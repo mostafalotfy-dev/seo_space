@@ -1,0 +1,33 @@
+/* Navy Color Palette */
+
+/* Dark Mode */
+:root, [data-theme="dark"] {
+  --main-color: #0F172A;
+  --secondary-color: #345281;
+  --third-color: #3B82F6;
+  --accent: #F59E0B;
+  --text-color: #F9FAFB;
+  --text-muted: #94A3B8;
+  --font-family: 'Poppins', sans-serif;
+  --selection-color: var(--third-color);
+  --secondary-hover-color: #e27777;
+  --paragraph-color: #818181;
+  --title-color: var(--text-color);
+
+}
+/* Light Mode */
+
+@media (prefers-color-scheme: light) {
+  :root, [data-theme="light"] {
+    --main-color: #F9FAFB;
+    --secondary-color: #FFFFFF;
+    --third-color: #2563EB;
+    --accent: #F97316;
+    --text-color: #111827;
+    --text-muted: #6B7280;
+    --selection-color: var(--third-color);
+    --secondary-hover-color: #e27777;
+    --paragraph-color: #444444;
+    --title-color: var(--text-color);
+  }
+}
