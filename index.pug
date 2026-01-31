@@ -1,0 +1,248 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="description" content="")
+    meta(name="author" content="")
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet")
+    title  #{t('title.main')}
+
+    // Bootstrap core CSS
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous")
+
+    // Additional CSS Files
+    link(rel="stylesheet" href="assets/css/fontawesome.css")
+    link(rel="stylesheet" href="assets/css/main.css")
+    link(rel="stylesheet" href="assets/css/animated.css")
+    link(rel="stylesheet" href="assets/css/owl.css")
+
+  body(dir=lang == 'ar' ? 'rtl' : 'ltr')
+    // ***** Preloader Start *****
+    #js-preloader.js-preloader
+      .preloader-inner
+        span.dot
+        .dots
+          span
+          span
+          span
+    // ***** Preloader End *****
+
+    // ***** Header Area Start *****
+    header.header-area.header-sticky.wow.slideInDown(data-wow-duration="0.75s" data-wow-delay="0s")
+      .container
+        .row
+          .col-12
+            nav.main-nav
+              a.logo(href="index.html")
+                h4
+                  | #{t('header.logo.part1')}
+                  span #{t('header.logo.part2')}
+              ul.nav
+                li.scroll-to-section
+                  a.active(href="#top") #{t('menu.home')}
+                li.scroll-to-section
+                  a(href="#about") #{t('menu.about')}
+                li.scroll-to-section
+                  a(href="#services") #{t('menu.services')}
+                li.scroll-to-section
+                  a(href="#portfolio") #{t('menu.portfolio')}
+                li.scroll-to-section
+                  a(href="#blog") #{t('menu.blog')}
+                li.scroll-to-section
+                  a(href="#contact") #{t('menu.message_us')}
+                li.scroll-to-section
+                  .main-red-button
+                    a(href="#contact") #{t('menu.contact_now')}
+              a.menu-trigger
+                span #{t('menu.trigger')}
+    // ***** Header Area End *****
+
+    // ***** Banner Start *****
+    .main-banner.wow.fadeIn#top(data-wow-duration="1s" data-wow-delay="0.5s")
+      .container
+        .row
+          .col-lg-12
+            .row
+              .col-lg-6.align-self-center
+                .left-content.header-text.wow.fadeInLeft(data-wow-duration="1s" data-wow-delay="1s")
+                  h6 #{t('banner.welcome')}
+                  h2
+                    | #{t('banner.we_make')}
+                    em #{t('banner.digital_ideas')}
+                    |  & 
+                    span #{t('banner.seo')}
+                    |  #{t('banner.marketing')}
+                  p
+                    | #{t('banner.description.part1')}
+                    a(rel="nofollow" href="https://templatemo.com/page/1" target="_parent") #{t('banner.templatemo')}
+                    | #{t('banner.description.part2')}
+                  form#search(action="#" method="GET")
+                    fieldset
+                      input.email(type="address" name="address" placeholder=t('banner.placeholder.website_url') autocomplete="on" required)
+                    fieldset
+                      button.main-button(type="submit") #{t('banner.button.analyze')}
+              .col-lg-6
+                .right-image.wow.fadeInRight(data-wow-duration="1s" data-wow-delay="0.5s")
+                  img(src="assets/images/banner-right-image.png" alt=t('banner.alt.team_meeting'))
+    // ***** Banner End *****
+
+    // ***** About Start *****
+    #about.about-us.section
+      .container
+        .row
+          .col-lg-4
+            .left-image.wow.fadeIn(data-wow-duration="1s" data-wow-delay="0.2s")
+              img(src="assets/images/about-left-image.png" alt=t('about.alt.person_graphic'))
+          .col-lg-8.align-self-center
+            .services
+              .row
+                each item, i in [1,2,3,4]
+                  .col-lg-6
+                    .item.wow.fadeIn(data-wow-duration="1s" data-wow-delay=(0.3 + i * 0.2) + "s")
+                      .icon
+                        img(src=`assets/images/service-icon-0${i}.png` alt="")
+                      .right-text
+                        if i == 1
+                          h4 #{t('about.services.data_analysis')}
+                        else if i == 2
+                          h4 #{t('about.services.data_reporting')}
+                        else if i == 3
+                          h4 #{t('about.services.web_analytics')}
+                        else
+                          h4 #{t('about.services.seo_suggestions')}
+                        p #{t('about.services.description')}
+    // ***** About End *****
+
+    // ***** Services Start *****
+    #services.our-services.section
+      .container
+        .row
+          .col-lg-6.align-self-center.wow.fadeInLeft(data-wow-duration="1s" data-wow-delay="0.2s")
+            .left-image
+              img(src="assets/images/services-left-image.png" alt="")
+          .col-lg-6.wow.fadeInRight(data-wow-duration="1s" data-wow-delay="0.2s")
+            .section-heading
+              h2
+                | #{t('services.heading.part1')}
+                em #{t('services.heading.em')}
+                |  #{t('services.heading.part2')}
+                span #{t('services.heading.span')}
+                |  #{t('services.heading.part3')}
+              p #{t('services.description')}
+            .row
+              .col-lg-12
+                .first-bar.progress-skill-bar
+                  h4 #{t('services.skills.website_analysis')}
+                  span 84%
+                  .filled-bar
+                  .full-bar
+              .col-lg-12
+                .second-bar.progress-skill-bar
+                  h4 #{t('services.skills.seo_reports')}
+                  span 88%
+                  .filled-bar
+                  .full-bar
+              .col-lg-12
+                .third-bar.progress-skill-bar
+                  h4 #{t('services.skills.page_optimizations')}
+                  span 94%
+                  .filled-bar
+                  .full-bar
+    // ***** Services End *****
+
+    // ***** Portfolio Start *****
+    #portfolio.our-portfolio.section
+      .container
+        .row
+          .col-lg-6.offset-lg-3
+            .section-heading.wow.bounceIn(data-wow-duration="1s" data-wow-delay="0.2s")
+              h2
+                | #{t('portfolio.heading.part1')}
+                em #{t('portfolio.heading.em')}
+                |  #{t('portfolio.heading.part2')}
+                span #{t('portfolio.heading.span')}
+        .row
+          each delay in [0.3,0.4,0.5,0.6]
+            .col-lg-3.col-sm-6
+              a(href="#")
+                .item.wow.bounceInUp(data-wow-duration="1s" data-wow-delay=delay + "s")
+                  .hidden-content
+                    h4 #{t('portfolio.items.seo_analysis.title')}
+                    p #{t('portfolio.items.seo_analysis.description')}
+                  .showed-content
+                    img(src="assets/images/portfolio-image.png" alt=t('portfolio.items.seo_analysis.alt'))
+    // ***** Portfolio End *****
+
+    // ***** Blog Start *****
+    #blog.our-blog.section
+      .container
+        .row
+          .col-lg-6.wow.fadeInDown(data-wow-duration="1s" data-wow-delay="0.25s")
+            .section-heading
+              h2
+                | #{t('blog.heading.part1')}
+                em #{t('blog.heading.em')}
+                |  #{t('blog.heading.part2')}
+                span #{t('blog.heading.span')}
+          .col-lg-6.wow.fadeInDown(data-wow-duration="1s" data-wow-delay="0.25s")
+            .top-dec
+              img(src="assets/images/blog-dec.png" alt=t('blog.alt'))
+    // ***** Blog End *****
+
+    // ***** Contact Start *****
+    #contact.contact-us.section
+      .container
+        .row
+          .col-lg-6.align-self-center.wow.fadeInLeft(data-wow-duration="0.5s" data-wow-delay="0.25s")
+            .section-heading
+              h2 #{t('contact.heading')}
+              p #{t('contact.description')}
+              .phone-info
+                h4
+                  | #{t('contact.phone_text')}
+                  span
+                    i.fa.fa-phone
+                    a(href="#") 010-020-0340
+          .col-lg-6.wow.fadeInRight(data-wow-duration="0.5s" data-wow-delay="0.25s")
+            form#contact(action="" method="post")
+              .row
+                .col-lg-6
+                  fieldset
+                    input#name(type="name" name="name" placeholder=t('contact.form.name') autocomplete="on" required)
+                .col-lg-6
+                  fieldset
+                    input#surname(type="surname" name="surname" placeholder=t('contact.form.surname') autocomplete="on" required)
+                .col-lg-12
+                  fieldset
+                    input#email(type="email" name="email" autocomplete="off" pattern="[^ @]*@[^ @]*" placeholder=t('contact.form.email') required)
+                .col-lg-12
+                  fieldset
+                    textarea#message.form-control(name="message" placeholder=t('contact.form.message') required)
+                .col-lg-12
+                  fieldset
+                    button#form-submit.main-button(type="submit") #{t('contact.form.submit')}
+              .contact-dec
+                img(src="assets/images/contact-decoration.png" alt=t('contact.form.alt'))
+    // ***** Contact End *****
+
+    // ***** Footer Start *****
+    footer
+      .container
+        .row
+          .col-lg-12.wow.fadeIn(data-wow-duration="1s" data-wow-delay="0.25s")
+            p
+              | #{t('footer.copyright')}
+              br
+              | #{t('footer.design.text')}
+              a(rel="nofollow" href="#") #{t('footer.design.author')}
+    // ***** Footer End *****
+
+    // Scripts
+    script(src="vendor/jquery/jquery.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous")
+    script(src="assets/js/owl-carousel.js")
+    script(src="assets/js/animation.js")
+    script(src="assets/js/imagesloaded.js")
+    script(src="./assets/js/main-custom.js")

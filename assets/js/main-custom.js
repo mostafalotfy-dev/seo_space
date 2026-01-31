@@ -82,9 +82,9 @@
       })
       $(this).addClass('active');
 
-      var target = this.hash,
-        menu = target;
-      var target = $(this.hash);
+      var target = this.hash;
+       
+      target = $(this.hash);
       $('html, body').stop().animate({
         scrollTop: (target.offset().top) + 1
       }, 500, 'swing', function () {
@@ -94,7 +94,7 @@
     });
   });
 
-  function onScroll(event) {
+  function onScroll() {
     var scrollPos = $(document).scrollTop();
     $('.nav a').each(function () {
       var currLink = $(this);
@@ -131,7 +131,7 @@
     });
   }
 
-  // mobileNav();
+  mobileNav();
 
 
 

@@ -16,6 +16,7 @@
 
 @media screen and (prefers-color-scheme: light) {
   :root {
+    outline:10px solid red ;
     --main-color: #F9FAFB;
     --secondary-color: #FFFFFF;
     --third-color: #2563EB;

@@ -1,0 +1,122 @@
+{
+  "title": {
+    "main": "SEO Nexus - SEO HTML5 Template"
+  },
+
+  "header": {
+    "logo": {
+      "part1": "Spac",
+      "part2": "Dyna"
+    }
+  },
+
+  "menu": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "message_us": "Message Us",
+    "contact_now": "Contact Now",
+    "trigger": "Menu"
+  },
+
+  "banner": {
+    "welcome": "Welcome to SEO Nexus",
+    "we_make": "We Make ",
+    "digital_ideas": "Digital Ideas",
+    "seo": "SEO",
+    "marketing": "Marketing",
+    "description": {
+      "part1": "SEO Nexus is a professional looking HTML template using a Bootstrap 5 (beta 2). This CSS template is free for you provided by ",
+      "part2": "."
+    },
+    "templatemo": "TemplateMo",
+    "placeholder": {
+      "website_url": "Your website URL..."
+    },
+    "button": {
+      "analyze": "Analyze Site"
+    },
+    "alt": {
+      "team_meeting": "team meeting"
+    }
+  },
+
+  "about": {
+    "alt": {
+      "person_graphic": "person graphic"
+    },
+    "services": {
+      "data_analysis": "Data Analysis",
+      "data_reporting": "Data Reporting",
+      "web_analytics": "Web Analytics",
+      "seo_suggestions": "SEO Suggestions",
+      "description": "Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter"
+    }
+  },
+
+  "services": {
+    "heading": {
+      "part1": "Grow your website with our ",
+      "em": "SEO",
+      "part2": " service & ",
+      "span": "Project",
+      "part3": " Ideas"
+    },
+    "description": "SEO Nexus HTML5 template is free to use for your website projects. However, you are not permitted to redistribute the template ZIP file on any CSS template collection websites. Please contact us for more information. Thank you for your kind cooperation.",
+    "skills": {
+      "website_analysis": "Website Analysis",
+      "seo_reports": "SEO Reports",
+      "page_optimizations": "Page Optimizations"
+    }
+  },
+
+  "portfolio": {
+    "heading": {
+      "part1": "See What Our Agency ",
+      "em": "Offers",
+      "part2": " & What We ",
+      "span": "Provide"
+    },
+    "items": {
+      "seo_analysis": {
+        "title": "SEO Analysis",
+        "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
+        "alt": "portfolio image"
+      }
+    }
+  },
+
+  "blog": {
+    "heading": {
+      "part1": "Check Out What Is ",
+      "em": "Trending",
+      "part2": " In Our Latest ",
+      "span": "News"
+    },
+    "alt": "blog decoration"
+  },
+
+  "contact": {
+    "heading": "Feel Free To Send Us a Message About Your Website Needs",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores",
+    "phone_text": "For any enquiry, Call Us: ",
+    "form": {
+      "name": "Name",
+      "surname": "Surname",
+      "email": "Your Email",
+      "message": "Message",
+      "submit": "Send Message",
+      "alt": "contact decoration"
+    }
+  },
+
+  "footer": {
+    "copyright": "© Copyright 2026 SEO Nexus Co. All Rights Reserved.",
+    "design": {
+      "text": "Design: ",
+      "author": "Mostafa Lotfy"
+    }
+  }
+}

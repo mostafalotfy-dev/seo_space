@@ -1,10 +1,6 @@
-/* 
-
-TemplateMo 562 Space Dynamic
-
-https://templatemo.com/tm-562-space-dynamic
-
-*/
+/* ---------------------------------------------
+  Author:Mostafa Lotfy
+------------------------------------------------*/
 
 /* ---------------------------------------------
 Table of contents
@@ -22,25 +18,25 @@ Table of contents
 10. preloader
 11. search
 12. portfolio
-
 --------------------------------------------- */
-/* 
+
 /*---------------------------------------------
             00. variables
 ---------------------------------------------*/
 
-:root{
+:root {
   --main-color: #212121;
-  --secondary-color: #fe3f40;
-  --third-color: #03a4ed;
-  --text-color: white;
-  --light-bg-color: #f7f7f7;
+  --secondary-color: #8cd6d2;
+  --accent-color: #8b8bae;
+  --text-color: #64e6ba;
+  --text-hover-color: #05f7a5;
+  --light-bg-color: #88d9e6;
   --font-family: 'Poppins', sans-serif;
-  --white-color: #fff;
-  --black-color:black;
-  --selection-color:var(--third-color);
-  --secondary-hover-color:#e27777;
-  --paragraph-color: #818181;
+  --light-color: #fff;
+  --dark-color:black;
+  --selection-color:var(--accent-color);
+  --secondary-hover-color:#c5fffd;
+  --paragraph-color: var(--light-color);
   --title-color: #ffffff;
   --history-text-color: #cccccc;
 }
@@ -52,19 +48,23 @@ Table of contents
 .header-area{
   --header-background-color:var(--main-color);
 }
-
+.background-header .main-nav .menu-trigger span,
+ .background-header .main-nav .menu-trigger span:before,
+  .background-header .main-nav .menu-trigger span:after{
+  background-color: var(--light-color);
+}
 /*---------------------------------------------
 font & reset css
 --------------------------------------------- 
 */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
 /* 
 ---------------------------------------------
 reset
 --------------------------------------------- 
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
-pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
 s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
 figure, header, nav, section, article, aside, footer, figcaption {
   margin: 0;
@@ -175,14 +175,19 @@ body {
   font-family: var(--font-family);
 }
 
-::selection {
-  background: var(--selection-color);
-  color:var(--white-color);
-}
-
 ::-moz-selection {
   background: var(--selection-color);
-  color: var(--white-color);
+  color: var(--light-color);
+}
+
+::-webkit-selection {
+  background: var(--selection-color);
+  color: var(--light-color);
+}
+
+::-webkit-selection,::-moz-selection {
+  background: var(--selection-color);
+  color: var(--light-color);
 }
 
 @media (max-width: 991px) {
@@ -218,11 +223,11 @@ body {
 
 .section-heading h2 em {
   font-style: normal;
-  color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .section-heading h2 span {
-  color: #fe3f40;
+  color: var(--text-color);
 }
 
 .main-blue-button a {
@@ -239,7 +244,7 @@ body {
 
 .main-red-button a {
   display: inline-block;
-  background-color: #fe3f40;
+  background-color: var(--text-color);
   font-size: 15px;
   font-weight: 400;
   color: #fff;
@@ -254,7 +259,7 @@ body {
   background-color: #fff;
   font-size: 15px;
   font-weight: 400;
-  color: #fe3f40;
+  color: var(--text-color);
   text-transform: capitalize;
   padding: 12px 25px;
   border-radius: 23px;
@@ -283,11 +288,11 @@ header
 }
 
 .background-header .main-nav .nav li:hover a {
-  color: var(--secondary-color)!important;
+  color: var(--text-hover-color)!important;
 }
 
 .background-header .nav li a.active {
-  color: var(--secondary-hover-color)!important;
+  color: var(--text-hover-color)!important;
 }
 
 .header-area {
@@ -337,7 +342,7 @@ header
 }
 
 .logo h4 span {
-  color: #fe3f40;
+  color: var(--text-color);
 }
 
 .background-header .main-nav .logo h4 {
@@ -405,18 +410,18 @@ header
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-  color:var(--secondary-color) !important;
+  color:var(--text-color) !important;
 }
 
 .background-header .main-nav .nav li:hover a,
 .background-header .main-nav .nav li a.active {
-  color: var(--secondary-color) !important;
+  color: var(--text-color) !important;
   opacity: 1;
 }
 
 .header-area .main-nav .nav li:last-child a:hover ,
 .background-header .main-nav .nav li:last-child a:hover {
-  background-color: var(--third-color);
+  background-color: var(--accent-color);
 }
 
 .header-area .main-nav .nav li.submenu {
@@ -425,7 +430,7 @@ header
 }
 
 .header-area .main-nav .nav li.submenu:after {
-  font-family: FontAwesome;
+  font-family: FontAwesome, sans-serif;
   content: "\f107";
   font-size: 12px;
   color: var(--main-color);
@@ -477,7 +482,7 @@ header
 
 .header-area .main-nav .nav li.submenu ul li a:hover {
   background: #fff;
-  color: #fe3f40!important;
+  color: var(--text-hover-color)!important;
   padding-left: 25px;
 }
 
@@ -617,7 +622,7 @@ header
 }
 
 .header-area.header-sticky .nav li a.active {
-  color: #fe3f40;
+  color: var(--text-hover-color);
 }
 
 @media (max-width: 1200px) {
@@ -650,7 +655,7 @@ header
   }
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
-    color: #fe3f40!important;
+    color: var(--text-hover-color)!important;
     opacity: 1;
   }
   .header-area.header-sticky .nav li.search-icon a {
@@ -711,7 +716,7 @@ header
   }
   .header-area .main-nav .nav li a:hover {
     background: #eee !important;
-    color: #fe3f40!important;
+    color: var(--text-color)!important;
   }
   .header-area .main-nav .nav li.submenu ul {
     position: relative;
@@ -825,7 +830,7 @@ preloader
     height: 16px;
     top: 12px;
     left: 15px;
-    background: #fe3f40;
+    background: var(--text-color);
     border-radius: 50%;
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -848,7 +853,7 @@ preloader
     width: 16px;
     height: 16px;
     margin-left: 16px;
-    background: #fe3f40;
+    background: var(--text-color);
     border-radius: 50%;
 }
 
@@ -869,7 +874,7 @@ Banner Style
   overflow: hidden;
 }
 
-.main-banner:after {
+/* .main-banner:after {
   content: '';
   background-image: url(../images/baner-dec-left.png);
   background-repeat: no-repeat;
@@ -879,7 +884,7 @@ Banner Style
   top: 100px;
   width: 193px;
   height: 467px;
-}
+} */
 
 .main-banner:before {
   content: '';
@@ -899,24 +904,24 @@ Banner Style
 .main-banner .left-content h6 {
   text-transform: uppercase;
   font-size: 18px;
-  color: #fe3f40;
+  color: var(--text-color);
   margin-bottom: 15px;
 }
 
 .main-banner .left-content h2 {
   font-size: 50px;
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--title-color);
   line-height: 72px;
 }
 
 .main-banner .left-content h2 em {
-  color: #03a4ed;
+  color: var(--text-color);
   font-style: normal;
 }
 
 .main-banner .left-content h2 span {
-  color: #fe3f40;
+  color: var(--text-color);
 }
 
 .main-banner .left-content p {
@@ -931,14 +936,15 @@ Banner Style
 }
 
 .main-banner .left-content form button {
+  --text-color:white;
   position: absolute;
   right: 10px;
   top: 10px;
   display: inline-block;
-  background-color: #fff;
+  background-color: var(--secondary-color);
   font-size: 15px;
   font-weight: 500;
-  color: #fe3f40;
+  color: var(--text-color);
   text-transform: capitalize;
   padding: 12px 25px;
   border-radius: 23px;
@@ -946,16 +952,21 @@ Banner Style
   outline: none;
   border: none;
 }
+[dir="rtl"] .main-banner .left-content form button
+{
+  right: revert;
+  left: 10px;
+}
 
 .main-banner .left-content form input {
   width: 470px;
   height: 66px;
-  background-color: #03a4ed;
+  background-color:var(--accent-color);
   border-radius: 33px;
   border: none;
   outline: none;
   padding: 0px 25px;
-  color: #fff;
+  color: var(--text-color);
   letter-spacing: 0.25px;
   font-size: 15px;
   font-weight: 300;
@@ -1081,8 +1092,8 @@ Services Style
 }
 
 .our-services .progress-skill-bar .filled-bar {
-  background: rgb(255,77,30);
-  background: linear-gradient(105deg, rgba(255,77,30,1) 0%, rgba(255,44,109,1) 100%);
+  background:var(--secondary-color);
+  background: linear-gradient(105deg,var(--secondary-color) 0%, var(--accent-color) 100%);
   height: 6px;
   border-radius: 3px;
   margin-bottom: -6px;
@@ -1137,8 +1148,8 @@ Portfolio
 }
 
 .our-portfolio .hidden-content {
-  background: rgb(255,77,30);
-  background: linear-gradient(105deg, rgba(255,77,30,1) 0%, rgba(255,44,109,1) 100%);
+  background: var(--secondary-color);
+  background: linear-gradient(105deg, var(--main-color)  0%,var(--secondary-color) 100%);
   padding: 30px;
   border-radius: 20px;
   text-align: center;
@@ -1440,7 +1451,7 @@ form#contact button {
 }
 
 form#contact button:hover {
-  background-color: #fe3f40;
+  background-color: var(--text-color);
 }
 
 
@@ -1456,7 +1467,7 @@ footer p {
 }
 
 footer p a {
-  color: #fe3f40;
+  color: var(--text-color);
 }
 /*---------------------------------------------
  Utils
@@ -1625,21 +1636,38 @@ responsive
   
 :root{
   --main-color: var(--light-bg-color);
-  --secondary-color: #fe3f40;
-  --third-color: #03a4ed;
-  --text-color: var(--black-color);
+  --text-color: var(--text-color);
+  --accent-color: #03a4ed;
+  --text-color: var(--dark-color);
   --light-bg-color: #f7f7f7;
   --font-family: 'Poppins', sans-serif;
-  --selection-color:var(--third-color);
+  --selection-color:var(--accent-color);
   --secondary-hover-color:#e27777;
   --paragraph-color: #818181;
   --title-color: var(--text-color);
-  --history-text-color: var(--history-text-color);
 }
 }
 
 
-[dir=rtl].main-banner .left-content form button {
-    left: 10px;
-    right: revert;
+[dir="rtl"] .about-us .services .item .icon {
+  float: right;
+  margin-right: 0px;
+  margin-left: 25px;
 }
+
+[dir="rtl"] .our-services .first-bar span{
+  left: revert !important;
+  right: 69% !important;
+
+}
+
+[dir="rtl"] .our-services .second-bar span{
+      left: revert !important;
+      right: 81% !important;
+}
+
+[dir="rtl"] .our-services .third-bar span{
+      left: revert !important;
+      right: 88% !important;
+}
+
