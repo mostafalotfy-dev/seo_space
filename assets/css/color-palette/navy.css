@@ -5,7 +5,7 @@
   --main-color: #0F172A;
   --secondary-color: #345281;
   --third-color: #3B82F6;
-  --accent: #F59E0B;
+  --accent-color: #F59E0B;
   --text-color: #F9FAFB;
   --text-muted: #94A3B8;
   --font-family: 'Poppins', sans-serif;
@@ -22,7 +22,7 @@
     --main-color: #F9FAFB;
     --secondary-color: #FFFFFF;
     --third-color: #2563EB;
-    --accent: #F97316;
+    --accent-color: #F97316;
     --text-color: #111827;
     --text-muted: #6B7280;
     --selection-color: var(--third-color);
