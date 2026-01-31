@@ -51,7 +51,7 @@ Table of contents
 .background-header .main-nav .menu-trigger span,
  .background-header .main-nav .menu-trigger span:before,
   .background-header .main-nav .menu-trigger span:after{
-  background-color: var(--light-color);
+  background-color: var(--text-color) !important ;
 }
 /*---------------------------------------------
 font & reset css

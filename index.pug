@@ -76,11 +76,11 @@ html(lang="en")
                     |  #{t('banner.marketing')}
                   p
                     | #{t('banner.description.part1')}
-                    a(rel="nofollow" href="https://templatemo.com/page/1" target="_parent") #{t('banner.templatemo')}
+                    a(rel="nofollow" href="#" target="_parent") #{t('banner.author')}
                     | #{t('banner.description.part2')}
                   form#search(action="#" method="GET")
                     fieldset
-                      input.email(type="address" name="address" placeholder=t('banner.placeholder.website_url') autocomplete="on" required)
+                      input.email(type="text" name="address" placeholder=t('banner.placeholder.website_url') autocomplete="on" required)
                     fieldset
                       button.main-button(type="submit") #{t('banner.button.analyze')}
               .col-lg-6
