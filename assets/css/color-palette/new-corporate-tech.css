@@ -9,7 +9,8 @@ Author: Mostafa Lotfy
   --secondary-color: #345281;
   --third-color: #3B82F6;
   --accent-color: #F59E0B;
-  --text-color: #F9FAFB;
+  --text-color: white;
+  --text-hover-color: white;
   --text-muted: #94A3B8;
   --font-family: 'Poppins', sans-serif;
   --selection-color: var(--third-color);
@@ -19,7 +20,9 @@ Author: Mostafa Lotfy
 
 }
 
-
+form#contact input{
+  color: var(--text-color) !important;
+}
 @media screen and (prefers-color-scheme: light) {
   :root {
    
@@ -28,10 +31,12 @@ Author: Mostafa Lotfy
     --third-color: #2563EB;
     --accent-color: #F97316;
     --text-color: #111827;
+     --text-hover-color: var(--main-color);
     --text-muted: #6B7280;
     --selection-color: var(--third-color);
     --secondary-hover-color: #e27777;
     --paragraph-color: #444444;
     --title-color: var(--text-color);
   }
+  
 }
