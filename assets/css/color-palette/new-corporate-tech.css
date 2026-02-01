@@ -1,3 +1,9 @@
+/* Ignite Color Palette */
+/*----------------------------------------------------------
+
+Author: Mostafa Lotfy
+-----------------------------------------------------------*/
+
 :root {
   --main-color: #0F172A;
   --secondary-color: #345281;
@@ -16,7 +22,7 @@
 
 @media screen and (prefers-color-scheme: light) {
   :root {
-    outline:10px solid red ;
+   
     --main-color: #F9FAFB;
     --secondary-color: #FFFFFF;
     --third-color: #2563EB;
