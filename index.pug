@@ -1,26 +1,48 @@
+// ========================================
+// Main HTML Document - Digital Marketing Agency Website
+// ========================================
+
 doctype html
 html(lang=lang)
   head
+    // Meta Tags for Encoding, Viewport, and SEO
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
     meta(name="description" content="")
     meta(name="author" content="")
+    
+    // Load Google Fonts - Poppins family with multiple weights
     link(rel="preconnect" href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet")
+    
+    // Page Title - Localized using translation function
     title  #{t('title.main')}
 
-    // Bootstrap core CSS
+    // ========================================
+    // CSS Stylesheets
+    // ========================================
+    
+    // Bootstrap 5 - Core CSS Framework
     link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous")
 
-    // Additional CSS Files
+    // Custom CSS Files
+    // FontAwesome icons stylesheet
     link(rel="stylesheet" href="assets/css/fontawesome.css")
+    // Dynamic theme color palette based on selected theme
     link(rel="stylesheet" href="assets/css/color-palette/"+ theme_name )
+    // Main custom styles
     link(rel="stylesheet" href="assets/css/main.css")
+    // Animation and transition effects
     link(rel="stylesheet" href="assets/css/animated.css")
+    // Owl Carousel styles for sliders
     link(rel="stylesheet" href="assets/css/owl.css")
 
+  // ========================================
+  // Body - Set Text Direction and Theme Based on Language and Mode
+  // ========================================
   body(dir=lang == 'ar' ? 'rtl' : 'ltr',data-theme=mode)
-    // ***** Preloader Start *****
+    // Preloader Animation - Displays while page loads
+    // ========================================
     #js-preloader.js-preloader
       .preloader-inner
         span.dot
@@ -28,18 +50,22 @@ html(lang=lang)
           span
           span
           span
-    // ***** Preloader End *****
+    // ========================================
 
-    // ***** Header Area Start *****
+    // Header Navigation Section - Sticky Navigation Bar
+    // ========================================
     header.header-area.header-sticky.wow.slideInDown(data-wow-duration="0.75s" data-wow-delay="0s")
       .container
         .row
           .col-12
             nav.main-nav
+              // Logo with Branding
               a.logo(href="index.html")
                 h4
                   | #{t('header.logo.part1')}
                   span #{t('header.logo.part2')}
+              
+              // Main Navigation Menu
               ul.nav
                 li.scroll-to-section
                   a.active(href="#top") #{t('menu.home')}
@@ -53,19 +79,25 @@ html(lang=lang)
                   a(href="#blog") #{t('menu.blog')}
                 li.scroll-to-section
                   a(href="#contact") #{t('menu.message_us')}
+                
+                // CTA Button - Contact Now
                 li.scroll-to-section
                   .main-red-button
                     a(href="#contact") #{t('menu.contact_now')}
+              
+              // Mobile Menu Trigger
               a.menu-trigger
                 span #{t('menu.trigger')}
-    // ***** Header Area End *****
+    // ========================================
 
-    // ***** Banner Start *****
+    // Hero/Banner Section - Main Call-to-Action
+    // ========================================
     .main-banner.wow.fadeIn#top(data-wow-duration="1s" data-wow-delay="0.5s")
       .container
         .row
           .col-lg-12
             .row
+              // Left Content - Text and Search Form
               .col-lg-6.align-self-center
                 .left-content.header-text.wow.fadeInLeft(data-wow-duration="1s" data-wow-delay="1s")
                   h6 #{t('banner.welcome')}
@@ -79,26 +111,35 @@ html(lang=lang)
                     | #{t('banner.description.part1')}
                     a(rel="nofollow" href="#" target="_parent") #{t('banner.author')}
                     | #{t('banner.description.part2')}
+                  
+                  // Website Analysis Form - Main CTA
                   form#search(action="#" method="GET")
                     fieldset
                       input.email(type="text" name="address" placeholder=t('banner.placeholder.website_url') autocomplete="on" required)
                     fieldset
                       button.main-button(type="submit") #{t('banner.button.analyze')}
+              
+              // Right Content - Banner Image
               .col-lg-6
                 .right-image.wow.fadeInRight(data-wow-duration="1s" data-wow-delay="0.5s")
                   img(src="assets/images/banner-right-image.png" alt=t('banner.alt.team_meeting'))
-    // ***** Banner End *****
+    // ========================================
     
-    // ***** About Start *****
+    // About Section - Service Highlights and Features
+    // ========================================
     #about.about-us.section
       .container
         .row
+          // Left Image
           .col-lg-4
             .left-image.wow.fadeIn(data-wow-duration="1s" data-wow-delay="0.2s")
               img(src="assets/images/about-left-image.png" alt=t('about.alt.person_graphic'))
+          
+          // Right Content - Service Features
           .col-lg-8.align-self-center
             .services
               .row
+                // Four Service Cards - Data Analysis, Reporting, Web Analytics, SEO
                 each item, i in [1,2,3,4]
                   .col-lg-6
                     .item.wow.fadeIn(data-wow-duration="1s" data-wow-delay=(0.3 + i * 0.2) + "s")
@@ -114,15 +155,19 @@ html(lang=lang)
                         else
                           h4 #{t('about.services.seo_suggestions')}
                         p #{t('about.services.description')}
-    // ***** About End *****
+    // ========================================
 
-    // ***** Services Start *****
+    // Services Section - Skill Bars and Expertise
+    // ========================================
     #services.our-services.section
       .container
         .row
+          // Left Image
           .col-lg-6.align-self-center.wow.fadeInLeft(data-wow-duration="1s" data-wow-delay="0.2s")
             .left-image
               img(src="assets/images/services-left-image.png" alt="")
+          
+          // Right Content - Service Description and Skill Bars
           .col-lg-6.wow.fadeInRight(data-wow-duration="1s" data-wow-delay="0.2s")
             .section-heading
               h2
@@ -132,6 +177,8 @@ html(lang=lang)
                 span #{t('services.heading.span')}
                 |  #{t('services.heading.part3')}
               p #{t('services.description')}
+            
+            // Skill Progress Bars - Website Analysis, SEO Reports, Page Optimizations
             .row
               .col-lg-12
                 .first-bar.progress-skill-bar
@@ -151,11 +198,13 @@ html(lang=lang)
                   span 94%
                   .filled-bar
                   .full-bar
-    // ***** Services End *****
+    // ========================================
 
-    // ***** Portfolio Start *****
+    // Portfolio Section - Case Studies Showcase
+    // ========================================
     #portfolio.our-portfolio.section
       .container
+        // Section Heading
         .row
           .col-lg-6.offset-lg-3
             .section-heading.wow.bounceIn(data-wow-duration="1s" data-wow-delay="0.2s")
@@ -164,22 +213,28 @@ html(lang=lang)
                 em #{t('portfolio.heading.em')}
                 |  #{t('portfolio.heading.part2')}
                 span #{t('portfolio.heading.span')}
+        
+        // Portfolio Items Grid - Showcase of completed projects
         .row
           each delay in [0.3,0.4,0.5,0.6]
             .col-lg-3.col-sm-6
               a(href="#")
                 .item.wow.bounceInUp(data-wow-duration="1s" data-wow-delay=delay + "s")
+                  // Hidden content revealed on hover
                   .hidden-content
                     h4 #{t('portfolio.items.seo_analysis.title')}
                     p #{t('portfolio.items.seo_analysis.description')}
+                  // Portfolio image
                   .showed-content
                     img(src="assets/images/portfolio-image.png" alt=t('portfolio.items.seo_analysis.alt'))
-    // ***** Portfolio End *****
+    // ========================================
 
-    // ***** Blog Start *****
+    // Blog Section - Articles and Updates
+    // ========================================
     #blog.our-blog.section
       .container
         .row
+          // Blog Section Heading
           .col-lg-6.wow.fadeInDown(data-wow-duration="1s" data-wow-delay="0.25s")
             .section-heading
               h2
@@ -187,48 +242,67 @@ html(lang=lang)
                 em #{t('blog.heading.em')}
                 |  #{t('blog.heading.part2')}
                 span #{t('blog.heading.span')}
+          
+          // Decorative Element
           .col-lg-6.wow.fadeInDown(data-wow-duration="1s" data-wow-delay="0.25s")
             .top-dec
               img(src="assets/images/blog-dec.png" alt=t('blog.alt'))
-    // ***** Blog End *****
+    // ========================================
 
-    // ***** Contact Start *****
+    // Contact Section - Contact Form and Information
+    // ========================================
     #contact.contact-us.section
       .container
         .row
+          // Left Content - Contact Information
           .col-lg-6.align-self-center.wow.fadeInLeft(data-wow-duration="0.5s" data-wow-delay="0.25s")
             .section-heading
               h2 #{t('contact.heading')}
               p #{t('contact.description')}
+              // Phone Contact Information
               .phone-info
                 h4
                   | #{t('contact.phone_text')}
                   span
                     i.fa.fa-phone
                     a(href="#") 010-020-0340
+          
+          // Right Content - Contact Form
           .col-lg-6.wow.fadeInRight(data-wow-duration="0.5s" data-wow-delay="0.25s")
             form#contact(action="" method="post")
               .row
+                // Name Field
                 .col-lg-6
                   fieldset
                     input#name(type="name" name="name" placeholder=t('contact.form.name') autocomplete="on" required)
+                
+                // Surname Field
                 .col-lg-6
                   fieldset
                     input#surname(type="surname" name="surname" placeholder=t('contact.form.surname') autocomplete="on" required)
+                
+                // Email Field
                 .col-lg-12
                   fieldset
                     input#email(type="email" name="email" autocomplete="off" pattern="[^ @]*@[^ @]*" placeholder=t('contact.form.email') required)
+                
+                // Message Field
                 .col-lg-12
                   fieldset
                     textarea#message.form-control(name="message" placeholder=t('contact.form.message') required)
+                
+                // Submit Button
                 .col-lg-12
                   fieldset
                     button#form-submit.main-button(type="submit") #{t('contact.form.submit')}
+              
+              // Decorative Element
               .contact-dec
                 img(src="assets/images/contact-decoration.png" alt=t('contact.form.alt'))
-    // ***** Contact End *****
+    // ========================================
 
-    // ***** Footer Start *****
+    // Footer - Copyright and Credits
+    // ========================================
     footer
       .container
         .row
@@ -238,12 +312,26 @@ html(lang=lang)
               br
               | #{t('footer.design.text')}
               a(rel="nofollow" href="#") #{t('footer.design.author')}
-    // ***** Footer End *****
+    // ========================================
 
-    // Scripts
+    // ========================================
+    // JavaScript Libraries and Custom Scripts
+    // ========================================
+    
+    // jQuery - JavaScript Library
     script(src="vendor/jquery/jquery.min.js")
+    
+    // Bootstrap 5 Bundle - Includes Popper.js for dropdowns, tooltips, popovers
     script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous")
+    
+    // Owl Carousel - Image/Content Carousel/Slider
     script(src="assets/js/owl-carousel.js")
+    
+    // Animation Effects - WOW.js related animations
     script(src="assets/js/animation.js")
+    
+    // Images Loaded - Detect when images are loaded
     script(src="assets/js/imagesloaded.js")
+    
+    // Custom JavaScript - Main application logic
     script(src="./assets/js/main-custom.js", defer)
