@@ -4,19 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node  ./compilepg.cjs"
+    "start": "node  ./compilepg.cjs",
+    "watch": "nodemon --watch compilepg.cjs --watch .env --exec \"node ./compilepg.cjs\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@types/node": "^25.1.0",
     "@types/pug": "^2.0.10",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.8",
+    "dotenv": "^17.2.3",
     "fontawesome": "^5.6.3",
     "i18next": "^25.8.0",
     "jquery": "^4.0.0",
+    "nodemon": "^3.1.11",
     "owljs": "^0.9.1",
     "pug": "^3.0.3",
     "waypoints": "^4.0.1"

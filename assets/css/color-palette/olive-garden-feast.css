@@ -1,0 +1,69 @@
+/* Olive Garden Feast Color Palette */
+/*----------------------------------------------------------
+Author: Mostafa Lotfy
+-----------------------------------------------------------*/
+
+/* =========================
+   DARK MODE (DEFAULT)
+   ========================= */
+:root,[data-theme="dark"] {
+  /* Core backgrounds */
+  --main-color: #020617;          /* Main background */
+  --secondary-color: #020617;     /* Sections / cards */
+  --light-bg-color: #020617;      /* Soft background */
+
+  /* Brand colors */
+  --third-color: #3B82F6;         /* Primary (links, icons) */
+  --accent-color: #F59E0B;        /* CTA / highlights */
+  --secondary-hover-color: #2563EB;
+
+  /* Text */
+  --text-color: #E5E7EB;          /* Main text */
+  --title-color: #E5E7EB;
+  --paragraph-color: #E5E7EB;
+  --text-muted: #94A3B8;
+  --history-text-color: #94A3B8;
+  --text-hover-color: #FBBF24;
+
+  /* Utility */
+  --light-color: #FFFFFF;
+  --dark-color: #020617;
+  --selection-color: var(--accent-color);
+
+  /* Typography */
+  --font-family: 'Poppins', sans-serif;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+
+
+
+@media screen and (prefers-color-scheme: light) {
+  :root {
+    --main-color: #F9FAFB;
+    --secondary-color: #5365ce;
+    --third-color: #2563EB;
+    --accent-color: #F97316;
+    --text-color: #111827;
+    --text-hover-color: #dda15e;
+    --text-muted: #6B7280;
+    --font-family: 'Poppins', sans-serif;
+    --selection-color: var(--third-color);
+    --secondary-hover-color: #e27777;
+    --light-bg-color: #88d9e6;
+    --light-color: #fff;
+    --dark-color: black;
+    --paragraph-color: #444444;
+    --title-color: var(--text-color);
+    --history-text-color: #cccccc;
+
+  }
+
+}

@@ -1,5 +1,5 @@
 doctype html
-html(lang="en")
+html(lang=lang)
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
@@ -14,14 +14,12 @@ html(lang="en")
 
     // Additional CSS Files
     link(rel="stylesheet" href="assets/css/fontawesome.css")
+    link(rel="stylesheet" href="assets/css/color-palette/"+ theme_name )
     link(rel="stylesheet" href="assets/css/main.css")
-    //- link(rel="stylesheet" href="assets/css/color-palette/navy.css")
-    link(rel="stylesheet" href="assets/css/color-palette/new-corporate-tech.css")
-    //- link(rel="stylesheet" href="assets/css/color-palette/ignite.css")
     link(rel="stylesheet" href="assets/css/animated.css")
     link(rel="stylesheet" href="assets/css/owl.css")
 
-  body(dir=lang == 'ar' ? 'rtl' : 'ltr')
+  body(dir=lang == 'ar' ? 'rtl' : 'ltr',data-theme=mode)
     // ***** Preloader Start *****
     #js-preloader.js-preloader
       .preloader-inner

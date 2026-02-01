@@ -1,45 +1,63 @@
 // Import dependencies
-const pug = require('pug');
-const fs = require('fs');
-const path = require('path');
-
+const pug = require("pug");
+const fs = require("fs");
+const path = require("path");
+require("dotenv").config();
+ const themes = [
+    "olive-garden-feast.css",
+    "navy.css",
+    "new-corporate-tech.css",
+    "ignite.css",
+  ];
 // Load translation files
 
 const translations = {
-  en:require('./locals/en.json'),
-  ar:require('./locals/ar.json'),
+  en: require("./locals/en.json"),
+  ar: require("./locals/ar.json"),
 };
 // Function to compile with locals + translations
-function compileTemplate(lang = 'en', locals = {}) {
-  const pugFile = path.join(path.dirname("./"), 'index.pug');
+function compileTemplate(lang = "en", locals = {}) {
+  const pugFile = path.join(path.dirname("./"), "index.pug");
 
   // Merge locals with translations
   const data = {
-    ...locals, 
-   t: (key) => { // Split nested keys like "banner.placeholder.website_url" 
-   const parts = key.split('.'); let value = translations[lang] || translations.en; 
-   for (const part of parts) { 
-    value = value?.[part]; 
-    } 
+    ...locals,
+    t: (key) => {
+      // Split nested keys like "banner.placeholder.website_url"
+      const parts = key.split(".");
+      let value = translations[lang] || translations.en;
+      for (const part of parts) {
+        value = value?.[part];
+      }
       return value || key; // fallback: return key if not found
-    } 
+    },
   };
-  
 
+ 
   // Compile and render
-  const compiledFunction = pug.compileFile(pugFile);
-  const html = compiledFunction({
-    pretty:true,
-    ...data
-  }); 
+  const compiledFunction = pug.compileFile(pugFile, {
+    pretty: true,
+  });
 
   // Save output
-  const outFile = path.join(path.dirname("./"), `output-${lang}.html`);
-  fs.writeFileSync(outFile, html);
+  
+    const outFileTheme = path.join(
+      path.dirname("./"),
+      `output-${lang}-theme-${locals.theme_name.replace(".css", "")}-${locals.mode}.html`,
+    );
+    const html = compiledFunction({
+      theme_name: locals.theme_name,
+      ...data,
+    });
+    fs.writeFileSync(outFileTheme, html);
+    console.log(
+      `✅ Compiled Pug template with ${lang} translations → ${outFileTheme}`,
+    );
+  }
 
-  console.log(`✅ Compiled Pug template with ${lang} translations → ${outFile}`);
+for (const theme of themes) {
+compileTemplate("en", { username: "Mostafa", lang: "en", theme_name: theme,mode:"dark" });
+compileTemplate("en", { username: "Mostafa", lang: "en", theme_name: theme,mode:"light" });
+compileTemplate("ar", { username: "مصطفى", lang: "ar", theme_name: theme,mode:"dark" });
+compileTemplate("ar", { username: "مصطفى", lang: "ar", theme_name: theme,mode:"light" });
 }
-
-// Example usage
-compileTemplate('en', { username: 'Mostafa',lang:"en" });
-compileTemplate('ar', { username: 'مصطفى',lang:"ar" });

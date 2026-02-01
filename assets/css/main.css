@@ -1,3 +1,4 @@
+/* eslint-disable css/no-invalid-properties */
 /* ---------------------------------------------
   Author:Mostafa Lotfy
 ------------------------------------------------*/
@@ -5,7 +6,7 @@
 /* ---------------------------------------------
 Table of contents
 ------------------------------------------------
-00. variables
+00. toggle theme
 01. font & reset css
 02. reset
 03. global styles
@@ -19,29 +20,18 @@ Table of contents
 11. search
 12. portfolio
 --------------------------------------------- */
-
 /*---------------------------------------------
-            00. variables
+        toggle theme
 ---------------------------------------------*/
-/* Dark Mode */
-:root {
-  --main-color: #212121;
-  --secondary-color: #8cd6d2;
-  --accent-color: #8b8bae;
-  --text-color: #64e6ba;
-  --text-hover-color: #05f7a5;
-  --light-bg-color: #88d9e6;
-  --font-family: 'Poppins', sans-serif;
-  --light-color: #fff;
-  --dark-color: black;
-  --selection-color: var(--accent-color);
-  --secondary-hover-color: #c5fffd;
-  --paragraph-color: var(--light-color);
-  --title-color: #ffffff;
-  --history-text-color: #cccccc;
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px 10px;
+  transition: color 0.3s ease;
 }
-
-
 /*---------------------------------------------
             header variables
 ---------------------------------------------*/
@@ -206,6 +196,7 @@ body {
 
 a {
   text-decoration: none !important;
+  color:var(--text-color);
 }
 
 h1,
@@ -453,14 +444,14 @@ header
 
 .header-area .main-nav .nav li:last-child a,
 .background-header .main-nav .nav li:last-child a {
-  color: var(--text-color) !important;
+  color: var(--text-color) ;
   padding: 0px 20px;
   font-weight: 400;
 }
 
 .header-area .main-nav .nav li:last-child a:hover,
 .header-area .main-nav .nav li:last-child a.active {
-  color: var(--text-hover-color) !important;
+  color: var(--text-hover-color) ;
 }
 
 .header-area .main-nav .nav li a {
@@ -496,7 +487,7 @@ header
 
 .header-area .main-nav .nav li:last-child a:hover,
 .background-header .main-nav .nav li:last-child a:hover {
-  background-color: var(--accent-color);
+  background-color: var(--secondary-color);
 }
 
 .header-area .main-nav .nav li.submenu {
@@ -1500,7 +1491,7 @@ form#contact input {
   width: 100%;
   height: 46px;
   border-radius: 33px;
-  background-color: #d1f3ff;
+  background-color: var(--secondary-color);
   border: none;
   outline: none;
   font-size: 15px;
@@ -1511,7 +1502,7 @@ form#contact input {
 }
 
 form#contact input::placeholder {
-  color: #2a2a2a;
+  color: var(--text-color);
 }
 
 form#contact textarea {
@@ -1522,26 +1513,26 @@ form#contact textarea {
   min-height: 140px;
   height: 140px;
   border-radius: 20px;
-  background-color: #d1f3ff;
+  background-color: var(--secondary-color);
   border: none;
   outline: none;
   font-size: 15px;
   font-weight: 300;
-  color: #2a2a2a;
+  color: var(--text-color);
   padding: 15px 20px;
   margin-bottom: 20px;
 }
 
 form#contact textarea::placeholder {
-  color: #2a2a2a;
+  color: var(--text-color);
 }
 
 form#contact button {
   display: inline-block;
-  background-color: #03a4ed;
+  background-color: var(--secondary-color);
   font-size: 15px;
   font-weight: 400;
-  color: #fff;
+  color: var(--text-color);
   text-transform: capitalize;
   padding: 12px 25px;
   border-radius: 23px;
@@ -1552,7 +1543,7 @@ form#contact button {
 }
 
 form#contact button:hover {
-  background-color: var(--accent-color);
+  background-color: var(--secondary-hover-color);
 }
 
 
