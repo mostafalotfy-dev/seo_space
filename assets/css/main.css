@@ -1756,21 +1756,6 @@ responsive
 
 
 
-@media screen and (prefers-color-scheme: light) {
-
-  :root {
-    --accent-color: #03a4ed;
-    --secondary-color: #ff6e6e;
-    --main-color: var(--light-bg-color);
-    --text-color: var(--dark-color);
-    --light-bg-color: #f7f7f7;
-    --font-family: 'Poppins', sans-serif;
-    --selection-color: var(--accent-color);
-    --secondary-hover-color: #e27777;
-    --paragraph-color: #818181;
-    --title-color: var(--text-color);
-  }
-}
 
 
 [dir="rtl"] .about-us .services .item .icon {

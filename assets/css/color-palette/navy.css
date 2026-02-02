@@ -3,7 +3,7 @@
 Author: Mostafa Lotfy
 -----------------------------------------------------------*/
 /* Dark Mode */
-:root {
+:root,[data-theme="dark"] {
   --main-color: #0F172A;
   --secondary-color: #345281;
   --third-color: #3B82F6;
