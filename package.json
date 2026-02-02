@@ -1,13 +1,13 @@
 {
   "name": "seo_nexus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "SEO Nexus - A modern SEO-focused website template Landing Page",
   "main": "index.js",
   "scripts": {
     "start": "node  ./compilepg.cjs",
     "watch": "nodemon --watch compilepg.cjs --watch .env --exec \"node ./compilepg.cjs\"",
-    "eslint": "eslint assets/css/main.css ./assets/js/main-custom.js assets/css/color-palette/*.css",
-    "fix": "eslint assets/css/main.css assets/js/main-custom.js assets/css/color-palette/*.css --fix"
+    "eslint": "npx eslint assets/css/main.css ./assets/js/main-custom.js assets/css/color-palette/*.css",
+    "fix": "npx eslint assets/css/main.css assets/js/main-custom.js assets/css/color-palette/*.css --fix"
   },
   "keywords": [],
   "author": "",
