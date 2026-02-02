@@ -687,10 +687,10 @@ live-server
 
 ```bash
 # Check code
-npx eslint .
+npx eslint assets/css/main.css ./assets/js/main-custom.js assets/css/color-palette/*.css
 
 # Auto-fix issues
-npx eslint . --fix
+npx eslint assets/css/main.css ./assets/js/main-custom.js assets/css/color-palette/*.css --fix
 
 # Check specific file
 npx eslint assets/js/main-custom.js

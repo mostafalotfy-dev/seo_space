@@ -126,6 +126,28 @@ Welcome to SEO Nexus Documentation! This index helps you find what you need quic
 
 ---
 
+## العربية — Arabic Translations
+
+The documentation is also available in Arabic under the `docs/ar/` folder:
+
+- **[README (العربية)](ar/README.md)**
+- **[INSTALLATION (العربية)](ar/INSTALLATION.md)**
+- **[ARCHITECTURE (العربية)](ar/ARCHITECTURE.md)**
+- **[COLOR_PALETTE (العربية)](ar/COLOR_PALETTE.md)**
+- **[CONFIGURATION (العربية)](ar/CONFIGURATION.md)**
+- **[DEVELOPMENT (العربية)](ar/DEVELOPMENT.md)**
+- **[LOCALIZATION (العربية)](ar/LOCALIZATION.md)**
+- **[DEPLOYMENT (العربية)](ar/DEPLOYMENT.md)**
+- **[TROUBLESHOOTING (العربية)](ar/TROUBLESHOOTING.md)**
+- **[CHANGELOG (العربية)](ar/CHANGELOG.md)**
+- **[CODECANYON_ITEM_DESCRIPTION (العربية)](ar/CODECANYON_ITEM_DESCRIPTION.md)**
+- **[CODECANYON_SETUP_GUIDE (العربية)](ar/CODECANYON_SETUP_GUIDE.md)**
+- **[DOCUMENTATION_UPDATE_SUMMARY (العربية)](ar/DOCUMENTATION_UPDATE_SUMMARY.md)**
+- **[FAQ (العربية)](ar/FAQ.md)**
+- **[INDEX (العربية)](ar/INDEX.md)**
+- **[QUICK_REFERENCE (العربية)](ar/QUICK_REFERENCE.md)**
+
+
 ## 🎯 Quick Navigation by Use Case
 
 ### I'm New and Want to Get Started
