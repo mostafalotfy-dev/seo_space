@@ -13,7 +13,7 @@
 
 ```bash
 # 1. Navigate to project
-cd d:\projects\seo
+cd d:\projects\seo_nexus
 
 # 2. Install dependencies
 npm install
