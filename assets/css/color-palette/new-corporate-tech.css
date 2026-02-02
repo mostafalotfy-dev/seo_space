@@ -5,7 +5,7 @@ Author: Mostafa Lotfy
 -----------------------------------------------------------*/
 
 :root,[data-theme="dark"] {
-  color-scheme: dark;
+
   --main-color: #0F172A;
   --secondary-color: #345281;
   --third-color: #3B82F6;
@@ -20,10 +20,15 @@ Author: Mostafa Lotfy
   --title-color: var(--text-color);
 
 }
-
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+[data-theme="light"] {
+  color-scheme: light;
+}
 
 :root,[data-theme="light"] {
-  color-scheme: light;
+ 
   
    
     --main-color: #F9FAFB;
@@ -42,6 +47,7 @@ Author: Mostafa Lotfy
 {
   color-scheme: normal;
 }
+
 
 form#contact input{
   color: var(--text-color) !important;

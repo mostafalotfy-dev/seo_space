@@ -9,9 +9,9 @@ Author: Mostafa Lotfy
 :root,
 [data-theme="dark"] {
   /* Core backgrounds */
-  --main-color: #020617;
+  --main-color: #284946;
   /* Main background */
-  --secondary-color: #020617;
+  --secondary-color: #5365ce;
   /* Sections / cards */
   --light-bg-color: #020617;
   /* Soft background */
@@ -51,16 +51,15 @@ Author: Mostafa Lotfy
 
 
 
-
 :root,
 [data-theme="light"] {
   --main-color: #F9FAFB;
-  --secondary-color: #5365ce;
+  --secondary-color: #2b7565;
   --third-color: #2563EB;
   --accent-color: #F97316;
   --text-color: #111827;
   --text-hover-color: #dda15e;
-  --text-muted: #6B7280;
+  --text-muted: #3c6357;
   --font-family: 'Poppins', sans-serif;
   --selection-color: var(--third-color);
   --secondary-hover-color: #e27777;
@@ -70,5 +69,6 @@ Author: Mostafa Lotfy
   --paragraph-color: #444444;
   --title-color: var(--text-color);
   --history-text-color: #cccccc;
+  --text-muted-placeholder:var(--light-color);
 
 }

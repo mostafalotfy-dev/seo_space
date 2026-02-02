@@ -118,5 +118,8 @@
       "text": "Design: ",
       "author": "Mostafa Lotfy"
     }
+  },
+  "noscript": {
+    "message": "This website requires JavaScript to function properly. Please enable JavaScript in your browser settings."
   }
 }

@@ -6,7 +6,7 @@
 npm install
 npm run watch
 npm start
-npx eslint .
+npx eslint assets/css/main.css ./assets/js/main-custom.js assets/css/color-palette/*.css
 ```
 
 ## مهام سريعة
