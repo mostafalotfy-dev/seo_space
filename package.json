@@ -1,7 +1,7 @@
 {
   "name": "seo_nexus",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.2",
+  "description": "SEO Nexus - A modern SEO-focused website template Landing Page",
   "main": "index.js",
   "scripts": {
     "start": "node  ./compilepg.cjs",
