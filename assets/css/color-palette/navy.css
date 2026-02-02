@@ -30,21 +30,23 @@ Author: Mostafa Lotfy
 [data-theme="light"] {
   color-scheme: light;
 }
-
+::placeholder {
+  color: var(--text-muted-placeholder) !important;
+}
 /* Light Mode */
 
 :root,[data-theme="light"] {
-  color-scheme: light;
- 
     --main-color: #F9FAFB;
-    --secondary-color: #FFFFFF;
+    --secondary-color: #b5673e;
     --third-color: #2563EB;
     --accent-color: #F97316;
-    --text-color: #111827;
-    --text-hover-color: var(--text-color);
-    --text-muted: #6B7280;
+    --text-color: #212121;
+    --text-hover-color: color-mix(var(--text-color) lightness(+20%));
+    --text-muted-placeholder:var(--light-color);
+    --text-muted: #000000;
     --selection-color: var(--third-color);
     --secondary-hover-color: #e27777;
     --paragraph-color: #444444;
     --title-color: var(--text-color);
+    
   }

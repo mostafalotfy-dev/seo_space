@@ -11,7 +11,7 @@ Author: Mostafa Lotfy
   /* Core backgrounds */
   --main-color: #020617;
   /* Main background */
-  --secondary-color: #020617;
+  --secondary-color: #5365ce;
   /* Sections / cards */
   --light-bg-color: #020617;
   /* Soft background */
@@ -50,7 +50,9 @@ Author: Mostafa Lotfy
 }
 
 
-
+::placeholder {
+  color: var(--text-muted-placeholder) !important;
+}
 
 :root,
 [data-theme="light"] {
@@ -70,5 +72,6 @@ Author: Mostafa Lotfy
   --paragraph-color: #444444;
   --title-color: var(--text-color);
   --history-text-color: #cccccc;
+  --text-muted-placeholder:var(--light-color);
 
 }

@@ -471,7 +471,7 @@ header
 }
 
 .header-area .main-nav .nav li a {
-  color: var(--text-color);
+  color: var(--text-muted);
 }
 
 .header-area .main-nav .nav li:hover a,
@@ -1027,7 +1027,7 @@ Banner Style
 }
 
 .main-banner .left-content form button {
-  --text-color: white;
+ 
   position: absolute;
   right: 10px;
   top: 10px;
@@ -1496,7 +1496,7 @@ form#contact input {
   outline: none;
   font-size: 15px;
   font-weight: 300;
-  color: var(--text-color);
+  color: var(--text-muted-placeholder);
   padding: 0px 20px;
   margin-bottom: 20px;
 }
@@ -1559,7 +1559,7 @@ footer p {
 }
 
 footer p a {
-  color: var(--text-color);
+  color: var(--text-muted);
 }
 
 /*---------------------------------------------
