@@ -297,8 +297,8 @@ html(lang=lang)
                     button#form-submit.main-button(type="submit") #{t('contact.form.submit')}
               
               // Decorative Element
-              .contact-dec
-                img(src="assets/images/contact-decoration.png" alt=t('contact.form.alt'))
+              .contact-dec(style=lang == "ar" ? "position:absolute;left: -166px;right:revert;bottom: 0;transform: rotateY(.5turn);":"")
+                img(src="assets/images/contact-decoration.png"  alt=t('contact.form.alt'))
     // ========================================
 
     // Footer - Copyright and Credits
