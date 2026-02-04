@@ -122,7 +122,7 @@ html(lang=lang)
               // Right Content - Banner Image
               .col-lg-6
                 .right-image.text-center.wow.fadeInRight(data-wow-duration="1s" data-wow-delay="0.5s")
-                  img(src="assets/images/banner-right-image.png" class="rounded-circle float-lg-start "  alt=t('banner.alt.team_meeting'))
+                  img(src="assets/images/banner-right-image.png", class="rounded-circle" + (lang == "ar" ? " float-lg-start" : ""), alt=t('banner.alt.team_meeting'))
     // ========================================
     
     // About Section - Service Highlights and Features
