@@ -121,8 +121,8 @@ html(lang=lang)
               
               // Right Content - Banner Image
               .col-lg-6
-                .right-image.wow.fadeInRight(data-wow-duration="1s" data-wow-delay="0.5s")
-                  img(src="assets/images/banner-right-image.png" alt=t('banner.alt.team_meeting'))
+                .right-image.text-center.wow.fadeInRight(data-wow-duration="1s" data-wow-delay="0.5s")
+                  img(src="assets/images/banner-right-image.png" class="rounded-circle float-lg-start "  alt=t('banner.alt.team_meeting'))
     // ========================================
     
     // About Section - Service Highlights and Features
@@ -133,7 +133,7 @@ html(lang=lang)
           // Left Image
           .col-lg-4
             .left-image.wow.fadeIn(data-wow-duration="1s" data-wow-delay="0.2s")
-              img(src="assets/images/about-left-image.png" alt=t('about.alt.person_graphic'))
+              img(src="assets/images/about-left-image.png", class="d-md-none d-sm-none", alt=t('about.alt.person_graphic'))
           
           // Right Content - Service Features
           .col-lg-8.align-self-center
@@ -163,7 +163,7 @@ html(lang=lang)
       .container
         .row
           // Left Image
-          .col-lg-6.align-self-center.wow.fadeInLeft(data-wow-duration="1s" data-wow-delay="0.2s")
+          .col-lg-6.align-self-center.wow.fadeInLeft.text-center(data-wow-duration="1s" data-wow-delay="0.2s")
             .left-image
               img(src="assets/images/services-left-image.png" alt="")
           
