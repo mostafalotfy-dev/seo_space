@@ -1,12 +1,12 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "seo_nexus",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "SEO Nexus - A modern SEO-focused website template Landing Page",
   "main": "index.js",
   "scripts": {
     "start": "node  ./compilepg.cjs",
-    "watch": "nodemon --watch compilepg.cjs --watch .env --exec \"node ./compilepg.cjs\"",
+    "watch": "nodemon --watch compilepg.cjs --watch .env --watch index.pug --exec \"node ./compilepg.cjs\"",
     "eslint": "npx eslint assets/css/main.css ./assets/js/main-custom.js assets/css/color-palette/*.css",
     "fix": "npx eslint assets/css/main.css assets/js/main-custom.js assets/css/color-palette/*.css --fix"
   },
