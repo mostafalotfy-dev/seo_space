@@ -1,12 +1,12 @@
 {
   "title": {
-    "main": "SEO Nexus - SEO HTML5 Template"
+    "main": "SEO Space - SEO HTML5 Template"
   },
 
   "header": {
     "logo": {
-      "part1": "Spac",
-      "part2": "Dyna"
+      "part1": "Seo",
+      "part2": "Space"
     }
   },
 
@@ -22,13 +22,13 @@
   },
 
   "banner": {
-    "welcome": "Welcome to SEO Nexus",
+    "welcome": "Welcome to SEO Space",
     "we_make": "We Make ",
     "digital_ideas": "Digital Ideas",
     "seo": "SEO",
     "marketing": "Marketing",
     "description": {
-      "part1": "SEO Nexus is a professional looking HTML template using a Bootstrap 5 (beta 2). This CSS template is free for you provided by ",
+      "part1": "SEO Space is a professional looking HTML template using a Bootstrap 5 (beta 2). This CSS template is free for you provided by ",
       "part2": "."
     },
     "author": "Mostafa Lotfy",
@@ -39,7 +39,8 @@
       "analyze": "Analyze Site"
     },
     "alt": {
-      "team_meeting": "team meeting"
+      "team_meeting": "team meeting",
+      "reporting": "Reporting"
     }
   },
 
@@ -60,7 +61,7 @@
     "heading": {
       "part1": "Grow your website with our ",
       "em": "SEO",
-      "part2": " service & ",
+      "part2": " service &amp; ",
       "span": "Project",
       "part3": " Ideas"
     },
@@ -76,7 +77,7 @@
     "heading": {
       "part1": "See What Our Agency ",
       "em": "Offers",
-      "part2": " & What We ",
+      "part2": " What We ",
       "span": "Provide"
     },
     "items": {
