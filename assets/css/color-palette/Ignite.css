@@ -4,7 +4,8 @@ Author: Mostafa Lotfy
 -----------------------------------------------------------*/
 /* Dark Mode */
 :root ,[data-theme="dark"]{
-
+  --light-color: #fff;
+  --dark-color: black;
   --main-color: #280905;
   --secondary-color: #740A03;
   --third-color: #C3110C;
@@ -18,8 +19,7 @@ Author: Mostafa Lotfy
   --title-color: var(--text-color);
   --text-hover-color: #dda15e;
   --light-bg-color: #88d9e6;
-  --light-color: #fff;
-  --dark-color: black;
+ 
   --history-text-color: #cccccc;
 }
 
@@ -36,11 +36,13 @@ Author: Mostafa Lotfy
 
 :root,
 [data-theme="light"] {
+  --light-color: #fff;
+  --dark-color: black;
   --main-color: #F9FAFB;
   --secondary-color: #e82e11;
   --third-color: #2563EB;
   --accent-color: #F97316;
-  --text-color: var(--dark-color);
+  --text-color: var(--light-color);
   --text-muted: #000000;
   --selection-color: var(--third-color);
   --secondary-hover-color: #e27777;
@@ -49,8 +51,7 @@ Author: Mostafa Lotfy
   --font-family: 'Poppins', sans-serif;
   --text-hover-color: #ffffff;
   --light-bg-color: #88d9e6;
-  --light-color: #fff;
-  --dark-color: black;
+ 
   --history-text-color: #cccccc;
 
 

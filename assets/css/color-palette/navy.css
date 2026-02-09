@@ -31,13 +31,13 @@ Author: Mostafa Lotfy
   color-scheme: light;
 }
 ::placeholder {
-  color: var(--text-muted-placeholder) !important;
+  color: var(--light-color) !important;
 }
 /* Light Mode */
 
 :root,[data-theme="light"] {
     --main-color: #F9FAFB;
-    --secondary-color: #b5673e;
+    --secondary-color: #f19c6e;
     --third-color: #2563EB;
     --accent-color: #F97316;
     --text-color: #212121;

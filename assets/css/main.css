@@ -1760,6 +1760,7 @@ responsive
 
 
 
+
 [dir="rtl"] .about-us .services .item .icon {
   float: right;
   margin-right: 0px;
@@ -1780,4 +1781,14 @@ responsive
 [dir="rtl"] .our-services .third-bar span {
   left: revert !important;
   right: 88% !important;
+}
+
+
+[data-theme="dark"] .showed-content img{
+  
+    filter:grayscale(1)
+  
+}
+[data-theme="dark"] .main-button{
+  color:var(--light-color)
 }
