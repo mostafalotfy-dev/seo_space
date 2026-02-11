@@ -28,7 +28,7 @@
     "seo": "SEO",
     "marketing": "Marketing",
     "description": {
-      "part1": "SEO Space is a professional looking HTML template using a Bootstrap 5 (beta 2). This CSS template is free for you provided by ",
+      "part1": "SEO Space is a professional looking HTML template using a Bootstrap 5 (beta 2). This CSS template is free for you provided by Mostafa Lotfy ",
       "part2": "."
     },
     "author": "Mostafa Lotfy",
@@ -61,7 +61,7 @@
     "heading": {
       "part1": "Grow your website with our ",
       "em": "SEO",
-      "part2": " service &amp; ",
+      "part2": " service & ",
       "span": "Project",
       "part3": " Ideas"
     },
@@ -81,11 +81,28 @@
       "span": "Provide"
     },
     "items": {
-      "seo_analysis": {
-        "title": "SEO Analysis",
-        "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
-        "alt": "portfolio image"
-      }
+      "models": [
+        {
+          "title": "SEO Analysis",
+          "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
+          "alt": "portfolio image"
+        },
+           {
+          "title": "SEO Analysis",
+          "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
+          "alt": "portfolio image"
+        },
+           {
+          "title": "SEO Analysis",
+          "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
+          "alt": "portfolio image"
+        },
+          {
+          "title": "SEO Analysis",
+          "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
+          "alt": "portfolio image"
+        }
+      ]
     }
   },
 

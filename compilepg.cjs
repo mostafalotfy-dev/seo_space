@@ -23,6 +23,7 @@ function compileTemplate(lang = "en", locals = {}) {
   const data = {
     ...locals,
     t: (key) => {
+      
       // Split nested keys like "banner.placeholder.website_url"
       const parts = key.split(".");
       let value = translations[lang] || translations.en;
@@ -32,8 +33,11 @@ function compileTemplate(lang = "en", locals = {}) {
       return value || key; // fallback: return key if not found
     },
   };
-
- 
+// for(const model of data.t("portfolio.items.models"))
+// {
+//   console.log(model.title)
+// } Debug
+  
   // Compile and render
   const compiledFunction = pug.compileFile(pugFile, {
     pretty: true,
@@ -50,6 +54,7 @@ function compileTemplate(lang = "en", locals = {}) {
       ...data,
     });
     fs.writeFileSync(outFileTheme, html);
+    
     console.log(
       `✅ Compiled Pug template with ${lang} translations → ${outFileTheme}`,
     );

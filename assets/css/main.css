@@ -1315,6 +1315,7 @@ Blog
 .our-blog .top-dec {
   text-align: right;
   margin-top: -80px;
+  margin-bottom: 23px;
 }
 
 .our-blog .top-dec img {
@@ -1756,9 +1757,14 @@ responsive
   }
 }
 
-
-
-
+/************************************************************
+* Utils
+*************************************************************/
+.flip.ar{
+  transform: rotateY(-.5turn);
+  right:revert !important;
+  left: -188px !important;
+}
 
 
 [dir="rtl"] .about-us .services .item .icon {

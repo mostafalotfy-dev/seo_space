@@ -5,8 +5,8 @@
 
   "header": {
     "logo": {
-      "part1": "سباك",
-      "part2": "دينا"
+      "part1": "سيو ",
+      "part2": "نيكسس"
     }
   },
 
@@ -25,10 +25,10 @@
     "welcome": "مرحبًا بك في سيو نيكسوس",
     "we_make": "نحن نصنع ",
     "digital_ideas": "أفكار رقمية",
-    "seo": "سيو",
-    "marketing": "تسويق",
+    "seo": " سيو ",
+    "marketing":  "تسويق ",
     "description": {
-      "part1": "سيو نيكسوس هو قالب HTML احترافي يستخدم Bootstrap 5. هذا القالب مجاني لك مقدم من ",
+      "part1": "سيو نيكسوس هو قالب HTML احترافي يستخدم Bootstrap 5  هذا القالب مجاني لك مقدم من Mostafa Lotfy",
       "part2": "."
     },
     "author": "Mostafa Lotfy",
@@ -68,7 +68,7 @@
     "description": "قالب SEO Nexus HTML5 مجاني لاستخدامه في مشاريع مواقعك. لا يُسمح بإعادة توزيع ملف القالب المضغوط على مواقع جمع القوالب. يرجى التواصل معنا لمزيد من المعلومات. شكرًا لتعاونكم.",
     "skills": {
       "website_analysis": "تحليل الموقع",
-      "seo_reports": "تقارير السيو",
+      "seo_reports": "تقارير ال سيو",
       "page_optimizations": "تحسين الصفحات"
     }
   },
@@ -81,11 +81,28 @@
       "span": "نوفره"
     },
     "items": {
-      "seo_analysis": {
-        "title": "تحليل السيو",
-        "description": "لوريم إيبسوم نص تجريبي يُستخدم في التصميم.",
-        "alt": "صورة من الأعمال"
-      }
+      "models": [
+        {
+          "title": "SEO Analysis",
+          "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
+          "alt": "portfolio image"
+        },
+           {
+          "title": "SEO Analysis",
+          "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
+          "alt": "portfolio image"
+        },
+           {
+          "title": "SEO Analysis",
+          "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
+          "alt": "portfolio image"
+        },
+          {
+          "title": "SEO Analysis",
+          "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
+          "alt": "portfolio image"
+        }
+      ]
     }
   },
 
