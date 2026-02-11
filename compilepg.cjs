@@ -53,7 +53,7 @@ function compileTemplate(lang = "en", locals = {}) {
       theme_name: locals.theme_name,
       ...data,
     });
-    fs.writeFileSync(outFileTheme, html);
+    fs.writeFileSync(path.dirname(".") + "/public/" + outFileTheme, html);
     
     console.log(
       `✅ Compiled Pug template with ${lang} translations → ${outFileTheme}`,
@@ -61,8 +61,8 @@ function compileTemplate(lang = "en", locals = {}) {
   }
 
 for (const theme of themes) {
-compileTemplate("en", { username: "Mostafa", lang: "en", theme_name: theme,mode:"dark" });
-compileTemplate("en", { username: "Mostafa", lang: "en", theme_name: theme,mode:"light" });
-compileTemplate("ar", { username: "مصطفى", lang: "ar", theme_name: theme,mode:"dark" });
-compileTemplate("ar", { username: "مصطفى", lang: "ar", theme_name: theme,mode:"light" });
+compileTemplate("en", { username: "Mostafa",yearNumber:Date.now(), lang: "en", theme_name: theme,mode:"dark" });
+compileTemplate("en", { username: "Mostafa",yearNumber:Date.now(), lang: "en", theme_name: theme,mode:"light" });
+compileTemplate("ar", { username: "مصطفى",yearNumber:Date.now(), lang: "ar", theme_name: theme,mode:"dark" });
+compileTemplate("ar", { username: "مصطفى",yearNumber:Date.now(), lang: "ar", theme_name: theme,mode:"light" });
 }

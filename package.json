@@ -8,7 +8,8 @@
     "start": "node  ./compilepg.cjs",
     "watch": "nodemon --watch compilepg.cjs --watch .env --watch index.pug --exec \"node ./compilepg.cjs\"",
     "eslint": "npx eslint assets/css/main.css ./assets/js/main-custom.js assets/css/color-palette/*.css",
-    "fix": "npx eslint assets/css/main.css assets/js/main-custom.js assets/css/color-palette/*.css --fix"
+    "fix": "npx eslint assets/css/main.css assets/js/main-custom.js assets/css/color-palette/*.css --fix",
+    "deploy":"firebase deploy --only hosting"
   },
   "keywords": [],
   "author": "",
