@@ -105,15 +105,36 @@
       ]
     }
   },
-
+  
   "blog": {
     "heading": {
       "part1": "Check Out What Is ",
       "em": "Trending",
       "part2": " In Our Latest ",
       "span": "News"
+      
     },
-    "alt": "blog decoration"
+    "calender":{
+      "text":"24 Mar 2026",
+      "author":"Mostafa Lotfy",
+      "li":"Branding"
+    },
+    "seo_agency":"SEO Agency & Digital Marketing",
+    "alt": "blog decoration",
+    "info":{
+      "discover_more":"Discover More",
+      "right_list":{
+        "date":"18 Mar 2026",
+        "backlinks":"New Websites & Backlinks"
+
+      },
+      "left_content":{
+        "date":"18 Mar 2026",
+        "title":"SEO Analysis & Content Ideas"
+        
+      }
+
+    }
   },
 
   "contact": {

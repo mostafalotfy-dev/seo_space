@@ -82,8 +82,8 @@ html(lang=lang)
                     fieldset
                       button.main-button(type="submit") #{t("banner.button.analyze")}
               .col-lg-6
-                .right-image.wow.fadeInRight(data-wow-duration="1s", data-wow-delay="0.5s")
-                  img(src="assets/images/banner-right-image.png", alt=t("alt.team_meeting"))
+                .right-image.wow.text-start.fadeInRight(data-wow-duration="1s", data-wow-delay="0.5s")
+                  img(src="assets/images/banner-right-image.png", alt=t("banner.alt.team_meeting"))
     #about.about-us.section
       .container
         .row
@@ -180,10 +180,10 @@ html(lang=lang)
         .row
           .col-lg-6.wow.fadeInDown(data-wow-duration="1s", data-wow-delay="0.25s")
             .section-heading
-              h2 Check Out What Is 
-                em Trending
-                | In Our Latest
-                span News
+              h2 #{t("blog.heading.part1")} 
+                em #{t("blog.heading.em")}
+                | #{t("blog.heading.part2")}
+                span #{t("blog.heading.span")}
           .col-lg-6.wow.fadeInDown(data-wow-duration="1s", data-wow-delay="0.25s")
             .top-dec
               img(src="assets/images/blog-dec.png", alt="")
@@ -191,24 +191,24 @@ html(lang=lang)
           .col-lg-6.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.25s")
             .left-image
               a(href="#")
-                img(src="assets/images/big-blog-thumb.jpg", alt="Workspace Desktop")
+                img(src="assets/images/big-blog-thumb.jpg", alt=t("blog.alt"))
               .info
                 .inner-content
                   ul
                     li
                       i.fa.fa-calendar
-                      | 24 Mar 2021
+                      | #{t("blog.calender.text")}
                     li
                       i.fa.fa-users
-                      | TemplateMo
+                      | #{t("blog.calender.author")}
                     li
                       i.fa.fa-folder
-                      | Branding
+                      | #{t("blog.calender.li")}
                   a(href="#")
-                    h4 SEO Agency & Digital Marketing
+                    h4 #{t("blog.seo_agency")}
                   p Lorem ipsum dolor sit amet, consectetur and sed doer ket eismod tempor incididunt ut labore et dolore magna...
                   .main-blue-button
-                    a(href="#") Discover More
+                    a(href="#") #{t("blog.info.discover_more")}
           .col-lg-6.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.25s")
             .right-list
               ul
@@ -216,9 +216,9 @@ html(lang=lang)
                   .left-content.align-self-center
                     span
                       i.fa.fa-calendar
-                      | 18 Mar 2021
+                      | #{t("blog.info.right_list.date")}
                     a(href="#")
-                      h4 New Websites & Backlinks
+                      h4 #{t("blog.info.right_list.backlinks")}
                     p Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...
                   .right-image
                     a(href="#")
@@ -227,9 +227,9 @@ html(lang=lang)
                   .left-content.align-self-center
                     span
                       i.fa.fa-calendar
-                      | 14 Mar 2021
+                      | #{t("blog.info.left_content.date")}
                     a(href="#")
-                      h4 SEO Analysis & Content Ideas
+                      h4 #{t("blog.info.left_content.title")}
                     p Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...
                   .right-image
                     a(href="#")
@@ -238,9 +238,9 @@ html(lang=lang)
                   .left-content.align-self-center
                     span
                       i.fa.fa-calendar
-                      | 06 Mar 2021
+                      | #{t("blog.info.left_content.date")}
                     a(href="#")
-                      h4 SEO Tips & Digital Marketing
+                      h4 #{t("blog.info.left_content.title")}
                     p Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...
                   .right-image
                     a(href="#")
@@ -250,10 +250,10 @@ html(lang=lang)
         .row
           .col-lg-6.align-self-center.wow.fadeInLeft(data-wow-duration="0.5s", data-wow-delay="0.25s")
             .section-heading
-              h2 Feel Free To Send Us a Message About Your Website Needs
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores
+              h2 #{t("contact.heading")}
+              p #{t("contact.description")}
               .phone-info
-                h4 For any enquiry, Call Us: 
+                h4 #{t("contact.phone_text")} 
                   span
                     i.fa.fa-phone
                     a(href="#") 010-020-0340
@@ -262,19 +262,19 @@ html(lang=lang)
               .row
                 .col-lg-6
                   fieldset
-                    input#name(type="name", name="name", placeholder="Name", autocomplete="on", required)
+                    input#name(type="text", name="name", placeholder=t("contact.form.name"), autocomplete="on", required)
                 .col-lg-6
                   fieldset
-                    input#surname(type="surname", name="surname", placeholder="Surname", autocomplete="on", required)
+                    input#surname(type="text", name="surname", placeholder=t("contact.form.surename"), autocomplete="on", required)
                 .col-lg-12
                   fieldset
-                    input#email(type="text", name="email", pattern="[^ @]*@[^ @]*", placeholder="Your Email", required)
+                    input#email(type="text", name="email", pattern="[^ @]*@[^ @]*", placeholder=t("contact.form.email"), required)
                 .col-lg-12
                   fieldset
-                    textarea#message.form-control(name="message", type="text", placeholder="Message", required)
+                    textarea#message.form-control(name="message", type="text", placeholder=t("contact.form.message"), required)
                 .col-lg-12
                   fieldset
-                    button#form-submit.main-button(type="submit") Send Message
+                    button#form-submit.main-button(type="submit") #{(t("contact.form.submit"))}
               - let flip_class= (lang == "ar") ? "ar" : "en";
               .contact-dec(class="flip " + flip_class)
                 
@@ -284,10 +284,10 @@ html(lang=lang)
         .row
           .col-lg-12.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.25s")
             p
-              | © Copyright #{yearNumber} Seo Nexus Co. All Rights Reserved.
+              | #{t("footer.copyright")}
               br
-              | Design:
-              a(rel="nofollow", href="https://example.com") Mostafa Lotfy
+              | #{t("footer.design.text")}
+              a(rel="nofollow", href="https://example.com") #{t("footer.design.author")}
     // Scripts
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js")
     script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous")
