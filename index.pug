@@ -88,7 +88,7 @@ html(lang=lang)
       .container
         .row
           .col-lg-4
-            .left-image.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.2s")
+            .left-image.d-md-none.d-sm-none.d-xl-block.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.2s")
               img(src="assets/images/about-left-image.png", alt=t("about.alt.person_graphic"))
           .col-lg-8.align-self-center
             .services
@@ -215,7 +215,7 @@ html(lang=lang)
                   .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;`)
                     span
                       i.fa.fa-calendar
-                      | #{t("blog.info.right_list.date")}
+                      |  #{t("blog.info.right_list.date")}
                     a(href="#")
                       h4 #{t("blog.info.right_list.backlinks")}
                     p #{t("blog.info.right_list.description")}
@@ -226,7 +226,7 @@ html(lang=lang)
                   .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;`)
                     span
                       i.fa.fa-calendar
-                      | #{t("blog.info.left_content.date")}
+                      |  #{t("blog.info.left_content.date")}
                     a(href="#")
                       h4 #{t("blog.info.left_content.title")}
                     p #{t("blog.info.left_content.description")}
@@ -238,7 +238,7 @@ html(lang=lang)
                   .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;` class=isAr)
                     span
                       i.fa.fa-calendar
-                      | #{t("blog.info.left_content.date")}
+                      |  #{t("blog.info.left_content.date")}
                     a(href="#")
                       h4 #{t("blog.info.left_content.title")}
                     p #{t("blog.info.left_content.description")}
