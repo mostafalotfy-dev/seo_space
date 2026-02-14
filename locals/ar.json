@@ -83,22 +83,22 @@
     "items": {
       "models": [
         {
-          "title": "SEO Analysis",
+          "title": "تحليل سيو",
           "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
           "alt": "portfolio image"
         },
            {
-          "title": "SEO Analysis",
+          "title": "تحليل سيو",
           "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
           "alt": "portfolio image"
         },
            {
-          "title": "SEO Analysis",
+          "title": "تحليل سيو",
           "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
           "alt": "portfolio image"
         },
           {
-          "title": "SEO Analysis",
+          "title": "تحليل سيو",
           "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
           "alt": "portfolio image"
         }
@@ -113,7 +113,27 @@
       "part2": " في آخر ",
       "span": "الأخبار"
     },
-    "alt": "زخرفة المدونة"
+     "calender":{
+      "text":"24 Mar 2026",
+      "author":"مصطفى لطفي",
+      "li":"براندينج"
+    },
+    "seo_agency":"وكالة سيو و تسويق الكتروني",
+    "alt": "زخرفة المدونة",
+    "info":{
+      "discover_more":"إكتشف المزيد",
+      "right_list":{
+        "date":"18 Mar 2026",
+        "backlinks":"مواقع جديدة"
+
+      },
+      "left_content":{
+        "date":"18 Mar 2026",
+        "title":"تحليل سيو و أفكار محتوى"
+        
+        
+      }
+    }
   },
 
   "contact": {
