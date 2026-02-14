@@ -8,6 +8,7 @@ if (fs.existsSync("./public")) {
   console.log("path exists"); // Create nested directories synchronously
   fs.mkdirSync("./public/assets/css", { recursive: true }); // Copy assets directory into public
   fs.cpSync("./assets", "./public/assets", { recursive: true, force: true });
+  fs.cpSync("./vendor", "./public/vendor", { recursive: true, force: true });
 }
 
 const themes = [

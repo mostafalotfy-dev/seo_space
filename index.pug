@@ -82,13 +82,13 @@ html(lang=lang)
                     fieldset
                       button.main-button(type="submit") #{t("banner.button.analyze")}
               .col-lg-6
-                .right-image.wow.text-start.fadeInRight(data-wow-duration="1s", data-wow-delay="0.5s")
+                .right-image.wow.text-start.text-sm-center.fadeInRight(data-wow-duration="1s", data-wow-delay="0.5s")
                   img(src="assets/images/banner-right-image.png", alt=t("banner.alt.team_meeting"))
     #about.about-us.section
       .container
         .row
           .col-lg-4
-            .left-image.d-md-none.d-sm-none.d-xl-block.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.2s")
+            .left-image.d-md-none.d-none.d-sm-block.d-xl-block.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.2s")
               img(src="assets/images/about-left-image.png", alt=t("about.alt.person_graphic"))
           .col-lg-8.align-self-center
             .services
@@ -125,7 +125,7 @@ html(lang=lang)
       .container
         .row
           .col-lg-6.align-self-center.wow.fadeInLeft(data-wow-duration="1s", data-wow-delay="0.2s")
-            .left-image
+            .left-image.text-sm-center
               img(src="assets/images/services-left-image.png", alt="")
           .col-lg-6.wow.fadeInRight(data-wow-duration="1s", data-wow-delay="0.2s")
             .section-heading
@@ -167,7 +167,7 @@ html(lang=lang)
           - for( const model of t("portfolio.items.models")) 
               .col-lg-3.col-sm-6
                 .item.wow.bounceInUp(data-wow-duration="1s", data-wow-delay="0.3s")
-                  .hidden-content
+                  .hidden-content.z-3
                     h4 #{model.title}
                     p #{model.description}
                   .showed-content
