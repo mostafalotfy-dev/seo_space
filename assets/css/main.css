@@ -300,10 +300,10 @@ body {
 
 .main-blue-button a {
   display: inline-block;
-  background-color: #03a4ed;
+  background-color: var(--secondary-color);
   font-size: 15px;
   font-weight: 400;
-  color: #fff;
+  color:var(--text-color);
   text-transform: capitalize;
   padding: 12px 25px;
   border-radius: 23px;

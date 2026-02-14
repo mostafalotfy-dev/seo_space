@@ -33,11 +33,7 @@ function compileTemplate(lang = "en", locals = {}) {
       return value || key; // fallback: return key if not found
     },
   };
-// for(const model of data.t("portfolio.items.models"))
-// {
-//   console.log(model.title)
-// } Debug
-  
+
   // Compile and render
   const compiledFunction = pug.compileFile(pugFile, {
     pretty: true,

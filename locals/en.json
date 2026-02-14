@@ -120,18 +120,19 @@
       "li":"Branding"
     },
     "seo_agency":"SEO Agency & Digital Marketing",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores",
     "alt": "blog decoration",
     "info":{
       "discover_more":"Discover More",
       "right_list":{
         "date":"18 Mar 2026",
-        "backlinks":"New Websites & Backlinks"
-
+        "backlinks":"New Websites & Backlinks",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
       },
       "left_content":{
         "date":"18 Mar 2026",
-        "title":"SEO Analysis & Content Ideas"
-        
+        "title":"SEO Analysis & Content Ideas",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
       }
 
     }
@@ -143,7 +144,7 @@
     "phone_text": "For any enquiry, Call Us: ",
     "form": {
       "name": "Name",
-      "surname": "Surname",
+      "surename": "Surname",
       "email": "Your Email",
       "message": "Message",
       "submit": "Send Message",

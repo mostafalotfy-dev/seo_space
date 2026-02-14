@@ -65,7 +65,7 @@
       "span": "المشاريع",
       "part3": " والأفكار"
     },
-    "description": "قالب SEO Nexus HTML5 مجاني لاستخدامه في مشاريع مواقعك. لا يُسمح بإعادة توزيع ملف القالب المضغوط على مواقع جمع القوالب. يرجى التواصل معنا لمزيد من المعلومات. شكرًا لتعاونكم.",
+    "description": "قالب SEO Space HTML5 مجاني لاستخدامه في مشاريع مواقعك. لا يُسمح بإعادة توزيع ملف القالب المضغوط على مواقع جمع القوالب. يرجى التواصل معنا لمزيد من المعلومات. شكرًا لتعاونكم.",
     "skills": {
       "website_analysis": "تحليل الموقع",
       "seo_reports": "تقارير ال سيو",
@@ -84,22 +84,22 @@
       "models": [
         {
           "title": "تحليل سيو",
-          "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
+          "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
           "alt": "portfolio image"
         },
            {
           "title": "تحليل سيو",
-          "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
+          "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
           "alt": "portfolio image"
         },
            {
           "title": "تحليل سيو",
-          "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
+          "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
           "alt": "portfolio image"
         },
           {
           "title": "تحليل سيو",
-          "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
+          "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
           "alt": "portfolio image"
         }
       ]
@@ -119,19 +119,19 @@
       "li":"براندينج"
     },
     "seo_agency":"وكالة سيو و تسويق الكتروني",
+    "description":"لوريم إيبسوم نص وهمي يُستخدم في التصميم",
     "alt": "زخرفة المدونة",
     "info":{
       "discover_more":"إكتشف المزيد",
       "right_list":{
         "date":"18 Mar 2026",
-        "backlinks":"مواقع جديدة"
-
+        "backlinks":"مواقع جديدة",
+        "description":"لوريم إيبسوم نص وهمي يُستخدم في التصميم"
       },
       "left_content":{
         "date":"18 Mar 2026",
-        "title":"تحليل سيو و أفكار محتوى"
-        
-        
+        "title":"تحليل سيو و أفكار محتوى",
+        "description":"لوريم إيبسوم نص وهمي يُستخدم في التصميم"
       }
     }
   },
@@ -142,7 +142,7 @@
     "phone_text": "لأي استفسار، اتصل بنا: ",
     "form": {
       "name": "الاسم",
-      "surname": "اسم العائلة",
+      "surename": "اسم العائلة",
       "email": "البريد الإلكتروني",
       "message": "الرسالة",
       "submit": "إرسال الرسالة",
@@ -151,7 +151,7 @@
   },
 
   "footer": {
-    "copyright": "© جميع الحقوق محفوظة 2026 شركة SEO Nexus.",
+    "copyright": "© جميع الحقوق محفوظة 2026 شركة سيو سبيس.",
     "design": {
       "text": "التصميم: ",
       "author": "مصطفى لطفي"
