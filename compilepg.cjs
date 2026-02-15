@@ -4,8 +4,10 @@ const fs = require("fs");
 const path = require("path");
 require("dotenv").config();
 // copy assets to public folder
+
+console.log("📗 Create Necessary folders\n")
 if (fs.existsSync("./public")) {
-  console.log("path exists"); // Create nested directories synchronously
+  // Create nested directories synchronously
   fs.mkdirSync("./public/assets/css", { recursive: true }); // Copy assets directory into public
   fs.cpSync("./assets", "./public/assets", { recursive: true, force: true });
   fs.cpSync("./vendor", "./public/vendor", { recursive: true, force: true });
@@ -52,6 +54,7 @@ function compileTemplate(lang = "en", locals = {}) {
     path.dirname("./"),
     `output-${lang}-theme-${locals.theme_name.replace(".css", "")}-${locals.mode}.html`,
   );
+  console.log("😊 Transpiling Pugjs -> Html\n")
   const html = compiledFunction({
     theme_name: locals.theme_name,
     ...data,
@@ -59,7 +62,7 @@ function compileTemplate(lang = "en", locals = {}) {
   fs.writeFileSync(path.dirname(".") + "/public/" + outFileTheme, html);
 
   console.log(
-    `✅ Compiled Pug template with ${lang} translations → ${outFileTheme}`,
+    `✅ Compiled Pug template with ${lang} translations → ${outFileTheme}\n`,
   );
 }
 
@@ -93,3 +96,4 @@ for (const theme of themes) {
     mode: "light",
   });
 }
+console.log("👊 Done .............\n")
