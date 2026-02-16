@@ -6,11 +6,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node  ./compilepg.cjs",
-    "watch": "nodemon -e .css --watch src/assets/css/main.css --watch src/assets/css/chatbox.css --watch compilepg.cjs --watch .env --watch ./src/views/index.pug --exec \"node ./compilepg.cjs\"",
+    "watch": "nodemon --ext .css --watch src/assets/css/main.css --watch src/assets/css/chatbox.css --watch compilepg.cjs --watch .env --watch ./src/views/index.pug  --exec \"node ./compilepg.cjs\"",
     "lint": "npx eslint assets/css/main.css ./assets/js/main.js assets/css/color-palette/*.css",
     "lint:fix": "npx eslint assets/css/main.css assets/js/main.js assets/css/color-palette/*.css --fix",
     "deploy": "firebase deploy --only hosting"
-   
   },
   "keywords": [],
   "author": "",
@@ -41,6 +40,5 @@
     "eslint": "^9.39.2",
     "globals": "^17.2.0",
     "scss": "^0.2.4"
-    
   }
 }
