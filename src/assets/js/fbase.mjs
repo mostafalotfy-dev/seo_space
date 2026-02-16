@@ -16,6 +16,7 @@ const firebaseConfig = {
   appId: "1:1032645167910:web:e2383581a6f85757ec8fe7",
 };
 
+
 // // Initialize FirebaseApp
 const firebaseApp = initializeApp(firebaseConfig);
 
@@ -171,7 +172,7 @@ Presenting clear pricing options
 Guiding them toward the right package
 
 Encouraging direct contact and engagement`;
- // Create a `GenerativeModel` instance with a model that supports your use case
+// // Create a `GenerativeModel` instance with a model that supports your use case
 const model = getGenerativeModel(ai, { model: modelName });
 
 const messageForm = document.querySelector("#messageForm");
@@ -184,21 +185,34 @@ messageForm.addEventListener("submit", async (e) => {
 
   const isEmpty = messageInput.value === "";
   if (isEmpty) {
+const messageForm = document.querySelector("form#message");
+messageForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const messageInput = document.querySelector("input[name=message]");
+
+  const messageArea = document.querySelector("#messageArea");
+
+  const isEmpty = messageInput.value == "";
+  if (isEmpty) {
     return;
   }
   const messageText = messageInput.value;
   // User
-  $(messageArea).append(
+$(messageArea).append(
     $(`
     <bdi>
       <div class='rounded col-6 p-3 bg-primary-subtle text-start d-flex flex-justify-end gemi'>
+      <div class='rounded col-6 p-3 bg-primary-subtle text-start flex-justify-end gemi'>
        ${messageText}
       </div>
     </bdi>`),)
   const cachedMesssage = messageInput.value; 
-  messageInput.value = ""
+  
   // Model Template
+
   const template = `
+    <bdi >
+    <div class='rounded col-6 p-3 text-right d-flex flex-justify-start bg-secondary-subtle gemi'>
     <bdi >
     <div class='rounded col-6 p-3 text-right d-flex flex-justify-start bg-secondary-subtle gemi'>
     %s</div>
@@ -230,3 +244,31 @@ messageForm.addEventListener("submit", async (e) => {
     }
   }
 });
+
+
+  try {
+  const result = await model.generateContent({
+    contents: [
+      { role: "model", parts: [{ text: systemPrompt }] },
+      { role: "user", parts: [{ text:cachedMesssage }] },
+    ],
+  });  
+    
+    $(messageArea)
+    .append($(template
+      .replace("%s", DOMPurify
+        .sanitize(markdown.default(result.response
+          .candidates[0]
+          .content
+          .parts[0]
+          .text
+          )
+        ))));
+  } catch (error) {
+    if (error.code == "fetch-error") {
+      $(template.replace("%s", `${error.code} Contact Us`)).appendTo(
+        messageArea,
+      );
+    }
+  }
+}});
