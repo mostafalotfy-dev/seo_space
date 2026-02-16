@@ -162,7 +162,8 @@
   },
   "ai": {
     "message": {
-      "button_text": "ارسال"
+      "button_text": "ارسال",
+      "placeholder":"اكتب راسلتك هنا."
     }
   }
 }

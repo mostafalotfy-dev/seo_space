@@ -164,7 +164,9 @@
   },
   "ai":{
     "message":{
-      "button_text":"Send Message"
+      "button_text":"Send Message",
+      "placeholder":"Type Something."
+
     }
   }
 }
