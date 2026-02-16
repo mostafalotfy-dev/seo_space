@@ -233,31 +233,4 @@ $(messageArea).append(
     }
   }
 
-
-
-  try {
-  const result = await model.generateContent({
-    contents: [
-      { role: "model", parts: [{ text: systemPrompt }] },
-      { role: "user", parts: [{ text:cachedMesssage }] },
-    ],
-  });  
-    
-    $(messageArea)
-    .append($(template
-      .replace("%s", DOMPurify
-        .sanitize(markdown.default(result.response
-          .candidates[0]
-          .content
-          .parts[0]
-          .text
-          )
-        ))));
-  } catch (error) {
-    if (error.code == "fetch-error") {
-      $(template.replace("%s", `${error.code} Contact Us`)).appendTo(
-        messageArea,
-      );
-    }
-  }
 });
