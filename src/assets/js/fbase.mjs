@@ -188,22 +188,15 @@ messageForm.addEventListener("submit", async (e) => {
   const messageText = messageInput.value;
   // User
 $(messageArea).append(
-    $(`
-    <bdi>
-      <div class='rounded col-6 p-3 bg-primary-subtle text-start d-flex flex-justify-end gemi'>
-      <div class='rounded col-6 p-3 bg-primary-subtle text-start flex-justify-end gemi'>
-       ${messageText}
-      </div>
-    </bdi>`),)
+      $(`<p class='rounded col-sm-6 bg-primary-subtle  p-1 text-end d-block text-break'>${messageText}</p>`) 
+)
   const cachedMesssage = messageInput.value; 
   messageInput.value = ""
   // Model Template
-
   const template = `
-    <bdi >
-    <div class='rounded col-6 p-3 text-right d-flex flex-justify-start bg-secondary-subtle gemi'>
-    <bdi >
-    <div class='rounded col-6 p-3 text-right d-flex flex-justify-start bg-secondary-subtle gemi'>
+    
+    <bdi class='d-flex flex-justify-start'>
+    <div class='rounded col-6 p-3 text-right bg-secondary-subtle gemi'>
     %s</div>
     </bdi>`; 
 
@@ -227,10 +220,13 @@ $(messageArea).append(
         ))));
   } catch (error) {
     if (error.code == "fetch-error") {
-      $(template.replace("%s", `${error.code} Contact Us`)).appendTo(
+      $(template.replace("%s", `${error.code} Something went wrong Please Contact the Developer`)).appendTo(
         messageArea,
       );
     }
   }
-
+  messageArea.scrollTo({
+    top:10000000,
+    behavior:"smooth"
+  })
 });
