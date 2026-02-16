@@ -26,7 +26,7 @@
     "we_make": "نحن نصنع ",
     "digital_ideas": "أفكار رقمية",
     "seo": " سيو ",
-    "marketing":  "تسويق ",
+    "marketing": "تسويق ",
     "description": {
       "part1": "سيو نيكسوس هو قالب HTML احترافي يستخدم Bootstrap 5  هذا القالب مجاني لك مقدم من Mostafa Lotfy",
       "part2": "."
@@ -40,7 +40,7 @@
     },
     "alt": {
       "team_meeting": "اجتماع الفريق",
-      "reporting":"تقرير"
+      "reporting": "تقرير"
     }
   },
 
@@ -87,17 +87,17 @@
           "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
           "alt": "portfolio image"
         },
-           {
+        {
           "title": "تحليل سيو",
           "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
           "alt": "portfolio image"
         },
-           {
+        {
           "title": "تحليل سيو",
           "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
           "alt": "portfolio image"
         },
-          {
+        {
           "title": "تحليل سيو",
           "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
           "alt": "portfolio image"
@@ -113,25 +113,25 @@
       "part2": " في آخر ",
       "span": "الأخبار"
     },
-     "calender":{
-      "text":"24 Mar 2026",
-      "author":"مصطفى لطفي",
-      "li":"براندينج"
+    "calender": {
+      "text": "24 Mar 2026",
+      "author": "مصطفى لطفي",
+      "li": "براندينج"
     },
-    "seo_agency":"وكالة سيو و تسويق الكتروني",
-    "description":"لوريم إيبسوم نص وهمي يُستخدم في التصميم",
+    "seo_agency": "وكالة سيو و تسويق الكتروني",
+    "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
     "alt": "زخرفة المدونة",
-    "info":{
-      "discover_more":"إكتشف المزيد",
-      "right_list":{
-        "date":"18 Mar 2026",
-        "backlinks":"مواقع جديدة",
-        "description":"لوريم إيبسوم نص وهمي يُستخدم في التصميم"
+    "info": {
+      "discover_more": "إكتشف المزيد",
+      "right_list": {
+        "date": "18 Mar 2026",
+        "backlinks": "مواقع جديدة",
+        "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم"
       },
-      "left_content":{
-        "date":"18 Mar 2026",
-        "title":"تحليل سيو و أفكار محتوى",
-        "description":"لوريم إيبسوم نص وهمي يُستخدم في التصميم"
+      "left_content": {
+        "date": "18 Mar 2026",
+        "title": "تحليل سيو و أفكار محتوى",
+        "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم"
       }
     }
   },
@@ -157,7 +157,12 @@
       "author": "مصطفى لطفي"
     }
   },
-   "noscript": {
+  "noscript": {
     "message": "هذا الموقع يتطلب تفعيل JavaScript ليعمل بشكل صحيح. يرجى تفعيل JavaScript في إعدادات المتصفح."
+  },
+  "ai": {
+    "message": {
+      "button_text": "ارسال"
+    }
   }
 }

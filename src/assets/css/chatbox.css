@@ -1,0 +1,46 @@
+/* eslint-disable css/no-invalid-properties */
+/* style.css */
+
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    
+}
+
+.button {
+    
+    background-color:var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.messageArea {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    height: 200px;
+    width: 100%;
+    color:var(--text-color);
+    overflow-y: scroll;
+    background-color:var(--main-color);
+    color:var(--text-color);
+}
+
+.message {
+    margin-bottom: 5px;
+}

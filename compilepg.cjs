@@ -9,8 +9,8 @@ console.log("📗 Create Necessary folders\n")
 if (fs.existsSync("./public")) {
   // Create nested directories synchronously
   fs.mkdirSync("./public/assets/css", { recursive: true }); // Copy assets directory into public
-  fs.cpSync("./assets", "./public/assets", { recursive: true, force: true });
-  fs.cpSync("./vendor", "./public/vendor", { recursive: true, force: true });
+  fs.cpSync("./src/assets", "./public/assets", { recursive: true, force: true });
+  fs.cpSync("./src/vendor", "./public/vendor", { recursive: true, force: true });
 }
 
 const themes = [
@@ -27,7 +27,7 @@ const translations = {
 };
 // Function to compile with locals + translations
 function compileTemplate(lang = "en", locals = {}) {
-  const pugFile = path.join(path.dirname("./"), "index.pug");
+  const pugFile = path.join(path.dirname("./src/views/"), "index.pug");
 
   // Merge locals with translations
   const data = {
@@ -51,7 +51,7 @@ function compileTemplate(lang = "en", locals = {}) {
   // Save output
 
   const outFileTheme = path.join(
-    path.dirname("./"),
+    path.dirname("./public/"),
     `output-${lang}-theme-${locals.theme_name.replace(".css", "")}-${locals.mode}.html`,
   );
   console.log("😊 Transpiling Pugjs -> Html\n")

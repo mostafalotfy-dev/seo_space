@@ -1397,7 +1397,7 @@ Blog
 }
 
 .our-blog .right-list .left-content span i {
-  color: #ff4d61;
+  color: var(--accent-color);
   font-size: 16px;
   margin-right: 8px;
 }
@@ -1792,7 +1792,7 @@ responsive
 
 [data-theme="dark"] .showed-content img{
   
-    filter:grayscale(1)
+    filter:grayscale(1); 
   
 }
 [data-theme="dark"] .main-button{
