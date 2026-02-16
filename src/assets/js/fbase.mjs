@@ -23,7 +23,7 @@ const firebaseApp = initializeApp(firebaseConfig);
 // // Initialize the Gemini Developer API backend service
 const ai = getAI(firebaseApp, { backend: new GoogleAIBackend() });
 const modelName = "gemini-2.5-flash"; // instead of gemini-3-pro-preview
-const systemPrompt = `You are an AI assistant for SEO Nexus, a digital marketing and SEO agency. Your job is to assist website visitors by explaining services, offering SEO guidance, presenting pricing packages, and helping users choose the best solution for their website.
+const systemPrompt = `You are an AI assistant for SEO Space, a digital marketing and SEO agency. Your job is to assist website visitors by explaining services, offering SEO guidance, presenting pricing packages, and helping users choose the best solution for their website.
 
 🏢 Brand Context
 
@@ -179,17 +179,6 @@ const messageForm = document.querySelector("#messageForm");
 const messageInput = document.querySelector("form#messageForm .input");
 messageForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  
-
-  const messageArea = document.querySelector("#messageArea");
-
-  const isEmpty = messageInput.value === "";
-  if (isEmpty) {
-const messageForm = document.querySelector("form#message");
-messageForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const messageInput = document.querySelector("input[name=message]");
-
   const messageArea = document.querySelector("#messageArea");
 
   const isEmpty = messageInput.value == "";
@@ -207,7 +196,7 @@ $(messageArea).append(
       </div>
     </bdi>`),)
   const cachedMesssage = messageInput.value; 
-  
+  messageInput.value = ""
   // Model Template
 
   const template = `
@@ -243,7 +232,7 @@ $(messageArea).append(
       );
     }
   }
-});
+
 
 
   try {
@@ -271,4 +260,4 @@ $(messageArea).append(
       );
     }
   }
-}});
+});
