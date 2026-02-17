@@ -1,15 +1,16 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "seo_nexus",
+  "name": "seo_space",
   "version": "1.2.1",
-  "description": "SEO Nexus - A modern SEO-focused website template Landing Page",
+  "description": "SEO Space - A modern SEO-focused website template Landing Page",
   "main": "index.js",
   "scripts": {
-    "start": "node  ./compilepg.cjs",
-    "watch": "nodemon --ext .css --watch src/assets/css/main.css --watch src/assets/css/chatbox.css --watch compilepg.cjs --watch .env --watch ./src/views/index.pug  --exec \"node ./compilepg.cjs\"",
-    "lint": "npx eslint assets/css/main.css ./assets/js/main.js assets/css/color-palette/*.css",
-    "lint:fix": "npx eslint assets/css/main.css assets/js/main.js assets/css/color-palette/*.css --fix",
-    "deploy": "firebase deploy --only hosting"
+    "start": "concurrently  \"npm run gulp\" \"npm run lint\" \"npm run deploy\"",
+    "watch": "gulp -f gulp.cjs watch",
+    "lint": "npx eslint ./src/assets/css/main.css ./src/assets/js/main.js",
+    "lint:fix": "npx eslint ./src/assets/css/main.css ./src/assets/js/main.js  --fix",
+    "deploy": "firebase deploy --only hosting",
+    "gulp": "gulp -f gulp.cjs"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +20,6 @@
     "@types/jquery": "^3.5.33",
     "@types/node": "^25.1.0",
     "@types/pug": "^2.0.10",
-    "@vituum/vite-plugin-pug": "^1.1.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.8",
     "dompurify": "^3.3.1",
@@ -28,17 +28,21 @@
     "fontawesome": "^5.6.3",
     "jquery": "^4.0.0",
     "jsdom": "^28.1.0",
-    "nodemon": "^3.1.11",
-    "owljs": "^0.9.1",
-    "pug": "^3.0.3",
-    "waypoints": "^4.0.1"
+    "nodemon": "^3.1.11"
   },
   "devDependencies": {
     "@eslint/css": "^0.14.1",
     "@eslint/js": "^9.39.2",
     "@eslint/json": "^1.0.0",
+    "concurrently": "^9.2.1",
     "eslint": "^9.39.2",
     "globals": "^17.2.0",
+    "gulp": "^5.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-preprocess": "^6.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-sequence": "^1.0.0",
+    "gulp-uglify": "^3.0.2",
     "scss": "^0.2.4"
   }
 }
