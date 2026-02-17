@@ -88,6 +88,7 @@ gulp.task("watch", function ()
     , gulp.series("app-js")
   ); 
   gulp.watch("src/assets/css/*.css", gulp.series("app-css"));
+  gulp.watch("src/index.pug",gulp.series("pug"))
  });
 gulp.task("pug",function(cb){
    for (const theme of themes) {
