@@ -80,7 +80,7 @@ gulp.task('app-css', function () {
   return gulp.src('src/assets/css/*.(css|sass)') 
   .pipe(concat('app.css')) 
   
-  .pipe(gulp.dest("public/dist")); 
+  .pipe(gulp.dest("public/dist/css")); 
 });
 gulp.task("watch", function () 
 { 
