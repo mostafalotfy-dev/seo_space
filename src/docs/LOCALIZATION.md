@@ -2,7 +2,7 @@
 
 ## Overview
 
-SEO Nexus uses **i18next** for multi-language support with built-in support for English (en) and Arabic (ar). The system supports right-to-left (RTL) text for Arabic and handles localized strings throughout the application.
+SEO Space uses **i18next** for multi-language support with built-in support for English (en) and Arabic (ar). The system supports right-to-left (RTL) text for Arabic and handles localized strings throughout the application.
 
 ## Supported Languages
 
@@ -26,7 +26,7 @@ locals/
 ```json
 {
   "title": {
-    "main": "SEO Nexus - SEO HTML5 Template"
+    "main": "SEO Space - SEO HTML5 Template"
   },
   "header": {
     "logo": {
@@ -45,7 +45,7 @@ locals/
     "trigger": "Menu"
   },
   "banner": {
-    "welcome": "Welcome to SEO Nexus",
+    "welcome": "Welcome to SEO Space",
     "we_make": "We Make ",
     "digital_ideas": "Digital Ideas",
     // ... more keys
@@ -125,7 +125,7 @@ In Pug template:
 // Simple translation
 h1 #{t('title.main')}
 
-// Outputs: <h1>SEO Nexus - SEO HTML5 Template</h1>
+// Outputs: <h1>SEO Space - SEO HTML5 Template</h1>
 // (or Arabic equivalent in ar.json)
 ```
 
@@ -214,7 +214,7 @@ Create `locals/xx.json` (where `xx` is language code):
 // locals/fr.json (French example)
 {
   "title": {
-    "main": "SEO Nexus - Modèle HTML5 SEO"
+    "main": "SEO Space - Modèle HTML5 SEO"
   },
   "menu": {
     "home": "Accueil",
@@ -648,3 +648,8 @@ const cached = JSON.parse(localStorage.getItem('translations_en'));
 ---
 
 Keep translations consistent and accurate for the best user experience across all languages! 🌍
+
+---
+
+**Last Updated:** February 20, 2026  
+**Version:** 2.2.2

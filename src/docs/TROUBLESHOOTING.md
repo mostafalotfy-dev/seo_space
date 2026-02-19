@@ -99,7 +99,7 @@ ping registry.npmjs.org
 **Problem:** HTML files not created after compilation
 
 **Solutions:**
-1. Check current directory: `pwd` (should be seo_nexus root)
+1. Check current directory: `pwd` (should be seo_Space root)
 2. Verify compilepg.cjs output path is correct
 3. Check if node_modules/pug exists:
    ```bash
@@ -436,3 +436,8 @@ Include:
 ---
 
 Still stuck? Create an issue on the project repository or contact support. Most issues have simple solutions!
+
+---
+
+**Last Updated:** February 20, 2026  
+**Version:** 2.2.2

@@ -2,7 +2,7 @@
 
 ## Overview
 
-SEO Nexus includes four professionally designed color palettes with full dark/light mode support. Each theme is defined in a separate CSS file with CSS custom properties (variables) for easy customization.
+SEO Space includes four professionally designed color palettes with full dark/light mode support. Each theme is defined in a separate CSS file with CSS custom properties (variables) for easy customization.
 
 ## Theme Files
 
@@ -430,4 +430,9 @@ Create a JSON file for sharing:
 
 ---
 
-Use these themes as starting points for your own brand customization!
+Happy coloring! 🎨
+
+---
+
+**Last Updated:** February 20, 2026  
+**Version:** 2.2.2

@@ -27,7 +27,7 @@ const systemPrompt = `You are an AI assistant for SEO Space, a digital marketing
 
 🏢 Brand Context
 
-SEO Nexus is a professional SEO & digital marketing agency specializing in:
+SEO Space is a professional SEO & digital marketing agency specializing in:
 
 Search Engine Optimization (SEO)
 

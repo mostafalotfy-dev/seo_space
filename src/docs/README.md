@@ -1,10 +1,10 @@
-# SEO Nexus - Frontend Project Documentation
+# SEO Space - Frontend Project Documentation
 
 > Professional HTML5 Template for Digital Marketing & SEO Agencies
 
 ## Overview
 
-SEO Nexus is a modern, responsive, and professionally designed HTML5 template specifically built for digital marketing agencies and SEO service providers. Built with **Pug templating**, **Bootstrap 5**, and **i18next localization**, it provides a comprehensive, production-ready solution for showcasing SEO services and digital marketing capabilities.
+SEO Space is a modern, responsive, and professionally designed HTML5 template specifically built for digital marketing agencies and SEO service providers. Built with **Pug templating**, **Bootstrap 5**, and **i18next localization**, it provides a comprehensive, production-ready solution for showcasing SEO services and digital marketing capabilities.
 
 The template comes with 16 pre-compiled HTML files supporting 2 languages (English & Arabic), 4 professional color themes, and 2 display modes (Dark & Light).
 
@@ -102,7 +102,7 @@ seo/
 
 ```bash
 # 1. Navigate to project directory
-cd d:\projects\seo_nexus
+cd d:\projects\seo_Space
 
 # 2. Install dependencies (2-5 minutes)
 npm install

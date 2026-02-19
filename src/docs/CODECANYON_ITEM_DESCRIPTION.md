@@ -1,8 +1,8 @@
-# SEO Nexus - CodeCanyon Item Documentation
+# SEO Space - CodeCanyon Item Documentation
 
 ## Product Overview
 
-**SEO Nexus** is a professional, responsive HTML5 template designed for digital marketing agencies and SEO service providers. Built with modern technologies including Pug templating, Bootstrap 5, and comprehensive multi-language support, this template provides everything needed to showcase SEO services and digital marketing capabilities.
+**SEO Space** is a professional, responsive HTML5 template designed for digital marketing agencies and SEO service providers. Built with modern technologies including Pug templating, Bootstrap 5, and comprehensive multi-language support, this template provides everything needed to showcase SEO services and digital marketing capabilities.
 
 ### Key Highlights
 
@@ -201,7 +201,7 @@ Bootstrap 5 grid system:
 ## File Structure
 
 ```
-SEO-Nexus/
+SEO-Space/
 ├── index.pug                     (Main template)
 ├── README.md                     (Overview)
 ├── INSTALLATION.md               (Setup guide)
@@ -388,14 +388,11 @@ Created by: Mostafa Lotfy
 
 ## Changelog
 
-### Version 1.0.0 (Initial Release)
-- 4 professional color themes
-- English and Arabic support
-- Dark/Light mode switching
-- Responsive design
-- Multiple HTML variations pre-compiled
-- Complete documentation
-- All page sections included
+### Version 2.2.2 (Current)
+- Build system refinements (Gulp & Pug)
+- Comprehensive cleanup of unnecessary files
+- Full documentation updates across all languages
+- Bug fixes and performance optimizations
 
 ---
 
@@ -426,6 +423,11 @@ A: Yes! Form structure is ready. See documentation for integration guides.
 
 ---
 
-**Thank you for choosing SEO Nexus!** 
+**Thank you for choosing SEO Space!** 
 
 For more information, refer to the complete documentation files included in the package.
+
+---
+
+**Last Updated:** February 20, 2026  
+**Version:** 2.2.2

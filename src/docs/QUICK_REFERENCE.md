@@ -302,3 +302,8 @@ npm install
 ---
 
 Need more help? Check the full documentation in the `docs/` folder or visit the project repository.
+
+---
+
+**Last Updated:** February 20, 2026  
+**Version:** 2.2.2

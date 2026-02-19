@@ -286,3 +286,8 @@ After successful installation:
 ---
 
 Installation complete! You're ready to start developing. 🚀
+
+---
+
+**Last Updated:** February 20, 2026  
+**Version:** 2.2.2

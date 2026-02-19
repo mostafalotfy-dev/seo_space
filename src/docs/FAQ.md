@@ -1,9 +1,9 @@
-# SEO Nexus - FAQ (Frequently Asked Questions)
+# SEO Space - FAQ (Frequently Asked Questions)
 
 ## General Questions
 
-### What is SEO Nexus?
-SEO Nexus is a professional HTML5 template designed for digital marketing agencies and SEO service providers. It features modern design, multiple themes, multi-language support, and all the sections needed to showcase digital marketing services.
+### What is SEO Space?
+SEO Space is a professional HTML5 template designed for digital marketing agencies and SEO service providers. It features modern design, multiple themes, multi-language support, and all the sections needed to showcase digital marketing services.
 
 ### What's included in the purchase?
 - 16 pre-compiled HTML files (all theme/language combinations)
@@ -499,7 +499,7 @@ Tools:
 
 ---
 
-**Last Updated:** February 2026
-**Version:** 1.0.0
+**Last Updated:** February 20, 2026
+**Version:** 2.2.2
 
 For more information, see the complete documentation files included in the template package.

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide explains how to configure various aspects of the SEO Nexus project including build settings, environment variables, themes, languages, and development options.
+This guide explains how to configure various aspects of the SEO Space project including build settings, environment variables, themes, languages, and development options.
 
 ## Environment Variables
 
@@ -517,7 +517,7 @@ script(src="assets/js/main-custom.js?v=1.0.0")
 In `index.pug`:
 
 ```pug
-meta(name="description" content="SEO Nexus - Digital Marketing Agency Template")
+meta(name="description" content="SEO Space - Digital Marketing Agency Template")
 meta(name="keywords" content="SEO, Marketing, Digital")
 meta(name="author" content="Your Company")
 meta(name="robots" content="index, follow")
@@ -526,7 +526,7 @@ meta(name="robots" content="index, follow")
 ### Open Graph Tags
 
 ```pug
-meta(property="og:title" content="SEO Nexus")
+meta(property="og:title" content="SEO Space")
 meta(property="og:description" content="Professional SEO Services")
 meta(property="og:image" content="assets/images/og-image.png")
 meta(property="og:url" content="https://yourdomain.com")
@@ -539,7 +539,7 @@ script(type="application/ld+json")
   | {
   |   "@context": "https://schema.org",
   |   "@type": "Organization",
-  |   "name": "SEO Nexus",
+  |   "name": "SEO Space",
   |   "url": "https://yourdomain.com"
   | }
 ```
@@ -599,3 +599,8 @@ For more advanced configurations, refer to the respective documentation of each 
 - Pug: https://pugjs.org/api/reference.html
 - Bootstrap: https://getbootstrap.com/docs/5.3/
 - ESLint: https://eslint.org/docs/rules/
+
+---
+
+**Last Updated:** February 20, 2026  
+**Version:** 2.2.2

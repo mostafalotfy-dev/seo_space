@@ -2,7 +2,7 @@
 
 ## Overview
 
-SEO Nexus is a static HTML template that can be deployed to any web hosting provider. No server-side processing required.
+SEO Space is a static HTML template that can be deployed to any web hosting provider. No server-side processing required.
 
 ## Pre-Deployment Checklist
 
@@ -83,14 +83,14 @@ public_html/
 
 1. **Create GitHub repository**
    - Go to github.com, create new repo
-   - Name: `username.github.io` (for user site) or `seo-nexus` (for project)
+   - Name: `username.github.io` (for user site) or `seo-Space` (for project)
    - Make it public
    - Initialize with README
 
 2. **Clone repository**
    ```bash
-   git clone https://github.com/username/seo-nexus.git
-   cd seo-nexus
+   git clone https://github.com/username/seo-Space.git
+   cd seo-Space
    ```
 
 3. **Add your files**
@@ -104,7 +104,7 @@ public_html/
 4. **Push to GitHub**
    ```bash
    git add .
-   git commit -m "Initial SEO Nexus deployment"
+   git commit -m "Initial SEO Space deployment"
    git push origin main
    ```
 
@@ -115,7 +115,7 @@ public_html/
    - Click Save
 
 6. **Access your site**
-   - URL: `https://username.github.io/seo-nexus`
+   - URL: `https://username.github.io/seo-Space`
    - Wait 1-2 minutes for deployment
 
 ### Method 3: Netlify (Recommended for Beginners)
@@ -372,4 +372,9 @@ If something breaks:
 
 ---
 
-Deployment complete! Your SEO Nexus site is live. 🚀
+Deployment complete! Your SEO Space site is live. 🚀
+
+---
+
+**Last Updated:** February 20, 2026  
+**Version:** 2.2.2

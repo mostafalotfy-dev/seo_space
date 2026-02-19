@@ -2,7 +2,7 @@
 
 ## Overview
 
-SEO Nexus Frontend uses a modular, component-based architecture with Pug templating, Bootstrap for styling, and i18next for localization.
+SEO Space Frontend uses a modular, component-based architecture with Pug templating, Bootstrap for styling, and i18next for localization.
 
 ## Core Architecture Pattern
 
@@ -26,11 +26,9 @@ Pug Templates (index.pug)
 
 ```
 seo/
-├── index.pug              # Main template file - single source of truth
-├── compilepg.cjs          # Build script for Pug compilation
+├── src/index.pug              # Main template file - single source of truth
 ├── eslint.config.mjs      # ESLint configuration for code quality
 ├── package.json           # Project metadata and dependencies
-├── prepros.config         # Prepros build tool configuration (optional)
 └── .env                   # Environment variables (optional)
 ```
 
@@ -42,12 +40,11 @@ assets/
 │   ├── main.css           # Global styles
 │   ├── animated.css       # Animation styles
 │   ├── fontawesome.css    # Icon library
-│   ├── owl.css            # Carousel styles
-│   └── color-palette/     # Theme color definitions
-│       ├── Ignite.css
-│       ├── navy.css
-│       ├── new-corporate-tech.css
-│       └── olive-garden-feast.css
+│   |-- color-palette/     # Theme color definitions
+│   |   ├── Ignite.css
+│   |   ├── navy.css
+│   |   ├── new-corporate-tech.css
+│   |   └── olive-garden-feast.css
 ├── js/
 │   ├── main-custom.js     # Main application logic
 │   ├── animation.js       # WOW.js animation setup
@@ -255,11 +252,8 @@ xxl: ≥ 1400px       /* Extra large desktop */
 
 | Script | Function |
 |--------|----------|
-| `main-custom.js` | Form handling, interactivity, event listeners |
-| `animation.js` | Scroll animations setup, WOW.js initialization |
-| `owl-carousel.js` | Carousel/slider initialization and config |
+| `main-custom.js` | Form handling, interactivity, event  config |
 | `tabs.js` | Tab switching functionality |
-| `isotope.js` | Portfolio filtering and sorting |
 | `imagesloaded.js` | Image load detection for animations |
 | `jquery.countup.min.js` | Counter animation for statistics |
 | `utils.js` | Helper functions, utilities |
@@ -289,8 +283,8 @@ title/
 
 header/
   logo/
-    part1: "Spac"
-    part2: "Dyna"
+    part1: "Seo"
+    part2: "Space"
 
 menu/
   home, about, services, etc.
@@ -523,3 +517,8 @@ mixin serviceCard(title, description, icon)
 ---
 
 This architecture supports scalability, maintainability, and smooth development workflow.
+
+---
+
+**Last Updated:** February 20, 2026  
+**Version:** 2.2.2

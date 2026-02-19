@@ -1,4 +1,4 @@
-# SEO Nexus - CodeCanyon Setup Guide
+# SEO Space - CodeCanyon Setup Guide
 
 ## Pre-Sale Information
 
@@ -122,7 +122,7 @@ template-folder/
 
 ```html
 <!-- Find this line in the HTML file: -->
-<title>SEO Nexus - SEO HTML5 Template</title>
+<title>SEO Space - SEO HTML5 Template</title>
 
 <!-- Change to: -->
 <title>Your Company Name - Digital Marketing Agency</title>
@@ -560,3 +560,8 @@ A: Yes! Easy CSS customization. Change color values and refresh.
 ---
 
 **You're all set!** Start customizing and deploying your website. 🚀
+
+---
+
+**Last Updated:** February 20, 2026  
+**Version:** 2.2.2

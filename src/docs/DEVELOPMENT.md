@@ -13,7 +13,7 @@
 
 ```bash
 # 1. Navigate to project
-cd d:\projects\seo_nexus
+cd d:\projects\seo_Space
 
 # 2. Install dependencies
 npm install
@@ -769,3 +769,8 @@ dist/
 ---
 
 Happy coding! 🚀
+
+---
+
+**Last Updated:** February 20, 2026  
+**Version:** 2.2.2
