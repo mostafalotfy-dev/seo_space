@@ -917,7 +917,7 @@ preloader
   position: relative;
   width: 142px;
   height: 40px;
-  background: #fff;
+  background: var(--accent-color);
 }
 
 .preloader-inner .dot {
@@ -926,7 +926,7 @@ preloader
   height: 16px;
   top: 12px;
   left: 15px;
-  background: var(--text-color);
+  background: var(--accent-color);
   border-radius: 50%;
   -webkit-transform: translateX(0);
   transform: translateX(0);
