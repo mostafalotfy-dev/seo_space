@@ -133,6 +133,21 @@
 
   mobileNav();
 
+$("#theme-toggle").on("click", function() {
+  
+  $("body").attr("data-theme", $("body").attr("data-theme") === "light" ? "dark" : "light");
+  $("body").attr("data-bs-theme", $("body").attr("data-bs-theme") === "light" ? "dark" : "light");
+ 
+});
+$("#assitant").on("click", function() {
 
-
+  const audio = new Audio("./assets/sounds/open.wav");
+  audio.play();
+  $("#messageContainer").attr("style","height:unset");
+});
+$("#closeMessageContainer").on("click", function() {
+const audio = new Audio("./assets/sounds/close.mp3");
+  audio.play();
+  $("#messageContainer").attr("style","height:0");
+}); 
 })(window.jQuery);
