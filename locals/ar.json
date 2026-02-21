@@ -2,12 +2,13 @@
   "title": {
     "main": "سيو سبيس - قالب HTML5 لتحسين محركات البحث"
   },
-
+  
   "header": {
     "logo": {
       "part1": "سيو ",
       "part2": "سبيس"
-    }
+    },
+    "mode":"الوضع الداكن / الفاتح"
   },
 
   "menu": {
@@ -22,21 +23,21 @@
   },
 
   "banner": {
-    "welcome": "مرحبًا بك في سيو نيكسوس",
+    "welcome": "مرحبًا بك في سيو سبيس",
     "we_make": "نحن نصنع ",
     "digital_ideas": "أفكار رقمية",
     "seo": " سيو ",
     "marketing": "تسويق ",
     "description": {
-      "part1": "سيو نيكسوس هو قالب HTML احترافي يستخدم Bootstrap 5  هذا القالب مجاني لك مقدم من Mostafa Lotfy",
+      "part1": "سيو سبيس هو قالب HTML احترافي يستخدم Bootstrap 5  هذا القالب مجاني لك مقدم من Mostafa Lotfy",
       "part2": "."
     },
     "author": "Mostafa Lotfy",
     "placeholder": {
-      "website_url": "رابط موقعك..."
+      "website_url": "أدخل الرابط لتحليل موقعك بالذكاء الاصطناعي..."
     },
     "button": {
-      "analyze": "تحليل الموقع"
+      "analyze": "تحليل الموقع "
     },
     "alt": {
       "team_meeting": "اجتماع الفريق",

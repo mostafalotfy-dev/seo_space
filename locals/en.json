@@ -2,12 +2,13 @@
   "title": {
     "main": "SEO Space - SEO HTML5 Template"
   },
-
+  
   "header": {
     "logo": {
       "part1": "Seo",
       "part2": "Space"
-    }
+    },
+    "mode":"Dark / Light Mode"
   },
 
   "menu": {
@@ -36,7 +37,7 @@
       "website_url": "Your website URL..."
     },
     "button": {
-      "analyze": "Analyze Site"
+      "analyze": "Analyze Site Using AI"
     },
     "alt": {
       "team_meeting": "team meeting",
