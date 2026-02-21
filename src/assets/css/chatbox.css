@@ -29,7 +29,19 @@
     min-width: 200px;
     cursor: pointer;
 }
-
+.assistant {
+    background-color:var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom:10px;
+    right:12px;
+    cursor: pointer;
+}
 .messageArea {
     margin-top: 20px;
     border: 1px solid #ccc;
@@ -37,7 +49,7 @@
     padding: 10px;
     height: 200px;
     width: 100%;
-    min-width: 200px;
+   
     color:var(--text-color);
     overflow-y: scroll;
     background-color:var(--main-color);

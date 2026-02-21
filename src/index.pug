@@ -13,7 +13,7 @@ html(lang=lang)
 
     // Additional CSS Files
    
-    link(rel="stylesheet", href="./assets/css/color-palette/"+ theme_name)
+    link(rel="stylesheet", href="./dist/css/color-palette/"+ theme_name)
     link(rel="stylesheet", href="./dist/css/app.css" defer)
     
     link(rel="stylesheet" href="https://unpkg.com/@wcj/markdown-to-html/dist/marked.css" defer)
@@ -55,8 +55,13 @@ html(lang=lang)
                 li.scroll-to-section
                   a(href="#contact") #{t("menu.message_us")}
                 li.scroll-to-section
+                  button.btn.btn-sm.btn-primary-subtle(type="button" id="theme-toggle")
+                    
+                    i.fa.fa-moon-o
+                li.scroll-to-section
                   .main-red-button
                     a(href="#contact") #{t("menu.contact_now")}
+                
               a.menu-trigger
                 span #{t("menu.trigger")}
               // ***** Menu End *****
@@ -78,7 +83,7 @@ html(lang=lang)
                     bdi #{t("banner.description.part1")}
                     a(rel="nofollow", href="https://example.com/page/1", target="_parent") 
                     | #{t("banner.description.part2")}
-                  form#search(action="#", method="GET")
+                  form#search(action="#", method="post")
                     fieldset
                       input.email(type="text", name="address", placeholder=t("banner.placeholder.website_url"), autocomplete="on", required)
                     fieldset
@@ -250,7 +255,7 @@ html(lang=lang)
     #contact.contact-us.section
       .container
         .row
-          .col-lg-6.align-self-center.wow.fadeInLeft(data-wow-duration="0.5s", data-wow-delay="0.25s")
+          .col-lg-6.align-self-center.wow.fadeInLeft
             .section-heading
               h2 #{t("contact.heading")}
               p #{t("contact.description")}
@@ -292,9 +297,12 @@ html(lang=lang)
               a(rel="nofollow", href="#") #{t("footer.design.author")}
 
       //- Ai Assitant
-      .container.position-fixed.bottom-0.right-0.z-3.col-3
+      #assitant.container.rounded-pill.text-primary-emphasis.z-3.col-3
+        .assistant
+          i.fa.fa-users.fa-lg
+      #messageContainer.container.position-fixed.bottom-0.right-0.z-3.col-3(style="height:0")
+        i.fa.fa-close.fa-lg.position-absolute.fixed-top.end-0(style="cursor:pointer" id="closeMessageContainer")
         form#messageForm.form(action="#",method="post")
-          
           textarea#messageInput.input(type="text" name="message" placeholder=t("ai.message.placeholder"))
           button.button(type="submit") #{t("ai.message.button_text")}
           #messageArea.messageArea
@@ -306,8 +314,9 @@ html(lang=lang)
     
     script(src="https://unpkg.com/@wcj/markdown-to-html/dist/markdown.min.js")
     //- script(src="./assets/js/animation.js")
-    script(src="./dist/fbase.js" type="module"  defer)
    
-    script(src="./dist/main.js" defer  )
+   
+ 
+    script(src="./dist/app.js" defer type="module")
     noscript
       | Enable Javascript
