@@ -1,17 +1,20 @@
 const gulp = require("gulp");
-const uglify = require("gulp-uglify");
+
 const pug = require("pug");
 require("dotenv").config();
-const concat = require('gulp-concat');
-const path = require("path")
-const fs = require("fs")
+const concat = require("gulp-concat");
+const path = require("path");
+const fs = require("fs");
+
+
+
 const themes = [
   "olive-garden-feast.css",
   "navy.css",
   "new-corporate-tech.css",
   "ignite.css",
 ];
-// Translations 
+// Translations
 const translations = {
   en: require("./locals/en.json"),
   ar: require("./locals/ar.json"),
@@ -45,7 +48,7 @@ function compileTemplate(lang = "en", locals = {}) {
     path.dirname("./public/"),
     `output-${lang}-theme-${locals.theme_name.replace(".css", "")}-${locals.mode}.html`,
   );
-  console.log("😊 Transpiling Pugjs -> Html\n")
+  console.log("😊 Transpiling Pugjs -> Html\n");
   const html = compiledFunction({
     theme_name: locals.theme_name,
     ...data,
@@ -56,77 +59,68 @@ function compileTemplate(lang = "en", locals = {}) {
     `✅ Compiled Pug template with ${lang} translations → ${outFileTheme}\n`,
   );
 }
-// JS task 
-gulp.task('app-js', function () { 
-
-  return gulp.src('src/assets/js/*.js')   
-  .pipe(concat('app.js')) 
-  .pipe(uglify({
-    output:{
-      wrap_iife:true,
-      ascii_only:true
-    },
-    compress:{
-      dead_code:true,
-    },
-    mangle:true
-  }))
-  
-  .pipe(gulp.dest("public/dist")); 
+// JS task
+gulp.task("app-js", function () {
+  return gulp
+    .src("src/assets/js/*.js")
+    .pipe(concat("app.js"))
+    
+    .pipe(gulp.dest("public/dist"));
 });
 // CSS Task
-gulp.task('app-css', function (cb) { 
+gulp.task("app-css", function (cb) {
+  gulp
+    .src("src/assets/css/*.(css|sass)")
+    .pipe(concat("app.css"))
 
-   gulp.src('src/assets/css/*.(css|sass)') 
-  .pipe(concat('app.css')) 
-  
-  .pipe(gulp.dest("public/dist/css")); 
-  gulp.src('src/assets/css/color-palette/*.css')
-  
-  .pipe(gulp.dest("public/dist/css/color-palette"));
-  cb()
+    .pipe(gulp.dest("public/dist/css"));
+  gulp
+    .src("src/assets/css/color-palette/*.css")
+
+    .pipe(gulp.dest("public/dist/css/color-palette"));
+  cb();
 });
-gulp.task("watch", function () 
-{ 
-  gulp.watch("src/assets/js/*.{js,mjs}"
-    , gulp.series("app-js")
-  ); 
+gulp.task("watch", function () {
+  gulp.watch("src/assets/js/*.{js,mjs}", gulp.series("app-js"));
   gulp.watch("src/assets/css/*.css", gulp.series("app-css"));
   gulp.watch("src/assets/css/color-palette/*.css", gulp.series("app-css"));
-  gulp.watch("src/index.pug",gulp.series("pug"))
- });
-gulp.task("pug",function(cb){
-   for (const theme of themes) {
-  compileTemplate("en", {
-    username: "Mostafa",
-    yearNumber: new Date().getFullYear(),
-    lang: "en",
-    theme_name: theme,
-    mode: "dark",
-  });
-  compileTemplate("en", {
-    username: "Mostafa",
-    yearNumber: new Date().getFullYear(),
-    lang: "en",
-    theme_name: theme,
-    mode: "light",
-  });
-  compileTemplate("ar", {
-    username: "مصطفى",
-    yearNumber: new Date().getFullYear(),
-    lang: "ar",
-    theme_name: theme,
-    mode: "dark",
-  });
-  compileTemplate("ar", {
-    username: "مصطفى",
-    yearNumber: new Date().getFullYear(),
-    lang: "ar",
-    theme_name: theme,
-    mode: "light",
-  });
-}
+  gulp.watch("src/index.pug", gulp.series("pug"));
+ 
 
-  cb()
-})
-exports.default = gulp.series("app-css","app-js","pug")
+});
+gulp.task("pug", function (cb) {
+  for (const theme of themes) {
+    compileTemplate("en", {
+      username: "Mostafa",
+      yearNumber: new Date().getFullYear(),
+      lang: "en",
+      theme_name: theme,
+      mode: "dark",
+    });
+    compileTemplate("en", {
+      username: "Mostafa",
+      yearNumber: new Date().getFullYear(),
+      lang: "en",
+      theme_name: theme,
+      mode: "light",
+    });
+    compileTemplate("ar", {
+      username: "مصطفى",
+      yearNumber: new Date().getFullYear(),
+      lang: "ar",
+      theme_name: theme,
+      mode: "dark",
+    });
+    compileTemplate("ar", {
+      username: "مصطفى",
+      yearNumber: new Date().getFullYear(),
+      lang: "ar",
+      theme_name: theme,
+      mode: "light",
+    });
+  }
+
+  cb();
+});
+ 
+exports.default = gulp.series("app-css", "app-js", "pug");
