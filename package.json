@@ -1,12 +1,13 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "seo_space",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "SEO Space - A modern SEO-focused website template Landing Page",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently  \"npm run gulp\" \"npm run lint\" \"npm run deploy\" \"npm run babel\"",
-    "watch": "gulp -f gulp.cjs watch",
+    "start": "concurrently  \"npm run gulp\" \"npm run lint\" \"npm run deploy\" \"npm run babel\" \"npx rollup -c rollup.config.mjs\" ",
+    "watch:gulp": "gulp -f gulp.cjs watch ",
+    "watch:rollup": "npx rollup -c rollup.config.mjs -w",
     "lint": "npx eslint ./src/assets/css/main.css ./src/assets/js/main.js",
     "lint:fix": "npx eslint ./src/assets/css/main.css ./src/assets/js/main.js  --fix",
     "deploy": "firebase deploy --only hosting",
@@ -40,6 +41,8 @@
     "@eslint/css": "^0.14.1",
     "@eslint/js": "^9.39.2",
     "@eslint/json": "^1.0.0",
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
     "@types/core-js": "^2.5.8",
     "concurrently": "^9.2.1",
     "eslint": "^9.39.2",
@@ -49,7 +52,9 @@
     "gulp-preprocess": "^6.0.0",
     "gulp-pug": "^5.0.0",
     "gulp-sequence": "^1.0.0",
-    "gulp-uglify": "^3.0.2",
+    "gulp-sourcemaps": "^3.0.0",
+    "rollup": "^4.58.0",
+    "rollup-plugin-swc3": "^0.12.1",
     "scss": "^0.2.4"
   }
 }
