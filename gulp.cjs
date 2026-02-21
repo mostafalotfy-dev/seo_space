@@ -59,8 +59,8 @@ function compileTemplate(lang = "en", locals = {}) {
 // JS task 
 gulp.task('app-js', function () { 
 
-  return gulp.src('src/assets/js/*.(js|mjs)')   
-  .pipe(concat('app.mjs')) 
+  return gulp.src('src/assets/js/*.js')   
+  .pipe(concat('app.js')) 
   .pipe(uglify({
     output:{
       wrap_iife:true,
@@ -75,12 +75,16 @@ gulp.task('app-js', function () {
   .pipe(gulp.dest("public/dist")); 
 });
 // CSS Task
-gulp.task('app-css', function () { 
+gulp.task('app-css', function (cb) { 
 
-  return gulp.src('src/assets/css/*.(css|sass)') 
+   gulp.src('src/assets/css/*.(css|sass)') 
   .pipe(concat('app.css')) 
   
   .pipe(gulp.dest("public/dist/css")); 
+  gulp.src('src/assets/css/color-palette/*.css')
+  
+  .pipe(gulp.dest("public/dist/css/color-palette"));
+  cb()
 });
 gulp.task("watch", function () 
 { 
@@ -88,6 +92,7 @@ gulp.task("watch", function ()
     , gulp.series("app-js")
   ); 
   gulp.watch("src/assets/css/*.css", gulp.series("app-css"));
+  gulp.watch("src/assets/css/color-palette/*.css", gulp.series("app-css"));
   gulp.watch("src/index.pug",gulp.series("pug"))
  });
 gulp.task("pug",function(cb){
