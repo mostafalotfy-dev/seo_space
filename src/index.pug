@@ -10,7 +10,8 @@ html(lang=lang)
     title #{t("title.main")}
     // Bootstrap core CSS
     link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous")
-
+    link(rel="icon", href="./assets/images/favicon.ico" type="image/x-icon")
+    link(rel="apple-touch-icon" href="./assets/images/favicon.ico" sizes="16x16")
     // Additional CSS Files
    
     link(rel="stylesheet", href="./dist/css/color-palette/"+ theme_name)
@@ -19,7 +20,8 @@ html(lang=lang)
     link(rel="stylesheet" href="https://unpkg.com/@wcj/markdown-to-html/dist/marked.css" defer)
     //- link(rel="stylesheet", href="./assets/css/animated.css")
     //- link(rel="stylesheet", href="./assets/css/owl.css")
-  body(data-theme=mode,data-bs-theme=mode,dir=(lang == "ar") ? "rtl" : "ltr")
+    - const dir = (lang == "ar") ? "rtl" : "ltr"
+  body(data-theme=mode,data-bs-theme=mode,dir=dir)
     // ***** Preloader Start *****
     #js-preloader.js-preloader
       .preloader-inner
@@ -85,9 +87,9 @@ html(lang=lang)
                     | #{t("banner.description.part2")}
                   form#search(action="#", method="post")
                     fieldset
-                      input.email(type="text", name="address", placeholder=t("banner.placeholder.website_url"), autocomplete="on", required)
+                      input.email(type="url", name="address", placeholder=t("banner.placeholder.website_url"),dir=dir, autocomplete="on", required)
                     fieldset
-                      button.main-button(type="submit") #{t("banner.button.analyze")}
+                      button.main-button(type="submit",dir=dir) #{t("banner.button.analyze")}
               .col-lg-6
                 .right-image.wow.text-start.text-sm-center.fadeInRight(data-wow-duration="1s", data-wow-delay="0.5s")
                   img(src="./assets/images/banner-right-image.png", alt=t("banner.alt.team_meeting"))
@@ -265,7 +267,7 @@ html(lang=lang)
                     i.fa.fa-phone
                     a(href="#") 010-020-0340
           .col-lg-6.wow.fadeInRight(data-wow-duration="0.5s", data-wow-delay="0.25s")
-            form#contact(action="", method="post")
+            form#contact(action="", method="post" dir=dir)
               .row
                 .col-lg-6
                   fieldset
@@ -302,13 +304,13 @@ html(lang=lang)
           i.fa.fa-users.fa-lg
       #messageContainer.container.position-fixed.bottom-0.right-0.z-3.col-3(style="height:0")
         i.fa.fa-close.fa-lg.position-absolute.fixed-top.end-0(style="cursor:pointer" id="closeMessageContainer")
-        form#messageForm.form(action="#",method="post")
+        form#messageForm.form(action="#",method="post",dir=dir)
           textarea#messageInput.input(type="text" name="message" placeholder=t("ai.message.placeholder"))
           button.button(type="submit") #{t("ai.message.button_text")}
           #messageArea.messageArea
     //- Scripts
     
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js")
+    
     script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous")
     script(src="https://cdn.jsdelivr.net/npm/dompurify@3.3.1/dist/purify.min.js")
     
@@ -317,6 +319,6 @@ html(lang=lang)
    
    
  
-    script(src="./dist/app.js" defer type="module")
+    script(src="./dist/bundle.js" defer )
     noscript
       | Enable Javascript
