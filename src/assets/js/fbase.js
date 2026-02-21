@@ -1,10 +1,11 @@
 /* eslint-disable no-undef */
-import { initializeApp } from 'firebase/app';
-import {
+const { initializeApp } = require('firebase/app');
+const {
   getAI,
   getGenerativeModel,
   GoogleAIBackend,
-} from "firebase/ai";
+} = require("firebase/ai");
+const $ = require("jquery");
 
 const firebaseConfig = {
   apiKey: "AIzaSyDX5whingnG9Ta4NEk8BaFpXYT5-Shf-vM",
@@ -20,7 +21,7 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 
 // // Initialize the Gemini Developer API backend service
-const ai = getAI(firebaseApp, { backend: new GoogleAIBackend() });
+const aiPackage = getAI(firebaseApp, { backend: new GoogleAIBackend() });
 const modelName = "gemini-2.5-flash"; // instead of gemini-3-pro-preview
 const systemPrompt = `You are an AI assistant for SEO Space, a digital marketing and SEO agency. Your job is to assist website visitors by explaining services, offering SEO guidance, presenting pricing packages, and helping users choose the best solution for their website.
 
@@ -172,7 +173,7 @@ Guiding them toward the right package
 
 Encouraging direct contact and engagement`;
 // // Create a `GenerativeModel` instance with a model that supports your use case
-const model = getGenerativeModel(ai, { model: modelName });
+const modelPackage = getGenerativeModel(aiPackage, { model: modelName });
 const template = `
     
     <bdi class='d-flex flex-justify-start'>
@@ -202,7 +203,7 @@ messageForm.addEventListener("submit", async (e) => {
   // Model Template
 
   try {
-    const result = await model.generateContent({
+    const result = await modelPackage.generateContent({
       contents: [
         { role: "model", parts: [{ text: systemPrompt }] },
         { role: "user", parts: [{ text: cachedMesssage }] },
@@ -245,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (urlInput === "") return;
       $("#messageContainer").attr("style", "height:unset");
       const url = new URL(urlInput);
-      const seoSystemPrompt = `Gemini System Prompt: SEO Website Analysis Expert
+      const seoPrompt = `Gemini System Prompt: SEO Website Analysis Expert
 
 You are a Senior SEO Consultant and Technical Website Auditor with deep expertise in on-page SEO, technical SEO, content strategy, UX, and performance optimization.
 Your task is to analyze a given website URL and provide a clear, structured, and actionable SEO audit report.
@@ -357,9 +358,9 @@ Final Instruction
 When ready, wait for the user to provide a website URL, then begin the analysis immediately following the structure above and reply in arabic.`;
       $(messageArea).html("انتظر التحليل...");
 
-      const result = await model.generateContent({
+      const result = await modelPackage.generateContent({
         contents: [
-          { role: "model", parts: [{ text: seoSystemPrompt }] },
+          { role: "model", parts: [{ text: seoPrompt }] },
           {
             role: "user",
             parts: [

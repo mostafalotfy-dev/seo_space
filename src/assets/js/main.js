@@ -1,10 +1,12 @@
 require("./fbase.js");
+const $ = require("jquery");
+
 (function ($) {
 
   "use strict";
 
   // Header Type = Fixed
-  $(window).scroll(function () {
+  $(window).on("scroll",function () {
     var scroll = $(window).scrollTop();
     var box = $('.header-text').height();
     var header = $('header').height();
@@ -69,7 +71,7 @@ require("./fbase.js");
     }
   });
 
-  $(document).ready(function () {
+  $(document).on("scroll",function () {
     $(document).on("scroll", onScroll);
 
     //smoothscroll
@@ -150,4 +152,4 @@ const audio = new Audio("./assets/sounds/close.mp3");
   audio.play();
   $("#messageContainer").attr("style","height:0");
 }); 
-})(window.jQuery);
+})($);
