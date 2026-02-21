@@ -5,3 +5,6 @@ node_modules
 public/*
 !public/.gitkeep
 *.cache
+*.pdf
+*.log
+*.tmp
