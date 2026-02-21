@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+import { initializeApp } from 'firebase/app';
 import {
   getAI,
   getGenerativeModel,
   GoogleAIBackend,
-} from "https://www.gstatic.com/firebasejs/12.9.0/firebase-ai.js";
+} from "firebase/ai";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDX5whingnG9Ta4NEk8BaFpXYT5-Shf-vM",

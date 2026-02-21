@@ -1,4 +1,4 @@
-
+require("./fbase.js");
 (function ($) {
 
   "use strict";
