@@ -175,8 +175,20 @@
     "description": "Subscribe to our newsletter to receive the latest updates and offers.",
     "email_placeholder": "Enter your email address",
     "subscribe_button": "Subscribe",
-    "title": "Signup",
+    "title": "Signup" ,
     "email_label": "Email",
-    "password_label": "Password"
+    "password_label": "Password",
+    "password_placeholder": "Enter your password",
+    "button_text": "Sign Up"
+  },
+  "login":{
+    "title": "Login",
+    "heading": "Welcome Back",
+    "description": "Please login to your account to continue.",
+    "email_placeholder": "Enter your email address",
+    "password_placeholder": "Enter your password",
+    "password_label": "Password",
+    "button_text": "Login",
+    "email_label": "Email"
   }
 }
