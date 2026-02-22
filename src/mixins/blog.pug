@@ -1,0 +1,72 @@
+mixin blog(lang)    
+    #blog.our-blog.section
+        .container
+            .row
+            .col-lg-6.wow.fadeInDown(data-wow-duration="1s", data-wow-delay="0.25s")
+                .section-heading
+                h2 #{t("blog.heading.part1")} 
+                    em #{t("blog.heading.em")}
+                    | #{t("blog.heading.part2")}
+                    span #{t("blog.heading.span")}
+            .col-lg-6.wow.fadeInDown(data-wow-duration="1s", data-wow-delay="0.25s")
+                .top-dec
+                img(src="./assets/images/blog-dec.png", alt="")
+            .row
+            .col-lg-6.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.25s")
+                .left-image
+                a(href="#")
+                    img(src="./assets/images/big-blog-thumb.jpg", alt=t("blog.alt"))
+                .info
+                    .inner-content
+                    ul
+                        li
+                        i.fa.fa-calendar
+                        | #{t("blog.calender.text")}
+                        li
+                        i.fa.fa-users
+                        | #{t("blog.calender.author")}
+                        li
+                        i.fa.fa-folder
+                        | #{t("blog.calender.li")}
+                    a(href="#")
+                        h4 #{t("blog.seo_agency")}
+                    p #{t("blog.description")}
+                    .main-blue-button
+                        a(href="#") #{t("blog.info.discover_more")}
+            .col-lg-6.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.25s")
+                .right-list
+                ul
+                    li
+                    .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;`)
+                        span
+                        i.fa.fa-calendar
+                        |  #{t("blog.info.right_list.date")}
+                        a(href="#")
+                        h4 #{t("blog.info.right_list.backlinks")}
+                        p #{t("blog.info.right_list.description")}
+                    .right-image
+                        a(href="#")
+                        img(src="./assets/images/blog-thumb-01.jpg", alt="")
+                    li
+                    .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;`)
+                        span
+                        i.fa.fa-calendar
+                        |  #{t("blog.info.left_content.date")}
+                        a(href="#")
+                        h4 #{t("blog.info.left_content.title")}
+                        p #{t("blog.info.left_content.description")}
+                    .right-image
+                        a(href="#")
+                        img(src="./assets/images/blog-thumb-01.jpg", alt="")
+                    li
+                    
+                    .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;` )
+                        span
+                        i.fa.fa-calendar
+                        |  #{t("blog.info.left_content.date")}
+                        a(href="#")
+                        h4 #{t("blog.info.left_content.title")}
+                        p #{t("blog.info.left_content.description")}
+                    .right-image
+                        a(href="#")
+                        img(src="./assets/images/blog-thumb-01.jpg", alt="")

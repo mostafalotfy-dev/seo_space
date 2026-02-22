@@ -1,0 +1,21 @@
+mixin headSection(lang, theme_name)
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="description", content="")
+    meta(name="author", content="Mostafa Lotfy")
+    link(rel="preconnect", href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap", rel="stylesheet")
+    title #{t("title.main")}
+    // Bootstrap core CSS
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous")
+    link(rel="icon", href="./assets/images/favicon.ico" type="image/x-icon")
+    link(rel="apple-touch-icon" href="./assets/images/favicon.ico" sizes="16x16")
+    // Additional CSS Files
+   
+    link(rel="stylesheet", href="./dist/css/color-palette/"+ theme_name)
+    link(rel="stylesheet", href="./dist/css/app.css" defer)
+    
+    link(rel="stylesheet" href="https://unpkg.com/@wcj/markdown-to-html/dist/marked.css" defer)
+    //- link(rel="stylesheet", href="./assets/css/animated.css")
+    //- link(rel="stylesheet", href="./assets/css/owl.css")

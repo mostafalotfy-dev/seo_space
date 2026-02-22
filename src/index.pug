@@ -1,324 +1,50 @@
-doctype html
-html(lang=lang)
+extends layout
+
+block head
   head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
-    meta(name="description", content="")
-    meta(name="author", content="Mostafa Lotfy")
-    link(rel="preconnect", href="https://fonts.gstatic.com")
-    link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap", rel="stylesheet")
-    title #{t("title.main")}
-    // Bootstrap core CSS
-    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous")
-    link(rel="icon", href="./assets/images/favicon.ico" type="image/x-icon")
-    link(rel="apple-touch-icon" href="./assets/images/favicon.ico" sizes="16x16")
-    // Additional CSS Files
-   
-    link(rel="stylesheet", href="./dist/css/color-palette/"+ theme_name)
-    link(rel="stylesheet", href="./dist/css/app.css" defer)
-    
-    link(rel="stylesheet" href="https://unpkg.com/@wcj/markdown-to-html/dist/marked.css" defer)
-    //- link(rel="stylesheet", href="./assets/css/animated.css")
-    //- link(rel="stylesheet", href="./assets/css/owl.css")
+    +headSection(lang, theme_name)
     - const dir = (lang == "ar") ? "rtl" : "ltr"
-  body(data-theme=mode,data-bs-theme=mode,dir=dir)
-    // ***** Preloader Start *****
-    #js-preloader.js-preloader
-      .preloader-inner
-        span.dot
-        .dots
-          span
-          span
-          span
-    // ***** Preloader End *****
-    // ***** Header Area Start *****
-    header.header-area.header-sticky.wow.slideInDown(data-wow-duration="0.75s", data-wow-delay="0s")
-      .container
-        .row
-          .col-12
-            nav.main-nav
-              // ***** Logo Start *****
-              a.logo(href="index.html")
-                h4 #{t("header.logo.part1")}
-                  span #{t("header.logo.part2")}
-              // ***** Logo End *****
-              // ***** Menu Start *****
-              ul.nav
-                li.scroll-to-section
-                  a.active(href="#top") #{t("menu.home")}
-                li.scroll-to-section
-                  a(href="#about") #{t("menu.about")}
-                li.scroll-to-section
-                  a(href="#services") #{t("menu.services")}
-                li.scroll-to-section
-                  a(href="#portfolio") #{t("menu.portfolio")}
-                li.scroll-to-section
-                  a(href="#blog") #{t("menu.blog")}
-                li.scroll-to-section
-                  a(href="#contact") #{t("menu.message_us")}
-                li.scroll-to-section
-                  button.btn.btn-sm.btn-primary-subtle(type="button" id="theme-toggle")
-                    
-                    i.fa.fa-moon-o
-                li.scroll-to-section
-                  .main-red-button
-                    a(href="#contact") #{t("menu.contact_now")}
-                
-              a.menu-trigger
-                span #{t("menu.trigger")}
-              // ***** Menu End *****
-    // ***** Header Area End *****
-    #top.main-banner.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.5s")
-      .container
-        .row
-          .col-lg-12
-            .row
-              .col-lg-6.align-self-center
-                .left-content.header-text.wow.fadeInLeft(data-wow-duration="1s", data-wow-delay="1s")
-                  h6 #{t("banner.welcome")} 
-                  h2 #{t("banner.we_make")}  
-                    em #{t("banner.digital_ideas")}
-                    | & 
-                    span #{t("banner.seo")}
-                    | #{t("banner.marketing")}
-                  p 
-                    bdi #{t("banner.description.part1")}
-                    a(rel="nofollow", href="https://example.com/page/1", target="_parent") 
-                    | #{t("banner.description.part2")}
-                  form#search(action="#", method="post")
-                    fieldset
-                      input.email(type="url", name="address", placeholder=t("banner.placeholder.website_url"),dir=dir, autocomplete="on", required)
-                    fieldset
-                      button.main-button(type="submit",dir=dir) #{t("banner.button.analyze")}
-              .col-lg-6
-                .right-image.wow.text-start.text-sm-center.fadeInRight(data-wow-duration="1s", data-wow-delay="0.5s")
-                  img(src="./assets/images/banner-right-image.png", alt=t("banner.alt.team_meeting"))
-    #about.about-us.section
-      .container
-        .row
-          .col-lg-4
-            .left-image.d-md-none.d-none.d-sm-block.d-xl-block.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.2s")
-              img(src="./assets/images/about-left-image.png", alt=t("about.alt.person_graphic"))
-          .col-lg-8.align-self-center
-            .services
-              .row
-                .col-lg-6
-                  .item.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.5s")
-                    .icon
-                      img(src="./assets/images/service-icon-01.png", alt=t("alt.reporting"))
-                    .right-text
-                      h4 #{t("about.services.data_analysis")}
-                      p Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter
-                .col-lg-6
-                  .item.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.7s")
-                    .icon
-                      img(src="./assets/images/service-icon-02.png", alt="")
-                    .right-text
-                      h4 #{t("about.services.data_reporting")}
-                      p Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter
-                .col-lg-6
-                  .item.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.9s")
-                    .icon
-                      img(src="./assets/images/service-icon-03.png", alt="")
-                    .right-text
-                      h4 #{t("about.services.web_analytics")}
-                      p Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter
-                .col-lg-6
-                  .item.wow.fadeIn(data-wow-duration="1s", data-wow-delay="1.1s")
-                    .icon
-                      img(src="./assets/images/service-icon-04.png", alt="")
-                    .right-text
-                      h4 #{t("about.services.seo_suggestions")}
-                      p #{t("about.services.description")}
-    #services.our-services.section
-      .container
-        .row
-          .col-lg-6.align-self-center.wow.fadeInLeft(data-wow-duration="1s", data-wow-delay="0.2s")
-            .left-image.text-sm-center
-              img(src="./assets/images/services-left-image.png", alt="")
-          .col-lg-6.wow.fadeInRight(data-wow-duration="1s", data-wow-delay="0.2s")
-            .section-heading
-              h2 #{t("services.heading.part1")}
-                em #{t("services.heading.em")}
-                | #{t("services.heading.part2")}
-                span #{t("services.heading.span")}
-                | #{t("services.heading.part3")}
-              p #{t("services.description")}
-            .row
-              .col-lg-12
-                .first-bar.progress-skill-bar
-                  h4 #{t("services.skills.website_analysis")}
-                  span 84%
-                  .filled-bar
-                  .full-bar
-              .col-lg-12
-                .second-bar.progress-skill-bar
-                  h4 #{t("services.skills.seo_reports")}
-                  span 88%
-                  .filled-bar
-                  .full-bar
-              .col-lg-12
-                .third-bar.progress-skill-bar
-                  h4 #{t("services.skills.page_optimizations")}
-                  span 94%
-                  .filled-bar
-                  .full-bar
-    #portfolio.our-portfolio.section
-      .container
-        .row
-          .col-lg-6.offset-lg-3
-            .section-heading.wow.bounceIn(data-wow-duration="1s", data-wow-delay="0.2s")
-              h2 #{t("portfolio.heading.part1")} 
-                em #{t("portfolio.heading.em")} 
-                | #{t("portfolio.heading.part2")} 
-                span #{t("portfolio.heading.span")} 
-        .row
-          - for( const model of t("portfolio.items.models")) 
-              .col-lg-3.col-sm-6
-                .item.wow.bounceInUp(data-wow-duration="1s", data-wow-delay="0.3s")
-                  .hidden-content.z-3
-                    h4 #{model.title}
-                    p #{model.description}
-                  .showed-content
-                    img(src="./assets/images/portfolio-image.png", alt=model.alt)
+ 
+    block content
+      // ***** Header Area Start *****
+      +header(lang)
+      // ***** Header Area End *****
+      //- // ***** Preloader Start *****
+      //- +preloader()
+      //- // ***** Preloader End *****
+      // ***** Banner Area Start *****
+      +banner(lang)
+      // ***** Banner Area End *****
+      // ***** Services Area Start *****
+      +services(lang)
+      // ***** Services Area End *****
+      // ***** Contact Area Start *****
+      +contact(lang)
+      // ***** Contact Area End *****
+      // ***** Footer Area Start *****
+      +footer()
+      // ***** Footer Area End *****
+      // ***** Assistant Area Start *****
+      +assistant(lang)
+      // ***** Assistant Area End *****
+      //- Scripts
+      
+      script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous")
+      script(src="https://cdn.jsdelivr.net/npm/dompurify@3.3.1/dist/purify.min.js")
+      
+      script(src="https://unpkg.com/@wcj/markdown-to-html/dist/markdown.min.js")
+      //- script(src="./assets/js/animation.js")
+      script(src="./dist/bundle.js" defer )
+      noscript
+        | Enable Javascript
+
+      
+      
+      
+      
           
            
-    #blog.our-blog.section
-      .container
-        .row
-          .col-lg-6.wow.fadeInDown(data-wow-duration="1s", data-wow-delay="0.25s")
-            .section-heading
-              h2 #{t("blog.heading.part1")} 
-                em #{t("blog.heading.em")}
-                | #{t("blog.heading.part2")}
-                span #{t("blog.heading.span")}
-          .col-lg-6.wow.fadeInDown(data-wow-duration="1s", data-wow-delay="0.25s")
-            .top-dec
-              img(src="./assets/images/blog-dec.png", alt="")
-        .row
-          .col-lg-6.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.25s")
-            .left-image
-              a(href="#")
-                img(src="./assets/images/big-blog-thumb.jpg", alt=t("blog.alt"))
-              .info
-                .inner-content
-                  ul
-                    li
-                      i.fa.fa-calendar
-                      | #{t("blog.calender.text")}
-                    li
-                      i.fa.fa-users
-                      | #{t("blog.calender.author")}
-                    li
-                      i.fa.fa-folder
-                      | #{t("blog.calender.li")}
-                  a(href="#")
-                    h4 #{t("blog.seo_agency")}
-                  p #{t("blog.description")}
-                  .main-blue-button
-                    a(href="#") #{t("blog.info.discover_more")}
-          .col-lg-6.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.25s")
-            .right-list
-              ul
-                li
-                  .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;`)
-                    span
-                      i.fa.fa-calendar
-                      |  #{t("blog.info.right_list.date")}
-                    a(href="#")
-                      h4 #{t("blog.info.right_list.backlinks")}
-                    p #{t("blog.info.right_list.description")}
-                  .right-image
-                    a(href="#")
-                      img(src="./assets/images/blog-thumb-01.jpg", alt="")
-                li
-                  .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;`)
-                    span
-                      i.fa.fa-calendar
-                      |  #{t("blog.info.left_content.date")}
-                    a(href="#")
-                      h4 #{t("blog.info.left_content.title")}
-                    p #{t("blog.info.left_content.description")}
-                  .right-image
-                    a(href="#")
-                      img(src="./assets/images/blog-thumb-01.jpg", alt="")
-                li
-                  
-                  .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;` )
-                    span
-                      i.fa.fa-calendar
-                      |  #{t("blog.info.left_content.date")}
-                    a(href="#")
-                      h4 #{t("blog.info.left_content.title")}
-                    p #{t("blog.info.left_content.description")}
-                  .right-image
-                    a(href="#")
-                      img(src="./assets/images/blog-thumb-01.jpg", alt="")
-    #contact.contact-us.section
-      .container
-        .row
-          .col-lg-6.align-self-center.wow.fadeInLeft
-            .section-heading
-              h2 #{t("contact.heading")}
-              p #{t("contact.description")}
-              .phone-info
-                h4 #{t("contact.phone_text")} 
-                  span
-                    i.fa.fa-phone
-                    a(href="#") 010-020-0340
-          .col-lg-6.wow.fadeInRight(data-wow-duration="0.5s", data-wow-delay="0.25s")
-            form#contact(action="", method="post" dir=dir)
-              .row
-                .col-lg-6
-                  fieldset
-                    input#name(type="text", name="name", placeholder=t("contact.form.name"), autocomplete="on", required)
-                .col-lg-6
-                  fieldset
-                    input#surname(type="text", name="surname", placeholder=t("contact.form.surename"), autocomplete="on", required)
-                .col-lg-12
-                  fieldset
-                    input#email(type="text", name="email", pattern="[^ @]*@[^ @]*", placeholder=t("contact.form.email"), required)
-                .col-lg-12
-                  fieldset
-                    textarea#message.form-control(name="message", type="text", placeholder=t("contact.form.message"), required)
-                .col-lg-12
-                  fieldset
-                    button#form-submit.main-button(type="submit") #{(t("contact.form.submit"))}
-              - let flip_class= (lang == "ar") ? "ar" : "en";
-              .contact-dec(class="flip " + flip_class)
-                
-                img(src="./assets/images/contact-decoration.png", alt="")
-    footer
-      .container
-        .row
-          .col-lg-12.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.25s")
-            p
-              | #{t("footer.copyright")}
-              br
-              | #{t("footer.design.text")}
-              a(rel="nofollow", href="#") #{t("footer.design.author")}
+    
+    
 
-      //- Ai Assitant
-      #assitant.container.rounded-pill.text-primary-emphasis.z-3.col-3
-        .assistant
-          i.fa.fa-users.fa-lg
-      #messageContainer.container.position-fixed.bottom-0.right-0.z-3.col-3(style="height:0")
-        i.fa.fa-close.fa-lg.position-absolute.fixed-top.end-0(style="cursor:pointer" id="closeMessageContainer")
-        form#messageForm.form(action="#",method="post",dir=dir)
-          textarea#messageInput.input(type="text" name="message" placeholder=t("ai.message.placeholder"))
-          button.button(type="submit") #{t("ai.message.button_text")}
-          #messageArea.messageArea
-    //- Scripts
-    
-    
-    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous")
-    script(src="https://cdn.jsdelivr.net/npm/dompurify@3.3.1/dist/purify.min.js")
-    
-    script(src="https://unpkg.com/@wcj/markdown-to-html/dist/markdown.min.js")
-    //- script(src="./assets/js/animation.js")
-   
-   
- 
-    script(src="./dist/bundle.js" defer )
-    noscript
-      | Enable Javascript
+      

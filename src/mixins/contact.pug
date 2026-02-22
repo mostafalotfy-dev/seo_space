@@ -1,0 +1,35 @@
+mixin contact(lang)
+ #contact.contact-us.section
+      .container
+        .row
+          .col-lg-6.align-self-center.wow.fadeInLeft
+            .section-heading
+              h2 #{t("contact.heading")}
+              p #{t("contact.description")}
+              .phone-info
+                h4 #{t("contact.phone_text")} 
+                  span
+                    i.fa.fa-phone
+                    a(href="#") 010-020-0340
+          .col-lg-6.wow.fadeInRight(data-wow-duration="0.5s", data-wow-delay="0.25s")
+            form#contact(action="", method="post" dir=dir)
+              .row
+                .col-lg-6
+                  fieldset
+                    input#name(type="text", name="name", placeholder=t("contact.form.name"), autocomplete="on", required)
+                .col-lg-6
+                  fieldset
+                    input#surname(type="text", name="surname", placeholder=t("contact.form.surename"), autocomplete="on", required)
+                .col-lg-12
+                  fieldset
+                    input#email(type="text", name="email", pattern="[^ @]*@[^ @]*", placeholder=t("contact.form.email"), required)
+                .col-lg-12
+                  fieldset
+                    textarea#message.form-control(name="message", type="text", placeholder=t("contact.form.message"), required)
+                .col-lg-12
+                  fieldset
+                    button#form-submit.main-button(type="submit") #{(t("contact.form.submit"))}
+              - let flip_class= (lang == "ar") ? "ar" : "en";
+              .contact-dec(class="flip " + flip_class)
+                
+                img(src="./assets/images/contact-decoration.png", alt="")

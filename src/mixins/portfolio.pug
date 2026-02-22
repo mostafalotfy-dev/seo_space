@@ -1,0 +1,19 @@
+mixin portfolio()
+    #portfolio.our-portfolio.section
+        .container
+            .row
+            .col-lg-6.offset-lg-3
+                .section-heading.wow.bounceIn(data-wow-duration="1s", data-wow-delay="0.2s")
+                h2 #{t("portfolio.heading.part1")} 
+                    em #{t("portfolio.heading.em")} 
+                    | #{t("portfolio.heading.part2")} 
+                    span #{t("portfolio.heading.span")} 
+            .row
+            - for( const model of t("portfolio.items.models")) 
+                .col-lg-3.col-sm-6
+                    .item.wow.bounceInUp(data-wow-duration="1s", data-wow-delay="0.3s")
+                    .hidden-content.z-3
+                        h4 #{model.title}
+                        p #{model.description}
+                    .showed-content
+                        img(src="./assets/images/portfolio-image.png", alt=model.alt)
