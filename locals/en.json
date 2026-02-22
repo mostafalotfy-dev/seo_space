@@ -169,5 +169,14 @@
       "placeholder":"Type Something."
 
     }
+  },
+  "signup": {
+    "heading": "Join Our Newsletter",
+    "description": "Subscribe to our newsletter to receive the latest updates and offers.",
+    "email_placeholder": "Enter your email address",
+    "subscribe_button": "Subscribe",
+    "title": "Signup",
+    "email_label": "Email",
+    "password_label": "Password"
   }
 }
