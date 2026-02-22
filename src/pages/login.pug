@@ -1,0 +1,21 @@
+extends ../layout
+block head
+    - const dir = (lang == "ar") ? "rtl" : "ltr";
+    +headSection(lang, theme_name)
+block content
+    +header(lang)
+    form#login(action="#", method="post", class="login-form")
+        .container
+            .row.justify-content-center
+                .col-lg-6
+                    .card
+                        .card-body
+                            h2.text-center #{t("login.title")}
+                            p.text-center #{t("login.description")}
+                            .mb-3
+                                label.form-label(for="email") #{t("login.email_label")}
+                                input.form-control(type="email", id="email", name="email", placeholder=t("login.email_placeholder"), required)
+                            .mb-3
+                                label.form-label(for="password") #{t("login.password_label")}
+                                input.form-control(type="password", id="password", name="password", placeholder=t("login.password_placeholder"), required)
+                            button.btn.btn-primary.w-100(type="submit") #{t("login.button_text")}
