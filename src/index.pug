@@ -243,8 +243,8 @@ html(lang=lang)
                     a(href="#")
                       img(src="./assets/images/blog-thumb-01.jpg", alt="")
                 li
-                  - const isAr = lang == "ar" && dir == 'rtl' ? "m-0" : "" ;
-                  .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;` class=isAr)
+                  
+                  .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;` )
                     span
                       i.fa.fa-calendar
                       |  #{t("blog.info.left_content.date")}

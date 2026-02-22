@@ -12,7 +12,7 @@ const themes = [
   "olive-garden-feast.css",
   "navy.css",
   "new-corporate-tech.css",
-  "ignite.css",
+  "loyal-green.css",
 ];
 // Translations
 const translations = {
