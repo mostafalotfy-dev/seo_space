@@ -1,12 +1,11 @@
 const gulp = require("gulp");
 
 const pug = require("pug");
+const pugTranspile = require("gulp-pug");
 require("dotenv").config();
 const concat = require("gulp-concat");
 const path = require("path");
 const fs = require("fs");
-
-
 
 const themes = [
   "olive-garden-feast.css",
@@ -54,10 +53,13 @@ function compileTemplate(lang = "en", locals = {}) {
     ...data,
   });
   fs.writeFileSync(path.dirname(".") + "/public/" + outFileTheme, html);
-
+gulp.src('src/pages/*.pug') // source folder 
+.pipe(pugTranspile({ pretty: true,data })) // pretty: true keeps readable HTML 
+.pipe(gulp.dest('public')); // output folder
   console.log(
     `✅ Compiled Pug template with ${lang} translations → ${outFileTheme}\n`,
   );
+  
 }
 // JS task
 gulp.task("app-js", function () {
@@ -84,10 +86,13 @@ gulp.task("watch", function () {
   gulp.watch("src/assets/js/*.{js,mjs}", gulp.series("app-js"));
   gulp.watch("src/assets/css/*.css", gulp.series("app-css"));
   gulp.watch("src/assets/css/color-palette/*.css", gulp.series("app-css"));
-  gulp.watch("src/*.pug", gulp.series("pug"));
+  gulp.watch("src/**/*.pug", gulp.series("pug"));
+  gulp.watch("locals/*.json", gulp.series("pug"));
+
  
 
 });
+
 gulp.task("pug", function (cb) {
   for (const theme of themes) {
     compileTemplate("en", {
@@ -119,8 +124,8 @@ gulp.task("pug", function (cb) {
       mode: "light",
     });
   }
-
   cb();
 });
+
  
 exports.default = gulp.series("app-css", "app-js", "pug");
