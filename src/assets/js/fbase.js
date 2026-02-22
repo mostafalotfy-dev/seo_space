@@ -181,25 +181,25 @@ const template = `
     %s</div>
     </bdi>`;
 
-const messageForm = document.querySelector("#messageForm");
-const messageInput = document.querySelector("form#messageForm .input");
-messageForm.addEventListener("submit", async (e) => {
+const messageForm = $("#messageForm") ;
+const messageInput = $("form#messageForm .input");
+messageForm.on("submit", async (e) => {
   e.preventDefault();
-  const messageArea = document.querySelector("#messageArea");
+  const messageArea = $("#messageArea");
 
   const isEmpty = messageInput.value == "";
   if (isEmpty) {
     return;
   }
-  const messageText = messageInput.value;
+  const messageText = messageInput.val().trim();
   // User
   $(messageArea).append(
     $(
       `<p class='rounded col-sm-6 bg-primary-subtle  p-1 text-end d-block text-break'>${messageText}</p>`,
     ),
   );
-  const cachedMesssage = messageInput.value;
-  messageInput.value = "";
+  const cachedMesssage = messageInput.val();
+  messageInput.val("");
   // Model Template
 
   try {
@@ -238,9 +238,8 @@ messageForm.addEventListener("submit", async (e) => {
   });
 });
 document.addEventListener("DOMContentLoaded", () => {
-  document
-    .querySelector("#search")
-    .addEventListener("submit", async function (e) {
+ $("#search")
+    .on("submit", async function (e) {
       e.preventDefault();
       const urlInput = $("#search .email").val().trim();
       if (urlInput === "") return;

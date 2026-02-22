@@ -1801,3 +1801,6 @@ responsive
 [data-theme="dark"] .main-button{
   color:var(--light-color)
 }
+.vh-100{
+  height:100vh;
+}
