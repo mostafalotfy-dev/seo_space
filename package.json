@@ -44,7 +44,6 @@
     "@eslint/json": "^1.0.0",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
-
     "@types/core-js": "^2.5.8",
     "concurrently": "^9.2.1",
     "eslint": "^9.39.2",
@@ -53,6 +52,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-preprocess": "^6.0.0",
     "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.1.0",
     "gulp-sequence": "^1.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "rollup": "^4.58.0",
