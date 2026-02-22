@@ -1,11 +1,9 @@
 const gulp = require("gulp");
-
-const pug = require("pug");
-const pugTranspile = require("gulp-pug");
-require("dotenv").config();
+const pug = require("gulp-pug");
 const concat = require("gulp-concat");
+const rename = require("gulp-rename");
 const path = require("path");
-const fs = require("fs");
+require("dotenv").config();
 
 const themes = [
   "olive-garden-feast.css",
@@ -13,119 +11,87 @@ const themes = [
   "new-corporate-tech.css",
   "loyal-green.css",
 ];
-// Translations
+
 const translations = {
   en: require("./locals/en.json"),
   ar: require("./locals/ar.json"),
 };
-// Compile Pug
-function compileTemplate(lang = "en", locals = {}) {
-  const pugFile = path.join(path.dirname("./src/views/"), "index.pug");
 
-  // Merge locals with translations
-  const data = {
-    ...locals,
-    t: (key) => {
-      // Split nested keys like "banner.placeholder.website_url"
-      const parts = key.split(".");
-      let value = translations[lang] || translations.en;
-      for (const part of parts) {
-        value = value?.[part];
-      }
-      return value || key; // fallback: return key if not found
-    },
+function getTranslator(lang) {
+  return (key) => {
+    const parts = key.split(".");
+    let value = translations[lang] || translations.en;
+    for (const part of parts) {
+      value = value?.[part];
+    }
+    return value || key;
   };
-
-  // Compile and render
-  const compiledFunction = pug.compileFile(pugFile, {
-    pretty: true,
-  });
-
-  // Save output
-
-  const outFileTheme = path.join(
-    path.dirname("./public/"),
-    `output-${lang}-theme-${locals.theme_name.replace(".css", "")}-${locals.mode}.html`,
-  );
-  console.log("😊 Transpiling Pugjs -> Html\n");
-  const html = compiledFunction({
-    theme_name: locals.theme_name,
-    ...data,
-  });
-  fs.writeFileSync(path.dirname(".") + "/public/" + outFileTheme, html);
-gulp.src('src/pages/*.pug') // source folder 
-.pipe(pugTranspile({ pretty: true,data })) // pretty: true keeps readable HTML 
-.pipe(gulp.dest('public')); // output folder
-  console.log(
-    `✅ Compiled Pug template with ${lang} translations → ${outFileTheme}\n`,
-  );
-  
 }
+
 // JS task
 gulp.task("app-js", function () {
   return gulp
-    .src("src/assets/js/*.js")
+    .src("src/assets/js/*.{js,mjs}")
     .pipe(concat("app.js"))
-    
     .pipe(gulp.dest("public/dist"));
 });
-// CSS Task
-gulp.task("app-css", function (cb) {
-  gulp
-    .src("src/assets/css/*.(css|sass)")
+
+// CSS task
+gulp.task("app-css", function () {
+  return gulp
+    .src(["src/assets/css/*.css", "src/assets/css/*.sass"])
     .pipe(concat("app.css"))
-
-    .pipe(gulp.dest("public/dist/css"));
-  gulp
-    .src("src/assets/css/color-palette/*.css")
-
-    .pipe(gulp.dest("public/dist/css/color-palette"));
-  cb();
+    .pipe(gulp.dest("public/dist/css"))
+    .on("end", () => {
+      gulp.src("src/assets/css/color-palette/*.css")
+        .pipe(gulp.dest("public/dist/css/color-palette"));
+    });
 });
+
+// Pug task with rename
+gulp.task("pug", function () {
+  const tasks = [];
+
+  for (const theme of themes) {
+    for (const lang of ["en", "ar"]) {
+      for (const mode of ["dark", "light"]) {
+        const username = lang === "en" ? "Mostafa" : "مصطفى";
+
+        tasks.push(
+          gulp.src("src/pages/*.pug")
+            .pipe(rename(function (filePath) {
+              const baseName = path.basename(filePath.basename, ".pug");
+              filePath.basename = `output-${baseName}-${lang}-${mode}-${theme.replace(".css", "")}`;
+              filePath.extname = ".html";
+            }))
+            .pipe(pug({
+              pretty: true,
+              data: {
+                username,
+                yearNumber: new Date().getFullYear(),
+                lang,
+                theme_name: theme,
+                mode,
+                t: getTranslator(lang),
+              }
+            }))
+            .pipe(gulp.dest("public/"))
+        );
+      }
+    }
+  }
+
+  return tasks.length ? tasks[tasks.length - 1] : Promise.resolve();
+});
+
+// Watch task
 gulp.task("watch", function () {
   gulp.watch("src/assets/js/*.{js,mjs}", gulp.series("app-js"));
-  gulp.watch("src/assets/css/*.css", gulp.series("app-css"));
+  gulp.watch(["src/assets/css/*.css", "src/assets/css/*.sass"], gulp.series("app-css"));
   gulp.watch("src/assets/css/color-palette/*.css", gulp.series("app-css"));
   gulp.watch("src/**/*.pug", gulp.series("pug"));
   gulp.watch("locals/*.json", gulp.series("pug"));
-
- 
-
 });
 
-gulp.task("pug", function (cb) {
-  for (const theme of themes) {
-    compileTemplate("en", {
-      username: "Mostafa",
-      yearNumber: new Date().getFullYear(),
-      lang: "en",
-      theme_name: theme,
-      mode: "dark",
-    });
-    compileTemplate("en", {
-      username: "Mostafa",
-      yearNumber: new Date().getFullYear(),
-      lang: "en",
-      theme_name: theme,
-      mode: "light",
-    });
-    compileTemplate("ar", {
-      username: "مصطفى",
-      yearNumber: new Date().getFullYear(),
-      lang: "ar",
-      theme_name: theme,
-      mode: "dark",
-    });
-    compileTemplate("ar", {
-      username: "مصطفى",
-      yearNumber: new Date().getFullYear(),
-      lang: "ar",
-      theme_name: theme,
-      mode: "light",
-    });
-  }
-  cb();
-});
-
- 
+// Default task
 exports.default = gulp.series("app-css", "app-js", "pug");
