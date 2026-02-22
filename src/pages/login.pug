@@ -4,7 +4,7 @@ block head
     +headSection(lang, theme_name)
 block content
     +header(lang)
-    form#login(action="#", method="post", class="login-form")
+    form#login(action="#", method="post", class="login-form justify-content-center vh-100 d-flex align-items-center" dir=dir)
         .container
             .row.justify-content-center
                 .col-lg-6
@@ -19,3 +19,13 @@ block content
                                 label.form-label(for="password") #{t("login.password_label")}
                                 input.form-control(type="password", id="password", name="password", placeholder=t("login.password_placeholder"), required)
                             button.btn.btn-primary.w-100(type="submit") #{t("login.button_text")}
+
+    +footer()
+block scripts
+  script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous")
+  script(src="https://cdn.jsdelivr.net/npm/dompurify@3.3.1/dist/purify.min.js")
+  script(src="https://unpkg.com/@wcj/markdown-to-html/dist/markdown.min.js")
+  //- script(src="./assets/js/animation.js")
+  script(src="./dist/bundle.js" defer )
+  noscript
+    | Enable Javascript
