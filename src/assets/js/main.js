@@ -71,6 +71,7 @@ $('.scroll-to-section a[href^="#"]').on("click", function (e) {
       },
       500,
       "swing",
+      onScroll
     );
 });
 

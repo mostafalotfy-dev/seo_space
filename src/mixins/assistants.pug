@@ -1,14 +1,11 @@
 mixin assistant(lang)
     - const dir = lang === "ar" ? "rtl" : "ltr";
-
- 
- 
     #assitant.container.rounded-pill.text-primary-emphasis.z-3.col-3
-    .assistant
-        i.fa.fa-users.fa-lg
+        .assistant
+         i.fa.fa-users.fa-lg
     #messageContainer.container.position-fixed.bottom-0.right-0.z-3.col-3(style="height:0")
-    i.fa.fa-close.fa-lg.position-absolute.fixed-top.end-0(style="cursor:pointer" id="closeMessageContainer")
-    form#messageForm.form(action="#",method="post",dir=dir)
-        textarea#messageInput.input(type="text" name="message" placeholder=t("ai.message.placeholder"))
-        button.button(type="submit") #{t("ai.message.button_text")}
-        #messageArea.messageArea
+        i.fa.fa-close.fa-lg.position-absolute.fixed-top.end-0(style="cursor:pointer" id="closeMessageContainer")
+        form#messageForm.form(action="#",method="post",dir=dir)
+            textarea#messageInput.input(type="text" name="message" placeholder=t("ai.message.placeholder"))
+            button.button(type="submit") #{t("ai.message.button_text")}
+            #messageArea.messageArea

@@ -84,7 +84,7 @@ gulp.task("watch", function () {
   gulp.watch("src/assets/js/*.{js,mjs}", gulp.series("app-js"));
   gulp.watch("src/assets/css/*.css", gulp.series("app-css"));
   gulp.watch("src/assets/css/color-palette/*.css", gulp.series("app-css"));
-  gulp.watch("src/index.pug", gulp.series("pug"));
+  gulp.watch("src/*.pug", gulp.series("pug"));
  
 
 });
