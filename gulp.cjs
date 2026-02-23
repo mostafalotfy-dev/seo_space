@@ -51,14 +51,14 @@ gulp.task("app-css", function () {
 // Pug task with rename
 gulp.task("pug", function () {
   const tasks = [];
-
+  
   for (const theme of themes) {
     for (const lang of ["en", "ar"]) {
       for (const mode of ["dark", "light"]) {
         const username = lang === "en" ? "Mostafa" : "مصطفى";
 
         tasks.push(
-          gulp.src("src/pages/*.pug")
+          gulp.src(["src/pages/*.pug","src/index.pug"])
             .pipe(rename(function (filePath) {
               const baseName = path.basename(filePath.basename, ".pug");
               filePath.basename = `output-${baseName}-${lang}-${mode}-${theme.replace(".css", "")}`;
@@ -73,6 +73,9 @@ gulp.task("pug", function () {
                 theme_name: theme,
                 mode,
                 t: getTranslator(lang),
+                user:true,
+                full_theme_name : "output-index-"+lang+"-"+mode+"-"+theme.replace(".css","")+".html",
+                
               }
             }))
             .pipe(gulp.dest("public/"))
