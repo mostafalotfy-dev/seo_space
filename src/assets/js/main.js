@@ -77,19 +77,23 @@ $('.scroll-to-section a[href^="#"]').on("click", function (e) {
 
 function onScroll() {
   var scrollPos = $(document).scrollTop();
-  $(".nav a").each(function () {
-    var currLink = $(this);
-    var refElement = $(currLink.attr("href"));
-    if (
-      refElement.position().top <= scrollPos &&
-      refElement.position().top + refElement.height() > scrollPos
-    ) {
-      $(".nav ul li a").removeClass("active");
-      currLink.addClass("active");
-    } else {
-      currLink.removeClass("active");
-    }
-  });
+  $(".nav a").not(".dropdown-menu a").each(function () {
+  var currLink = $(this);
+  const href = currLink.attr("href");
+  // Skip empty or placeholder hrefs 
+  if (href === "#" || href === "" || href === undefined) return
+  const refElement = $(href);
+  var refTop = refElement.position().top;
+  var refBottom = refTop + refElement.outerHeight();
+
+  if (refTop <= scrollPos && refBottom > scrollPos) {
+    $(".nav ul li a").removeClass("active");
+    currLink.addClass("active");
+  } else {
+    currLink.removeClass("active");
+  }
+});
+
 }
 
 // Page loading animation
@@ -130,4 +134,5 @@ $("#closeMessageContainer").on("click", function () {
   audio.play();
   $("#messageContainer").attr("style", "height:0");
 });
+
 })($);
