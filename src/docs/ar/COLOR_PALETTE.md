@@ -8,7 +8,7 @@
 
 | السمة | الملف | حالة الاستخدام |
 |-------|-------|----------------|
-| **Ignite** | `assets/css/color-palette/ignite.css` | علامة تجارية حيوية ونابضة |
+| **Ignite** | `assets/css/color-palette/loyal-green.css` | علامة تجارية حيوية ونابضة |
 | **Navy** | `assets/css/color-palette/navy.css` | مهني واحترافي |
 | **New Corporate Tech** | `assets/css/color-palette/new-corporate-tech.css` | شركة تقنية حديثة |
 | **Olive Garden Feast** | `assets/css/color-palette/olive-garden-feast.css` | علامة طبيعية وأرضية |
@@ -356,5 +356,5 @@ document.body.dataset.theme = 'light';
 
 ---
 
-**آخر تحديث:** 20 فبراير 2026  
-**الإصدار:** 2.2.2
+**آخر تحديث:** 23 فبراير 2026  
+**الإصدار:** 2.4.1

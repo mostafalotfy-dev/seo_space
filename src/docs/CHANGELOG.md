@@ -7,6 +7,129 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.4.1] - 2026-02-23
+
+### Features
+- **Authentication Pages** - Complete auth system with login, profile, and signup pages
+  - Individual page templates: `src/pages/login.pug`, `profile.pug`, `signup.pug`
+  - Custom navbar component with auth integration
+  - Page-specific translations and styling
+
+- **Custom Navigation** - Enhanced navbar with auth-aware navigation
+  - Dynamic navbar component in `src/mixins/auth/navbar.pug`
+  - Support for authenticated and unauthenticated states
+
+- **Preloader Component** - Visual loading indicator
+  - Preloader mixin in `src/mixins/preloader.pug`
+  - Auto-hide on page load
+
+- **Theme Enhancement** - New color palette added
+  - Added `loyal-green.css` theme variant
+  - Updated color palette system for flexibility
+
+### Build System
+- **Rollup Integration** - JavaScript bundling and optimization
+  - `rollup.config.mjs` for ES module bundling
+  - Webpack plugin support for postcss
+  
+- **Gulp Updates** - Enhanced build pipeline
+  - Updated `gulp.cjs` with latest configurations
+  - Improved asset compilation workflow
+
+### Dependencies
+- Added rollup plugins for enhanced bundling
+- Updated package dependencies for better performance
+- jQuery added as npm package for improved performance
+
+### Translations
+- Updated translations for new authentication pages
+- Added translations for profile and login flows
+- Maintained multi-language support for all new features
+
+### Bug Fixes
+- Fixed expression handling in templates
+- Fixed gulp script compatibility with auth pages
+- Fixed layout and structuring for pug files
+- Updated CSS and layout for better consistency
+
+---
+
+## [2.3.0] - 2026-02-20
+
+### Features
+- **AI Assistant Functionality** - Chatbot integration
+  - AI assistant dialog/chat component
+  - Firebase real-time integration ready
+
+- **Dark/Light Mode Toggle** - Theme switching capability
+  - User preference persistence via localStorage
+  - Smooth transitions between themes
+  - System preference detection support
+
+- **Enhanced Color Themes** - Theme system improvements
+  - Better color variable organization
+  - More consistent theme application
+  - Support for dynamic theme switching
+
+### Build System
+- **Rollup Integration** - JavaScript module bundling
+  - ES6+ transformation and optimization
+  - Tree shaking for smaller bundles
+  - Source map generation
+
+- **Updated npm Scripts** - Improved development workflow
+  - Separate build and watch commands
+  - Plugin management enhancements
+
+### Styling
+- **Chatbox Styling** - New styles for assistant component
+  - `src/assets/css/chatbox.css` for chat interface
+  - Responsive design for all screen sizes
+
+### Infrastructure
+- **Firebase Support** - Backend integration ready
+  - Firebase hosting configuration
+  - Real-time database support
+  - Authentication prepared
+
+### Improvements
+- Added Babel for modern JavaScript transpilation
+- Enhanced asset loading and caching
+- Improved development server experience
+
+---
+
+## [2.2.3] - 2026-02-23
+
+### Documentation
+
+#### Updated
+- **ARCHITECTURE.md** - Synchronized with current src folder structure
+  - Updated Root Level Files section to show src/ subdirectories (components/, pages/, mixins/, etc.)
+  - Updated `assets/` directory structure with actual file inventory:
+    - Changed `main-custom.js` to `main.js`
+    - Added `fbase.js` (Firebase integration)
+    - Added `chatbox.css` to CSS section
+    - Added `sounds/` folder with audio files (open.wav, close.mp3)
+    - Removed obsolete animation files (animation.js, owl-carousel.js, isotope.js, jquery.countup, waypoints)
+  - Added `pages/` directory documentation (login.pug, profile.pug, signup.pug)
+  - Added `mixins/` directory with complete mixin inventory (about, assistants, auth, banner, blog, contact, footer, header, headSection, portfolio, preloader, services)
+  - Updated Build Process flow to reference gulp.cjs with comprehensive compilation steps
+  - Updated Script Loading Order and Responsibilities to reflect current JavaScript architecture
+  - Updated Template Architecture section with src/index.pug, layout.pug, and pages structure
+
+- **ARCHITECTURE.md (Arabic)** - Full Arabic translation updated with same structure changes
+  - Complete synchronization with English version
+  - All directory structures translated to Arabic
+  - Updated compilation process description in Arabic
+  - Updated script responsibilities table in Arabic
+
+#### Synchronized
+- Pulled latest changes from origin/dev branch
+- Documentation now reflects actual project structure (as of Feb 23, 2026)
+
+---
+
 ## [2.2.2] - 2026-02-20
 
 ### Fixed
@@ -296,8 +419,8 @@ Format: `MAJOR.MINOR.PATCH`
 
 ---
 
-**Last Updated:** February 20, 2026
-**Current Version:** 2.2.2
+**Last Updated:** February 23, 2026
+**Current Version:** 2.4.1
 **Status:** Active ✓
 
 For detailed information, see the [documentation index](INDEX.md) or the [README](README.md).

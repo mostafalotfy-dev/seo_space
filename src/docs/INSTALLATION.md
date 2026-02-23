@@ -28,17 +28,50 @@ npm install
 ```
 
 This will install all required packages listed in `package.json`:
-- Pug template engine
-- Bootstrap framework
-- jQuery
-- i18next localization
-- ESLint for code quality
-- nodemon for development watch mode
+- **Pug** (3.0.3) - Template engine
+- **Bootstrap** (5.3.8) - CSS framework
+- **jQuery** (4.0.0) - JavaScript library
+- **i18next** (25.8.0) - Localization
+- **Gulp** (5.0.1) - Task runner and build system
+- **Rollup** - JavaScript bundler
+- **Babel** - JavaScript transpiler
+- **Firebase** - Backend and hosting
+- **ESLint** - Code quality
 - And more...
 
 **Installation time**: Usually 2-5 minutes depending on internet speed
 
-### 3. Verify Installation
+### 3. Understand Project Structure
+
+The project is organized as follows:
+
+```
+src/
+├── index.pug                    # Main template entry point
+├── layout.pug                   # Master layout wrapper
+├── pages/                       # Standalone pages
+│   ├── login.pug               # Login page
+│   ├── signup.pug              # Registration page
+│   └── profile.pug             # User profile page
+├── mixins/                      # Reusable components
+│   ├── header.pug              # Header navigation
+│   ├── footer.pug              # Footer section
+│   ├── preloader.pug           # Page loading indicator
+│   ├── auth/
+│   │   └── navbar.pug          # Auth-aware navbar
+│   └── ... (other sections)
+├── assets/                      # Static files
+│   ├── css/                    # Stylesheets
+│   ├── js/                     # JavaScript files
+│   ├── images/                 # Images
+│   ├── fonts/                  # Custom fonts
+│   └── sounds/                 # Audio effects (open.wav, close.mp3)
+└── locals/                      # Translations
+    ├── en.json                 # English translations
+    └── ar.json                 # Arabic translations
+```
+
+### 4. Available npm Scripts
 
 Check if dependencies installed correctly:
 
@@ -289,5 +322,5 @@ Installation complete! You're ready to start developing. 🚀
 
 ---
 
-**Last Updated:** February 20, 2026  
-**Version:** 2.2.2
+**Last Updated:** February 23, 2026  
+**Version:** 2.4.1

@@ -8,7 +8,7 @@ SEO Space includes four professionally designed color palettes with full dark/li
 
 | Theme | File | Use Case |
 |-------|------|----------|
-| **Ignite** | `assets/css/color-palette/Ignite.css` | Energetic, vibrant brand |
+| **Ignite** | `assets/css/color-palette/loyal-green.css` | Loyal Green |
 | **Navy** | `assets/css/color-palette/navy.css` | Professional, corporate |
 | **New Corporate Tech** | `assets/css/color-palette/new-corporate-tech.css` | Modern tech company |
 | **Olive Garden Feast** | `assets/css/color-palette/olive-garden-feast.css` | Earthy, organic brand |
@@ -434,5 +434,5 @@ Happy coloring! 🎨
 
 ---
 
-**Last Updated:** February 20, 2026  
-**Version:** 2.2.2
+**Last Updated:** February 23, 2026  
+**Version:** 2.4.1

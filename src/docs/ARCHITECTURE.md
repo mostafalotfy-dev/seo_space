@@ -9,13 +9,13 @@ SEO Space Frontend uses a modular, component-based architecture with Pug templat
 ```
 Pug Templates (index.pug)
          ↓
-    Compilation (compilepg.cjs)
+    Compilation (gulp.cjs)
          ↓
     HTML Output (output-*.html)
          ↓
     Browser Rendering
          ↓
-    JavaScript Enhancement (main-custom.js)
+    JavaScript Enhancement (main.js)
          ↓
     Interactive Website
 ```
@@ -26,7 +26,18 @@ Pug Templates (index.pug)
 
 ```
 seo/
-├── src/index.pug              # Main template file - single source of truth
+├── src/
+│   ├── index.pug          # Main entry template
+│   ├── layout.pug         # Master layout template
+│   ├── components/        # Reusable component templates
+│   ├── pages/             # Page-specific templates
+│   ├── partials/          # Partial template files
+│   ├── sections/          # Section components
+│   ├── mixins/            # Pug mixin definitions
+│   ├── assets/            # Static assets
+│   ├── vendor/            # Third-party libraries
+│   ├── docs/              # Documentation files
+│   └── ...
 ├── eslint.config.mjs      # ESLint configuration for code quality
 ├── package.json           # Project metadata and dependencies
 └── .env                   # Environment variables (optional)
@@ -37,26 +48,25 @@ seo/
 ```
 assets/
 ├── css/
-│   ├── main.css           # Global styles
-│   ├── animated.css       # Animation styles
+│   ├── main.css           # Global styles and layout
+│   ├── chatbox.css        # Chat component styles
 │   ├── fontawesome.css    # Icon library
-│   |-- color-palette/     # Theme color definitions
-│   |   ├── Ignite.css
-│   |   ├── navy.css
-│   |   ├── new-corporate-tech.css
-│   |   └── olive-garden-feast.css
+│   └── color-palette/     # Theme color definitions
+│       ├── Ignite.css
+│       ├── navy.css
+│       ├── new-corporate-tech.css
+│       └── olive-garden-feast.css
 ├── js/
-│   ├── main-custom.js     # Main application logic
-│   ├── animation.js       # WOW.js animation setup
-│   ├── owl-carousel.js    # Carousel initialization
+│   ├── main.js            # Main application logic
+│   ├── fbase.js           # Firebase integration
 │   ├── tabs.js            # Tab component logic
-│   ├── isotope.js         # Filtering/sorting
 │   ├── imagesloaded.js    # Image loading detection
-│   ├── jquery.countup.min.js    # Counter animation plugin
-│   ├── noframework.waypoints.min.js  # Scroll detection
 │   └── utils.js           # Utility functions
 ├── images/                # Static images and graphics
-└── fonts/                 # Custom font files
+├── fonts/                 # Custom font files
+└── sounds/                # Audio files
+    ├── open.wav           # UI sound effects
+    └── close.mp3
 ```
 
 ### `vendor/` Directory (Third-party Libraries)
@@ -67,10 +77,34 @@ vendor/
 │   ├── css/               # Bootstrap styles
 │   └── js/                # Bootstrap JavaScript
 └── jquery/                # jQuery library
-    ├── jquery.js
-    ├── jquery.min.js
-    ├── jquery.slim.js
-    └── jquery.slim.min.js
+    └── jquery.js (various versions)
+```
+
+### `pages/` Directory (Page Templates)
+
+```
+pages/
+├── login.pug              # Login page template
+├── profile.pug            # User profile page
+└── signup.pug             # Registration page
+```
+
+### `mixins/` Directory (Reusable Components)
+
+```
+mixins/
+├── about.pug              # About section mixin
+├── assistants.pug         # Team/assistants display
+├── auth/                  # Authentication components
+├── banner.pug             # Banner section mixin
+├── blog.pug               # Blog section mixin
+├── contact.pug            # Contact form mixin
+├── footer.pug             # Footer mixin
+├── header.pug             # Header/navigation mixin
+├── headSection.pug        # Section heading mixin
+├── portfolio.pug          # Portfolio section mixin
+├── preloader.pug          # Preloader mixin
+└── services.pug           # Services section mixin
 ```
 
 ### `locals/` Directory (Localization)
@@ -88,23 +122,24 @@ locals/
 ```
 ┌─────────────────────────────────────────────────────────┐
 │              1. Development Change                       │
-│           (Edit .pug, .json, or .css)                   │
+│     (Edit .pug, .json, .css, or .js in src/)            │
 └────────────────────┬────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────┐
 │         2. File Watcher Detects Change                  │
-│            (nodemon monitoring)                         │
+│        (Gulp watch or build tool monitoring)            │
 └────────────────────┬────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────┐
-│      3. compilepg.cjs Executes Compilation              │
+│      3. gulp.cjs Executes Compilation                   │
 │                                                         │
-│  - Reads index.pug                                      │
-│  - Loads locale files (en.json, ar.json)               │
-│  - Determines active theme                              │
-│  - Processes Pug syntax                                │
+│  - Reads src/index.pug & mixins                        │
+│  - Loads locale files (locals/en.json, ar.json)        │
+│  - Processes Pug templates                             │
+│  - Compiles CSS & concatenates stylesheets            │
+│  - Transpiles & minifies JavaScript                    │
 │  - Injects variables and translations                  │
 └────────────────────┬────────────────────────────────────┘
                      │
@@ -121,40 +156,40 @@ locals/
 │  - output-en-theme-navy-dark.html                      │
 │  - output-en-theme-navy-light.html                     │
 │  - output-ar-theme-navy-dark.html                      │
-│  - output-ar-theme-navy-light.html                     │
 └────────────────────┬────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────┐
 │    5. Browser Loads Generated HTML                      │
 │    6. Browser Loads CSS & JavaScript                    │
-│    7. Page Renders with Theme & Language                │
+│    7. Firebase Integration (if configured)              │
+│    8. Page Renders with Theme & Language                │
 └─────────────────────────────────────────────────────────┘
 ```
 
-## Template Architecture (index.pug)
+## Template Architecture
 
-### Pug Structure
+### Main Template Structure
 
+**src/index.pug** - Main entry template
 ```pug
 doctype html
 html(lang=lang)
   head
-    // Meta tags
-    // CSS imports
+    // Meta tags & SEO
+    // CSS imports (main, themes, icons)
     // Font loading
   body(dir=lang === 'ar' ? 'rtl' : 'ltr', data-theme=mode)
-    // Preloader
-    // Header (Navigation)
-    // Main Banner (Hero)
-    // About Section
-    // Services Section
-    // Portfolio Section
-    // Blog Section
-    // Contact Section
-    // Footer
-    // Scripts
+    // Preloader mixin
+    // Header mixin
+    // Page content (via layout.pug or pages/*.pug)
+    // Footer mixin
+    // Scripts & Firebase integration
 ```
+
+**src/layout.pug** - Master layout wrapper
+**src/pages/*** - Page-specific templates (login, profile, signup)
+**src/mixins/*** - Reusable component mixins
 
 ### Template Variables Used
 
@@ -252,11 +287,11 @@ xxl: ≥ 1400px       /* Extra large desktop */
 
 | Script | Function |
 |--------|----------|
-| `main-custom.js` | Form handling, interactivity, event  config |
+| `main.js` | Form handling, interactivity, event config |
+| `fbase.js` | Firebase authentication and real-time database |
 | `tabs.js` | Tab switching functionality |
 | `imagesloaded.js` | Image load detection for animations |
-| `jquery.countup.min.js` | Counter animation for statistics |
-| `utils.js` | Helper functions, utilities |
+| `utils.js` | Helper functions and utilities |
 
 ## Localization Architecture
 

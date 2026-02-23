@@ -31,23 +31,49 @@ npm run watch
 
 ```
 Working Files (edit these):
-├── index.pug              ← Main template - EDIT THIS
-├── locals/
-│   ├── en.json            ← English translations - EDIT THIS
-│   └── ar.json            ← Arabic translations - EDIT THIS
-├── assets/
-│   ├── css/
-│   │   ├── main.css       ← Global styles - EDIT THIS
-│   │   ├── color-palette/ ← Theme colors - EDIT THESE
-│   │   └── *.css          ← Other styles
-│   └── js/
-│       ├── main-custom.js ← Application logic - EDIT THIS
-│       └── *.js           ← Other scripts
-└── .env                   ← Configuration - EDIT THIS
+├── src/
+│   ├── index.pug                    ← Main landing page template - EDIT THIS
+│   ├── layout.pug                   ← Master layout - EDIT THIS
+│   ├── pages/
+│   │   ├── login.pug                ← Login page - EDIT THIS
+│   │   ├── signup.pug               ← Registration page - EDIT THIS
+│   │   └── profile.pug              ← User profile page - EDIT THIS
+│   ├── mixins/
+│   │   ├── header.pug               ← Navigation header - EDIT THIS
+│   │   ├── footer.pug               ← Footer section - EDIT THIS
+│   │   ├── preloader.pug            ← Loading indicator - EDIT THIS
+│   │   ├── auth/
+│   │   │   └── navbar.pug           ← Auth navbar - EDIT THIS
+│   │   └── ...                      ← Other component mixins
+│   ├── assets/
+│   │   ├── css/
+│   │   │   ├── main.css             ← Global styles - EDIT THIS
+│   │   │   ├── chatbox.css          ← Chat component styles - EDIT THIS
+│   │   │   ├── color-palette/       ← Theme colors - EDIT THESE
+│   │   │   │   ├── Ignite.css
+│   │   │   │   ├── navy.css
+│   │   │   │   ├── loyal-green.css
+│   │   │   │   ├── new-corporate-tech.css
+│   │   │   │   └── olive-garden-feast.css
+│   │   │   └── *.css                ← Other styles
+│   │   ├── js/
+│   │   │   ├── main.js              ← Application logic - EDIT THIS
+│   │   │   ├── fbase.js             ← Firebase integration - EDIT THIS
+│   │   │   ├── tabs.js              ← Tab functionality - EDIT THIS
+│   │   │   └── *.js                 ← Other scripts
+│   │   ├── fonts/                   ← Custom fonts
+│   │   ├── images/                  ← Images
+│   │   └── sounds/                  ← Audio files (open.wav, close.mp3)
+│   └── locals/
+│       ├── en.json                  ← English translations - EDIT THIS
+│       └── ar.json                  ← Arabic translations - EDIT THIS
+└── .env                             ← Configuration - EDIT THIS
 
 Generated Files (auto-generated):
-├── output-*.html          ← Don't edit directly
-└── (regenerated on save)
+├── public/
+│   ├── output-*.html                ← Generated HTML files - DON'T EDIT DIRECTLY
+│   └── dist/                        ← Bundled assets
+└── (regenerated on save during watch mode)
 ```
 
 ### Typical Development Cycle
