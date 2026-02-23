@@ -1,0 +1,10 @@
+mixin footer()
+  footer
+      .container
+        .row
+          .col-lg-12.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.25s")
+            p
+              | #{t("footer.copyright")}
+              br
+              | #{t("footer.design.text")}
+              a(rel="nofollow", href="#") #{t("footer.design.author")}

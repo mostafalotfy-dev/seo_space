@@ -1,0 +1,138 @@
+require("./fbase.js");
+const $ = require("jquery");
+(function ($) {
+  "use strict";
+// Header Type = Fixed
+$(window).on("scroll", function () {
+  var scroll = $(window).scrollTop();
+  var box = $(".header-text").height();
+  var header = $("header").height();
+
+  if (scroll >= box - header) {
+    $("header").addClass("background-header");
+  } else {
+    $("header").removeClass("background-header");
+  }
+});
+
+// Menu Dropdown Toggle
+if ($(".menu-trigger").length) {
+  $(".menu-trigger").on("click", function () {
+    $(this).toggleClass("active");
+    $(".header-area .nav").slideToggle(200);
+  });
+}
+
+// Menu elevator animation
+$(".scroll-to-section a[href*=\\#]:not([href=\\#])").on("click", function () {
+  if (
+    location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") &&
+    location.hostname == this.hostname
+  ) {
+    var target = $(this.hash);
+    target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+    if (target.length) {
+      var width = $(window).width();
+      if (width < 991) {
+        $(".menu-trigger").removeClass("active");
+        $(".header-area .nav").slideUp(200);
+      }
+      $("html,body").animate(
+        {
+          scrollTop: target.offset().top + 1,
+        },
+        700,
+      );
+      return false;
+    }
+  }
+});
+
+$(document).on("scroll", onScroll);
+
+//smoothscroll
+$('.scroll-to-section a[href^="#"]').on("click", function (e) {
+  e.preventDefault();
+  $(document).off("scroll");
+
+  $(".scroll-to-section a").each(function () {
+    $(this).removeClass("active");
+  });
+  $(this).addClass("active");
+
+  var target = this.hash;
+
+  target = $(this.hash);
+  $("html, body")
+    .stop()
+    .animate(
+      {
+        scrollTop: target.offset().top + 1,
+      },
+      500,
+      "swing",
+      onScroll
+    );
+});
+
+function onScroll() {
+  var scrollPos = $(document).scrollTop();
+  $(".nav a").not(".dropdown-menu a").each(function () {
+  var currLink = $(this);
+  const href = currLink.attr("href");
+  // Skip empty or placeholder hrefs 
+  if (href === "#" || href === "" || href === undefined) return
+  const refElement = $(href);
+  var refTop = refElement.position().top;
+  var refBottom = refTop + refElement.outerHeight();
+
+  if (refTop <= scrollPos && refBottom > scrollPos) {
+    $(".nav ul li a").removeClass("active");
+    currLink.addClass("active");
+  } else {
+    currLink.removeClass("active");
+  }
+});
+
+}
+
+// Page loading animation
+$(window).on("load", function () {
+  $("#js-preloader").addClass("loaded");
+});
+
+// Window Resize Mobile Menu Fix
+function mobileNav() {
+  var width = $(window).width();
+  $(".submenu").on("click", function () {
+    if (width < 767) {
+      $(".submenu ul").removeClass("active");
+      $(this).find("ul").toggleClass("active");
+    }
+  });
+}
+
+mobileNav();
+
+$("#theme-toggle").on("click", function () {
+  $("body").attr(
+    "data-theme",
+    $("body").attr("data-theme") === "light" ? "dark" : "light",
+  );
+  $("body").attr(
+    "data-bs-theme",
+    $("body").attr("data-bs-theme") === "light" ? "dark" : "light",
+  );
+});
+$("#assitant").on("click", function () {
+  const audio = new Audio("./assets/sounds/open.wav");
+  audio.play();
+  $("#messageContainer").attr("style", "height:unset");
+});
+$("#closeMessageContainer").on("click", function () {
+  const audio = new Audio("./assets/sounds/close.mp3");
+  audio.play();
+  $("#messageContainer").attr("style", "height:0");
+});
+
+})($);

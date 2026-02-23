@@ -1,0 +1,25 @@
+include mixins/preloader
+include mixins/header
+include mixins/blog
+include mixins/banner
+include mixins/services
+include mixins/contact
+include mixins/footer
+include mixins/assistants
+include mixins/headSection
+include mixins/portfolio
+include mixins/about
+include mixins/auth/navbar
+doctype html
+html(lang=lang)
+  head
+    block head
+
+  body(
+    data-theme=mode,
+    data-bs-theme=mode,
+    dir=dir
+  )
+    block content
+    block scripts
+

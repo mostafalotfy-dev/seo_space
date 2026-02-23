@@ -1,0 +1,38 @@
+mixin about(lang)  
+    #about.about-us.section
+      .container
+        .row
+          .col-lg-4
+            .left-image.d-md-none.d-none.d-sm-block.d-xl-block.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.2s")
+              img(src="./assets/images/about-left-image.png", alt=t("about.alt.person_graphic"))
+          .col-lg-8.align-self-center
+            .services
+              .row
+                .col-lg-6
+                  .item.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.5s")
+                    .icon
+                      img(src="./assets/images/service-icon-01.png", alt=t("alt.reporting"))
+                    .right-text
+                      h4 #{t("about.services.data_analysis")}
+                      p Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter
+                .col-lg-6
+                  .item.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.7s")
+                    .icon
+                      img(src="./assets/images/service-icon-02.png", alt="")
+                    .right-text
+                      h4 #{t("about.services.data_reporting")}
+                      p Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter
+                .col-lg-6
+                  .item.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.9s")
+                    .icon
+                      img(src="./assets/images/service-icon-03.png", alt="")
+                    .right-text
+                      h4 #{t("about.services.web_analytics")}
+                      p Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter
+                .col-lg-6
+                  .item.wow.fadeIn(data-wow-duration="1s", data-wow-delay="1.1s")
+                    .icon
+                      img(src="./assets/images/service-icon-04.png", alt="")
+                    .right-text
+                      h4 #{t("about.services.seo_suggestions")}
+                      p #{t("about.services.description")}

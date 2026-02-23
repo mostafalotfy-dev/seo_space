@@ -1,13 +1,14 @@
 {
   "title": {
-    "main": "سيو نيكسوس - قالب HTML5 لتحسين محركات البحث"
+    "main": "سيو سبيس - قالب HTML5 لتحسين محركات البحث"
   },
-
+  
   "header": {
     "logo": {
       "part1": "سيو ",
-      "part2": "نيكسس"
-    }
+      "part2": "سبيس"
+    },
+    "mode":"الوضع الداكن / الفاتح"
   },
 
   "menu": {
@@ -18,29 +19,31 @@
     "blog": "المدونة",
     "message_us": "راسلنا",
     "contact_now": "اتصل الآن",
-    "trigger": "القائمة"
+    "trigger": "القائمة",
+    "language":"اللغة",
+    "button_content":"القائمة"
   },
 
   "banner": {
-    "welcome": "مرحبًا بك في سيو نيكسوس",
+    "welcome": "مرحبًا بك في سيو سبيس",
     "we_make": "نحن نصنع ",
     "digital_ideas": "أفكار رقمية",
     "seo": " سيو ",
-    "marketing":  "تسويق ",
+    "marketing": "تسويق ",
     "description": {
-      "part1": "سيو نيكسوس هو قالب HTML احترافي يستخدم Bootstrap 5  هذا القالب مجاني لك مقدم من Mostafa Lotfy",
+      "part1": "سيو سبيس هو قالب HTML احترافي يستخدم Bootstrap 5  هذا القالب مجاني لك مقدم من Mostafa Lotfy",
       "part2": "."
     },
     "author": "Mostafa Lotfy",
     "placeholder": {
-      "website_url": "رابط موقعك..."
+      "website_url": "أدخل الرابط لتحليل موقعك بالذكاء الاصطناعي..."
     },
     "button": {
-      "analyze": "تحليل الموقع"
+      "analyze": "تحليل الموقع "
     },
     "alt": {
       "team_meeting": "اجتماع الفريق",
-      "reporting":"تقرير"
+      "reporting": "تقرير"
     }
   },
 
@@ -87,17 +90,17 @@
           "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
           "alt": "portfolio image"
         },
-           {
+        {
           "title": "تحليل سيو",
           "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
           "alt": "portfolio image"
         },
-           {
+        {
           "title": "تحليل سيو",
           "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
           "alt": "portfolio image"
         },
-          {
+        {
           "title": "تحليل سيو",
           "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
           "alt": "portfolio image"
@@ -113,25 +116,25 @@
       "part2": " في آخر ",
       "span": "الأخبار"
     },
-     "calender":{
-      "text":"24 Mar 2026",
-      "author":"مصطفى لطفي",
-      "li":"براندينج"
+    "calender": {
+      "text": "24 Mar 2026",
+      "author": "مصطفى لطفي",
+      "li": "براندينج"
     },
-    "seo_agency":"وكالة سيو و تسويق الكتروني",
-    "description":"لوريم إيبسوم نص وهمي يُستخدم في التصميم",
+    "seo_agency": "وكالة سيو و تسويق الكتروني",
+    "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم",
     "alt": "زخرفة المدونة",
-    "info":{
-      "discover_more":"إكتشف المزيد",
-      "right_list":{
-        "date":"18 Mar 2026",
-        "backlinks":"مواقع جديدة",
-        "description":"لوريم إيبسوم نص وهمي يُستخدم في التصميم"
+    "info": {
+      "discover_more": "إكتشف المزيد",
+      "right_list": {
+        "date": "18 Mar 2026",
+        "backlinks": "مواقع جديدة",
+        "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم"
       },
-      "left_content":{
-        "date":"18 Mar 2026",
-        "title":"تحليل سيو و أفكار محتوى",
-        "description":"لوريم إيبسوم نص وهمي يُستخدم في التصميم"
+      "left_content": {
+        "date": "18 Mar 2026",
+        "title": "تحليل سيو و أفكار محتوى",
+        "description": "لوريم إيبسوم نص وهمي يُستخدم في التصميم"
       }
     }
   },
@@ -157,7 +160,60 @@
       "author": "مصطفى لطفي"
     }
   },
-   "noscript": {
+  "noscript": {
     "message": "هذا الموقع يتطلب تفعيل JavaScript ليعمل بشكل صحيح. يرجى تفعيل JavaScript في إعدادات المتصفح."
-  }
+  },
+  "ai": {
+    "message": {
+      "button_text": "ارسال",
+      "placeholder":"اكتب راسلتك هنا."
+    }
+  },
+  "signup": {
+    "heading": "انضم إلى نشرتنا الإخبارية",
+    "description": "اشترك في نشرتنا الإخبارية لتلقي أحدث التحديثات والعروض.",
+    "email_placeholder": "أدخل عنوان بريدك الإلكتروني",
+    "subscribe_button": "اشترك",
+    "title": "نشرة سيو سبيس الإخبارية",
+    "email_label": "البريد الإلكتروني",
+    "password_label" : "كلمة المرور",
+    "password_placeholder": "أدخل كلمة المرور الخاصة بك",
+    "button_text": "اشترك"
+  },
+   "nav":{
+    "logout":"تسجيل الخروج"
+   },
+  "login": {
+    "title": "تسجيل الدخول",
+    "heading": "مرحبًا بعودتك",
+    "description": "يرجى تسجيل الدخول إلى حسابك للمتابعة.",
+    "email_placeholder": "أدخل عنوان بريدك الإلكتروني",
+    "password_placeholder": "أدخل كلمة المرور الخاصة بك",
+    "button_text": "تسجيل الدخول",
+    "password_label":"كلمة المرور",
+    "email_label":"البريد الإلكتروني",
+    "name_placeholder":"أدخل اسمك"
+    
+  },
+  "profile": {
+    "title": "الملف الشخصي",
+    "heading": "ملفك الشخصي",
+    "description": "قم بإدارة معلومات ملفك الشخصي وإعداداتك.",
+    "email_label": "البريد الإلكتروني",
+    "name_label": "الاسم",
+    "update_button": "تحديث الملف الشخصي",
+    "alt": "زخرفة الملف الشخصي",
+    "email":"بريدك الإلكتروني",
+    "name_placeholder":"أدخل اسمك",
+    "email_placeholder":"أدخل عنوان بريدك الإلكتروني",
+    "button_text":"تحديث الملف الشخصي"
+   },
+   "blog_post":{
+    "title":"تحليل سيو و أفكار محتوى",
+    "date":"18 Mar 2026",
+    "author":"مصطفى لطفي",
+    "content":{
+
+     }
+   }
 }

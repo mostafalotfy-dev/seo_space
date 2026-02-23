@@ -2,12 +2,13 @@
   "title": {
     "main": "SEO Space - SEO HTML5 Template"
   },
-
+  
   "header": {
     "logo": {
       "part1": "Seo",
       "part2": "Space"
-    }
+    },
+    "mode":"Dark / Light Mode"
   },
 
   "menu": {
@@ -18,7 +19,8 @@
     "blog": "Blog",
     "message_us": "Message Us",
     "contact_now": "Contact Now",
-    "trigger": "Menu"
+    "trigger": "Menu",
+    "language":"Language"
   },
 
   "banner": {
@@ -28,7 +30,7 @@
     "seo": "SEO",
     "marketing": "Marketing",
     "description": {
-      "part1": "SEO Space is a professional looking HTML template using a Bootstrap 5 (beta 2). This CSS template is free for you provided by Mostafa Lotfy ",
+      "part1": "SEO Space is a professional looking HTML template using a Bootstrap 5 . This CSS template is free for you provided by Mostafa Lotfy ",
       "part2": "."
     },
     "author": "Mostafa Lotfy",
@@ -36,7 +38,7 @@
       "website_url": "Your website URL..."
     },
     "button": {
-      "analyze": "Analyze Site"
+      "analyze": "Analyze Site Using AI"
     },
     "alt": {
       "team_meeting": "team meeting",
@@ -65,7 +67,7 @@
       "span": "Project",
       "part3": " Ideas"
     },
-    "description": "SEO Nexus HTML5 template is free to use for your website projects. However, you are not permitted to redistribute the template ZIP file on any CSS template collection websites. Please contact us for more information. Thank you for your kind cooperation.",
+    "description": "SEO Space HTML5 template is free to use for your website projects. However, you are not permitted to redistribute the template ZIP file on any CSS template collection websites. Please contact us for more information. Thank you for your kind cooperation.",
     "skills": {
       "website_analysis": "Website Analysis",
       "seo_reports": "SEO Reports",
@@ -153,7 +155,7 @@
   },
 
   "footer": {
-    "copyright": "© Copyright 2026 SEO Nexus Co. All Rights Reserved.",
+    "copyright": "© Copyright 2026 SEO Space Co. All Rights Reserved.",
     "design": {
       "text": "Design: ",
       "author": "Mostafa Lotfy"
@@ -161,5 +163,73 @@
   },
   "noscript": {
     "message": "This website requires JavaScript to function properly. Please enable JavaScript in your browser settings."
+  },
+  "ai":{
+    "message":{
+      "button_text":"Send Message",
+      "placeholder":"Type Something."
+
+    }
+  },
+  "signup": {
+    "heading": "Join Our Newsletter",
+    "description": "Subscribe to our newsletter to receive the latest updates and offers.",
+    "email_placeholder": "Enter your email address",
+    "subscribe_button": "Subscribe",
+    "title": "Signup" ,
+    "email_label": "Email",
+    "password_label": "Password",
+    "password_placeholder": "Enter your password",
+    "button_text": "Sign Up"
+  },
+  "login":{
+    "title": "Login",
+    "heading": "Welcome Back",
+    "description": "Please login to your account to continue.",
+    "email_placeholder": "Enter your email address",
+    "password_placeholder": "Enter your password",
+    "password_label": "Password",
+    "button_text": "Login",
+    "email_label": "Email"
+  },
+  "profile": {
+    "title": "Profile",
+    "heading": "Your Profile",
+    "description": "Manage your profile information and settings.",
+    "email_label": "Email",
+    "name_label": "Name",
+    "update_button": "Update Profile",
+    "alt": "profile decoration",
+    "email":"Your Email",
+    "email_placeholder":"Enter your email address",
+    "name":"Your Name",
+    "name_placeholder":"Enter your name"
+
+   },
+   "nav":{
+    "logout":"Logout"
+   },
+   "blog_post":{
+    "title":"SEO Analysis & Content Ideas",
+    "date":"18 Mar 2026",
+    "author":"Mostafa Lotfy",
+    "content":{
+       "paragraph1":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores",
+       "paragraph2":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores",
+       "paragraph3":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
+    },
+    "related_posts":{
+       "heading":"Related Posts",
+       "post1":{
+        "date":"18 Mar 2026",
+        "title":"New Websites & Backlinks",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
+       },
+       "post2":{
+        "date":"18 Mar 2026",
+        "title":"SEO Analysis & Content Ideas",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
+       }
+    }
   }
 }

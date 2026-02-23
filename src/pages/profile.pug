@@ -1,0 +1,32 @@
+extends ../layout
+
+
+block head
+    - const dir = (lang == "ar") ? "rtl" : "ltr";
+    +headSection(lang, theme_name)
+block content
+    +navbar(lang)
+    +preloader()
+    .container.vh-100
+        .row.justify-content-center.align-items-center.vh-100
+            .col-lg-6
+                .card
+                    .card-body
+                        h2.text-center #{t("profile.title")}
+                        p.text-center #{t("profile.description")}
+                        
+                        form#profile(action="#", method="post",autocomplete="off")
+                            .mb-3
+                                label.form-label(for="name") #{t("profile.name_label")}
+                                input.form-control(type="text", id="name", name="name", placeholder=t("profile.name_placeholder"), required)
+                            .mb-3
+                                label.form-label(for="email") #{t("profile.email_label")}
+                                input.form-control(type="email", id="email", name="email", placeholder=t("profile.email_placeholder"), required)
+                            button.btn.btn-primary.w-100(type="submit") #{t("profile.button_text")}
+
+    +footer()
+block scripts
+  script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous")
+    
+  //- script(src="./assets/js/animation.js")
+  script(src="./dist/bundle.js" defer )
