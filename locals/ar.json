@@ -19,7 +19,9 @@
     "blog": "المدونة",
     "message_us": "راسلنا",
     "contact_now": "اتصل الآن",
-    "trigger": "القائمة"
+    "trigger": "القائمة",
+    "language":"اللغة",
+    "button_content":"القائمة"
   },
 
   "banner": {
@@ -178,6 +180,9 @@
     "password_placeholder": "أدخل كلمة المرور الخاصة بك",
     "button_text": "اشترك"
   },
+   "nav":{
+    "logout":"تسجيل الخروج"
+   },
   "login": {
     "title": "تسجيل الدخول",
     "heading": "مرحبًا بعودتك",

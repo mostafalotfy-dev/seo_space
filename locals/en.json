@@ -19,7 +19,8 @@
     "blog": "Blog",
     "message_us": "Message Us",
     "contact_now": "Contact Now",
-    "trigger": "Menu"
+    "trigger": "Menu",
+    "language":"Language"
   },
 
   "banner": {
@@ -205,7 +206,9 @@
     "name_placeholder":"Enter your name"
 
    },
-   
+   "nav":{
+    "logout":"Logout"
+   },
    "blog_post":{
     "title":"SEO Analysis & Content Ideas",
     "date":"18 Mar 2026",
