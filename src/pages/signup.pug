@@ -4,7 +4,7 @@ block head
     - const dir = (lang == "ar") ? "rtl" : "ltr";
     +headSection(lang, theme_name)
 block content
-    +header(lang)
+    +navbar()
     +preloader()
     form#signup(action="#", method="post", class="signup-form" dir=dir , class="vh-100 d-flex align-items-center")
         .container

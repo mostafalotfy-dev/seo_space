@@ -1,0 +1,25 @@
+mixin navbar()
+
+    - const login_page_name = "output-login-"+lang+'-'+mode+"-"+theme_name.replace(".css",'')+".html";
+    - const register_page_name = "output-signup-"+lang+'-'+mode+"-"+theme_name.replace(".css",'')+".html";
+    - const profile_page_name = "output-profile-"+lang+'-'+mode+"-"+theme_name.replace(".css",'')+".html";
+    nav.navbar.navbar-expand-lg.bg-body-tertiary
+        .container
+            a.navbar-brand(href='/public/'+full_theme_name) #{t('title.main')}
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarNav.collapse.navbar-collapse
+                ul.navbar-nav.ml-auto
+                    if user
+                        li.nav-item
+                            a.nav-link(href="/public/"+profile_page_name) #{t('profile.title')}
+                        li.nav-item
+                            a.nav-link(href="/public/"+full_theme_name) #{t('nav.logout')}
+                    else
+                        li.nav-item
+                         a.nav-link(href='/public/'+ login_page_name) #{t('login.title')}
+                        li.nav-item
+                          a.nav-link(href='/public/'+register_page_name) #{t('signup.title')}
+                        li.scroll-to-section
+                          button.btn.btn-sm.btn-primary-subtle(type="button" id="theme-toggle")
+                              i.fa.fa-moon-o
