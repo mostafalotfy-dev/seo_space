@@ -190,5 +190,43 @@
     "password_label": "Password",
     "button_text": "Login",
     "email_label": "Email"
+  },
+  "profile": {
+    "title": "Profile",
+    "heading": "Your Profile",
+    "description": "Manage your profile information and settings.",
+    "email_label": "Email",
+    "name_label": "Name",
+    "update_button": "Update Profile",
+    "alt": "profile decoration",
+    "email":"Your Email",
+    "email_placeholder":"Enter your email address",
+    "name":"Your Name",
+    "name_placeholder":"Enter your name"
+
+   },
+   
+   "blog_post":{
+    "title":"SEO Analysis & Content Ideas",
+    "date":"18 Mar 2026",
+    "author":"Mostafa Lotfy",
+    "content":{
+       "paragraph1":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores",
+       "paragraph2":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores",
+       "paragraph3":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
+    },
+    "related_posts":{
+       "heading":"Related Posts",
+       "post1":{
+        "date":"18 Mar 2026",
+        "title":"New Websites & Backlinks",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
+       },
+       "post2":{
+        "date":"18 Mar 2026",
+        "title":"SEO Analysis & Content Ideas",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
+       }
+    }
   }
 }

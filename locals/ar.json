@@ -186,6 +186,29 @@
     "password_placeholder": "أدخل كلمة المرور الخاصة بك",
     "button_text": "تسجيل الدخول",
     "password_label":"كلمة المرور",
-    "email_label":"البريد الإلكتروني"
-  }
+    "email_label":"البريد الإلكتروني",
+    "name_placeholder":"أدخل اسمك"
+    
+  },
+  "profile": {
+    "title": "الملف الشخصي",
+    "heading": "ملفك الشخصي",
+    "description": "قم بإدارة معلومات ملفك الشخصي وإعداداتك.",
+    "email_label": "البريد الإلكتروني",
+    "name_label": "الاسم",
+    "update_button": "تحديث الملف الشخصي",
+    "alt": "زخرفة الملف الشخصي",
+    "email":"بريدك الإلكتروني",
+    "name_placeholder":"أدخل اسمك",
+    "email_placeholder":"أدخل عنوان بريدك الإلكتروني",
+    "button_text":"تحديث الملف الشخصي"
+   },
+   "blog_post":{
+    "title":"تحليل سيو و أفكار محتوى",
+    "date":"18 Mar 2026",
+    "author":"مصطفى لطفي",
+    "content":{
+
+     }
+   }
 }
