@@ -3,7 +3,8 @@
 Author: Mostafa Lotfy
 -----------------------------------------------------------*/
 /* Dark Mode */
-:root,[data-theme="dark"] {
+:root,
+[data-theme="dark"] {
   --main-color: #0F172A;
   --secondary-color: #345281;
   --third-color: #3B82F6;
@@ -20,7 +21,16 @@ Author: Mostafa Lotfy
   --light-color: #fff;
   --dark-color: black;
   --history-text-color: #eee;
-
+  --linkedin-hover-color: #0e76a8;
+  --facebook-hover-color: #3b5998;
+  --youtube-hover-color: #c4302b;
+  --twitter-hover-color: #00acee;
+  --instagram-hover-color: #3f729b;
+  --disabled-color: #555555;
+  --disabled-hover-color: #777777;
+  --disabled-text-color: #999999;
+  --gray-color: #cccccc;
+  --gray-hover-color: #999999;
 
 }
 
@@ -31,23 +41,36 @@ Author: Mostafa Lotfy
 [data-theme="light"] {
   color-scheme: light;
 }
+
 ::placeholder {
   color: var(--light-color) !important;
 }
+
 /* Light Mode */
 
-:root,[data-theme="light"] {
-    --main-color: #F9FAFB;
-    --secondary-color: #f19c6e;
-    --third-color: #2563EB;
-    --accent-color: #F97316;
-    --text-color: #212121;
-    --text-hover-color: color-mix(var(--text-color) lightness(+20%));
-    --text-muted-placeholder:var(--light-color);
-    --text-muted: #000000;
-    --selection-color: var(--third-color);
-    --secondary-hover-color: #e27777;
-    --paragraph-color: #444444;
-    --title-color: var(--text-color);
-    
-  }
+:root,
+[data-theme="light"] {
+  --main-color: #F9FAFB;
+  --secondary-color: #f19c6e;
+  --third-color: #2563EB;
+  --accent-color: #F97316;
+  --text-color: #212121;
+  --text-hover-color: color-mix(var(--text-color) lightness(+20%));
+  --text-muted-placeholder: var(--light-color);
+  --text-muted: #000000;
+  --selection-color: var(--third-color);
+  --secondary-hover-color: #e27777;
+  --paragraph-color: #444444;
+  --title-color: var(--text-color);
+  --linkedin-hover-color: #0e76a8;
+  --facebook-hover-color: #3b5998;
+  --twitter-hover-color: #00acee;
+  --instagram-hover-color: #3f729b;
+  --youtube-hover-color: #c4302b;
+  --disabled-color: #555555;
+  --disabled-hover-color: #777777;
+  --disabled-text-color: #999999;
+  --gray-color: #cccccc;
+  --gray-hover-color: #999999;
+  
+}

@@ -4,7 +4,8 @@
 Author: Mostafa Lotfy
 -----------------------------------------------------------*/
 
-:root,[data-theme="dark"] {
+:root,
+[data-theme="dark"] {
 
   --main-color: #0F172A;
   --secondary-color: #345281;
@@ -19,37 +20,58 @@ Author: Mostafa Lotfy
   --paragraph-color: #818181;
   --title-color: var(--text-color);
   --history-text-color: #eee;
-
+  --linkedin-hover-color: #0e76a8;
+  --facebook-hover-color: #3b5998;
+  --twitter-hover-color: #00acee;
+  --instagram-hover-color: #3f729b;
+  --youtube-hover-color: #c4302b;
+  --disabled-color: #555555;
+  --disabled-hover-color: #777777;
+  --disabled-text-color: #999999;
+  --gray-color: #cccccc;
+  --gray-hover-color: #999999;
 
 }
+
 [data-theme="dark"] {
   color-scheme: dark;
 }
+
 [data-theme="light"] {
   color-scheme: light;
 }
 
-:root,[data-theme="light"] {
-    --main-color: #F9FAFB;
-    --secondary-color: #c55b10;
-    --third-color: #2563EB;
-    --accent-color: #F97316;
-    --text-color: #111827;
-    --text-hover-color: var(--main-color);
-    --text-muted: #6B7280;
-    --selection-color: var(--third-color);
-    --secondary-hover-color: #e27777;
-    --paragraph-color: #444444;
-    --title-color: var(--text-color);
-    --history-text-color: #4c4a4a;
+:root,
+[data-theme="light"] {
+  --main-color: #F9FAFB;
+  --secondary-color: #c55b10;
+  --third-color: #2563EB;
+  --accent-color: #F97316;
+  --text-color: #111827;
+  --text-hover-color: var(--main-color);
+  --text-muted: #6B7280;
+  --selection-color: var(--third-color);
+  --secondary-hover-color: #e27777;
+  --paragraph-color: #444444;
+  --title-color: var(--text-color);
+  --history-text-color: #4c4a4a;
+  --linkedin-hover-color: #0e76a8;
+  --facebook-hover-color: #3b5998;
+  --twitter-hover-color: #00acee;
+  --instagram-hover-color: #3f729b;
+  --youtube-hover-color: #c4302b;
+  --disabled-color: #555555;
+  --disabled-hover-color: #777777;
+  --disabled-text-color: #999999;
+  --gray-color: #cccccc;
+  --gray-hover-color: #999999;
+}
 
-  }
-[data-theme="normal"]
-{
+[data-theme="normal"] {
   color-scheme: normal;
 }
 
 
-form#contact input{
+form#contact input {
   color: var(--text-color) !important;
 }

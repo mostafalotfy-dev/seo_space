@@ -19,8 +19,18 @@ Author: Mostafa Lotfy
   --title-color: var(--text-color);
   --text-hover-color: #dda15e;
   --light-bg-color: #88d9e6;
- 
+  --linkedin-hover-color: #0e76a8;
+  --facebook-hover-color: #3b5998;
+  --twitter-hover-color: #00acee;
+  --instagram-hover-color: #3f729b;
+  --youtube-hover-color: #c4302b;
   --history-text-color: #cccccc;
+  --disabled-color: #555555;
+  --disabled-hover-color: #777777;
+  --disabled-text-color: #999999;
+  --gray-color: #cccccc;
+  --gray-hover-color: #999999;
+  
 }
 
 [data-theme="dark"] {
@@ -52,6 +62,14 @@ Author: Mostafa Lotfy
   --text-hover-color: #ffffff;
   --light-bg-color: #88d9e6;
   --history-text-color: #3a3939;
-
-
+  --linkedin-hover-color: #0e76a8;
+  --facebook-hover-color: #3b5998;
+  --twitter-hover-color: #00acee;
+  --instagram-hover-color: #3f729b;
+  --disabled-color: #555555;
+  --disabled-hover-color: #777777;
+  --disabled-text-color: #999999;
+  --gray-color: #cccccc;
+  --gray-hover-color: #999999;
+  --youtube-hover-color: #c4302b;
 }
