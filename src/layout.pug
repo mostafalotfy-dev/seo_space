@@ -10,6 +10,7 @@ include mixins/headSection
 include mixins/portfolio
 include mixins/about
 include mixins/auth/navbar
+
 doctype html
 html(lang=lang)
   head
@@ -21,5 +22,6 @@ html(lang=lang)
     dir=dir
   )
     block content
+    block footer
     block scripts
 
