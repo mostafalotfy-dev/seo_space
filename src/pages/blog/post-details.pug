@@ -1,0 +1,58 @@
+extends ../../../layout.pug
+include ../../../mixins/blog/header
+block head
+    +headSection()
+    link(href="css/templatemo-xtra-blog.css", rel="stylesheet")
+block content
+        +header()
+        .tm-mb-65
+          a.tm-social-link(rel="nofollow", href="https://fb.com/templatemo")
+            i.fab.fa-facebook.tm-social-icon
+          a.tm-social-link(href="https://twitter.com")
+            i.fab.fa-twitter.tm-social-icon
+          a.tm-social-link(href="https://instagram.com")
+            i.fab.fa-instagram.tm-social-icon
+          a.tm-social-link(href="https://linkedin.com")
+            i.fab.fa-linkedin.tm-social-icon
+        p.tm-mb-80.pr-5.text-white
+          | Xtra Blog is a multi-purpose HTML template from TemplateMo website. Left side is a sticky menu bar. Right side content will scroll up and down.
+    .container-fluid
+      main.tm-main
+        // Search form
+        .row.tm-row
+          .col-12
+            form.form-inline.tm-mb-80.tm-search-form(method="GET")
+              input.form-control.tm-search-input(name="query", type="text", placeholder="Search...", aria-label="Search")
+              button.tm-search-button(type="submit")
+                i.fas.fa-search.tm-search-icon(aria-hidden="true")
+            
+                .row.tm-row
+                    article.col-12.col-md-6.tm-post
+                        hr.tm-hr-primary
+                        a.effect-lily.tm-post-link.tm-pt-60(href="post.html")
+                        .tm-post-link-inner
+                            img.img-fluid(src="img/img-01.jpg", alt="Image")
+                        span.position-absolute.tm-new-badge New
+                        h2.tm-pt-30.tm-color-primary.tm-post-title Simple and useful HTML layout
+                        p.tm-pt-30
+                        | There is a clickable image with beautiful hover effect and active title link for each post item. 
+                        | Left side is a sticky menu bar. Right side is a blog content that will scroll up and down.
+                        .d-flex.justify-content-between.tm-pt-45
+                        span.tm-color-primary Travel . Events
+                        span.tm-color-primary June 24, 2020
+                        hr
+                        .d-flex.justify-content-between
+                        span 36 comments
+                        span by Admin Nat
+                
+            
+block footer
+        footer.row.tm-row
+          hr.col-12
+          .col-md-6.col-12.tm-color-gray
+            | Design:
+            a.tm-external-link(rel="nofollow", target="_parent", href="https://templatemo.com") TemplateMo
+          .col-md-6.col-12.tm-color-gray.tm-copyright
+            | Copyright 2020 Xtra Blog Company Co. Ltd.
+   
+    script(src="js/main.js" defer)

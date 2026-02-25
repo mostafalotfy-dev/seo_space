@@ -1,0 +1,63 @@
+extends ../../layout
+include ../../mixins/blog/blog-header
+include ../../mixins/blog/blog-head-section
+include ../../mixins/blog/blog-footer
+block head
+    +blog-head-section()
+block content
+    +blog-header()
+    +preloader()
+    .container-fluid
+        main.tm-main
+            // Search form
+            .row.tm-row
+                .col-12
+                    form.form-inline.tm-mb-80.tm-search-form(method="GET")
+                        input.form-control.tm-search-input(name="query", type="text", placeholder="Search...", aria-label="Search")
+                        button.tm-search-button(type="submit")
+                            i.fas.fa-search.tm-search-icon(aria-hidden="true")
+            .row.tm-row
+                each post in posts
+                
+                    article.col-12.col-md-6.tm-post
+                        hr.tm-hr-primary
+                        a.effect-lily.tm-post-link.tm-pt-60(href="post.html")
+                            .tm-post-link-inner
+                                img.img-fluid(src="./assets/images/img-01.jpg", alt="Image")
+                            span.position-absolute.tm-new-badge New
+                            h2.tm-pt-30.tm-color-primary.tm-post-title Simple and useful HTML layout
+                        p.tm-pt-30
+                            | There is a clickable image with beautiful hover effect and active title link for each post item. 
+                            | Left side is a sticky menu bar. Right side is a blog content that will scroll up and down.
+                        .d-flex.justify-content-between.tm-pt-45
+                            span.tm-color-primary Travel . Events
+                            span.tm-color-primary June 24, 2020
+                        hr
+                        .d-flex.justify-content-between
+                            span 36 comments
+                            span by Admin Nat
+            .row.tm-row.tm-mt-100.tm-mb-75
+                .tm-prev-next-wrapper
+                    a.mb-2.tm-btn.tm-btn-primary.tm-prev-next.disabled.tm-mr-20(href="#") Prev
+                    a.mb-2.tm-btn.tm-btn-primary.tm-prev-next(href="#") Next
+                .tm-paging-wrapper
+                    span.d-inline-block.me-3 Page
+                    nav.tm-paging-nav.d-inline-block
+                        ul
+                            li.tm-paging-item.active
+                                a.mb-2.tm-btn.tm-paging-link(href="#") 1
+                            li.tm-paging-item
+                                a.mb-2.tm-btn.tm-paging-link(href="#") 2
+                            li.tm-paging-item
+                                a.mb-2.tm-btn.tm-paging-link(href="#") 3
+                            li.tm-paging-item
+                                a.mb-2.tm-btn.tm-paging-link(href="#") 4
+block footer
+    +blog-footer()
+
+    
+block scripts
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous")
+    script(src="./dist/bundle.js" defer )
+    noscript
+     | Enable Javascript
