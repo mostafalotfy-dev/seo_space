@@ -4,7 +4,9 @@ const concat = require("gulp-concat");
 const rename = require("gulp-rename");
 const path = require("path");
 require("dotenv").config();
-
+const fs = require("fs");
+console.log("copying images...");
+fs.cpSync("src/assets/images", "public/assets/images", { recursive: true });
 const themes = [
   "olive-garden-feast.css",
   "navy.css",
@@ -39,12 +41,17 @@ gulp.task("app-js", function () {
 // CSS task
 gulp.task("app-css", function () {
   return gulp
-    .src(["src/assets/css/*.css", "src/assets/css/*.sass"])
+    .src(["src/assets/css/*.css", "!src/assets/css/(blog|all.min).css"])
     .pipe(concat("app.css"))
     .pipe(gulp.dest("public/dist/css"))
     .on("end", () => {
       gulp.src("src/assets/css/color-palette/*.css")
         .pipe(gulp.dest("public/dist/css/color-palette"));
+      gulp.src("src/assets/css/blog.css")
+        .pipe(gulp.dest("public/dist/css/"));
+        fs.cpSync("src/assets/fonts", "public/dist/webfonts", { recursive: true });
+        gulp.src("src/assets/css/all.min.css")
+        .pipe(gulp.dest("public/dist/css/"));
     });
 });
 
@@ -58,7 +65,7 @@ gulp.task("pug", function () {
         const username = lang === "en" ? "Mostafa" : "مصطفى";
 
         tasks.push(
-          gulp.src(["src/pages/*.pug","src/index.pug"])
+          gulp.src(["src/pages/*.pug","src/index.pug","src/pages/blog/main.pug"])
             .pipe(rename(function (filePath) {
               const baseName = path.basename(filePath.basename, ".pug");
               filePath.basename = `output-${baseName}-${lang}-${mode}-${theme.replace(".css", "")}`;
@@ -72,10 +79,15 @@ gulp.task("pug", function () {
                 lang,
                 theme_name: theme,
                 mode,
+                dir: lang === "ar" ? "rtl" : "ltr",
                 t: getTranslator(lang),
                 user:true,
                 full_theme_name : "output-index-"+lang+"-"+mode+"-"+theme.replace(".css","")+".html",
-                
+                posts: [
+                  { title: "Post 1",image:"https://placehold.co/600x400",slug:"post-1",excerpt:"hello", content: "Content of post 1" },
+                  { title: "Post 2",image:"https://placehold.co/600x400",slug:"post-2",excerpt:"hello", content: "Content of post 2" },
+                  { title: "Post 3",image:"https://placehold.co/600x400",slug:"post-3",excerpt:"hello", content: "Content of post 3" },
+                ],
               }
             }))
             .pipe(gulp.dest("public/"))
@@ -92,8 +104,11 @@ gulp.task("watch", function () {
   gulp.watch("src/assets/js/*.{js,mjs}", gulp.series("app-js"));
   gulp.watch(["src/assets/css/*.css", "src/assets/css/*.sass"], gulp.series("app-css"));
   gulp.watch("src/assets/css/color-palette/*.css", gulp.series("app-css"));
-  gulp.watch("src/**/*.pug", gulp.series("pug"));
+  gulp.watch("src/pages/*.pug", gulp.series("pug"));
+  gulp.watch("src/pages/blog/*.pug", gulp.series("pug"));
+  gulp.watch("src/index.pug", gulp.series("pug"));
   gulp.watch("locals/*.json", gulp.series("pug"));
+  
 });
 
 // Default task
