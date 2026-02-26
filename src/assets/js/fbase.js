@@ -181,62 +181,60 @@ const template = `
     %s</div>
     </bdi>`;
 
-const messageForm = $("#messageForm") ;
+const messageForm = $("#messageForm");
 const messageInput = $("form#messageForm .input");
+const messageArea = $("#messageArea");
+
 messageForm.on("submit", async (e) => {
   e.preventDefault();
-  const messageArea = $("#messageArea");
 
-  const isEmpty = messageInput.value == "";
-  if (isEmpty) {
-    return;
-  }
   const messageText = messageInput.val().trim();
-  // User
+  if (!messageText) {
+    return; // skip empty submissions
+  }
+  const firstMessage = $(
+      `<p class='rounded col-sm-6 bg-secondary-subtle p-1 text-end d-block text-break'>${messageText}</p>`
+    )
+  // Show user message
   $(messageArea).append(
-    $(
-      `<p class='rounded col-sm-6 bg-primary-subtle  p-1 text-end d-block text-break'>${messageText}</p>`,
-    ),
+    firstMessage
   );
-  const cachedMesssage = messageInput.val();
-  messageInput.val("");
-  // Model Template
-
+firstMessage[0].scrollIntoView({ behavior: "smooth", block: "start" });
+  const cachedMessage = messageText;
+  messageInput.val(""); // clear input
+  let replyText;
   try {
     const result = await modelPackage.generateContent({
       contents: [
-        { role: "model", parts: [{ text: systemPrompt }] },
-        { role: "user", parts: [{ text: cachedMesssage }] },
+        { role: "model", parts: [{ text: systemPrompt || "" }] },
+        { role: "user", parts: [{ text: cachedMessage || "" }] },
       ],
     });
 
+    replyText =
+      result?.response?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+    const currentReply = $(
+        template.replace(
+          "%s",
+          DOMPurify.sanitize(markdown.default(replyText))
+        )
+      );
     $(messageArea).append(
-      $(
-        template.replace(
-          "%s",
-          DOMPurify.sanitize(
-            markdown.default(
-              result.response.candidates[0].content.parts[0].text,
-            ),
-          ),
-        ),
-      ),
+      currentReply
     );
+    currentReply[0].scrollIntoView({ behavior: "smooth", block: "start" });
   } catch (error) {
-    if (error.code == "fetch-error") {
-      $(
-        template.replace(
-          "%s",
-          `${error.code} Something went wrong Please Contact the Developer`,
-        ),
-      ).appendTo(messageArea);
-    }
+    const errorMsg =
+      error.code === "fetch-error"
+        ? `${error.code} Something went wrong. Please contact the developer.`
+        : `Unexpected error: ${error.message}`;
+
+    $(template.replace("%s", errorMsg)).appendTo(messageArea);
   }
-  messageArea.scrollTo({
-    top: 10000000,
-    behavior: "smooth",
-  });
+
+ 
 });
+
 document.addEventListener("DOMContentLoaded", () => {
  $("#search")
     .on("submit", async function (e) {
