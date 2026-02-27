@@ -6,9 +6,9 @@ $(".navbar-toggler").on("click", function (e) {
 });
 
 $("html").on("click", function (e) {
-  var header = document.getElementById("tm-header");
+  var header = $("#tm-header");
 
-  if (!header.contains(e.target)) {
+  if (!header.has(e.target)) {
     $(".tm-header").removeClass("show");
   }
 });
