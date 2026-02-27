@@ -30,13 +30,7 @@ function getTranslator(lang) {
   };
 }
 
-// JS task
-gulp.task("app-js", function () {
-  return gulp
-    .src("src/assets/js/*.{js,mjs}")
-    .pipe(concat("app.js"))
-    .pipe(gulp.dest("public/dist"));
-});
+
 
 // CSS task
 gulp.task("app-css", function () {
@@ -101,8 +95,8 @@ gulp.task("pug", function () {
 
 // Watch task
 gulp.task("watch", function () {
-  gulp.watch("src/assets/js/*.{js,mjs}", gulp.series("app-js"));
-  gulp.watch(["src/assets/css/*.css", "src/assets/css/*.sass"], gulp.series("app-css"));
+  
+  gulp.watch("src/assets/css/*.css", gulp.series("app-css"));
   gulp.watch("src/assets/css/color-palette/*.css", gulp.series("app-css"));
   gulp.watch("src/pages/*.pug", gulp.series("pug"));
   gulp.watch("src/pages/blog/*.pug", gulp.series("pug"));
@@ -112,4 +106,4 @@ gulp.task("watch", function () {
 });
 
 // Default task
-exports.default = gulp.series("app-css", "app-js", "pug");
+exports.default = gulp.series("app-css", "pug");
