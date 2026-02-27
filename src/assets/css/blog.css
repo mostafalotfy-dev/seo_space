@@ -87,7 +87,7 @@ hr {
 }
 
 .tm-nav-link {
-    color: white;
+    color: var(--text-color);
     background-color: transparent;
     height: 75px;
     width: 100%;
@@ -101,8 +101,8 @@ hr {
 .tm-nav-item:hover .tm-nav-link,
 .tm-nav-item.active .tm-nav-link
  {
-    color: var(--text-muted);
-    background-color: white;
+    color: var(--text-hover-color);
+    background-color: var(--secondary-color);
     text-decoration: none;
 }
 
