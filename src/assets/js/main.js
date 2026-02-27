@@ -1,4 +1,5 @@
 require("./fbase.js");
+require("./menu-toggler.js")
 const $ = require("jquery");
 (function ($) {
   "use strict";
