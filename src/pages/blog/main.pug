@@ -13,29 +13,48 @@ block content
             .row.tm-row
                 .col-12
                     form.form-inline.tm-mb-80.tm-search-form(method="GET")
-                        input.form-control.tm-search-input(name="query", type="text", placeholder="Search...", aria-label="Search")
+                        input.form-control.tm-search-input(name="query", type="search", placeholder=t("search"), aria-label=t("search"))
                         button.tm-search-button(type="submit")
                             i.fas.fa-search.tm-search-icon(aria-hidden="true")
             .row.tm-row
-                each post in posts
+                each post in t("blog_post.content")
                 
                     article.col-12.col-md-6.tm-post
                         hr.tm-hr-primary
-                        a.effect-lily.tm-post-link.tm-pt-60(href="post.html")
+                        //- TODO Add Real page Name
+                        a.effect-lily.tm-post-link.tm-pt-60(href="post-details")
                             .tm-post-link-inner
                                 img.img-fluid(src="./assets/images/img-01.jpg", alt="Image")
-                            span.position-absolute.tm-new-badge New
-                            h2.tm-pt-30.tm-color-primary.tm-post-title Simple and useful HTML layout
+                            span.position-absolute.tm-new-badge #{t("blog_post.new_badge")}
+                            h2.tm-pt-30.tm-color-primary.tm-post-title #{post.title}
                         p.tm-pt-30
-                            | There is a clickable image with beautiful hover effect and active title link for each post item. 
-                            | Left side is a sticky menu bar. Right side is a blog content that will scroll up and down.
+                             #{post.description.part1}
+                             #{post.description.part2}
                         .d-flex.justify-content-between.tm-pt-45
-                            span.tm-color-primary Travel . Events
-                            span.tm-color-primary June 24, 2020
+                            span.tm-color-primary #{post.comment}
+                            span.tm-color-primary 2026
                         hr
                         .d-flex.justify-content-between
-                            span 36 comments
-                            span by Admin Nat
+                            span #{post.comments_count}
+                            span #{post.by_who}
+                    article.col-12.col-md-6.tm-post
+                        hr.tm-hr-primary
+                        //- TODO Add Real page Name
+                        a.effect-lily.tm-post-link.tm-pt-60(href="post-details")
+                            .tm-post-link-inner
+                                img.img-fluid(src="./assets/images/img-01.jpg", alt="Image")
+                           
+                            h2.tm-pt-30.tm-color-primary.tm-post-title #{post.title}
+                        p.tm-pt-30
+                            | #{post.description.part1}
+                            | #{post.description.part2}
+                        .d-flex.justify-content-between.tm-pt-45
+                            span.tm-color-primary #{post.comment}
+                            span.tm-color-primary 2026
+                        hr
+                        .d-flex.justify-content-between
+                            span #{post.comments_count}
+                            span #{post.by_who}
             .row.tm-row.tm-mt-100.tm-mb-75
                 .tm-prev-next-wrapper
                     a.mb-2.tm-btn.tm-btn-primary.tm-prev-next.disabled.tm-mr-20(href="#") Prev
@@ -59,5 +78,6 @@ block footer
 block scripts
     script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous")
     script(src="./dist/bundle.js" defer )
+    
     noscript
      | Enable Javascript

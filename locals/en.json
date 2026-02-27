@@ -2,7 +2,7 @@
   "title": {
     "main": "SEO Space - SEO HTML5 Template"
   },
-  
+  "app_desc":"Seo Space is a multi-purpose HTML template from TemplateMo website. Left side is a sticky menu bar. Right side content will scroll up and down.",
   "header": {
     "logo": {
       "part1": "Seo",
@@ -139,7 +139,7 @@
 
     }
   },
-
+  "search":"Search...",
   "contact": {
     "heading": "Feel Free To Send Us a Message About Your Website Needs",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores",
@@ -210,14 +210,27 @@
     "logout":"Logout"
    },
    "blog_post":{
-    "title":"SEO Analysis & Content Ideas",
-    "date":"18 Mar 2026",
-    "author":"Mostafa Lotfy",
-    "content":{
-       "paragraph1":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores",
-       "paragraph2":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores",
-       "paragraph3":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
-    },
+   
+    "content":[
+      {
+       "description":{"part1":"There is a clickable image with beautiful hover effect and active title link for each post item.","part2":"Left side is a sticky menu bar. Right side is a blog content that will scroll up and down."},
+      "comment":"Travel . Events",
+      "by_who":"by Admin Nat",
+       "title":"Simple and useful HTML layout"
+      },
+       {
+      "description":{"part1":"There is a clickable image with beautiful hover effect and active title link for each post item.","part2":"Left side is a sticky menu bar. Right side is a blog content that will scroll up and down."},
+      "comment":"Travel . Events",
+      "by_who":"by Admin Nat",
+        "title":"Simple and useful HTML layout"
+      },
+       {
+      "description":{"part1":"There is a clickable image with beautiful hover effect and active title link for each post item.","part2":"Left side is a sticky menu bar. Right side is a blog content that will scroll up and down."},
+      "comment":"Travel . Events",
+      "by_who":"by Admin Nat",
+        "title":"Simple and useful HTML layout"
+      }
+    ],
     "related_posts":{
        "heading":"Related Posts",
        "post1":{

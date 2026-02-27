@@ -1,6 +1,5 @@
 include nav
 mixin blog-header()
-    
     header#tm-header.tm-header
         .tm-header-wrapper
             button.navbar-toggler(type="button", aria-label="Toggle navigation")
@@ -8,7 +7,7 @@ mixin blog-header()
             .tm-site-header
                 .mb-3.mx-auto.tm-site-logo
                     i.fas.fa-times.fa-2x
-                h1.text-center Xtra Blog
+                h1.text-center #{t("title.main")}
             +nav()
             .tm-mb-65
                 a.tm-social-link(rel="nofollow", href="https://fb.com/templatemo")
@@ -20,4 +19,4 @@ mixin blog-header()
                 a.tm-social-link(href="https://linkedin.com")
                     i.fab.fa-linkedin.tm-social-icon
             p.tm-mb-80.pr-5.text-white
-                | Xtra Blog is a multi-purpose HTML template from TemplateMo website. Left side is a sticky menu bar. Right side content will scroll up and down.
+                | #{t("app_desc")}
