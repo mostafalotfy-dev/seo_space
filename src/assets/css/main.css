@@ -384,6 +384,8 @@ header
 .header-area .main-nav {
   min-height: 80px;
   background: transparent;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-area .main-nav .logo {
@@ -403,6 +405,7 @@ header
 .header-area .main-nav .logo h4 {
   font-size: 24px;
   font-weight: 700;
+  margin-bottom:0px;
   text-transform: uppercase;
   color: #03a4ed;
   line-height: 100px;
@@ -426,7 +429,7 @@ header
 }
 
 .header-area .main-nav .nav {
-  float: right;
+  
   margin-top: 30px;
   margin-right: 0px;
   background-color: transparent;
@@ -436,6 +439,7 @@ header
   transition: all 0.3s ease 0s;
   position: relative;
   z-index: 999;
+  justify-content: flex-end;
 }
 
 .header-area .main-nav .nav li {
@@ -443,10 +447,10 @@ header
   padding-right: 20px;
 }
 
-.header-area .main-nav .nav li:last-child {
+/* .header-area .main-nav .nav li:last-child {
   padding-right: 0px;
   padding-left: 40px;
-}
+} */
 
 .header-area .main-nav .nav li:last-child a,
 .background-header .main-nav .nav li:last-child a {
@@ -553,7 +557,7 @@ header
 }
 
 .header-area .main-nav .nav li.submenu ul li a:hover {
-  background: #fff;
+  background: var(--secondary-color);
   color: var(--text-hover-color) !important;
   padding-left: 25px;
 }
