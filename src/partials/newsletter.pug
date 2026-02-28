@@ -1,0 +1,13 @@
+form#signup(action="#", method="post", class="signup-form  z-3" dir=dir )
+        .container
+            .row.justify-content-center.mt-5
+                .col-lg-12
+                    h2.text-center #{t("signup.title")}
+                    p.text-center #{t("signup.description")}
+                        .mb-3
+                            label.form-label(for="email") #{t("signup.email_label")}
+                            input.form-control(type="email", id="email", name="email", placeholder=t("signup.email_placeholder"), required)
+                        .mb-3
+                            label.form-label(for="password") #{t("signup.password_label")}
+                            input.form-control(type="password", id="password", name="password", placeholder=t("signup.password_placeholder"), required)
+                        button.btn.btn-primary.w-100(type="submit") #{t("signup.button_text")}

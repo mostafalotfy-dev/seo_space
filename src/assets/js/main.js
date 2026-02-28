@@ -136,4 +136,13 @@ $("#closeMessageContainer").on("click", function () {
   $("#messageContainer").attr("style", "height:0");
 });
 
+setTimeout(()=>{
+// eslint-disable-next-line no-undef
+const newsletterModal = new bootstrap.Modal("#newsletter")
+newsletterModal.show()
+
+
+},5*30*1000)
+
+
 })($);

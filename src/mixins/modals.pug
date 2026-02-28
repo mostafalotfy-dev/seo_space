@@ -1,0 +1,19 @@
+mixin defaultModal(id,title)
+    .modal.fade(tabindex="-1" id=id )
+      .modal-dialog
+        .modal-content
+            .modal-header
+                if lang == "ar"
+                    button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+                    h5.modal-title #{title}
+                else
+                    h5.modal-title #{title} 
+                    button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+                    
+            .modal-body
+                block 
+                
+            .modal-footer
+                button(type="button" class="btn btn-secondary" data-bs-dismiss="modal") #{t("modal")}
+
+                
