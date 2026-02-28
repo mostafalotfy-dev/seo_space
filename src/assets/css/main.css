@@ -248,13 +248,13 @@ body {
 
 ::-webkit-selection {
   background: var(--selection-color);
-  color: var(--light-color);
+  color: var(--text-color);
 }
 
 ::-webkit-selection,
 ::-moz-selection {
   background: var(--selection-color);
-  color: var(--light-color);
+  color: var(--text-color);
 }
 
 @media (max-width: 991px) {

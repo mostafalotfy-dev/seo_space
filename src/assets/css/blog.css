@@ -1,6 +1,66 @@
 /* eslint-disable css/no-invalid-properties */
 
-
+/****************************************
+    Author: Mostafa Lotfy
+*****************************************/
+.blog ,[data-theme="dark"]{
+  --light-color: #fff;
+  --dark-color: black;
+  --main-color: #04211D;
+  --secondary-color: #d48f5d;
+  --third-color: #272932;
+  --accent-color: #c92a2a;
+  --text-color: #E7ECEF;
+  --text-muted: #94A3B8;
+  --font-family: 'Poppins', sans-serif;
+  --selection-color: var(--third-color);
+  --secondary-hover-color: #e27777;
+  --paragraph-color: #ffffff;
+  --title-color: var(--text-color);
+  --text-hover-color: #dda15e;
+  --light-bg-color: #88d9e6;
+  --linkedin-hover-color: #0e76a8;
+  --facebook-hover-color: #3b5998;
+  --twitter-hover-color: #00acee;
+  --instagram-hover-color: #3f729b;
+  --youtube-hover-color: #c4302b;
+  --history-text-color: #cccccc;
+  --disabled-color: #555555;
+  --disabled-hover-color: #777777;
+  --disabled-text-color: #999999;
+  --gray-color: #cccccc;
+  --gray-hover-color: #999999;
+  
+}
+.blog,
+[data-theme="light"] {
+  --light-color: #fff;
+  --dark-color: black;
+  --main-color: #F9FAFB;
+  --secondary-color: #217054;
+  --third-color: #2563EB;
+  --accent-color: #53957f;
+  --text-color: var(--dark-color);
+  --text-muted: #000000;
+  --selection-color: var(--third-color);
+  --secondary-hover-color: #e27777;
+  --paragraph-color: #444444;
+  --title-color: #212121;
+  --font-family: 'Poppins', sans-serif;
+  --text-hover-color: #ffffff;
+  --light-bg-color: #88d9e6;
+  --history-text-color: #3a3939;
+  --linkedin-hover-color: #0e76a8;
+  --facebook-hover-color: #3b5998;
+  --twitter-hover-color: #00acee;
+  --instagram-hover-color: #3f729b;
+  --disabled-color: #555555;
+  --disabled-hover-color: #777777;
+  --disabled-text-color: #999999;
+  --gray-color: #cccccc;
+  --gray-hover-color: #999999;
+  --youtube-hover-color: #c4302b;
+}
 html { overflow-x: hidden; }
 
 body {
