@@ -98,10 +98,10 @@ gulp.task("watch", function () {
   
   gulp.watch("src/assets/css/*.css", gulp.series("app-css"));
   gulp.watch("src/assets/css/color-palette/*.css", gulp.series("app-css"));
-  gulp.watch("src/pages/*.pug", gulp.series("pug"));
-  gulp.watch("src/pages/blog/*.pug", gulp.series("pug"));
-  gulp.watch("src/index.pug", gulp.series("pug"));
-  gulp.watch("locals/*.json", gulp.series("pug"));
+  
+  gulp.watch(["src/**/*.pug","locals/*.json","!src/assets","!src/docs"], gulp.series("pug"));
+  
+ 
   
 });
 
