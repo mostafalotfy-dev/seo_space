@@ -2,6 +2,8 @@
   "title": {
     "main": "SEO Space - SEO HTML5 Template"
   },
+  "modal":"Close",
+  "newsletter":"Signup Newsletter",
   "app_desc":"Seo Space is a multi-purpose HTML template from TemplateMo website. Left side is a sticky menu bar. Right side content will scroll up and down.",
   "header": {
     "logo": {
@@ -203,8 +205,8 @@
     "email":"Your Email",
     "email_placeholder":"Enter your email address",
     "name":"Your Name",
-    "name_placeholder":"Enter your name"
-
+    "name_placeholder":"Enter your name",
+    "button_text":"Sign Up"
    },
    "nav":{
     "logout":"Logout"
