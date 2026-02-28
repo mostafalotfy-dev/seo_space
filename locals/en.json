@@ -2,15 +2,82 @@
   "title": {
     "main": "SEO Space - SEO HTML5 Template"
   },
-  "modal":"Close",
-  "newsletter":"Signup Newsletter",
-  "app_desc":"Seo Space is a multi-purpose HTML template from TemplateMo website. Left side is a sticky menu bar. Right side content will scroll up and down.",
+  "price_title":"Pricing Tables",
+  "price_description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+  "prices": [
+    {
+      "recommended":"",
+      "price_sign": "r.s",
+      "main_title": "Starter",
+      "price_in_text": "149",
+      "features": [
+        {
+          "feature": "Basic website SEO audit"
+        },
+        {
+          "feature": "On-page SEO optimization (up to 5 pages)"
+        },
+        {
+          "feature": "Keyword research (5–7 keywords)"
+        },
+        {
+          "feature": "SEO suggestions report"
+        },
+        {
+          "feature": "Monthly performance summary"
+        }
+      ]
+    },
+    {
+      "recommended":"Recommended",
+      "price_sign": "r.s",
+      "main_title": "Basic",
+      "price_in_text": "349",
+      "features": [
+        {
+          "feature": "Basic website SEO audit"
+        },
+        {
+          "feature": "On-page SEO optimization (up to 5 pages)"
+        },
+        {
+          "feature": "SEO suggestions report"
+        },
+        {
+          "feature": "Monthly performance summary"
+        }
+      ]
+    },
+    {
+      "recommended":"",
+      "price_sign": "r.s",
+      "main_title": "Advanced",
+      "price_in_text": "699",
+      "features": [
+        {
+          "feature": "Advanced technical SEO Website performance & speed optimization"
+        },
+        {
+          "feature": "Competitor analysis Content growth ideas & backlink strategy"
+        },
+        {
+          "feature": "Detailed SEO & analytics reporting"
+        },
+        {
+          "feature": "Continuous optimization & monitoring"
+        }
+      ]
+    }
+  ],
+  "modal": "Close",
+  "newsletter": "Signup Newsletter",
+  "app_desc": "Seo Space is a multi-purpose HTML template from TemplateMo website. Left side is a sticky menu bar. Right side content will scroll up and down.",
   "header": {
     "logo": {
       "part1": "Seo",
       "part2": "Space"
     },
-    "mode":"Dark / Light Mode"
+    "mode": "Dark / Light Mode"
   },
 
   "menu": {
@@ -22,7 +89,7 @@
     "message_us": "Message Us",
     "contact_now": "Contact Now",
     "trigger": "Menu",
-    "language":"Language"
+    "language": "Language"
   },
 
   "banner": {
@@ -91,17 +158,17 @@
           "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
           "alt": "portfolio image"
         },
-           {
+        {
           "title": "SEO Analysis",
           "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
           "alt": "portfolio image"
         },
-           {
+        {
           "title": "SEO Analysis",
           "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
           "alt": "portfolio image"
         },
-          {
+        {
           "title": "SEO Analysis",
           "description": "Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.",
           "alt": "portfolio image"
@@ -109,39 +176,37 @@
       ]
     }
   },
-  
+
   "blog": {
     "heading": {
       "part1": "Check Out What Is ",
       "em": "Trending",
       "part2": " In Our Latest ",
       "span": "News"
-      
     },
-    "calender":{
-      "text":"24 Mar 2026",
-      "author":"Mostafa Lotfy",
-      "li":"Branding"
+    "calender": {
+      "text": "24 Mar 2026",
+      "author": "Mostafa Lotfy",
+      "li": "Branding"
     },
-    "seo_agency":"SEO Agency & Digital Marketing",
-    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores",
+    "seo_agency": "SEO Agency & Digital Marketing",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores",
     "alt": "blog decoration",
-    "info":{
-      "discover_more":"Discover More",
-      "right_list":{
-        "date":"18 Mar 2026",
-        "backlinks":"New Websites & Backlinks",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
+    "info": {
+      "discover_more": "Discover More",
+      "right_list": {
+        "date": "18 Mar 2026",
+        "backlinks": "New Websites & Backlinks",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
       },
-      "left_content":{
-        "date":"18 Mar 2026",
-        "title":"SEO Analysis & Content Ideas",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
+      "left_content": {
+        "date": "18 Mar 2026",
+        "title": "SEO Analysis & Content Ideas",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
       }
-
     }
   },
-  "search":"Search...",
+  "search": "Search...",
   "contact": {
     "heading": "Feel Free To Send Us a Message About Your Website Needs",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores",
@@ -166,11 +231,10 @@
   "noscript": {
     "message": "This website requires JavaScript to function properly. Please enable JavaScript in your browser settings."
   },
-  "ai":{
-    "message":{
-      "button_text":"Send Message",
-      "placeholder":"Type Something."
-
+  "ai": {
+    "message": {
+      "button_text": "Send Message",
+      "placeholder": "Type Something."
     }
   },
   "signup": {
@@ -178,13 +242,13 @@
     "description": "Subscribe to our newsletter to receive the latest updates and offers.",
     "email_placeholder": "Enter your email address",
     "subscribe_button": "Subscribe",
-    "title": "Signup" ,
+    "title": "Signup",
     "email_label": "Email",
     "password_label": "Password",
     "password_placeholder": "Enter your password",
     "button_text": "Sign Up"
   },
-  "login":{
+  "login": {
     "title": "Login",
     "heading": "Welcome Back",
     "description": "Please login to your account to continue.",
@@ -202,49 +266,57 @@
     "name_label": "Name",
     "update_button": "Update Profile",
     "alt": "profile decoration",
-    "email":"Your Email",
-    "email_placeholder":"Enter your email address",
-    "name":"Your Name",
-    "name_placeholder":"Enter your name",
-    "button_text":"Sign Up"
-   },
-   "nav":{
-    "logout":"Logout"
-   },
-   "blog_post":{
-   
-    "content":[
+    "email": "Your Email",
+    "email_placeholder": "Enter your email address",
+    "name": "Your Name",
+    "name_placeholder": "Enter your name",
+    "button_text": "Sign Up"
+  },
+  "nav": {
+    "logout": "Logout"
+  },
+  "blog_post": {
+    "content": [
       {
-       "description":{"part1":"There is a clickable image with beautiful hover effect and active title link for each post item.","part2":"Left side is a sticky menu bar. Right side is a blog content that will scroll up and down."},
-      "comment":"Travel . Events",
-      "by_who":"by Admin Nat",
-       "title":"Simple and useful HTML layout"
+        "description": {
+          "part1": "There is a clickable image with beautiful hover effect and active title link for each post item.",
+          "part2": "Left side is a sticky menu bar. Right side is a blog content that will scroll up and down."
+        },
+        "comment": "Travel . Events",
+        "by_who": "by Admin Nat",
+        "title": "Simple and useful HTML layout"
       },
-       {
-      "description":{"part1":"There is a clickable image with beautiful hover effect and active title link for each post item.","part2":"Left side is a sticky menu bar. Right side is a blog content that will scroll up and down."},
-      "comment":"Travel . Events",
-      "by_who":"by Admin Nat",
-        "title":"Simple and useful HTML layout"
+      {
+        "description": {
+          "part1": "There is a clickable image with beautiful hover effect and active title link for each post item.",
+          "part2": "Left side is a sticky menu bar. Right side is a blog content that will scroll up and down."
+        },
+        "comment": "Travel . Events",
+        "by_who": "by Admin Nat",
+        "title": "Simple and useful HTML layout"
       },
-       {
-      "description":{"part1":"There is a clickable image with beautiful hover effect and active title link for each post item.","part2":"Left side is a sticky menu bar. Right side is a blog content that will scroll up and down."},
-      "comment":"Travel . Events",
-      "by_who":"by Admin Nat",
-        "title":"Simple and useful HTML layout"
+      {
+        "description": {
+          "part1": "There is a clickable image with beautiful hover effect and active title link for each post item.",
+          "part2": "Left side is a sticky menu bar. Right side is a blog content that will scroll up and down."
+        },
+        "comment": "Travel . Events",
+        "by_who": "by Admin Nat",
+        "title": "Simple and useful HTML layout"
       }
     ],
-    "related_posts":{
-       "heading":"Related Posts",
-       "post1":{
-        "date":"18 Mar 2026",
-        "title":"New Websites & Backlinks",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
-       },
-       "post2":{
-        "date":"18 Mar 2026",
-        "title":"SEO Analysis & Content Ideas",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
-       }
+    "related_posts": {
+      "heading": "Related Posts",
+      "post1": {
+        "date": "18 Mar 2026",
+        "title": "New Websites & Backlinks",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
+      },
+      "post2": {
+        "date": "18 Mar 2026",
+        "title": "SEO Analysis & Content Ideas",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut labore et dolores"
+      }
     }
   }
 }
