@@ -395,7 +395,6 @@ Format: `MAJOR.MINOR.PATCH`
 - [ ] Newsletter signup integration
 - [ ] Client testimonials slider
 - [ ] Team member showcase section
-- [ ] Pricing section
 - [ ] Blog listing and detail pages
 - [ ] Search functionality
 - [ ] Analytics integration examples
