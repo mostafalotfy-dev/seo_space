@@ -170,8 +170,8 @@ npm start
 After running `npm start` or `npm run watch`, 16 HTML files are automatically generated in the root directory:
 
 **English Versions:**
-- `output-en-theme-ignite-dark.html`
-- `output-en-theme-ignite-light.html`
+- `output-en-theme-loyal-green-dark.html`
+- `output-en-theme-loyal-green-light.html`
 - `output-en-theme-navy-dark.html`
 - `output-en-theme-navy-light.html`
 - `output-en-theme-new-corporate-tech-dark.html`

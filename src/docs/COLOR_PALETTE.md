@@ -2,49 +2,94 @@
 
 ## Overview
 
-SEO Space includes four professionally designed color palettes with full dark/light mode support. Each theme is defined in a separate CSS file with CSS custom properties (variables) for easy customization.
+SEO Space includes five professionally designed color palettes with full dark/light mode support. Each theme is defined in a separate CSS file with CSS custom properties (variables) for easy customization.
 
 ## Theme Files
 
 | Theme | File | Use Case |
 |-------|------|----------|
-| **Ignite** | `assets/css/color-palette/loyal-green.css` | Loyal Green |
+| **Loyal Green** | `assets/css/color-palette/loyal-green.css` | Sophisticated green and teal branding |
 | **Navy** | `assets/css/color-palette/navy.css` | Professional, corporate |
 | **New Corporate Tech** | `assets/css/color-palette/new-corporate-tech.css` | Modern tech company |
 | **Olive Garden Feast** | `assets/css/color-palette/olive-garden-feast.css` | Earthy, organic brand |
+| **Cranberries** | `assets/css/color-palette/cranberries.css` | Warm, berry-inspired brand |
 
 ## Color Variable System
 
-### Core Variables
+### Complete Variable Reference
 
-All themes define these CSS custom properties:
+All themes define these CSS custom properties, organized by category:
 
 ```css
 :root {
-  /* Backgrounds */
-  --main-color              /* Primary background for sections */
-  --secondary-color         /* Cards, containers background */
-  --light-bg-color          /* Light background areas */
+  /* ========================
+     CORE BACKGROUND COLORS
+     ======================== */
+  --main-color              /* Primary background for main page content */
+  --secondary-color         /* Background for sections, cards, and components */
+  --light-bg-color          /* Subtle/soft background for nested elements */
   
-  /* Text Colors */
-  --text-color              /* Main paragraph/body text */
-  --title-color             /* Headings, titles */
-  --paragraph-color         /* Descriptive text */
-  --text-muted              /* Secondary/disabled text */
-  --text-hover-color        /* Text on hover states */
+  /* ========================
+     BRAND & ACCENT COLORS
+     ======================== */
+  --third-color             /* Primary brand color for links and icons */
+  --accent-color            /* Accent for CTAs, highlights, and interactive elements */
+  --secondary-hover-color   /* Hover state for secondary interactive elements */
   
-  /* Brand Colors */
-  --third-color             /* Primary accent (links, icons) */
-  --accent-color            /* CTA buttons, highlights */
-  --secondary-hover-color   /* Hover state for secondary elements */
+  /* ========================
+     TEXT COLORS
+     ======================== */
+  --text-color              /* Primary text color for body content */
+  --title-color             /* Color for headings and titles */
+  --paragraph-color         /* Color for paragraph text */
+  --text-muted              /* Muted text for secondary information */
+  --text-hover-color        /* Color on hover state for text elements */
+  --text-accent-color       /* Accent text for emphasis */
+  --heading-color           /* Color for general headings */
+  --history-text-color      /* Color for history/timeline text */
   
-  /* Utility Colors */
-  --light-color             /* Pure white/light */
-  --dark-color              /* Pure dark/black */
-  --selection-color         /* Text selection background */
+  /* ========================
+     UTILITY COLORS
+     ======================== */
+  --light-color             /* Light utility color */
+  --dark-color              /* Dark utility color */
+  --selection-color         /* Color for text selection highlights */
+  --header-bg-color         /* Header background color */
   
-  /* Typography */
-  --font-family             /* Primary font stack */
+  /* ========================
+     NAVIGATION & LISTS
+     ======================== */
+  --navbar-list-color       /* Color for navigation list items */
+  --list-color              /* Color for list items */
+  --footer-text-color       /* Color for footer text */
+  
+  /* ========================
+     TYPOGRAPHY
+     ======================== */
+  --font-family             /* Primary font family for the theme */
+  --text-muted-placeholder  /* Placeholder text color for form inputs */
+  
+  /* ========================
+     SOCIAL MEDIA COLORS
+     ======================== */
+  --linkedin-hover-color    /* LinkedIn brand hover color */
+  --facebook-hover-color    /* Facebook brand hover color */
+  --twitter-hover-color     /* Twitter brand hover color */
+  --instagram-hover-color   /* Instagram brand hover color */
+  --youtube-hover-color     /* YouTube brand hover color */
+  
+  /* ========================
+     DISABLED STATE COLORS
+     ======================== */
+  --disabled-color          /* Background for disabled elements */
+  --disabled-hover-color    /* Hover state for disabled elements */
+  --disabled-text-color     /* Text color for disabled elements */
+  
+  /* ========================
+     GRAY SCALE COLORS
+     ======================== */
+  --gray-color              /* Standard gray color */
+  --gray-hover-color        /* Gray color on hover state */
 }
 ```
 
@@ -54,68 +99,184 @@ All themes define these CSS custom properties:
 
 ```css
 :root,[data-theme="dark"] {
-  --main-color:           #020617;          /* Deep blue-black */
-  --secondary-color:      #020617;
-  --light-bg-color:       #020617;
-  
-  --third-color:          #3B82F6;          /* Bright blue */
-  --accent-color:         #F59E0B;          /* Amber/gold */
-  --secondary-hover-color:#2563EB;          /* Darker blue */
-  
-  --text-color:           #E5E7EB;          /* Light gray */
-  --title-color:          #E5E7EB;
-  --paragraph-color:      #E5E7EB;
-  --text-muted:           #94A3B8;          /* Muted gray */
-  --text-hover-color:     #FBBF24;          /* Lighter amber */
-  
-  --light-color:          #FFFFFF;
-  --dark-color:           #020617;
-  --selection-color:      var(--accent-color);
-  --font-family:          'Poppins', sans-serif;
+  /* --- Core Background Colors --- */
+  --main-color: #212121;
+  /* Primary background for main page content */
+  --secondary-color: #284946;
+  /* Background for sections, cards, and components */
+  --light-bg-color: #020617;
+  /* Subtle/soft background for nested elements */
+
+  /* --- Brand & Accent Colors --- */
+  --third-color: #3B82F6;
+  /* Primary brand color for links and icons */
+  --accent-color: #5365ce;
+  /* Accent for CTAs, highlights, and interactive elements */
+  --secondary-hover-color: #2563EB;
+  /* Hover state for secondary interactive elements */
+
+  /* --- Text Colors --- */
+  --text-color: #E5E7EB;
+  /* Primary text color for body content */
+  --title-color: #E5E7EB;
+  /* Color for headings and titles */
+  --paragraph-color: #E5E7EB;
+  /* Color for paragraph text */
+  --text-muted: #94A3B8;
+  /* Muted text for secondary information */
+  --history-text-color: #94A3B8;
+  /* Color for history/timeline text */
+  --text-hover-color: #FBBF24;
+  /* Color on hover state for text elements */
+  --text-accent-color: white;
+  /* Accent text for emphasis */
+  --heading-color: white;
+  /* Color for general headings */
+
+  /* --- Utility Colors --- */
+  --light-color: #FFFFFF;
+  /* Light utility color */
+  --dark-color: #020617;
+  /* Dark utility color */
+  --selection-color: var(--accent-color);
+  /* Color for text selection highlights */
+
+  /* --- Typography --- */
+  --font-family: 'Poppins', sans-serif;
+  /* Primary font family for the theme */
+  --text-muted-placeholder: white;
+  /* Placeholder text color for form inputs */
+
+  /* --- Social Media Hover Colors --- */
+  --linkedin-hover-color: #0e76a8;
+  /* LinkedIn brand hover color */
+  --facebook-hover-color: #3b5998;
+  /* Facebook brand hover color */
+  --twitter-hover-color: #00acee;
+  /* Twitter brand hover color */
+  --instagram-hover-color: #3f729b;
+  /* Instagram brand hover color */
+  --youtube-hover-color: #c4302b;
+  /* YouTube brand hover color */
+
+  /* --- Disabled State Colors --- */
+  --disabled-color: #555555;
+  /* Background for disabled elements */
+  --disabled-hover-color: #777777;
+  /* Hover state for disabled elements */
+  --disabled-text-color: #999999;
+  /* Text color for disabled elements */
+
+  /* --- Gray Scale Colors --- */
+  --gray-color: #cccccc;
+  /* Standard gray color */
+  --gray-hover-color: #999999;
+  /* Gray color on hover state */
+  --footer-text-color: white;
+  /* Color for footer text */
 }
 ```
 
 **Visual Palette:**
-- Background: Very dark blue (#020617)
-- Primary Accent: Bright blue (#3B82F6)
-- Highlights/CTA: Warm amber (#F59E0B)
+- Background: Dark gray (#212121)
+- Secondary: Deep teal (#284946)
+- Primary Accent: Blue (#3B82F6)
+- Highlights: Muted blue (#5365ce)
 - Text: Light gray (#E5E7EB)
 - Muted Text: Medium gray (#94A3B8)
 
 ### Light Mode
 
+### Light Mode
+
 ```css
-@media screen and (prefers-color-scheme: light) {
-  :root {
-    --main-color:           #F9FAFB;        /* Off-white */
-    --secondary-color:      #5365ce;        /* Muted blue */
-    --light-bg-color:       #88d9e6;        /* Light cyan */
-    
-    --third-color:          #2563EB;        /* Medium blue */
-    --accent-color:         #F97316;        /* Orange */
-    --secondary-hover-color:#e27777;        /* Rose tone */
-    --text-hover-color:     #dda15e;        /* Tan */
-    
-    --text-color:           #111827;        /* Dark gray/black */
-    --paragraph-color:      #444444;
-    --title-color:          #111827;
-    --text-muted:           #6B7280;        /* Medium gray */
-    
-    --light-color:          #fff;
-    --dark-color:           black;
-    --selection-color:      var(--third-color);
-    --font-family:          'Poppins', sans-serif;
-  }
+:root,[data-theme="light"] {
+  /* --- Core Background Colors --- */
+  --main-color: #F9FAFB;
+  /* Primary background for main page content in light mode */
+  --secondary-color: #2b7565;
+  /* Background for sections, cards, and components in light mode */
+  --light-bg-color: #88d9e6;
+  /* Subtle/soft background for nested elements in light mode */
+
+  /* --- Brand & Accent Colors --- */
+  --third-color: #2563EB;
+  /* Primary brand color in light mode */
+  --accent-color: #F97316;
+  /* Accent color for CTAs and highlights in light mode */
+  --secondary-hover-color: #e27777;
+  /* Hover state for secondary interactive elements */
+
+  /* --- Text Colors --- */
+  --text-color: #111827;
+  /* Primary text color in light mode */
+  --title-color: var(--text-color);
+  /* Title color inherits from primary text */
+  --paragraph-color: #444444;
+  /* Paragraph text color */
+  --text-muted: #3c6357;
+  /* Muted text for secondary information */
+  --text-hover-color: #dda15e;
+  /* Color on hover state for text elements */
+  --text-accent-color: white;
+  /* Accent text for emphasis */
+  --heading-color: white;
+  /* Color for general headings */
+  --history-text-color: #cccccc;
+  /* Color for history/timeline text */
+
+  /* --- Utility Colors --- */
+  --light-color: #fff;
+  /* Light utility color */
+  --dark-color: black;
+  /* Dark utility color */
+  --selection-color: var(--third-color);
+  /* Color for text selection highlights */
+
+  /* --- Typography --- */
+  --font-family: 'Poppins', sans-serif;
+  /* Primary font family (consistent across modes) */
+  --text-muted-placeholder: var(--light-color);
+  /* Placeholder text color for form inputs */
+
+  /* --- Social Media Hover Colors --- */
+  --linkedin-hover-color: #0e76a8;
+  /* LinkedIn brand hover color */
+  --facebook-hover-color: #3b5998;
+  /* Facebook brand hover color */
+  --twitter-hover-color: #00acee;
+  /* Twitter brand hover color */
+  --instagram-hover-color: #3f729b;
+  /* Instagram brand hover color */
+  --youtube-hover-color: #c4302b;
+  /* YouTube brand hover color */
+
+  /* --- Disabled State Colors --- */
+  --disabled-color: #555555;
+  /* Background for disabled elements */
+  --disabled-hover-color: #777777;
+  /* Hover state for disabled elements */
+  --disabled-text-color: #999999;
+  /* Text color for disabled elements */
+
+  /* --- Gray Scale Colors --- */
+  --gray-color: #cccccc;
+  /* Standard gray color */
+  --gray-hover-color: #999999;
+  /* Gray color on hover state */
+  --footer-text-color: black;
+  /* Color for footer text */
 }
 ```
 
-**Visual Palette:**
-- Background: Off-white/cream (#F9FAFB)
-- Secondary: Muted blue (#5365ce)
+**Visual Palette (Light Mode):**
+- Background: Off-white (#F9FAFB)
+- Secondary: Teal green (#2b7565)
 - Light Areas: Light cyan (#88d9e6)
-- Primary Accent: Medium blue (#2563EB)
+- Primary Accent: Blue (#2563EB)
 - Highlights: Orange (#F97316)
-- Text: Dark gray (#111827)
+- Text: Dark gray/black (#111827)
+- Muted Text: Muted green (#3c6357)
 
 ## Theme Usage
 
@@ -256,41 +417,79 @@ Secondary:      Light supporting color
 
 ## Existing Theme Specifications
 
-### Ignite Theme
+### Loyal Green Theme
 
-**Dark**: Energetic reds and oranges on dark backgrounds
-- Primary: #ff6b6b
-- Accent: #ffd93d
-- Background: #0a0e27
+**Dark**: Sophisticated green and teal professional branding
+- Main Background: #212121
+- Secondary: #04211D
+- Primary Brand: #272932
+- Accent: #c92a2a
+- Text: #ffffff
+- Accent Hover: #dda15e
 
-**Light**: Bright vibrant colors
-- Primary: #ff4757
-- Accent: #ffc107
-- Background: #ffffff
+**Light**: Clean professional green palette
+- Main Background: #ffffff
+- Secondary: #217054
+- Primary Brand: #2563EB
+- Accent: #53957f
+- Text: varies
+- Title Color: #212121
 
 ### Navy Theme
 
-**Dark**: Professional navy blues
-- Primary: #003f87
-- Accent: #00a8ff
-- Background: #0d1b2a
+**Dark**: Professional blue with golden accents
+- Main Background: #212121
+- Secondary: #345281
+- Primary Brand: #3B82F6
+- Accent: #F59E0B (Golden)
+- Light Background: #88d9e6
+- Text: #F9FAFB
 
-**Light**: Corporate clean whites
-- Primary: #003f87
-- Accent: #0066cc
-- Background: #f0f4f8
+**Light**: Corporate clean whites with blue accents
+- Main Background: #F9FAFB
+- Secondary: #345281
+- Primary Brand: #2563EB
+- Accent: #813434
+- Text: #212121
+- Paragraph: #ffffff
 
 ### New Corporate Tech Theme
 
-**Dark**: Modern tech aesthetic
-- Primary: #1e40af
-- Accent: #3b82f6
-- Background: #0f172a
+**Dark**: Modern tech aesthetic with blue and gold
+- Main Background: #212121
+- Secondary: #345281
+- Primary Brand: #3B82F6
+- Accent: #F59E0B (Golden)
+- Text: white
+- Heading: white
 
-**Light**: Clean tech professional
-- Primary: #1e3a8a
-- Accent: #3b82f6
-- Background: #f8fafc
+**Light**: Clean tech professional design
+- Main Background: #ffffff
+- Secondary: #345281
+- Primary Brand: #2563EB
+- Accent: #F97316
+- Text: #111827
+- Muted Text: #6B7280
+
+### Cranberries Theme
+
+**Dark**: Berry-inspired warm color scheme with deep reds
+- Main Background: #212121
+- Secondary: #A60A3D (Deep berry red)
+- Primary Brand: #272932
+- Accent: #A60A3D
+- Text: #f3d0d0 (Warm tone)
+- Title: #943232
+- Hover Color: #dda15e
+
+**Light**: Warm berry and pink tones
+- Main Background: #F9FAFB
+- Secondary: #A60A3D
+- Primary Brand: #2563EB
+- Accent: #A60A3D
+- Text: #f56767 (Warm red tone)
+- Title: #212121
+- Paragraph: #470303
 
 ## CSS Variables Usage in Code
 

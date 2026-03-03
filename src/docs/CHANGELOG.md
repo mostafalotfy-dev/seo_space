@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.4.2] - 2026-03-03
+
+### Documentation
+- **Enhanced Color Palette Documentation** - Complete overhaul of theme documentation
+  - Added comprehensive inline comments to all CSS variable files for clarity
+  - Added missing CSS variables (--text-muted-placeholder, --text-accent-color, --list-color) for consistency across themes
+  - Updated COLOR_PALETTE.md with complete variable reference system (40+ variables categorized by purpose)
+  - Fixed formatting issues and organized variables into logical sections
+  - Synchronized documentation with actual CSS values from all five theme files
+  - Added previously missing Cranberries theme to documentation
+  - Updated all existing theme specifications with accurate color values
+
+### Quality Improvements
+- Improved CSS variable organization with section headers and comments
+- Enhanced consistency across all five color palette files (Loyal Green, Navy, New Corporate Tech, Olive Garden Feast, Cranberries)
+- Better developer experience with clear variable categorization and documentation
+
+---
+
 ## [2.4.1] - 2026-02-23
 
 ### Features
