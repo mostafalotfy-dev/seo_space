@@ -1,0 +1,189 @@
+/*========================================
+  Cranberries Color Palette
+  A berry-inspired color scheme with 
+  deep reds and warm tones for both 
+  dark and light modes.
+  
+  Author: Mostafa Lotfy
+========================================*/
+
+/* =========================
+   DARK MODE (DEFAULT)
+   ========================= */
+:root ,[data-theme="dark"]{
+  /* --- Core Background Colors --- */
+  --main-color: #212121;
+  /* Primary background color */
+  --secondary-color: #A60A3D;
+  /* Secondary background and accent color */
+  --light-bg-color: #88d9e6;
+  /* Light background for nested elements */
+
+  /* --- Brand & Accent Colors --- */
+  --third-color: #272932;
+  /* Tertiary brand color */
+  --accent-color: var(--secondary-color);
+  /* Accent color (inherits from secondary) */
+  --secondary-hover-color: #e27777;
+  /* Hover state for secondary elements */
+
+  /* --- Text Colors --- */
+  --text-color: #f3d0d0;
+  /* Primary text color with warm tone */
+  --title-color: #943232;
+  /* Specific color for titles */
+  --paragraph-color: #ffffff;
+  /* Paragraph text color */
+  --text-muted: var(--light-color);
+  /* Muted text color */
+  --text-hover-color: #dda15e;
+  /* Color on hover for text elements */
+  --text-accent-color: white;
+  /* Accent text color for emphasis */
+  --heading-color: var(--text-color);
+  /* Heading color (inherits from primary text) */
+
+  /* --- Utility Colors --- */
+  --light-color: #fff;
+  /* Light utility color */
+  --dark-color: black;
+  /* Dark utility color */
+  --header-bg-color: var(--dark-color);
+  /* Header background color */
+  --selection-color: var(--third-color);
+  /* Color for text selection highlights */
+
+  /* --- Lists & Navigation --- */
+  --list-color: white;
+  /* Color for list items */
+
+  /* --- Typography --- */
+  --font-family: 'Poppins', sans-serif;
+  /* Primary font family */
+  --text-muted-placeholder: #ffffff;
+  /* Placeholder text color for form inputs */
+
+  /* --- Social Media Hover Colors --- */
+  --linkedin-hover-color: #0e76a8;
+  /* LinkedIn brand color */
+  --facebook-hover-color: #3b5998;
+  /* Facebook brand color */
+  --twitter-hover-color: #00acee;
+  /* Twitter brand color */
+  --instagram-hover-color: #3f729b;
+  /* Instagram brand color */
+  --youtube-hover-color: #c4302b;
+  /* YouTube brand color */
+
+  /* --- Disabled State Colors --- */
+  --disabled-color: #555555;
+  /* Background for disabled elements */
+  --disabled-hover-color: #777777;
+  /* Hover state for disabled elements */
+  --disabled-text-color: #999999;
+  /* Text color for disabled elements */
+
+  /* --- Gray Scale Colors --- */
+  --gray-color: #cccccc;
+  /* Standard gray color */
+  --gray-hover-color: #999999;
+  /* Gray color on hover state */
+  --footer-text-color: white;
+  /* Color for footer text */
+  --history-text-color: white;
+  /* Color for history/timeline text */
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* =========================
+   LIGHT MODE
+   ========================= */
+:root,
+[data-theme="light"] {
+  /* --- Core Background Colors --- */
+  --main-color: #F9FAFB;
+  /* Primary background for light mode */
+  --secondary-color: #A60A3D;
+  /* Secondary background for sections and cards */
+  --light-bg-color: #88d9e6;
+  /* Light background for nested elements */
+  --header-bg-color: var(--dark-color);
+  /* Header background color */
+
+  /* --- Brand & Accent Colors --- */
+  --third-color: #2563EB;
+  /* Primary brand color in light mode */
+  --accent-color: var(--secondary-color);
+  /* Accent color inherits from secondary */
+  --secondary-hover-color: #e27777;
+  /* Hover state for secondary elements */
+
+  /* --- Text Colors --- */
+  --text-color: #f56767;
+  /* Primary text color with warm tone */
+  --title-color: #212121;
+  /* Specific color for titles */
+  --paragraph-color: #470303;
+  /* Paragraph text color */
+  --text-muted: #b16d6d;
+  /* Muted text for secondary information */
+  --heading-color: var(--text-color);
+  /* Heading color inherits from primary text */
+  --text-hover-color: #ffffff;
+  /* Color on hover for text elements */
+  --text-accent-color: black;
+  /* Accent text for emphasis */
+  --history-text-color: #3a3939;
+  /* Color for history/timeline text */
+
+  /* --- Utility Colors --- */
+  --light-color: #fff;
+  /* Light utility color */
+  --dark-color: black;
+  /* Dark utility color */
+  --selection-color: var(--third-color);
+  /* Color for text selection highlights */
+
+  /* --- Typography --- */
+  --font-family: 'Poppins', sans-serif;
+  /* Primary font family */
+  --text-muted-placeholder: #ffffff;
+  /* Placeholder text color for form inputs */
+
+  /* --- Social Media Hover Colors --- */
+  --linkedin-hover-color: #0e76a8;
+  /* LinkedIn brand color */
+  --facebook-hover-color: #3b5998;
+  /* Facebook brand color */
+  --twitter-hover-color: #00acee;
+  /* Twitter brand color */
+  --instagram-hover-color: #3f729b;
+  /* Instagram brand color */
+  --youtube-hover-color: #c4302b;
+  /* YouTube brand color */
+
+  /* --- Disabled State Colors --- */
+  --disabled-color: #555555;
+  /* Background for disabled elements */
+  --disabled-hover-color: #777777;
+  /* Hover state for disabled elements */
+  --disabled-text-color: #999999;
+  /* Text color for disabled elements */
+
+  /* --- Gray Scale Colors --- */
+  --gray-color: #cccccc;
+  /* Standard gray color */
+  --gray-hover-color: #999999;
+  /* Gray color on hover state */
+  --footer-text-color: black;
+  /* Color for footer text */
+  --list-color: white;
+  /* Color for list items */
+}

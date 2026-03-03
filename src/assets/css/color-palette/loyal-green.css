@@ -1,36 +1,91 @@
-/* Ignite Color Palette */
-/*----------------------------------------------------------
-Author: Mostafa Lotfy
------------------------------------------------------------*/
-/* Dark Mode */
-:root ,[data-theme="dark"]{
-  --light-color: #fff;
-  --dark-color: black;
-  --main-color: #04211D;
-  --secondary-color: #f07a26;
-  --third-color: #272932;
-  --accent-color: #c92a2a;
-  --text-color: #ffffff;
-  --text-muted: #94A3B8;
-  --font-family: 'Poppins', sans-serif;
-  --selection-color: var(--third-color);
-  --secondary-hover-color: #e27777;
-  --paragraph-color: #ffffff;
-  --title-color: var(--text-color);
-  --text-hover-color: #dda15e;
-  --light-bg-color: #88d9e6;
-  --linkedin-hover-color: #0e76a8;
-  --facebook-hover-color: #3b5998;
-  --twitter-hover-color: #00acee;
-  --instagram-hover-color: #3f729b;
-  --youtube-hover-color: #c4302b;
-  --history-text-color: #cccccc;
-  --disabled-color: #555555;
-  --disabled-hover-color: #777777;
-  --disabled-text-color: #999999;
-  --gray-color: #cccccc;
-  --gray-hover-color: #999999;
+/*========================================
+  Loyal Green Color Palette
+  A sophisticated green and teal color 
+  scheme for dark and light modes with 
+  professional branding.
   
+  Author: Mostafa Lotfy
+========================================*/
+
+/* =========================
+   DARK MODE (DEFAULT)
+   ========================= */
+:root ,[data-theme="dark"]{
+  /* --- Core Background Colors --- */
+  --main-color: #212121;
+  /* Primary background color */
+  --secondary-color: #04211D;
+  /* Secondary background for sections and cards */
+  --light-bg-color: #04211D;
+  /* Light background for nested elements */
+
+  /* --- Brand & Accent Colors --- */
+  --third-color: #272932;
+  /* Tertiary brand color */
+  --accent-color: #c92a2a;
+  /* Accent color for highlights and CTAs */
+  --secondary-hover-color: #e27777;
+  /* Hover state for secondary elements */
+
+  /* --- Text Colors --- */
+  --text-color: #ffffff;
+  /* Primary text color (white for contrast) */
+  --title-color: var(--text-color);
+  /* Title color inherits from primary text */
+  --paragraph-color: #ffffff;
+  /* Paragraph text color */
+  --text-muted: #94A3B8;
+  /* Muted text for secondary information */
+  --text-hover-color: #dda15e;
+  /* Color on hover for text elements */
+  --heading-color: var(--text-color);
+  /* Heading color inherits from primary text */
+
+  /* --- Utility Colors --- */
+  --light-color: #fff;
+  /* Light utility color */
+  --dark-color: black;
+  /* Dark utility color */
+  --selection-color: var(--third-color);
+  /* Color for text selection highlights */
+
+  /* --- Typography --- */
+  --font-family: 'Poppins', sans-serif;
+  /* Primary font family */
+  --text-muted-placeholder: #ffffff;
+  /* Placeholder text color for form inputs */
+  --text-accent-color: white;
+  /* Accent text for emphasis */
+
+  /* --- Social Media Hover Colors --- */
+  --linkedin-hover-color: #0e76a8;
+  /* LinkedIn brand color */
+  --facebook-hover-color: #3b5998;
+  /* Facebook brand color */
+  --twitter-hover-color: #00acee;
+  /* Twitter brand color */
+  --instagram-hover-color: #3f729b;
+  /* Instagram brand color */
+  --youtube-hover-color: #c4302b;
+  /* YouTube brand color */
+
+  /* --- Disabled State Colors --- */
+  --disabled-color: #555555;
+  /* Background for disabled elements */
+  --disabled-hover-color: #777777;
+  /* Hover state for disabled elements */
+  --disabled-text-color: #999999;
+  /* Text color for disabled elements */
+
+  /* --- Gray Scale Colors --- */
+  --gray-color: #cccccc;
+  /* Standard gray color */
+  --gray-hover-color: #999999;
+  /* Gray color on hover state */
+  --footer-text-color: white;
+  /* Color for footer text */
+  --history-text-color: white;
+  /* Color for history/timeline text */
 }
 
 [data-theme="dark"] {
@@ -41,35 +96,88 @@ Author: Mostafa Lotfy
   color-scheme: light;
 }
 
-/* Light Mode */
-
-
+/* =========================
+   LIGHT MODE
+   ========================= */
 :root,
 [data-theme="light"] {
-  --light-color: #fff;
-  --dark-color: black;
-  --main-color: #F9FAFB;
+  /* --- Core Background Colors --- */
+  --main-color: #ffffff;
+  /* Primary background for light mode */
   --secondary-color: #217054;
+  /* Secondary background for sections and cards */
+  --light-bg-color: #217054;
+  /* Light background for nested elements */
+
+  /* --- Brand & Accent Colors --- */
   --third-color: #2563EB;
+  /* Primary brand color in light mode */
   --accent-color: #53957f;
-  --text-color: var(--dark-color);
-  --text-muted: #000000;
-  --selection-color: var(--third-color);
+  /* Accent color for highlights and CTAs */
   --secondary-hover-color: #e27777;
-  --paragraph-color: #444444;
+  /* Hover state for secondary elements */
+
+  /* --- Text Colors --- */
+  --text-color: var(--dark-color);
+  /* Primary text color (dark) */
   --title-color: #212121;
-  --font-family: 'Poppins', sans-serif;
+  /* Specific color for titles */
+  --paragraph-color: #444444;
+  /* Paragraph text color */
+  --text-muted: #000000;
+  /* Muted text for secondary information */
+  --heading-color: var(--text-color);
+  /* Heading color inherits from primary text */
   --text-hover-color: #ffffff;
-  --light-bg-color: #88d9e6;
+  /* Color on hover for text elements */
+  --text-accent-color: white;
+  /* Accent text for emphasis */
   --history-text-color: #3a3939;
+  /* Color for history/timeline text */
+
+  /* --- Utility Colors --- */
+  --light-color: #fff;
+  /* Light utility color */
+  --dark-color: black;
+  /* Dark utility color */
+  --selection-color: var(--third-color);
+  /* Color for text selection highlights */
+
+  /* --- Typography --- */
+  --font-family: 'Poppins', sans-serif;
+  /* Primary font family */
+  --text-muted-placeholder: #000000;
+  /* Placeholder text color for form inputs */
+
+  /* --- Social Media Hover Colors --- */
   --linkedin-hover-color: #0e76a8;
+  /* LinkedIn brand color */
   --facebook-hover-color: #3b5998;
+  /* Facebook brand color */
   --twitter-hover-color: #00acee;
+  /* Twitter brand color */
   --instagram-hover-color: #3f729b;
-  --disabled-color: #555555;
-  --disabled-hover-color: #777777;
-  --disabled-text-color: #999999;
-  --gray-color: #cccccc;
-  --gray-hover-color: #999999;
+  /* Instagram brand color */
   --youtube-hover-color: #c4302b;
+  /* YouTube brand color */
+
+  /* --- Lists & Navigation --- */
+  --list-color: white;
+  /* Color for list items */
+
+  /* --- Disabled State Colors --- */
+  --disabled-color: #555555;
+  /* Background for disabled elements */
+  --disabled-hover-color: #777777;
+  /* Hover state for disabled elements */
+  --disabled-text-color: #999999;
+  /* Text color for disabled elements */
+
+  /* --- Gray Scale Colors --- */
+  --gray-color: #cccccc;
+  /* Standard gray color */
+  --gray-hover-color: #999999;
+  /* Gray color on hover state */
+  --footer-text-color: black;
+  /* Color for footer text */
 }

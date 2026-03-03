@@ -12,17 +12,17 @@
 	 word-break: break-all;
 }
 .single-table {
-	background-color: var(--accent-color);
+	background-color: var(--secondary-color);
 	color:var(--text-color);
 	
 }
 
 .single-table h2 {
-	background-color: var(--accent-color);
+	background-color: var(--secondary-color);
 	padding: 23px;
 	margin-top: 0;
 	margin-bottom: 0;
-	color:var(--text-color)
+	color:var(--heading-color)
 }
 
 .price {
@@ -30,6 +30,7 @@
 	background-color: var(--main-color);	
 	padding:9px 23px;
 	margin-bottom: 0;
+	color:var(--sub-heading-color);
 }
 
 .price span {
@@ -96,7 +97,7 @@ ul {
 
 .single-table ul li {
     margin-top: 15px;
-	color:var(--text-color);
+	color:var(--list-color);
 }
 
 

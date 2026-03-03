@@ -221,7 +221,7 @@ ul {
 p {
   font-size: 15px;
   line-height: 30px;
-  color: var(--paragraph-color);
+  color: var(--footer-text-color);
 }
 
 img {
@@ -307,7 +307,7 @@ body {
   background-color: var(--secondary-color);
   font-size: 15px;
   font-weight: 400;
-  color:var(--text-color);
+  color:var(--text-accent-color);
   text-transform: capitalize;
   padding: 12px 25px;
   border-radius: 23px;
@@ -481,7 +481,7 @@ header
 }
 
 .header-area .main-nav .nav li a {
-  color: var(--text-muted);
+  color: var(--navbar-list-color);
 }
 
 .header-area .main-nav .nav li:hover a,
@@ -987,16 +987,6 @@ Banner Style
   height: 467px;
 } */
 
-.main-banner:before {
-  content: '';
-  background-image: url(../images/baner-dec-right.png);
-  background-repeat: no-repeat;
-  position: absolute;
-  right: 0;
-  top: 100px;
-  width: 98px;
-  height: 290px;
-}
 
 .main-banner .left-content {
   margin-right: 45px;
@@ -1045,7 +1035,7 @@ Banner Style
   background-color: var(--secondary-color);
   font-size: 15px;
   font-weight: 500;
-  color: var(--text-color);
+  color: var(--text-accent-color);
   text-transform: capitalize;
   padding: 12px 25px;
   border-radius: 23px;
@@ -1161,7 +1151,7 @@ Services Style
   top: 0;
   font-size: 18px;
   font-weight: 600;
-  color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .our-services .first-bar span {
@@ -1279,12 +1269,12 @@ Portfolio
 .our-portfolio .hidden-content h4 {
   font-size: 20px;
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--text-accent-color);
   margin-bottom: 20px;
 }
 
 .our-portfolio .hidden-content p {
-  color: var(--text-color);
+  color: var(--text-accent-color);
 }
 
 .our-portfolio .showed-content {
@@ -1344,7 +1334,7 @@ Blog
 }
 
 .our-blog .left-image .info .inner-content {
-  background-color: var(--main-color);
+  background-color: var(--secondary-color);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   margin-right: 75px;
@@ -1465,9 +1455,9 @@ contact
   display: inline-block;
   text-align: center;
   line-height: 46px;
-  background-color: var(--accent-color);
+  background-color: var(--secondary-color);
   border-radius: 50%;
-  color: var(--text-color);
+  color: var(--text-accent-color);
   font-size: 22px;
   margin-left: 30px;
   margin-right: 15px;
@@ -1513,7 +1503,7 @@ form#contact input {
 }
 
 form#contact input::placeholder {
-  color: var(--text-color);
+  color: var(--text-muted-placeholder);
 }
 
 form#contact textarea {
@@ -1529,13 +1519,13 @@ form#contact textarea {
   outline: none;
   font-size: 15px;
   font-weight: 300;
-  color: var(--text-color);
+  color: var(--text-muted-placeholder);
   padding: 15px 20px;
   margin-bottom: 20px;
 }
 
 form#contact textarea::placeholder {
-  color: var(--text-color);
+  color: var(--text-muted-placeholder);
 }
 
 form#contact button {
@@ -1543,7 +1533,7 @@ form#contact button {
   background-color: var(--secondary-color);
   font-size: 15px;
   font-weight: 400;
-  color: var(--text-color);
+  color: var(--text-accent-color);
   text-transform: capitalize;
   padding: 12px 25px;
   border-radius: 23px;

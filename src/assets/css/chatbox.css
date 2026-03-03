@@ -20,7 +20,7 @@
 
 .button {
     
-    background-color:var(--accent-color);
+    background-color:var(--secondary-color);
     color: white;
     border: none;
     border-radius: 5px;
@@ -30,8 +30,8 @@
     cursor: pointer;
 }
 .assistant {
-    background-color:var(--accent-color);
-    color: var(--text-color);
+    background-color:var(--secondary-color);
+    color: var(--text-accent-color);
     border: none;
     border-radius: 50%;
     padding: 15px;
@@ -42,6 +42,9 @@
     right:12px;
     cursor: pointer;
 }
+#messageContainer {
+    color:var(--secondary-color)
+}
 .messageArea {
     margin-top: 20px;
     border: 1px solid #ccc;
@@ -49,10 +52,10 @@
     padding: 10px;
     height: 200px;
     width: 100%;
-    min-width: max-content;
+    min-width: min-content;
     color:var(--text-color);
     overflow-y: scroll;
-    background-color:var(--main-color);
+    background-color:var(--secondary-color);
     color:var(--text-color);
 }
 

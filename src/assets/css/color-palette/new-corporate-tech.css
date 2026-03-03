@@ -1,36 +1,88 @@
-/* new corporate tech Color Palette */
-/*----------------------------------------------------------
+/*========================================
+  New Corporate Tech Color Palette
+  A modern corporate color scheme with
+  blue and gold accents designed for 
+  tech-forward applications.
+  
+  Author: Mostafa Lotfy
+========================================*/
 
-Author: Mostafa Lotfy
------------------------------------------------------------*/
-
+/* =========================
+   DARK MODE (DEFAULT)
+   ========================= */
 :root,
 [data-theme="dark"] {
-
-  --main-color: #0F172A;
+  /* --- Core Background Colors --- */
+  --main-color: #212121;
+  /* Primary dark background */
   --secondary-color: #345281;
-  --third-color: #3B82F6;
-  --accent-color: #F59E0B;
-  --text-color: white;
-  --text-hover-color: white;
-  --text-muted: #94A3B8;
-  --font-family: 'Poppins', sans-serif;
-  --selection-color: var(--third-color);
-  --secondary-hover-color: #e27777;
-  --paragraph-color: #818181;
-  --title-color: var(--text-color);
-  --history-text-color: #eee;
-  --linkedin-hover-color: #0e76a8;
-  --facebook-hover-color: #3b5998;
-  --twitter-hover-color: #00acee;
-  --instagram-hover-color: #3f729b;
-  --youtube-hover-color: #c4302b;
-  --disabled-color: #555555;
-  --disabled-hover-color: #777777;
-  --disabled-text-color: #999999;
-  --gray-color: #cccccc;
-  --gray-hover-color: #999999;
+  /* Secondary blue background for sections */
 
+  /* --- Brand & Accent Colors --- */
+  --third-color: #3B82F6;
+  /* Primary blue brand color */
+  --accent-color: #F59E0B;
+  /* Golden accent for highlights and CTAs */
+  --secondary-hover-color: #e27777;
+  /* Hover state for secondary elements */
+  --selection-color: var(--third-color);
+  /* Color for text selection highlights */
+
+  /* --- Text Colors --- */
+  --text-color: white;
+  /* Primary text color */
+  --title-color: var(--text-color);
+  /* Title color inherits from primary text */
+  --paragraph-color: #818181;
+  /* Paragraph text color (muted) */
+  --text-muted: #94A3B8;
+  /* Muted text for secondary information */
+  --text-hover-color: white;
+  /* Text color on hover */
+  --text-accent-color: white;
+  /* Accent text for emphasis */
+  --heading-color: white;
+  /* Color for headings */
+  --text-muted-placeholder: white;
+  /* Placeholder text color in form inputs */
+  --history-text-color: rgb(255, 255, 255);
+  /* History/timeline text color */
+
+  /* --- Lists & Navigation --- */
+  --list-color: white;
+  /* Color for list items */
+
+  /* --- Typography --- */
+  --font-family: 'Poppins', sans-serif;
+  /* Primary font family */
+
+  /* --- Social Media Hover Colors --- */
+  --linkedin-hover-color: #0e76a8;
+  /* LinkedIn brand color */
+  --facebook-hover-color: #3b5998;
+  /* Facebook brand color */
+  --twitter-hover-color: #00acee;
+  /* Twitter brand color */
+  --instagram-hover-color: #3f729b;
+  /* Instagram brand color */
+  --youtube-hover-color: #c4302b;
+  /* YouTube brand color */
+
+  /* --- Disabled State Colors --- */
+  --disabled-color: #555555;
+  /* Background for disabled elements */
+  --disabled-hover-color: #777777;
+  /* Hover state for disabled elements */
+  --disabled-text-color: #999999;
+  /* Text color for disabled elements */
+
+  /* --- Gray Scale Colors --- */
+  --gray-color: #cccccc;
+  /* Standard gray color */
+  --gray-hover-color: #999999;
+  /* Gray color on hover state */
+  --footer-text-color: white;
+  /* Color for footer text */
 }
 
 [data-theme="dark"] {
@@ -41,30 +93,82 @@ Author: Mostafa Lotfy
   color-scheme: light;
 }
 
+/* =========================
+   LIGHT MODE
+   ========================= */
 :root,
 [data-theme="light"] {
-  --main-color: #F9FAFB;
-  --secondary-color: #f0ad7d;
+  /* --- Core Background Colors --- */
+  --main-color: #ffffff;
+  /* Primary background for light mode */
+  --secondary-color: #345281;
+  /* Secondary background for sections and cards */
+
+  /* --- Brand & Accent Colors --- */
   --third-color: #2563EB;
+  /* Primary brand color in light mode */
   --accent-color: #F97316;
-  --text-color: #111827;
-  --text-hover-color: var(--main-color);
-  --text-muted: #6B7280;
-  --selection-color: var(--third-color);
+  /* Accent color for highlights and CTAs */
   --secondary-hover-color: #e27777;
-  --paragraph-color: #444444;
+  /* Hover state for secondary elements */
+  --selection-color: var(--third-color);
+  /* Color for text selection highlights */
+
+  /* --- Text Colors --- */
+  --text-color: #111827;
+  /* Primary text color (dark) */
   --title-color: var(--text-color);
+  /* Title color inherits from primary text */
+  --paragraph-color: #444444;
+  /* Paragraph text color */
+  --text-muted: #6B7280;
+  /* Muted text for secondary information */
+  --heading-color: white;
+  /* Color for headings */
+  --text-hover-color: var(--main-color);
+  /* Color on hover for text elements */
+  --text-accent-color: white;
+  /* Accent text for emphasis */
+  --text-muted-placeholder: white;
+  /* Placeholder text color in form inputs */
   --history-text-color: #4c4a4a;
+  /* Color for history/timeline text */
+
+  /* --- Lists & Navigation --- */
+  --list-color: white;
+  /* Color for list items */
+
+  /* --- Typography --- */
+  --font-family: 'Poppins', sans-serif;
+  /* Primary font family */
+
+  /* --- Social Media Hover Colors --- */
   --linkedin-hover-color: #0e76a8;
+  /* LinkedIn brand color */
   --facebook-hover-color: #3b5998;
+  /* Facebook brand color */
   --twitter-hover-color: #00acee;
+  /* Twitter brand color */
   --instagram-hover-color: #3f729b;
+  /* Instagram brand color */
   --youtube-hover-color: #c4302b;
+  /* YouTube brand color */
+
+  /* --- Disabled State Colors --- */
   --disabled-color: #555555;
+  /* Background for disabled elements */
   --disabled-hover-color: #777777;
+  /* Hover state for disabled elements */
   --disabled-text-color: #999999;
+  /* Text color for disabled elements */
+
+  /* --- Gray Scale Colors --- */
   --gray-color: #cccccc;
+  /* Standard gray color */
   --gray-hover-color: #999999;
+  /* Gray color on hover state */
+  --footer-text-color: black;
+  /* Color for footer text */
 }
 
 [data-theme="normal"] {
@@ -73,5 +177,5 @@ Author: Mostafa Lotfy
 
 
 form#contact input {
-  color: var(--text-color) !important;
+  color: var(--text-muted-placeholder) !important;
 }
