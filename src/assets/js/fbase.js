@@ -33,7 +33,7 @@ const modelPackage = getTemplateGenerativeModel(aiPackage);
 const currentLang = document.lang == "en" ? "start" : "end"
 const template = `
     <bdi class='d-flex flex-justify-${currentLang}'>
-    <div class='rounded col-12 my-3 p-3 text-right bg-primary-subtle gemi'>
+    <div class='rounded col-12 my-3 p-3 text-right  gemi'>
     %s</div>
     </bdi>`;
 
