@@ -2,14 +2,19 @@
   "title": {
     "main": "SEO Space - SEO HTML5 Template"
   },
-  "price_title":"Pricing Tables",
-  "price_description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+  "price_title": "Pricing",
+  "slider": {
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "price_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
   "prices": [
     {
-      "recommended":"",
+      "recommended": "",
       "price_sign": "r.s",
       "main_title": "Starter",
       "price_in_text": "149",
+      "time_in_text":"Monthly",
       "features": [
         {
           "feature": "Basic website SEO audit"
@@ -29,10 +34,11 @@
       ]
     },
     {
-      "recommended":"Recommended",
+      "recommended": "Recommended",
       "price_sign": "r.s",
       "main_title": "Basic",
       "price_in_text": "349",
+      "time_in_text":"Monthly",
       "features": [
         {
           "feature": "Basic website SEO audit"
@@ -49,10 +55,11 @@
       ]
     },
     {
-      "recommended":"",
+      "recommended": "",
       "price_sign": "r.s",
       "main_title": "Advanced",
       "price_in_text": "699",
+      "time_in_text":"Monthly",
       "features": [
         {
           "feature": "Advanced technical SEO Website performance & speed optimization"
@@ -89,6 +96,7 @@
     "message_us": "Message Us",
     "contact_now": "Contact Now",
     "trigger": "Menu",
+    "pricing":"Pricing",
     "language": "Language"
   },
 

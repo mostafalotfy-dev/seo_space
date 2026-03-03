@@ -2,11 +2,16 @@
   "title": {
     "main": "سيو سبيس - قالب HTML5 لتحسين محركات البحث"
   },
-  "price_title":"جداول الأسعار",
+  "slider":{
+    "next":"التالي",
+    "previous":"السابق"
+  },
+  "price_title":"أسعارنا",
   "price_description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
   "prices": [
     {
       "recommended":"",
+      "time_in_text":"شهري",
       "price_sign": "ريال سعودي",
       "main_title": "للمبتدئين",
       "price_in_text": "149",
@@ -29,9 +34,10 @@
       ]
     },
     {
-      "recommended":"ينصح به.",
+      "recommended":"(ينصح به.)",
       "price_sign": "ريال سعودي",
       "main_title": "أساسي",
+      "time_in_text":"شهري",
       "price_in_text": "349",
       "features": [
         {
@@ -53,6 +59,7 @@
       "price_sign": "ريال سعودي",
       "main_title": "متقدمة",
       "price_in_text": "699",
+      "time_in_text":"شهري",
       "features": [
         {
           "feature": "تحسين أداء وسرعة الموقع الإلكتروني باستخدام تقنيات تحسين محركات البحث المتقدمة"
@@ -90,7 +97,8 @@
     "contact_now": "اتصل الآن",
     "trigger": "القائمة",
     "language": "اللغة",
-    "button_content": "القائمة"
+    "button_content": "القائمة",
+    "pricing":"أسعارنا"
   },
 
   "banner": {
