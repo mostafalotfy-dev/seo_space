@@ -12,6 +12,7 @@ const themes = [
   "navy.css",
   "new-corporate-tech.css",
   "loyal-green.css",
+  "cranberries.css",
 ];
 
 const translations = {
