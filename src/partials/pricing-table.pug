@@ -3,7 +3,7 @@
     .section-title
         h1 #{t("price_title")}
         p #{t("price_description")}
-
+    .clear-fix
         .container.text-center
             .pricing-table.text-left
                 .row
@@ -15,11 +15,9 @@
                                 p.price
                                     span  #{price.time_in_text}
                                     span.dollar-icon  #{price.price_in_text} #{price.price_sign}
-                                    
-                                    
                                 ul
                                     each f in price.features
                                     
                                         li #{f.feature}
                                 
-                            a.col-12.btn.btn-secondary(href="#") Sign-up
+                            a.col-12.btn.btn-secondary(href="#") #{t("signup.button_text")}
