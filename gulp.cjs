@@ -5,8 +5,8 @@ const rename = require("gulp-rename");
 const path = require("path");
 require("dotenv").config();
 const fs = require("fs");
-console.log("copying images...");
-fs.cpSync("src/assets/images", "public/assets/images", { recursive: true });
+
+
 const themes = [
   "olive-garden-feast.css",
   "navy.css",
@@ -93,7 +93,11 @@ gulp.task("pug", function () {
 
   return tasks.length ? tasks[tasks.length - 1] : Promise.resolve();
 });
-
+gulp.task("image",(cb)=>{
+  console.log("copying images...");
+  fs.cpSync("src/assets/images", "public/assets/images", { recursive: true });
+  cb();
+})
 // Watch task
 gulp.task("watch", function () {
   
@@ -101,10 +105,10 @@ gulp.task("watch", function () {
   gulp.watch("src/assets/css/color-palette/*.css", gulp.series("app-css"));
   
   gulp.watch(["src/**/*.pug","locals/*.json","!src/assets","!src/docs"], gulp.series("pug"));
-  
+  gulp.watch(["src/assets/images/*.png","src/assets/images/*.jpg","src/assets/images/*.jpeg"],gulp.series("image"))
  
   
 });
 
 // Default task
-exports.default = gulp.series("app-css", "pug");
+exports.default = gulp.series("app-css", "pug","image");
