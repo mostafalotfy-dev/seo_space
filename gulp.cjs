@@ -42,7 +42,7 @@ gulp.task("app-css", function () {
 // Pug task with rename
 gulp.task("pug", function () {
   const tasks = [];
-  const config = require("./config");
+  const config = require("./config.js");
   
   for (const theme of config.themes) {
     if(tasks.length > config.themes)
@@ -52,7 +52,7 @@ gulp.task("pug", function () {
     for (const lang of config.languages) {
       for (const mode of config.modes) {
         const username = lang === "en" ? "Mostafa" : "مصطفى";
-
+        
         tasks.push(
           gulp
             .src([
@@ -74,8 +74,11 @@ gulp.task("pug", function () {
             .pipe(
               pug({
                 pretty: true,
+                
                 data: {
+                  pre_loader:config.preloader,
                   username,
+                  ai_assistant:config.ai_asssitant,
                   yearNumber: new Date().getFullYear(),
                   lang,
                   theme_name: theme,
@@ -85,7 +88,7 @@ gulp.task("pug", function () {
                   user: true,
                   full_theme_name: (function () {
                     return config.output_default_name
-                      .replace("{baseName}", config.main_page_base_name)
+                      .replace("{baseName}", "index")
                       .replace("{lang}", lang)
                       .replace("{mode}", mode)
                       .replace("{theme}", theme.replace(".css", ""));
