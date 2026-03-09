@@ -1,11 +1,27 @@
+//- ================================================
+//- SIGNUP PAGE: User Registration
+//- ================================================
+//- Dedicated page for new user registration/sign-up
+//- Features: Minimalist form, responsive design, email/password fields
+//- Access: /output-[lang]-[theme]-signup.html
+//- Dependencies: Bootstrap 5.3.8, localization system, form validation
+
 extends ../layout
 
 block head
+    //- Set text direction based on language: RTL for Arabic, LTR for English
     - const dir = (lang == "ar") ? "rtl" : "ltr";
+    //- Render page head: meta tags, stylesheets, etc.
     +headSection(lang, theme_name)
+
 block content
+    //- Navigation bar (auth version with language/theme toggles)
     +navbar()
+    
+    //- Page loading animation
     +preloader()
+    
+    //- Registration form: centered, full-height, collects email and password
     form#signup(action="#", method="post", class="signup-form" dir=dir , class="vh-100 d-flex align-items-center")
         .container
             .row.justify-content-center.mt-5
@@ -13,7 +29,7 @@ block content
                     .card
                         .card-body
                             h2.text-center #{t("signup.title")}
-                            p.text-center #{t("signup.description")}
+
                             .mb-3
                                 label.form-label(for="email") #{t("signup.email_label")}
                                 input.form-control(type="email", id="email", name="email", placeholder=t("signup.email_placeholder"), required)

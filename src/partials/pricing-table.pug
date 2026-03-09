@@ -1,22 +1,64 @@
+//- ================================================
+//- PRICING TABLE PARTIAL: Service Pricing Display
+//- ================================================
+//- Reusable component displaying pricing tiers for SEO services
+//- Included in: index.pug main landing page
+//- Features:
+//-   - Multiple pricing tiers (loaded from translation file)
+//-   - Responsive grid layout (1 col on mobile, 2 on tablet, 3 on desktop)
+//-   - Recommended plan highlighted/marked
+//-   - Feature lists for each pricing tier
+//-   - Signup CTA button for each pricing option
+//-   - Localized content (all text from translation system)
+//- Data Source: t("prices") array from locals/en.json or locals/ar.json
+//- Each pricing object contains:
+//-   - main_title: Plan name (e.g., "Basic", "Professional", "Enterprise")
+//-   - recommended: Flag indicating recommended plan
+//-   - time_in_text: Billing period (e.g., "per month")
+//-   - price_in_text: Price amount as text
+//-   - price_sign: Currency symbol ($ or other)
+//-   - features: Array of feature descriptions for this tier
+
+//- Main pricing section container
 #pricing-tables
+    //- Section title and description
     .section-title.container
         h1 #{t("price_title")}
         p #{t("price_description")}
+    
+    //- Pricing table cards layout
     .clear-fix
         .container.text-center
             .pricing-table.text-left
+                //- Responsive row containing pricing cards
                 .row
+                    //- Loop through each pricing tier from translation data
                     each price in t("prices")
-
+                        //- Pricing card: responsive columns (2/tablets, 3/desktop)
+                        //- Auto-centered on tablets with margins
                         .col-md-6.col-lg-4.mx-md-auto.my-md-5
+                            //- Individual pricing card
                             .single-table
-                                h2 #{price.main_title} #{price.recommended} 
+                                //- Plan title with recommended badge (if applicable)
+                                h2
+                                    | #{price.main_title}
+                                    | #{price.recommended}
+                                
+                                //- Price display: amount and billing period
                                 p.price
-                                    span  #{price.time_in_text}
-                                    span.dollar-icon  #{price.price_in_text} #{price.price_sign}
+                                    //- Billing period text (e.g., "per month")
+                                    span #{price.time_in_text}
+                                    //- Price with currency symbol
+                                    span.dollar-icon
+                                        | #{price.price_in_text}
+                                        | #{price.price_sign}
+                                
+                                //- Feature list for this pricing tier
+                                //- Each feature is a benefit/capability included in plan
                                 ul
                                     each f in price.features
-                                    
                                         li #{f.feature}
                                 
-                            a.col-12.btn.btn-secondary(href="#") #{t("signup.button_text")}
+                            //- Call-to-action button: signup for this plan
+                            a.col-12.btn.btn-secondary(href="#")
+                                | #{t("signup.button_text")}

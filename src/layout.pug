@@ -1,28 +1,64 @@
-include mixins/preloader
-include mixins/header
-include mixins/blog
-include mixins/banner
-include mixins/services
-include mixins/contact
-include mixins/footer
-include mixins/assistants
-include mixins/headSection
-include mixins/portfolio
-include mixins/about
-include mixins/auth/navbar
-include mixins/modals
-include mixins/slider
+//- ================================================
+//- LICENSE & PROJECT: SEO Space v2.4.3
+//- ================================================
+//- This is the main layout template for the SEO Space project
+//- All page templates extend this layout to ensure consistent structure
+//- Documentation: see docs/ARCHITECTURE.md for detailed information
+
+//- ================================================
+//- IMPORTS: Load all reusable template mixins
+//- ================================================
+//- These mixins are Pug components that define various sections and components
+//- referenced throughout the application
+include mixins/preloader       
+//- Loading animation displayed on page load
+include mixins/header          
+//- Top navigation bar with logo and menu
+include mixins/blog            
+//- Blog section with articles listing
+include mixins/banner          
+//- Hero/banner section with call-to-action
+include mixins/services        
+//- Services/skills section with progress bars
+include mixins/contact         
+//- Contact form and location section
+include mixins/footer          
+//- Footer with copyright and links
+include mixins/assistants      
+//- AI assistant chat component
+include mixins/headSection     
+//- Meta tags and head section setup
+include mixins/portfolio       
+//- Portfolio/projects gallery section
+include mixins/about           
+//- About us section with team info
+include mixins/auth/navbar     
+//- Authentication navigation bar
+include mixins/modals          
+//- Reusable modal dialog templates
+include mixins/slider          
+//- Carousel/slider component for testimonials
+
+//- ================================================
+//- DOCUMENT STRUCTURE
+//- ================================================
 doctype html
 html(lang=lang)
   head
+    //- Head block: extended by child templates to add meta tags, scripts, styles
     block head
 
   body(
-    data-theme=mode,
-    data-bs-theme=mode,
-    dir=dir
+    data-theme=mode,     
+    data-bs-theme=mode,  
+    dir=dir              
   )
+    //- Main content block: extended by child templates for page structure
     block content
+    
+    //- Footer block: extended by child templates (typically contains footer section)
     block footer
+    
+    //- Scripts block: extended by child templates to load external scripts and bundles
     block scripts
 

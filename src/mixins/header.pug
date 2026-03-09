@@ -1,45 +1,99 @@
+//- ================================================
+//- HEADER MIXIN: Sticky Navigation Bar
+//- ================================================
+//- Renders the main navigation header with logo and menu
+//- Features:
+//-   - Sticky positioning (stays at top during scroll)
+//-   - Animated entrance using WOW library (slideInDown effect)
+//-   - Responsive dropdown navigation menu
+//-   - Theme toggle (light/dark mode switcher)
+//-   - Language switcher (English to Arabic and vice versa)
+//-   - Mobile menu trigger
+//- Dependencies: Bootstrap 5.3+, WOW.js animations, Font Awesome icons
+
 mixin header()
   header.header-area.header-sticky.wow.slideInDown(data-wow-duration="0.75s", data-wow-delay="0s")
-      .container
-        .row
-          .col-12
-            nav.main-nav
-              // ***** Logo Start *****
-              a.logo(href="output-ar-theme-loyal-green-dark.html")
-                h4.h6 #{t("header.logo.part1")}
-                  span #{t("header.logo.part2")}
-              // ***** Logo End *****
-              // ***** Menu Start *****
-              ul.nav
-                li.scroll-to-section
-                  a.btn.active(href="#top") #{t("menu.home")}
-                li.dropdown
-                  
-                    a.btn.dropdown-toggle(href="#", role="button", data-bs-toggle="dropdown", aria-expanded="false")
-                      | #{t("menu.main")}
-                    ul.dropdown-menu
-                      li
-                        a.dropdown-item(href="#about") #{t("menu.about")}
-                      li
-                        a.dropdown-item(href="#pricing-tables") #{t("menu.pricing")}
-                      li
-                        a.dropdown-item(href="#services") #{t("menu.services")}
-                      li
-                        a.dropdown-item(href="#portfolio") #{t("menu.portfolio")}
-                      li
-                        a.dropdown-item(href="#blog") #{t("menu.blog")}
-                      li
-                        a.dropdown-item(href="#contact") #{t("menu.message_us")}
+    .container
+      .row
+        .col-12
+          nav.main-nav
+            //- ================================================
+            //- LOGO: Branding and Title
+            //- ================================================
+            //- Clickable logo linking to homepage
+            //- Logo text is split in two parts using translation system
+            //- Currently hardcoded to Arabic dark loyal green theme - consider making dynamic
+            a.logo(href="output-ar-theme-loyal-green-dark.html")
+              h4.h6
+                | #{t("header.logo.part1")}
+                span #{t("header.logo.part2")}
+            
+            //- ================================================
+            //- MAIN NAVIGATION MENU
+            //- ================================================
+            //- Primary navigation links with smooth scroll-to-section functionality
+            //- Includes dropdown submenu for secondary pages
+            ul.nav
+              //- Home link - scrolls to #top
+              li.scroll-to-section
+                a.btn.active(href="#top") #{t("menu.home")}
               
-                li.scroll-to-section
-                  span(type="button" id="theme-toggle" )
-                    i.fa.fa-moon-o
-                li
-                      a(href=full_theme_name.replace("-en","-ar") + ".html" , class="btn") 
-                        | العربية
-                li 
-                      a(href=full_theme_name.replace("-ar","-en") + ".html" , class="btn")  
-                        | English
-                  
+              //- Dropdown menu with links to major page sections
+              li.dropdown
+                a.btn.dropdown-toggle(href="#", role="button", data-bs-toggle="dropdown", aria-expanded="false")
+                  | #{t("menu.main")}
+                ul.dropdown-menu
+                  //- Link to About section
+                  li
+                    a.dropdown-item(href="#about") #{t("menu.about")}
+                  //- Link to Pricing section
+                  li
+                    a.dropdown-item(href="#pricing-tables") #{t("menu.pricing")}
+                  //- Link to Services section
+                  li
+                    a.dropdown-item(href="#services") #{t("menu.services")}
+                  //- Link to Portfolio section
+                  li
+                    a.dropdown-item(href="#portfolio") #{t("menu.portfolio")}
+                  //- Link to Blog section
+                  li
+                    a.dropdown-item(href="#blog") #{t("menu.blog")}
+                  //- Link to Contact form
+                  li
+                    a.dropdown-item(href="#contact") #{t("menu.message_us")}
+              
+              //- ================================================
+              //- THEME TOGGLE: Light/Dark Mode Switcher
+              //- ================================================
+              //- CSS-only button that triggers theme switching
+              //- Uses Font Awesome moon icon, switches to sun icon in dark mode
+              //- Functionality provided by JavaScript in dist/bundle.js
+              li.scroll-to-section
+                span(type="button" id="theme-toggle")
+                  i.fa.fa-moon-o
+              
+              //- ================================================
+              //- LANGUAGE SWITCHER: AR/EN Toggle
+              //- ================================================
+              //- Switches between Arabic (RTL) and English (LTR) versions
+              //- Links use string replacement to convert theme name:
+              //-   "-en" ↔ "-ar" (e.g., "output-index-en-dark-navy.html")
+              //- Maintains selected theme when switching languages
+              
+              //- Link to Arabic version of current page
+              li
+                a(href=full_theme_name.replace("-en","-ar") + ".html", class="btn")
+                  | العربية
+              
+              //- Link to English version of current page
+              li
+                a(href=full_theme_name.replace("-ar","-en") + ".html", class="btn")
+                  | English
+              
+              //- ================================================
+              //- MOBILE MENU TRIGGER: Hamburger Button
+              //- ================================================
+              //- Visible only on mobile/tablet screens
+              //- Controlled by Bootstrap responsive utilities
               a.menu-trigger
                 span #{t("menu.trigger")}

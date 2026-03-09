@@ -1,9 +1,40 @@
+//- ================================================
+//- PRELOADER MIXIN: Page Loading Animation
+//- ================================================
+//- Displays animated loader on page load
+//- Features:
+//-   - Animated dots spinner with cascading animation
+//-   - Lightweight and performant animation
+//-   - Default loader: animated spinning dots
+//-   - Optional: Bootstrap spinner component (bsSpinnerGrow)
+//- Usage: Include near top of page, hide when page content loads via JavaScript
+//- Animation: CSS-based (see stylesheet for @keyframes preloader)
+//- Performance: Use JavaScript to hide preloader after page fully loads
+//- Note: Ensure z-index is high enough to appear above page content
+
 mixin preloader()
-    #js-preloader.js-preloader
-      .preloader-inner
-        span.dot
-        .dots
-          span
-          span
-          span
-    
+  //- Preloader container with ID for JavaScript access/hiding
+  #js-preloader.js-preloader
+    .preloader-inner
+      //- Main animated dot
+      span.dot
+      //- Three secondary dots with staggered animation
+      .dots
+        span  
+        span  
+        span  
+
+//- ================================================
+//- BOOTSTRAP SPINNER VARIANT: Alternative Preloader
+//- ================================================
+//- Optional mixin using Bootstrap 5.3 spinner component
+//- Parameters:
+//-   - color: Bootstrap color class (primary, success, danger, warning, info, light, dark)
+//- Usage: +bsSpinnerGrow("primary")
+//- Refer to Bootstrap 5.3 documentation for available color options
+
+mixin bsSpinnerGrow(color)
+  //- Bootstrap grow spinner with specified color
+  .spinner-grow(role="status", class="text-"+color)
+    //- Hidden loading text for accessibility
+    span.visually-hidden Loading...

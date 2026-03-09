@@ -1,72 +1,140 @@
-mixin blog(lang)    
-    #blog.our-blog.section
-      .container
-        .row
-          .col-lg-6.wow.fadeInDown(data-wow-duration="1s", data-wow-delay="0.25s")
-            .section-heading
-              h2 #{t("blog.heading.part1")} 
-                em #{t("blog.heading.em")}
-                | #{t("blog.heading.part2")}
-                span #{t("blog.heading.span")}
-          .col-lg-6.wow.fadeInDown(data-wow-duration="1s", data-wow-delay="0.25s")
-            .top-dec
-              img(src="./assets/images/blog-dec.png",loading="lazy", alt="")
-        .row
-          .col-lg-6.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.25s")
-            .left-image
-              a(href="#")
-                img(src="./assets/images/big-blog-thumb.jpg",loading="lazy", alt=t("blog.alt"))
-              .info
-                .inner-content
-                  ul
-                    li
-                      i.fa.fa-calendar
-                      | #{t("blog.calender.text")}
-                    li
-                      i.fa.fa-users
-                      | #{t("blog.calender.author")}
-                    li
-                      i.fa.fa-folder
-                      | #{t("blog.calender.li")}
+//- ================================================
+//- BLOG MIXIN: Blog Articles and News Section
+//- ================================================
+//- Displays blog articles, recent posts, and news content
+//- Features:
+//-   - Featured blog article on left (large thumbnail)
+//-   - Blog article list on right (3 items)
+//-   - Animated entrance effects (fadeInDown, fadeInUp)
+//-   - Meta information: date, author, category
+//-   - Language support (responsive margin adjustments for RTL)
+//-   - Decorative elements (blog-dec image)
+//-   - "Discover More" CTA links for each article
+//- Parameters:
+//-   - lang: Current language for directional styling
+//- Content Source: Localized content from translation files
+//- TODO: Replace placeholder Lorem ipsum with actual article descriptions
+//- TODO: Update article images and links
+
+mixin blog(lang)
+  #blog.our-blog.section
+    .container
+      .row
+        //- ================================================
+        //- BLOG SECTION HEADING
+        //- ================================================
+        //- Title with animated entrance from left
+        .col-lg-6.wow.fadeInDown(data-wow-duration="1s", data-wow-delay="0.25s")
+          .section-heading
+            h2
+              //- Blog heading with three parts: main, em, part2, span
+              | #{t("blog.heading.part1")}
+              em #{t("blog.heading.em")}
+              | #{t("blog.heading.part2")}
+              span #{t("blog.heading.span")}
+        
+        //- ================================================
+        //- DECORATIVE ELEMENT: Blog Section Image
+        //- ================================================
+        //- Right side decoration with animated entrance
+        .col-lg-6.wow.fadeInDown(data-wow-duration="1s", data-wow-delay="0.25s")
+          .top-dec
+            img(src="./assets/images/blog-dec.png", loading="lazy", alt="")
+      
+      .row
+        //- ================================================
+        //- FEATURED ARTICLE: Large Left Column
+        //- ================================================
+        //- Main featured blog article with large thumbnail
+        .col-lg-6.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.25s")
+          .left-image
+            //- Featured article thumbnail image (clickable)
+            a(href="#")
+              img(src="./assets/images/big-blog-thumb.jpg", loading="lazy", alt=t("blog.alt"))
+            
+            //- Article metadata and title
+            .info
+              .inner-content
+                //- Article metadata: date, author, category
+                ul
+                  //- Publication date with calendar icon
+                  li
+                    i.fa.fa-calendar
+                    | #{t("blog.calender.text")}
+                  //- Author name with user icon
+                  li
+                    i.fa.fa-users
+                    | #{t("blog.calender.author")}
+                  //- Category with folder icon
+                  li
+                    i.fa.fa-folder
+                    | #{t("blog.calender.li")}
+                
+                //- Article title (clickable link)
+                a(href="#")
+                  h4 #{t("blog.seo_agency")}
+                
+                //- Article excerpt/description
+                p #{t("blog.description")}
+                
+                //- "Discover More" CTA button
+                .main-blue-button
+                  a(href="#") #{t("blog.info.discover_more")}
+        
+        //- ================================================
+        //- BLOG ARTICLE LIST: Right Column
+        //- ================================================
+        //- Sidebar with 3 recent blog articles
+        .col-lg-6.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.25s")
+          .right-list
+            ul
+              //- ARTICLE 1
+              li
+                //- Left content: article info with dynamic margin for LTR/RTL
+                .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;`)
+                  //- Publication date
+                  span
+                    i.fa.fa-calendar
+                    | #{t("blog.info.right_list.date")}
+                  //- Article title (clickable)
                   a(href="#")
-                    h4 #{t("blog.seo_agency")}
-                  p #{t("blog.description")}
-                  .main-blue-button
-                    a(href="#") #{t("blog.info.discover_more")}
-          .col-lg-6.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.25s")
-            .right-list
-              ul
-                li
-                  .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;`)
-                    span
-                      i.fa.fa-calendar
-                      |  #{t("blog.info.right_list.date")}
-                    a(href="#")
-                      h4 #{t("blog.info.right_list.backlinks")}
-                    p #{t("blog.info.right_list.description")}
-                  .right-image
-                    a(href="#")
-                      img(src="./assets/images/blog-thumb-01.jpg",loading="lazy", alt="")
-                li
-                  .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;`)
-                    span
-                      i.fa.fa-calendar
-                      |  #{t("blog.info.left_content.date")}
-                    a(href="#")
-                      h4 #{t("blog.info.left_content.title")}
-                    p #{t("blog.info.left_content.description")}
-                  .right-image
-                    a(href="#")
-                      img(src="./assets/images/blog-thumb-01.jpg",loading="lazy", alt="")
-                li
-                  
-                  .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;` )
-                    span
-                      i.fa.fa-calendar
-                      |  #{t("blog.info.left_content.date")}
-                    a(href="#")
-                      h4 #{t("blog.info.left_content.title")}
-                    p #{t("blog.info.left_content.description")}
-                  .right-image
-                    a(href="#")
-                      img(src="./assets/images/blog-thumb-01.jpg",loading="lazy", alt="")
+                    h4 #{t("blog.info.right_list.backlinks")}
+                  //- Article excerpt
+                  p #{t("blog.info.right_list.description")}
+                
+                //- Right side: article thumbnail
+                .right-image
+                  a(href="#")
+                    img(src="./assets/images/blog-thumb-01.jpg", loading="lazy", alt="")
+              
+              //- ARTICLE 2
+              li
+                //- Left content: article info
+                .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;`)
+                  span
+                    i.fa.fa-calendar
+                    | #{t("blog.info.left_content.date")}
+                  a(href="#")
+                    h4 #{t("blog.info.left_content.title")}
+                  p #{t("blog.info.left_content.description")}
+                
+                //- Right side: article thumbnail
+                .right-image
+                  a(href="#")
+                    img(src="./assets/images/blog-thumb-01.jpg", loading="lazy", alt="")
+              
+              //- ARTICLE 3
+              li
+                //- Left content: article info
+                .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;`)
+                  span
+                    i.fa.fa-calendar
+                    | #{t("blog.info.left_content.date")}
+                  a(href="#")
+                    h4 #{t("blog.info.left_content.title")}
+                  p #{t("blog.info.left_content.description")}
+                
+                //- Right side: article thumbnail
+                .right-image
+                  a(href="#")
+                    img(src="./assets/images/blog-thumb-01.jpg", loading="lazy", alt="")

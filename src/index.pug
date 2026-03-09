@@ -1,94 +1,155 @@
 extends layout
 
-block head
-    - const dir = (lang == "ar") ? "rtl" : "ltr";
-    +headSection(lang, theme_name)
-block content
+//- ================================================
+//- INDEX PAGE: Main Home/Landing Page
+//- ================================================
+//- This template defines the primary landing page for the SEO Space application
+//- It extends the main layout template and uses various mixins to compose sections
+//- The page structure is mobile-responsive using Bootstrap 5.3.8
+//- Language support: English (LTR) and Arabic (RTL)
 
-    // ***** Header Area Start *****
+block head
+    //- Set text direction based on language (rtl for Arabic, ltr for English)
+    - const dir = (lang == "ar") ? "rtl" : "ltr";
+    
+    //- Render head section: meta tags, Open Graph, stylesheets, etc.
+    +headSection(lang, theme_name)
+
+block content
+    //- ================================================
+    //- PAGE HEADER: Navigation and Logo
+    //- ================================================
     +header()
-    // ***** Header Area End *****
-    // ***** Banner Area Starts *****
+    
+    //- ================================================
+    //- HERO/BANNER SECTION: Welcome and Call-to-Action
+    //- ================================================
+    //- Main banner displays hero image, marketing message, and website URL analyzer form
     +banner()
-    // ***** Banner Area Ends *****
-    // ***** Preloader Start *****
+    
+    //- ================================================
+    //- PRELOADER: Loading Animation (Conditional)
+    //- ================================================
+    //- Animated loader shown on initial page load if enabled in config
+    //- Enhances perceived loading experience with visual feedback
     - if (pre_loader)
         +preloader()
-    // ***** Preloader End *****
-    // ***** Services Area Start *****
+    
+    //- ================================================
+    //- SERVICES SECTION: SEO Services and Skills
+    //- ================================================
+    //- Displays service offerings with animated skill progress bars
+    //- Shows: Website Analysis (84%), SEO Reports (88%), Page Optimizations (94%)
     +services()
     
+    //- ================================================
+    //- PRICING TABLE SECTION: Service Packages
+    //- ================================================
+    //- Partial component showing different pricing tiers and packages
     include partials/pricing-table
-    // ***** Services Area End *****
-    // ***** Portfolio Area End *****
-    +portfolio()
-    // ***** Portfolio Area End *****
-    // ***** About Area Start *****
-    +about(lang)
-    // ***** About Area End *****
     
-    // ***** Testemonials Area Starts ******
+    //- ================================================
+    //- PORTFOLIO SECTION: Showcased Projects/Portfolio Items
+    //- ================================================
+    //- Gallery of completed projects with hover effects
+    //- Items loaded dynamically from localization JSON file
+    +portfolio()
+    
+    //- ================================================
+    //- ABOUT SECTION: Company/Team Information
+    //- ================================================
+    //- About company message, team details, and company history
+    +about(lang)
+    
+    //- ================================================
+    //- TESTIMONIALS SECTION: Client Reviews and Feedback
+    //- ================================================
+    //- Rotating carousel displaying client testimonials with photos
+    //- Currently uses placeholder content - replace with actual client reviews
     #testemonials
-        .row
-            h2 #{t("menu.testemonials")}  
-            +slider("slider",2)
-                .carousel-item.active
-                        img(src="./assets/images/person.png", loading="lazy" ,class="img-thumbnail rounded-pill d-block my-1 mx-auto", alt="person")
+        .container-fluid
+            .row
+                //- Section heading with localized text
+                h2 #{t("menu.testemonials")}
+                
+                //- Carousel component with 2 visible items (from slider mixin)
+                +slider("slider",2)
+                    //- First testimonial item
+                    .carousel-item.active
+                        //- Client profile image - using lazy loading for performance
+                        img(src="./assets/images/person.png", loading="lazy", class="img-thumbnail rounded-pill d-block my-1 mx-auto", alt="person")
                         .clearfix
-                        blockqoute.text-center 
+                        
+                        //- Testimonial quote/text
+                        blockqoute.text-center
                             p Some representative placeholder content for the first slide.
-                            
                         .clearfix
-                .carousel-item
-                        img(src="./assets/images/person.png", loading="lazy",class="img-thumbnail rounded-pill d-block my-1 mx-auto", alt="person")
+                    
+                    //- Second testimonial item
+                    .carousel-item
+                        img(src="./assets/images/person.png", loading="lazy", class="img-thumbnail rounded-pill d-block my-1 mx-auto", alt="person")
                         .clearfix
-                        blockquote.text-center 
+                        blockquote.text-center
                             p representative placeholder content for the first slide.
                         .clearfix
-    // ***** Testemonials Area Ends ********
-
-
-            
-                        
-    // ***** Blog Area Start *****
+    
+    //- ================================================
+    //- BLOG SECTION: Articles and News Feed
+    //- ================================================
+    //- Displays recent blog posts/articles with language support
     +blog(lang)
-    // ***** Blog Area End *****
-    // ***** Contact Area Start *****
+    
+    //- ================================================
+    //- CONTACT SECTION: Contact Form and Information
+    //- ================================================
+    //- Allows visitors to send messages and view contact details
     +contact(lang)
-    // ***** Contact Area End *****
-    // ***** Assistant Area Start *****
+    
+    //- ================================================
+    //- AI ASSISTANT SECTION: Chat Bot (Conditional)
+    //- ================================================
+    //- Floating AI assistant widget for customer support
+    //- Only rendered if enabled in configuration (ai_assistant=true)
     - if(ai_assistant)
         +assistant(lang)
-    // ***** Assistant Area End *****
-    // Newsletter Start Area
+    
+    //- ================================================
+    //- NEWSLETTER MODAL: Email Subscription Popup
+    //- ================================================
+    //- Modal dialog for email newsletter signup
+    //- Opens automatically or on user trigger
     +defaultModal("newsletter",t("newsletter"))
         include partials/newsletter
-    
-    // Newsletter End Area
-    // ***** Footer Area Start *****
-block footer
-    +footer()
-    // ***** Footer Area End *****
-    
 
-//- Scripts
+block footer
+    //- ================================================
+    //- FOOTER SECTION: Copyright and Legal Footer
+    //- ================================================
+    //- Standard footer with copyright, author info, and links
+    +footer()
+
+//- ================================================
+//- EXTERNAL SCRIPTS AND BUNDLE LOADING
+//- ================================================
+//- Note: All custom JavaScript is bundled into a single file (dist/bundle.js)
+//- for better performance through: Rollup (bundler) + Babel (transpiler)
+//- CSS is compiled from Pug templates and optimized by Gulp
+
 block scripts
+  //- Bootstrap 5.3.8 - CSS Framework for responsive layouts
   script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js")
+  
+  //- DOMPurify 3.3.1 - DOM sanitization library for security
   script(src="https://cdn.jsdelivr.net/npm/dompurify@3.3.1/dist/purify.min.js")
   
+  //- Markdown to HTML converter - for dynamic content rendering
   script(src="https://unpkg.com/@wcj/markdown-to-html/dist/markdown.min.js")
-  //- script(src="./assets/js/animation.js")
-  script(src="./dist/bundle.js" defer )
+  
+  //- Main application bundle - contains all custom CSS and JavaScript
+  //- Compiled by Gulp, Rollup, and Babel, then minified for production
+  //- See gulp.cjs for the build configuration
+  script(src="./dist/bundle.js" defer)
+  
+  //- Fallback message if JavaScript is disabled in browser
   noscript
     | Enable Javascript
-
-    
-    
-    
-    
-        
-        
-    
-    
-
-

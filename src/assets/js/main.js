@@ -276,6 +276,7 @@ const $ = require("jquery");
       $("body").attr("data-bs-theme") === "light" ? "dark" : "light",
     );
   });
+  
   /**
    * AI Assistant Modal Open Handler
    * 
@@ -294,14 +295,21 @@ const $ = require("jquery");
    */
   $("#assistant").on("click", function () {
     const audio = new Audio("./assets/sounds/open.wav");
+    if($("#messageContainer").attr("style") != "height:0") return ;
     audio.play();
     $("#messageContainer").attr("style", "height:unset");
     
   });
   setTimeout(()=>{
-    $("#assistant").trigger("click")
+    const audio = new Audio("./assets/sounds/open.wav");
+    const container = $("#messageContainer");
+
+    console.log(container.attr("style"))
+    if(container.attr("style") != "height:0") return ;
+    container.attr("style","height:unset")
+    audio.play()
     const lang = document.documentElement.lang
-    console.log(lang)
+    
     if (lang == "ar")
     {
       $("#messageArea").append(`<div class="col-12"><p class="rounded bg-secondary-subtle p-1 text-center  text-break col-12 my-3"><b>مرحبا بك. انا بوت ذكي😍 . كيف يمكنني مساعدتك؟ </b></p></div`)
@@ -310,7 +318,7 @@ const $ = require("jquery");
       $("#messageArea").append($(`<div class="col-12"><p class="rounded bg-secondary-subtle p-1 text-center  text-break col-12 my-3"><b>Hello 😍 .Iam Ai Assistant. Tell Me What do You need? </b></p> `))
     }
     
-  },20 * 1000)
+  },3 * 1000)
   /**
    * AI Assistant Modal Close Handler
    * 

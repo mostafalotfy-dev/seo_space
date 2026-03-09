@@ -178,9 +178,8 @@ const config = {
    * 6. Verify accessibility (AA contrast ratio minimum)
    */
   themes: [
-    "olive-garden-feast.css",
+    
     "navy.css",
-    "new-corporate-tech.css",
     "loyal-green.css",
     "cranberries.css",
   ],
@@ -256,7 +255,12 @@ const config = {
    * - Add feature flags for individual AI features (chat, analysis)
    * - Possible values: 'enabled', 'beta', 'disabled' for more control
    */
-  "ai_asssitant": true
+  "ai_asssitant": true,
+  "pug_to_compile":[
+                //"src/pages/*.pug",
+                "src/index.pug",
+                // "src/pages/blog/main.pug", Soon
+              ]
 };
 
 /**

@@ -1,10 +1,45 @@
-form#signup(action="#", method="post", class="signup-form  z-3" dir=dir )
-        .container
-            .row.justify-content-center.mt-5
-                .col-lg-12
-                    h2.text-center #{t("signup.title")}
-                    p.text-center #{t("signup.description")}
-                        .mb-3
-                            label.form-label(for="email") #{t("signup.email_label")}
-                            input.form-control(type="email", id="email", name="email", placeholder=t("signup.email_placeholder"), required)
-                        button.btn.btn-primary.w-100(type="submit") #{t("signup.button_text")}
+//- ================================================
+//- NEWSLETTER SIGNUP PARTIAL: Email Subscription Form
+//- ================================================
+//- Reusable newsletter signup component displayed in modal dialog
+//- Included in: index.pug via defaultModal mixin
+//- Features:
+//-   - Modal popup for email newsletter subscription
+//-   - Email input field with validation
+//-   - Signup button
+//-   - Localized content (all text from translation system)
+//-   - Responsive design with Bootstrap grid
+//-   - Modal styling with z-index layering
+//- Purpose: Collect visitor email addresses for marketing campaigns
+//- Data Submission: Form action="#" should be updated to actual newsletter endpoint
+//- Security Notes: Consider adding CSRF token and server-side validation
+//- Email Field: HTML5 validation ensures valid email format
+
+//- Newsletter signup form in modal (z-3 for high z-index stacking)
+form#signup(action="#", method="post", class="signup-form z-3" dir=dir)
+    .container
+        .row.justify-content-center.mt-5
+            .col-lg-12
+                //- Newsletter signup heading
+                h2.text-center #{t("signup.title")}
+                
+                //- Newsletter description/persuasion text
+                p.text-center #{t("signup.description")}
+                
+                //- Email input field
+                .mb-3
+                    //- Email input label
+                    label.form-label(for="email") #{t("signup.email_label")}
+                    
+                    //- Email input: required, HTML5 validation, localized placeholder
+                    input.form-control(
+                        type="email",
+                        id="email",
+                        name="email",
+                        placeholder=t("signup.email_placeholder"),
+                        required
+                    )
+                
+                //- Form submission button
+                button.btn.btn-primary.w-100(type="submit")
+                    | #{t("signup.button_text")}

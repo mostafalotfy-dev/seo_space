@@ -14,7 +14,7 @@
   /* --- Core Background Colors --- */
   --main-color: #212121;
   /* Primary background color */
-  --secondary-color: #04211D;
+  --secondary-color: #0a4a23;
   /* Secondary background for sections and cards */
   --light-bg-color: #04211D;
   /* Light background for nested elements */
@@ -22,7 +22,7 @@
   /* --- Brand & Accent Colors --- */
   --third-color: #272932;
   /* Tertiary brand color */
-  --accent-color: #c92a2a;
+  --accent-color: #a03211;
   /* Accent color for highlights and CTAs */
   --secondary-hover-color: #e27777;
   /* Hover state for secondary elements */
@@ -86,15 +86,9 @@
   /* Color for footer text */
   --history-text-color: white;
   /* Color for history/timeline text */
+  --navbar-list-color:white;
 }
 
-[data-theme="dark"] {
-  color-scheme: dark;
-}
-
-[data-theme="light"] {
-  color-scheme: light;
-}
 
 /* =========================
    LIGHT MODE
@@ -126,7 +120,7 @@
   /* Paragraph text color */
   --text-muted: #000000;
   /* Muted text for secondary information */
-  --heading-color: var(--text-color);
+  --heading-color: white;
   /* Heading color inherits from primary text */
   --text-hover-color: #ffffff;
   /* Color on hover for text elements */

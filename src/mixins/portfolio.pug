@@ -1,19 +1,60 @@
+//- ================================================
+//- PORTFOLIO MIXIN: Projects/Portfolio Gallery Section
+//- ================================================
+//- Displays a grid of showcased projects/portfolio items
+//- Features:
+//-   - Responsive grid layout (up to 4 columns on desktop, 2 on mobile)
+//-   - Animated entrance effects (bounceIn, bounceInUp from WOW.js)
+//-   - Hover effects showing hidden content (title and description)
+//-   - Dynamic content loaded from translation file
+//-   - Professional showcase of completed work
+//- Portfolio Items: Loaded from t("portfolio.items.models") array
+//- NOTE: Items are dynamically rendered, see locals/en.json for content
+
 mixin portfolio()
     #portfolio.our-portfolio.section
         .container
             .row
-                .col-lg-6.offset-lg-3
+                //- ================================================
+                //- PORTFOLIO SECTION HEADING
+                //- ================================================
+                //- Centered section title with animated entrance
+                .col-lg-12
                     .section-heading.wow.bounceIn(data-wow-duration="1s", data-wow-delay="0.2s")
-                        h2 #{t("portfolio.heading.part1")} 
-                            em #{t("portfolio.heading.em")} 
-                            | #{t("portfolio.heading.part2")} 
-                            span #{t("portfolio.heading.span")} 
+                        h2
+                            //- Title with three parts: part1, em (emphasized), part2, span, rest
+                            | #{t("portfolio.heading.part1")}
+                            em #{t("portfolio.heading.em")}
+                            | #{t("portfolio.heading.part2")}
+                            span #{t("portfolio.heading.span")}
+            
+            //- ================================================
+            //- PORTFOLIO ITEMS GRID
+            //- ================================================
+            //- Dynamic loop through portfolio items from localization data
+            //- Each item displays as a card with image and hover information
             .row
-                - for( const model of t("portfolio.items.models")) 
+                //- Loop iterates through each model/project in the portfolio array
+                //- TODO: Update content in locals/en.json and locals/ar.json with real projects
+                - for( const model of t("portfolio.items.models"))
+                    //- Responsive column: 3 columns on desktop, 6 columns (2 items) on tablet
                     .col-lg-3.col-sm-6
+                        //- Portfolio item card with animations
                         .item.wow.bounceInUp(data-wow-duration="1s", data-wow-delay="0.3s")
+                            //- ================================================
+                            //- HIDDEN CONTENT: Shown on Hover
+                            //- ================================================
+                            //- Title and description visible on mouse hover
+                            //- Positioned on top of image using z-3 (high z-index)
                             .hidden-content.z-3
-                                h4 #{model.title}
-                                p #{model.description}
+                                h4 #{model.title}          //- Project/item title
+                                p #{model.description}      //- Project/item description
+                            
+                            //- ================================================
+                            //- VISIBLE CONTENT: Portfolio Image
+                            //- ================================================
+                            //- Portfolio item thumbnail image
+                            //- Using lazy loading for performance optimization
+                            //- Current placeholder: 'portfolio-image.png' (apply real images)
                             .showed-content
-                                img(src="./assets/images/portfolio-image.png",loading="lazy", alt=model.alt)
+                                img(src="./assets/images/portfolio-image.png", loading="lazy", alt=model.alt)

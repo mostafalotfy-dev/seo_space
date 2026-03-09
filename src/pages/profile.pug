@@ -1,21 +1,41 @@
+//- ================================================
+//- PROFILE PAGE: User Account Profile/Dashboard
+//- ================================================
+//- User profile management page (authenticated users only)
+//- Features: Profile card, user info display/editing, language/theme support
+//- Access: /output-[lang]-[theme]-profile.html
+//- Security: Page should require authentication, autocomplete disabled
+//- Fields: Name, Email (both updateable)
+//- Dependencies: Bootstrap 5.3.8, localization system, auth middleware
+
 extends ../layout
 
-
 block head
+    //- Set text direction based on language: RTL for Arabic, LTR for English
     - const dir = (lang == "ar") ? "rtl" : "ltr";
+    //- Render page head: meta tags, stylesheets, etc.
     +headSection(lang, theme_name)
+
 block content
+    //- Navigation bar (includes user menu for authenticated users)
     +navbar(lang)
+    
+    //- Page loading animation
     +preloader()
+    
+    //- Full-height container centering profile card on screen
     .container.vh-100
         .row.justify-content-center.align-items-center.vh-100
             .col-lg-6
                 .card
                     .card-body
+                        //- Profile page heading
                         h2.text-center #{t("profile.title")}
+                        //- Profile page description/instructions
                         p.text-center #{t("profile.description")}
                         
-                        form#profile(action="#", method="post",autocomplete="off")
+                        //- Profile edit form: updates user information securely
+                        form#profile(action="#", method="post", autocomplete="off")
                             .mb-3
                                 label.form-label(for="name") #{t("profile.name_label")}
                                 input.form-control(type="text", id="name", name="name", placeholder=t("profile.name_placeholder"), required)

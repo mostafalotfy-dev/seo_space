@@ -1,19 +1,57 @@
-mixin defaultModal(id,title)
-    .modal.fade(tabindex="-1" id=id )
-      .modal-dialog
-        .modal-content
-            .modal-header
-                if lang == "ar"
-                    button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
-                    h5.modal-title #{title}
-                else
-                    h5.modal-title #{title} 
-                    button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
-                    
-            .modal-body
-                block 
-                
-            .modal-footer
-                button(type="button" class="btn btn-secondary" data-bs-dismiss="modal") #{t("modal")}
+//- ================================================
+//- MODALS MIXIN: Bootstrap Modal Dialog Component
+//- ================================================
+//- Reusable Bootstrap modal component for popups and dialog windows
+//- Features:
+//-   - Full Bootstrap 5.3 modal styling and functionality
+//-   - Language-aware button placement (RTL for Arabic)
+//-   - Header, body, and footer sections
+//-   - Dismiss/close button
+//-   - Fade animation on open
+//-   - Flexible content via Pug block parameter
+//- Parameters:
+//-   - id: Unique modal identifier (for triggering via data-bs-target)
+//-   - title: Modal heading/title text
+//- Content: Accepts custom content via block (inserted in modal-body)
+//- Usage Example:
+//-   +defaultModal("newsletter", "Subscribe to Newsletter")
+//-     include partials/newsletter
+//- Dependencies: Bootstrap 5.3+ CSS and JavaScript
+//- Notes:
+//-   - Button order changes based on language (RTL = close button first)
+//-   - Modal is hidden by default (use data-bs-toggle="modal" on trigger)
+//- TODO: Update "modal" translation key value in localization files
 
-                
+mixin defaultModal(id, title)
+  //- Modal container with fade animation effect
+  .modal.fade(tabindex="-1" id=id)
+    .modal-dialog
+      .modal-content
+        //- ================================================
+        //- MODAL HEADER: Title and Close Button
+        //- ================================================
+        //- Button order changes based on language direction
+        .modal-header
+          if lang == "ar"
+            //- Arabic (RTL): Close button first, then title
+            button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+            h5.modal-title #{title}
+          else
+            //- English (LTR): Title first, then close button
+            h5.modal-title #{title}
+            button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+        
+        //- ================================================
+        //- MODAL BODY: Main Content
+        //- ================================================
+        //- Custom content area (injected via block in parent template)
+        .modal-body
+          block
+        
+        //- ================================================
+        //- MODAL FOOTER: Action Buttons
+        //- ================================================
+        .modal-footer
+          //- Dismiss/close button
+          button(type="button" class="btn btn-secondary" data-bs-dismiss="modal")
+            | #{t("modal")}

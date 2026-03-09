@@ -66,11 +66,7 @@ gulp.task("pug", function () {
 
         tasks.push(
           gulp
-            .src([
-              "src/pages/*.pug",
-              "src/index.pug",
-              // "src/pages/blog/main.pug",
-            ])
+            .src(config.pug_to_compile)
             .pipe(
               rename(function (filePath) {
                 const baseName = path.basename(filePath.basename, ".pug");

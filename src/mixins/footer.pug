@@ -1,10 +1,30 @@
+//- ================================================
+//- FOOTER MIXIN: Page Footer Section
+//- ================================================
+//- Renders the page footer with copyright and legal information
+//- Features:
+//-   - Animated entrance effect (fadeIn from WOW.js)
+//-   - Localized copyright and design attribution text
+//-   - Responsive layout using Bootstrap grid
+//- Content Source: Localization file (locals/en.json, locals/ar.json)
+//- Displayed on every page by including in layout.pug
+
 mixin footer()
   footer
-      .container
-        .row
-          .col-lg-12.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.25s")
-            p
-              | #{t("footer.copyright")}
-              br
-              | #{t("footer.design.text")}
-              a(rel="nofollow", href="#") #{t("footer.design.author")}
+    .container
+      .row
+        //- ================================================
+        //- FOOTER CONTENT: Copyright and Attribution
+        //- ================================================
+        //- Full-width column with centered animated footer text
+        .col-lg-12.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.25s")
+          p
+            //- Copyright text from translation file
+            | #{t("footer.copyright")}
+            br
+            
+            //- Design attribution with link to designer/author
+            | #{t("footer.design.text")}
+            a(rel="nofollow", href="#")
+              //- Author/designer name link
+              | #{t("footer.design.author")}

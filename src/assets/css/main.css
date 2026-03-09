@@ -1532,11 +1532,11 @@ contact
 .contact-us .section-heading h2,
 .contact-us .section-heading h2 em,
 .contact-us .section-heading h2 span {
-  color: var(--text-color);
+  color: var(--heading-color);
 }
 
 .contact-us .section-heading p {
-  color: var(--text-color);
+  color: var(--paragraph-color);
   margin-top: 30px;
 }
 
@@ -1547,7 +1547,7 @@ contact
 .phone-info h4 {
   font-size: 20px;
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--heading-color);
 }
 
 .phone-info h4 span i {
@@ -1565,7 +1565,7 @@ contact
 }
 
 .phone-info h4 span a {
-  color: var(--text-color);
+  color: var(--text-accent-color);
   font-size: 15px;
   font-weight: 400;
 }
@@ -1583,7 +1583,7 @@ form#contact .contact-dec img {
 form#contact {
   margin-left: 30px;
   position: relative;
-  background-color: var(--main-color);
+  background-color: var(--accent-color);
   padding: 60px 30px;
   border-radius: 20px;
 }
@@ -1865,7 +1865,7 @@ responsive
   left: -188px !important;
 }
 
-
+/* Right To Left */
 [dir="rtl"] .about-us .services .item .icon {
   float: right;
   margin-right: 0px;
@@ -1923,7 +1923,20 @@ responsive
   text-align: left;
   margin-left:30px;
 }
-
+[dir=rtl] .our-services .section-heading h2
+{
+  margin-right:unset;
+  margin-left:100px
+}
+[dir=rtl] .our-blog .left-image .info .main-blue-button
+{
+  left:unset;
+  right: 0;
+}
+[dir=rtl] .our-blog .section-heading h2{
+  margin-right: unset;
+  margin-left: 180px;
+}
 /*************************************************
   Buttons
 *************************************************/
@@ -1932,11 +1945,21 @@ responsive
   --bs-dropdown-color: var(--secondary-color);
   --bs-dropdown-bg: var(--secondary-color);
 }
+
+
+/* Color Scheme Toggle*/
+
+
 [dir=rtl] .dropdown-toggle::after {
   margin-right:.255em
 }
 #theme-toggle{
   margin-top:7px;
 }
+[data-theme="dark"] {
+  color-scheme: dark;
+}
 
-
+[data-theme="light"] {
+  color-scheme: light;
+}

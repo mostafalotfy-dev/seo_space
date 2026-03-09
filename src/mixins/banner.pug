@@ -1,31 +1,98 @@
+//- ================================================
+//- BANNER MIXIN: Hero/Banner Section
+//- ================================================
+//- Main landing page hero section with call-to-action
+//- Features:
+//-   - Large background with animated image
+//-   - Heading with marketing message
+//-   - Website URL analyzer form (primary CTA)
+//-   - Responsive layout: text on left, image on right (desktop)
+//-   - Animated entrance effects using WOW.js
+//-   - Responsive images with picture element for different screen sizes
+//- Parameters:
+//-   - lang: Current language (used by nested components)
+//- Content Source: Localization file
+
 mixin banner(lang)
   #top.main-banner.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0.5s")
-      .container
-        .row
-          .col-lg-12
-            .row
-              .col-lg-6.align-self-center
-                .left-content.header-text.wow.fadeInLeft(data-wow-duration="1s", data-wow-delay="1s")
-                  h6 #{t("banner.welcome")} 
-                  h2 #{t("banner.we_make")}  
-                    em #{t("banner.digital_ideas")}
-                    | & 
-                    span #{t("banner.seo")}
-                    | #{t("banner.marketing")}
-                  p 
-                    bdi #{t("banner.description.part1")}
-                    a(rel="nofollow", href="https://example.com/page/1", target="_parent") 
-                    | #{t("banner.description.part2")}
-                  form#search(action="#", method="post")
-                    fieldset
-                      input.email(type="url", name="address", placeholder=t("banner.placeholder.website_url"),dir=dir, autocomplete="on", required)
-                    fieldset
-                      button.main-button(type="submit",dir=dir) #{t("banner.button.analyze")}
-              .col-lg-6
-                .right-image.wow.text-center.fadeInRight(data-wow-duration="1s", data-wow-delay="0.5s")
-                  picture
-                    source(media="(max-width:992px )", srcset="./assets/images/banner-right-image-238.png")
-                    source(media="(max-width:1200px )", srcset="./assets/images/banner-right-image-238.png")
-                    source(media="(min-width:769px )", srcset="./assets/images/banner-right-image.png")
-                    
-                    img(src="./dist/assets/images/banner-right-image.png",loading="lazy", alt=t("banner.alt.team_meeting"))
+    .container
+      .row
+        .col-lg-12
+          .row
+            //- ================================================
+            //- LEFT COLUMN: Text Content and CTA Form
+            //- ================================================
+            //- Marketing message and website analyzer form
+            .col-lg-6.align-self-center
+              .left-content.header-text.wow.fadeInLeft(data-wow-duration="1s", data-wow-delay="1s")
+                //- Subheading: welcome message
+                h6 #{t("banner.welcome")}
+                
+                //- Main heading: dynamic marketing message with emphasis
+                h2
+                  //- Main text
+                  | #{t("banner.we_make")}
+                  //- Emphasized text (styled differently)
+                  em #{t("banner.digital_ideas")}
+                  //- Conjunction
+                  | &
+                  //- Span text (additional emphasis)
+                  span #{t("banner.seo")}
+                  //- Rest of text
+                  | #{t("banner.marketing")}
+                
+                //- Description paragraph with link reference
+                p
+                  //- bdi (Bidirectional Isolate) wraps text to handle RTL/LTR mixed content
+                  bdi #{t("banner.description.part1")}
+                  //- External link for more information
+                  a(rel="nofollow", href="https://example.com/page/1", target="_parent")
+                  //- Rest of description
+                  | #{t("banner.description.part2")}
+                
+                //- ================================================
+                //- SEARCH/ANALYZER FORM
+                //- ================================================
+                //- Website URL input form for SEO analysis tool
+                //- Primary call-to-action for visitors
+                form#search(action="#", method="post")
+                  fieldset
+                    //- Website URL input field
+                    //- Direction automatically set based on language (RTL for Arabic)
+                    //- Accepts URLs for semantic HTML validation
+                    input.email(
+                      type="url",
+                      name="address",
+                      placeholder=t("banner.placeholder.website_url"),
+                      dir=dir,
+                      autocomplete="on",
+                      required
+                    )
+                  
+                  fieldset
+                    //- Submit button for website analysis
+                    button.main-button(type="submit", dir=dir)
+                      | #{t("banner.button.analyze")}
+            
+            //- ================================================
+            //- RIGHT COLUMN: Hero Image
+            //- ================================================
+            //- Visual representation of the SEO/digital marketing concept
+            //- Responsive image using picture element for optimization
+            .col-lg-6
+              .right-image.wow.text-center.fadeInRight(data-wow-duration="1s", data-wow-delay="0.5s")
+                picture
+                  //- Mobile version: screens up to 992px width
+                  source(media="(max-width:992px )", srcset="./assets/images/banner-right-image-238.png")
+                  //- Tablet version: screens up to 1200px width
+                  source(media="(max-width:1200px )", srcset="./assets/images/banner-right-image-238.png")
+                  //- Desktop version: screens 769px and above
+                  source(media="(min-width:769px )", srcset="./assets/images/banner-right-image.png")
+                  
+                  //- Fallback image (used if no source matches or picture not supported)
+                  //- Uses lazy loading for performance optimization
+                  img(
+                    src="./dist/assets/images/banner-right-image.png",
+                    loading="lazy",
+                    alt=t("banner.alt.team_meeting")
+                  )

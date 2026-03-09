@@ -1,34 +1,78 @@
+//- ================================================
+//- SERVICES MIXIN: SEO Services and Skills Section
+//- ================================================
+//- Displays the company's services and core competencies
+//- Layout: Image on left, content on right (responsive design)
+//- Features:
+//-   - Animated entrance effects (WOW library)
+//-   - Responsive image (shown/hidden based on screen size)
+//-   - Dynamic skill progress bars
+//-   - Localized content through translation system
+//- Skill Categories:
+//-   - Website Analysis: 84%
+//-   - SEO Reports: 88%
+//-   - Page Optimizations: 94%
+
 mixin services()
   #services.our-services.section
-      .container
-        .row
-          .col-lg-6.d-none.d-lg-block.align-self-center.wow.fadeInLeft(data-wow-duration="1s", data-wow-delay="0.2s")
-            .left-image.text-sm-center
-              img(src="./assets/images/services-left-image.png",loading="lazy", alt="")
-          .col-lg-6.wow.fadeInRight(data-wow-duration="1s", data-wow-delay="0.2s")
-            .section-heading
-              h2 #{t("services.heading.part1")}
-                em #{t("services.heading.em")}
-                | #{t("services.heading.part2")}
-                span #{t("services.heading.span")}
-                | #{t("services.heading.part3")}
-              p #{t("services.description")}
-            .row
-              .col-lg-12
-                .first-bar.progress-skill-bar
-                  h4 #{t("services.skills.website_analysis")}
-                  span 84%
-                  .filled-bar
-                  .full-bar
-              .col-lg-12
-                .second-bar.progress-skill-bar
-                  h4 #{t("services.skills.seo_reports")}
-                  span 88%
-                  .filled-bar
-                  .full-bar
-              .col-lg-12
-                .third-bar.progress-skill-bar
-                  h4 #{t("services.skills.page_optimizations")}
-                  span 94%
-                  .filled-bar
-                  .full-bar
+    .container
+      .row
+        //- ================================================
+        //- SERVICES IMAGE: Left Side Visual
+        //- ================================================
+        //- Decorative image showcasing services concept
+        //- Hidden on mobile/tablet (d-none d-lg-block classes)
+        //- Animates from left with fadeInLeft effect
+        .col-lg-6.d-none.d-lg-block.align-self-center.wow.fadeInLeft(data-wow-duration="1s", data-wow-delay="0.2s")
+          .left-image.text-sm-center
+            img(src="./assets/images/services-left-image.png", loading="lazy", alt="")
+        
+        //- ================================================
+        //- SERVICES CONTENT: Right Side Information
+        //- ================================================
+        //- Main content including heading, description, and skill bars
+        //- Animates from right with fadeInRight effect
+        .col-lg-6.wow.fadeInRight(data-wow-duration="1s", data-wow-delay="0.2s")
+          .section-heading
+            //- Section title with formatting (three parts + emphasis + span)
+            h2
+              | #{t("services.heading.part1")}
+              em #{t("services.heading.em")}
+              | #{t("services.heading.part2")}
+              span #{t("services.heading.span")}
+              | #{t("services.heading.part3")}
+            
+            //- Section description from localization file
+            p #{t("services.description")}
+          
+          //- ================================================
+          //- SKILL PROGRESS BARS: Visual Representation
+          //- ================================================
+          //- Three progress bars showing different skill levels
+          //- Each bar has: title, percentage, filled bar, full bar background
+          .row
+            //- SKILL 1: Website Analysis - 84%
+            .col-lg-12
+              .first-bar.progress-skill-bar
+                h4 #{t("services.skills.website_analysis")}
+                span 84%
+                //- Colored portion representing progress
+                .filled-bar  
+                //- Full background/container
+                .full-bar    
+            
+            //- SKILL 2: SEO Reports - 88%
+            .col-lg-12
+              .second-bar.progress-skill-bar
+                h4 #{t("services.skills.seo_reports")}
+                span 88%
+                .filled-bar
+                .full-bar
+            
+            //- SKILL 3: Page Optimizations - 94%
+            .col-lg-12
+              .third-bar.progress-skill-bar
+                h4 #{t("services.skills.page_optimizations")}
+                span 94%
+                .filled-bar
+                .full-bar

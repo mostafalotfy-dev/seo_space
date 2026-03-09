@@ -1,16 +1,66 @@
-mixin slider(id,indicators_count)
-    .slide.carousel.pt-5(data-bs-ride="carousel",id=id)
-        .carousel-indicators
-            - for (let i = 0; i < indicators_count;i++)
-                button.active(type="button", data-bs-target="#"+id, data-bs-slide-to=i, aria-current="true", aria-label="Slide " + (i + 1) )
+//- ================================================
+//- SLIDER MIXIN: Carousel/Slider Component
+//- ================================================
+//- Bootstrap-based carousel component for testimonials and image galleries
+//- Features:
+//-   - Responsive carousel with Bootstrap 5.3 integration
+//-   - Indicator dots showing number of slides
+//-   - Previous/Next navigation buttons (with accessibility labels)
+//-   - Automatic or manual slide navigation
+//-   - Fully accessible with ARIA attributes
+//-   - Flexible footer with clearfix
+//- Parameters:
+//-   - id: Unique carousel identifier (for linking controls)
+//-   - indicators_count: Number of indicator dots to generate
+//- Content: Accepts carousel-item blocks via Pug block parameter
+//- Usage Example:
+//-   +slider("testimonials", 2)
+//-     .carousel-item.active
+//-       p Testimonial content 1
+//-     .carousel-item
+//-       p Testimonial content 2
+//- Dependencies: Bootstrap 5.3+ CSS and JavaScript
+//- Notes: First carousel-item should have .active class
 
-
-        .carousel-inner
-            block
-        .clearfix
-        button.carousel-control-prev(type="button", data-bs-target="#"+id, data-bs-slide="prev")
-            span.carousel-control-prev-icon(aria-hidden="true")
-            span.visually-hidden #{t("slider.previous")}
-        button.carousel-control-next(type="button", data-bs-target="#"+id, data-bs-slide="next")
-            span.carousel-control-next-icon(aria-hidden="true")
-            span.visually-hidden #{t("slider.next")}
+mixin slider(id, indicators_count)
+  //- Main carousel container with Bootstrap data attributes
+  .slide.carousel.pt-5(data-bs-ride="carousel", id=id)
+    
+    //- ================================================
+    //- CAROUSEL INDICATORS: Slide Navigation Dots
+    //- ================================================
+    //- Shows current slide number and allows direct slide selection
+    .carousel-indicators
+      //- Generate indicator buttons based on indicators_count parameter
+      - for (let i = 0; i < indicators_count; i++)
+        button.active(
+          type="button",
+          data-bs-target="#"+id,
+          data-bs-slide-to=i,
+          aria-current="true",
+          aria-label="Slide " + (i + 1)
+        )
+    
+    //- ================================================
+    //- CAROUSEL CONTENT: Slide Items
+    //- ================================================
+    //- Container for carousel items (defined via block in parent template)
+    .carousel-inner
+      block
+    
+    //- Clear float for proper DOM flow
+    .clearfix
+    
+    //- ================================================
+    //- CAROUSEL CONTROLS: Navigation Buttons
+    //- ================================================
+    
+    //- Previous slide button
+    button.carousel-control-prev(type="button", data-bs-target="#"+id, data-bs-slide="prev")
+      span.carousel-control-prev-icon(aria-hidden="true")
+      span.visually-hidden #{t("slider.previous")}
+    
+    //- Next slide button
+    button.carousel-control-next(type="button", data-bs-target="#"+id, data-bs-slide="next")
+      span.carousel-control-next-icon(aria-hidden="true")
+      span.visually-hidden #{t("slider.next")}

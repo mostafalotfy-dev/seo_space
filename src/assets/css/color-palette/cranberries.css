@@ -22,7 +22,7 @@
   /* --- Brand & Accent Colors --- */
   --third-color: #272932;
   /* Tertiary brand color */
-  --accent-color: var(--secondary-color);
+  --accent-color: #16134a;
   /* Accent color (inherits from secondary) */
   --secondary-hover-color: #e27777;
   /* Hover state for secondary elements */
@@ -94,13 +94,6 @@
   /* Color for history/timeline text */
 }
 
-[data-theme="dark"] {
-  color-scheme: dark;
-}
-
-[data-theme="light"] {
-  color-scheme: light;
-}
 
 /* =========================
    LIGHT MODE
@@ -130,13 +123,13 @@
   /* Primary text color with warm tone */
   --title-color: #212121;
   /* Specific color for titles */
-  --paragraph-color: #470303;
+  --paragraph-color: #ffffff;
   /* Paragraph text color */
   --text-muted: #b16d6d;
   /* Muted text for secondary information */
   --heading-color: var(--text-color);
   /* Heading color inherits from primary text */
-  --text-hover-color: var(--secondary-color);
+  --text-hover-color: white;
   /* Color on hover for text elements */
   --text-accent-color: #ffffff;
   /* Accent text for emphasis */
@@ -186,6 +179,8 @@
   /* Color for footer text */
   --list-color: white;
   /* Color for list items */
+  --heading-color: white;
+  --navbar-list-color:white
 }
 
 
