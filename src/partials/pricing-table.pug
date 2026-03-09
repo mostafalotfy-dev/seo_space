@@ -1,6 +1,5 @@
-
 #pricing-tables
-    .section-title
+    .section-title.container
         h1 #{t("price_title")}
         p #{t("price_description")}
     .clear-fix
@@ -9,7 +8,7 @@
                 .row
                     each price in t("prices")
 
-                        .col-md-6.col-lg-4
+                        .col-md-6.col-lg-4.mx-md-auto.my-md-5
                             .single-table
                                 h2 #{price.main_title} #{price.recommended} 
                                 p.price

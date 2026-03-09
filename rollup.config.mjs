@@ -32,7 +32,6 @@ export default {
       preferConst: true, // use `const` instead of `var` for generated variables
     }),
     nodePolyfills(),
- 
-   
+
   ],
 };

@@ -28,15 +28,14 @@ npm install
 ```
 
 This will install all required packages listed in `package.json`:
-- **Pug** (3.0.3) - Template engine
+- **gulp-pug** (5.0.0) - Pug template compilation
 - **Bootstrap** (5.3.8) - CSS framework
 - **jQuery** (4.0.0) - JavaScript library
-- **i18next** (25.8.0) - Localization
 - **Gulp** (5.0.1) - Task runner and build system
 - **Rollup** - JavaScript bundler
 - **Babel** - JavaScript transpiler
-- **Firebase** - Backend and hosting
-- **ESLint** - Code quality
+- **Firebase** (12.9.0) - Backend and hosting
+- **ESLint** (9.39.2) - Code quality
 - And more...
 
 **Installation time**: Usually 2-5 minutes depending on internet speed
@@ -82,22 +81,41 @@ npm list
 Or check specific packages:
 
 ```bash
-npm list pug
+npm list gulp
 npm list bootstrap
-npm list i18next
+npm list firebase
 ```
 
-### 4. Start Development
+### 4. Verify Installation
 
 ```bash
-# Watch mode - automatically recompiles on file changes
-npm run watch
+# Check if all dependencies installed correctly
+npm list
 
-# Or compile once
+# Check specific critical packages
+npm list gulp gulp-pug bootstrap firebase
+```
+
+### 5. Start Development
+
+```bash
+# Watch mode - Gulp automatically recompiles on file changes
+npm run watch:gulp
+
+# In separate terminal: Watch JavaScript bundling  
+npm run watch:rollup
+
+# Or run all build processes at once
 npm start
 ```
 
-**Output**: HTML files will be generated in the root directory with pattern `output-[lang]-theme-[theme-name].html`
+**Output**: HTML files will be generated in the `public/` directory with pattern `output-[lang]-theme-[theme-name]-[mode].html`
+
+**Example generated files:**
+- `output-en-theme-navy-dark.html`
+- `output-en-theme-navy-light.html` 
+- `output-ar-theme-navy-dark.html`
+- `output-ar-theme-navy-light.html`
 
 ## Troubleshooting Installation
 
@@ -120,7 +138,8 @@ sudo npm install -g npm
 **Solutions**:
 - Delete `node_modules` and reinstall: `rm -rf node_modules && npm install`
 - Check Node.js version: `node --version` (should be v14+)
-- Verify `compilepg.cjs` exists in root directory
+- Verify `gulp.cjs` exists in root directory
+- Run: `npm run watch:gulp` to compile Pug templates
 
 ### Issue: Port already in use (if using dev server)
 **Solution**: Change port in development configuration or kill process using the port

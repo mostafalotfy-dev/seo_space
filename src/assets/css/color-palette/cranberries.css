@@ -136,9 +136,9 @@
   /* Muted text for secondary information */
   --heading-color: var(--text-color);
   /* Heading color inherits from primary text */
-  --text-hover-color: #ffffff;
+  --text-hover-color: var(--secondary-color);
   /* Color on hover for text elements */
-  --text-accent-color: black;
+  --text-accent-color: #ffffff;
   /* Accent text for emphasis */
   --history-text-color: #3a3939;
   /* Color for history/timeline text */
@@ -187,3 +187,5 @@
   --list-color: white;
   /* Color for list items */
 }
+
+

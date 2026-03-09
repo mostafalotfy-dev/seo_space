@@ -69,16 +69,14 @@ assets/
     └── close.mp3
 ```
 
-### `vendor/` Directory (Third-party Libraries)
+### Third-party Libraries (via npm/node_modules)
 
-```
-vendor/
-├── bootstrap/             # Bootstrap 5 framework
-│   ├── css/               # Bootstrap styles
-│   └── js/                # Bootstrap JavaScript
-└── jquery/                # jQuery library
-    └── jquery.js (various versions)
-```
+Third-party libraries are installed via npm and located in `node_modules/`:
+- **Bootstrap** (5.3.8) - CSS framework
+- **jQuery** (4.0.0) - JavaScript utilities
+- **Firebase** (12.9.0) - Backend services
+- **gulp-pug** (5.0.0) - Pug template engine
+- And other dependencies listed in `package.json`
 
 ### `pages/` Directory (Page Templates)
 
@@ -388,11 +386,35 @@ CSS logical properties apply
 
 ```
 Body
-  └── .container (Bootstrap)
-      └── .row (Grid row)
-          ├── .col-lg-6 (6 columns on large screens)
-          ├── .col-lg-4 (4 columns on large screens)
-          └── .col-sm-12 (12 columns on small screens)
+  └── .container (Bootstrap max-width container)
+      └── .row (Flexbox grid row)
+          ├── .col-lg-6 (6 columns on lg screens ≥992px)
+          ├── .col-lg-4 (4 columns on lg screens ≥992px)
+          ├── .col-md-8 (8 columns on md screens ≥768px)
+          └── .col-sm-12 (12 columns on sm screens <768px)
+```
+
+### Responsive Breakpoints
+
+Bootstrap 5 media query breakpoints:
+
+```css
+/* Mobile First Approach */
+/* xs: < 576px (default) */
+/* sm >= 576px */
+@media (min-width: 576px) { ... }
+
+/* md >= 768px */
+@media (min-width: 768px) { ... }
+
+/* lg >= 992px */
+@media (min-width: 992px) { ... }
+
+/* xl >= 1200px */
+@media (min-width: 1200px) { ... }
+
+/* xxl >= 1400px */
+@media (min-width: 1400px) { ... }
 ```
 
 ### Utility Classes
@@ -503,9 +525,9 @@ form#contact
 ```
 Development (watch mode)
   ↓
-npm run watch (auto-recompile)
+npm run watch:gulp (auto-recompile via Gulp)
   ↓
-output-*.html generated
+output-*.html generated in public/ directory
   ↓
 Deploy to web server
 ```
@@ -555,5 +577,7 @@ This architecture supports scalability, maintainability, and smooth development 
 
 ---
 
-**Last Updated:** February 20, 2026  
+**Last Updated:** March 9, 2026
+**Version:** 2.3.0
+**Status:** Current & Maintained  
 **Version:** 2.2.2

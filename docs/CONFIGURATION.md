@@ -31,22 +31,22 @@ DEV_PORT=8080
 
 ### Environment Variables Reference
 
-| Variable | Values | Default | Purpose |
-|----------|--------|---------|---------|
-| `LANG` | `en`, `ar` | `en` | Primary language |
-| `THEME` | See themes list | `navy` | Color palette theme |
-| `MODE` | `dark`, `light` | `dark` | Color scheme |
-| `NODE_ENV` | `development`, `production` | `development` | Build environment |
-| `BUILD_PATH` | Path string | `./` | Output directory |
-| `DEV_HOST` | Hostname | `localhost` | Dev server host |
-| `DEV_PORT` | Port number | `8080` | Dev server port |
+| Variable | Values | Default | Purpose | Example |
+|----------|--------|---------|---------|----------|
+| `LANG` | `en`, `ar` | `en` | Primary language | `LANG=ar` for Arabic |
+| `THEME` | `navy`, `ignite`, `new-corporate-tech`, `olive-garden-feast`, `loyal-green`, `cranberries` | `navy` | Color palette theme | `THEME=ignite` |
+| `MODE` | `dark`, `light` | `dark` | Color scheme | `MODE=light` |
+| `NODE_ENV` | `development`, `production` | `development` | Build environment | `NODE_ENV=production` |
+| `BUILD_PATH` | Path string | `./` | Output directory | `BUILD_PATH=./public/` |
+| `DEV_HOST` | Hostname string | `localhost` | Dev server host | `DEV_HOST=127.0.0.1` |
+| `DEV_PORT` | Port number | `8080` | Dev server port | `DEV_PORT=3000` |
 
 ## Theme Configuration
 
 ### Available Themes
 
 ```javascript
-// In compilepg.cjs or .env
+// Themes available in color-palette directory
 const themes = [
   'Ignite',                    // Vibrant, energetic
   'navy',                      // Professional blue
@@ -63,10 +63,10 @@ const themes = [
 THEME=navy
 ```
 
-#### Method 2: compilepg.cjs Configuration
+#### Method 2: gulp.cjs Configuration
 
 ```javascript
-// compilepg.cjs
+// gulp.cjs - configure theme in gulpfile
 const config = {
   theme: 'navy',
   language: 'en',
@@ -109,11 +109,7 @@ Example: `assets/css/color-palette/navy.css`
 LANG=en
 ```
 
-Or in compilepg.cjs:
-
-```javascript
-const language = process.env.LANG || 'en';
-```
+Or edit `.env` file to select language before compilation.
 
 ### Adding New Language
 
@@ -132,11 +128,15 @@ const language = process.env.LANG || 'en';
 }
 ```
 
-2. **Update compilation logic** in `compilepg.cjs` to include new language
+2. **Update .env** to include new language:
+
+```env
+LANG=xx
+```
 
 3. **Recompile**:
 ```bash
-npm run watch
+npm run watch:gulp
 ```
 
 ### Language Switching Logic
@@ -170,35 +170,15 @@ banner.welcome
 services.skills.website_analysis
 ```
 
-## Build Configuration
+## Build System Configuration
 
-### compilepg.cjs Configuration
+### Gulp Task Runner
 
-Main build configuration file:
+The project uses **Gulp** for Pug template compilation. Configuration is in `gulp.cjs`:
 
 ```javascript
-// compilepg.cjs excerpt
-const pug = require('pug');
-const fs = require('fs');
-const path = require('path');
-
-// Configuration object
-const config = {
-  templates: './index.pug',
-  output: './',
-  themes: ['navy', 'Ignite', 'new-corporate-tech', 'olive-garden-feast'],
-  languages: ['en', 'ar'],
-  modes: ['dark', 'light']
-};
-
-// Compile for each combination
-for (const theme of config.themes) {
-  for (const lang of config.languages) {
-    for (const mode of config.modes) {
-      // Generate HTML file
-    }
-  }
-}
+// gulp.cjs - Main build configuration
+// Defines tasks for pug compilation, asset processing, etc.
 ```
 
 ### Output File Naming
@@ -215,21 +195,16 @@ output-[language]-theme-[theme-name]-[mode].html
 - `output-ar-theme-navy-dark.html`
 - `output-ar-theme-olive-garden-feast-light.html`
 
-### Modifying Compilation Output
+### Modifying Build Output
 
-Edit `compilepg.cjs` to change output format:
+Edit `gulp.cjs` to customize compilation:
 
-```javascript
-// Change output filename pattern
-const filename = `custom-${lang}-${theme}-${mode}.html`;
+```bash
+# Run compilation once
+npm run gulp
 
-// Or compile to subdirectory
-const outputPath = `./dist/${lang}/${theme}/index.html`;
-
-// Ensure directory exists
-if (!fs.existsSync(outputPath)) {
-  fs.mkdirSync(outputPath, { recursive: true });
-}
+# Watch for changes
+npm run watch:gulp
 ```
 
 ## Development Server Configuration
@@ -298,66 +273,62 @@ npx eslint . --fix
 npx eslint assets/js/main-custom.js
 ```
 
-## Pug Compilation Options
+## Babel Configuration
 
-### Pretty Print HTML
+File: `babel.config.json`
 
-In `compilepg.cjs`:
+Babel transpiles modern JavaScript to compatible versions:
 
-```javascript
-const pugOptions = {
-  pretty: true,      // Indent HTML (development)
-  compress: false,   // No compression
-  doctype: 'html'
-};
+```bash
+# Run Babel transpilation
+npm run babel
 ```
 
-### Production Minification
-
-```javascript
-// For production
-const pugOptions = {
-  pretty: false,
-  compress: true,    // Minify output
-  doctype: 'html'
-};
-```
-
-## Package.json Scripts
+## Build System Scripts
 
 ### Current Scripts
 
 ```json
 {
   "scripts": {
-    "start": "node ./compilepg.cjs",
-    "watch": "nodemon --watch compilepg.cjs --watch .env --exec \"node ./compilepg.cjs\""
+    "start": "concurrently \"npm run gulp\" \"npm run lint\" \"npm run deploy\" \"npm run babel\" \"npx rollup -c rollup.config.mjs\"",
+    "watch:gulp": "gulp -f gulp.cjs watch",
+    "watch:rollup": "npx rollup -c rollup.config.mjs -w",
+    "lint": "npx eslint ./src/assets/css/main.css ./src/assets/js/main.js",
+    "lint:fix": "npx eslint ./src/assets/css/main.css ./src/assets/js/main.js --fix",
+    "deploy": "firebase deploy --only hosting",
+    "gulp": "gulp -f gulp.cjs",
+    "babel": "npx babel src/assets/js --config-file ./babel.config.json --out-dir public/dist"
   }
 }
 ```
 
-### Adding Custom Scripts
-
-```json
-{
-  "scripts": {
-    "build": "NODE_ENV=production node ./compilepg.cjs",
-    "lint": "eslint .",
-    "clean": "rm -rf output-*.html",
-    "dev": "npm run watch",
-    "serve": "live-server"
-  }
-}
-```
-
-### Running Custom Scripts
+### Running Scripts
 
 ```bash
-npm run build
+# Start development
+npm start
+
+# Watch Pug templates for changes
+npm run watch:gulp
+
+# Watch JavaScript bundling
+npm run watch:rollup
+
+# Compile Pug templates once
+npm run gulp
+
+# Check code quality
 npm run lint
-npm run clean
-npm run dev
-npm run serve
+
+# Fix code quality issues
+npm run lint:fix
+
+# Deploy to Firebase hosting
+npm run deploy
+
+# Transpile JavaScript with Babel
+npm run babel
 ```
 
 ## Font Configuration

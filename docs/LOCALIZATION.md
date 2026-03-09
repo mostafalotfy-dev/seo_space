@@ -15,9 +15,16 @@ SEO Space uses **i18next** for multi-language support with built-in support for 
 
 ```
 locals/
-├── en.json    ← English translations
-└── ar.json    ← Arabic translations
+├── en.json         # English translations (2500+ strings)
+└── ar.json         # Arabic translations (2500+ strings)
 ```
+
+### File Size & Scope
+
+- **en.json**: ~80KB = Complete English translations for all pages
+- **ar.json**: ~100KB = Complete Arabic translations + Arabic metadata
+- Both files have identical structure for consistency
+- All localization keys defined across 25+ sections
 
 ## Translation Files Structure
 
@@ -226,24 +233,18 @@ Create `locals/xx.json` (where `xx` is language code):
 }
 ```
 
-### Step 2: Update Compilation Script
+### Step 2: Update Environment
 
-Edit `compilepg.cjs` to include new language:
+Edit `.env` file to include new language:
 
-```javascript
-const languages = ['en', 'ar', 'fr']; // Add 'fr'
-
-// In compilation loop
-for (const lang of languages) {
-  // Generate HTML for French
-  // Outputs: output-fr-theme-navy-dark.html, etc.
-}
+```env
+LANG=fr
 ```
 
 ### Step 3: Recompile
 
 ```bash
-npm run watch
+npm run watch:gulp
 ```
 
 New HTML files will be generated for the new language with all theme/mode combinations.
@@ -584,7 +585,7 @@ console.log(i18next.language);
 1. Verify key exists in JSON file
 2. Check JSON syntax is valid
 3. Verify language is set correctly
-4. Recompile: `npm run watch`
+4. Recompile: `npm run watch:gulp`
 
 ### Issue: Special Characters Not Displaying
 

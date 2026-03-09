@@ -3,27 +3,53 @@ extends layout
 block head
     - const dir = (lang == "ar") ? "rtl" : "ltr";
     +headSection(lang, theme_name)
-  
 block content
+
     // ***** Header Area Start *****
-    +header(lang)
+    +header()
     // ***** Header Area End *****
-    +banner(lang)
-    // ***** Header Area Start *****
+    // ***** Banner Area Starts *****
+    +banner()
+    // ***** Banner Area Ends *****
     // ***** Preloader Start *****
-    +preloader()
+    - if (pre_loader)
+        +preloader()
     // ***** Preloader End *****
     // ***** Services Area Start *****
-    +services(lang)
+    +services()
     
     include partials/pricing-table
     // ***** Services Area End *****
     // ***** Portfolio Area End *****
-    +portfolio(lang)
+    +portfolio()
     // ***** Portfolio Area End *****
     // ***** About Area Start *****
     +about(lang)
     // ***** About Area End *****
+    
+    // ***** Testemonials Area Starts ******
+    #testemonials
+        .row
+            h2 #{t("menu.testemonials")}  
+            +slider("slider",2)
+                .carousel-item.active
+                        img(src="./assets/images/person.png", loading="lazy" ,class="img-thumbnail rounded-pill d-block my-1 mx-auto", alt="person")
+                        .clearfix
+                        blockqoute.text-center 
+                            p Some representative placeholder content for the first slide.
+                            
+                        .clearfix
+                .carousel-item
+                        img(src="./assets/images/person.png", loading="lazy",class="img-thumbnail rounded-pill d-block my-1 mx-auto", alt="person")
+                        .clearfix
+                        blockquote.text-center 
+                            p representative placeholder content for the first slide.
+                        .clearfix
+    // ***** Testemonials Area Ends ********
+
+
+            
+                        
     // ***** Blog Area Start *****
     +blog(lang)
     // ***** Blog Area End *****
@@ -31,7 +57,8 @@ block content
     +contact(lang)
     // ***** Contact Area End *****
     // ***** Assistant Area Start *****
-    +assistant(lang)
+    - if(ai_assistant)
+        +assistant(lang)
     // ***** Assistant Area End *****
     // Newsletter Start Area
     +defaultModal("newsletter",t("newsletter"))
@@ -43,7 +70,7 @@ block footer
     +footer()
     // ***** Footer Area End *****
     
-   
+
 //- Scripts
 block scripts
   script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js")
@@ -60,8 +87,8 @@ block scripts
     
     
         
-          
+        
     
     
 
-      
+

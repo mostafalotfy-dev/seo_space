@@ -13,13 +13,16 @@
 
 ```bash
 # 1. Navigate to project
-cd d:\projects\seo_Space
+cd seo_space
 
 # 2. Install dependencies
 npm install
 
-# 3. Start development
-npm run watch
+# 3. Start development (Gulp watch mode)
+npm run watch:gulp
+
+# Or for Rollup watch mode (in another terminal)
+npm run watch:rollup
 
 # 4. Open in browser
 # Navigate to the generated output-en-theme-navy-dark.html
@@ -81,11 +84,11 @@ Generated Files (auto-generated):
 ```
 1. Edit source file (index.pug, main.css, etc.)
                 ↓
-2. nodemon detects change
+2. Gulp detects change
                 ↓
-3. compilepg.cjs runs automatically
+3. gulp.cjs processes templates automatically
                 ↓
-4. HTML files regenerated
+4. HTML files regenerated in public/ directory
                 ↓
 5. Browser refreshes (use Live Server extension)
                 ↓
@@ -314,7 +317,9 @@ Edit `assets/css/color-palette/navy.css`:
 
 ## Editing JavaScript
 
-### Main Application File (main-custom.js)
+### Main Application File (main.js)
+
+**Important:** This is where all custom functionality lives. Any interactions, auto-compiles, reloads with Gulp.
 
 ```javascript
 // Document ready
@@ -550,14 +555,14 @@ li.scroll-to-section
 THEME=ignite
 ```
 
-Or in `compilepg.cjs`:
-```javascript
-const theme = 'ignite';
+Or in `.env`:
+```env
+THEME=ignite
 ```
 
-2. Recompile:
+2. Then recompile in watch mode:
 ```bash
-npm run watch
+npm run watch:gulp
 ```
 
 ### Task: Add Animation to Element

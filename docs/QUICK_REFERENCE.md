@@ -5,19 +5,32 @@
 ### Development
 
 ```bash
-# Start watching and auto-recompiling
-npm run watch
+# Start watching templates with Gulp
+npm run watch:gulp
 
-# Compile once
+# Watch JavaScript bundling with Rollup  
+npm run watch:rollup
+
+# Run all processes together
 npm start
+
+# Compile templates once
+npm run gulp
 
 # Check for outdated packages
 npm outdated
 
-# Update all packages
+# Update all packages safely
 npm update
 
+# Audit for security vulnerabilities
+npm audit
+
 # Run linting
+npm run lint
+
+# Auto-fix linting issues
+npm run lint:fix
 npx eslint .
 
 # List all installed packages
@@ -71,7 +84,7 @@ h1 #{t('banner.welcome')}
 1. Edit `index.pug` - add section HTML
 2. Add translations to `locals/en.json` & `locals/ar.json`
 3. Add styles to `assets/css/main.css`
-4. Run `npm run watch`
+4. Run `npm run watch:gulp`
 
 ### Add Image
 
@@ -223,8 +236,8 @@ git revert HEAD
 ### Templates Not Compiling
 
 ```bash
-# Check if compilepg.cjs exists
-ls compilepg.cjs
+# Check if gulp.cjs exists
+ls gulp.cjs
 
 # Check Node version
 node --version
@@ -232,6 +245,9 @@ node --version
 # Delete node_modules and reinstall
 rm -rf node_modules
 npm install
+
+# Run Gulp compilation
+npm run gulp
 ```
 
 ### Styles Not Applying

@@ -5,7 +5,7 @@ const rename = require("gulp-rename");
 const path = require("path");
 require("dotenv").config();
 const fs = require("fs");
-
+const purgecss = require("gulp-purgecss");
 const config = require("./config.js");
 
 function getTranslator(lang) {
@@ -39,26 +39,37 @@ gulp.task("app-css", function () {
     });
 });
 
+gulp.task("purgecss", () => {
+  return gulp
+    .src("./public/dist/css/app.css")
+    .pipe(
+      purgecss({
+        content: ["public/*.html"],
+      }),
+    )
+    .pipe(gulp.dest("public/dist/css"));
+
+
+});
 // Pug task with rename
 gulp.task("pug", function () {
   const tasks = [];
   const config = require("./config.js");
-  
+
   for (const theme of config.themes) {
-    if(tasks.length > config.themes)
-    {
+    if (tasks.length > config.themes) {
       break;
     }
     for (const lang of config.languages) {
       for (const mode of config.modes) {
         const username = lang === "en" ? "Mostafa" : "مصطفى";
-        
+
         tasks.push(
           gulp
             .src([
               "src/pages/*.pug",
               "src/index.pug",
-              "src/pages/blog/main.pug",
+              // "src/pages/blog/main.pug",
             ])
             .pipe(
               rename(function (filePath) {
@@ -74,11 +85,11 @@ gulp.task("pug", function () {
             .pipe(
               pug({
                 pretty: true,
-                
+
                 data: {
-                  pre_loader:config.preloader,
+                  pre_loader: config.preloader,
                   username,
-                  ai_assistant:config.ai_asssitant,
+                  ai_assistant: config.ai_asssitant,
                   yearNumber: new Date().getFullYear(),
                   lang,
                   theme_name: theme,
@@ -130,6 +141,7 @@ gulp.task("pug", function () {
 gulp.task("image", (cb) => {
   console.log("copying images...");
   fs.cpSync("src/assets/images", "public/assets/images", { recursive: true });
+  fs.cpSync("src/assets/images", "public/dist/images", { recursive: true });
   cb();
 });
 // Watch task
@@ -152,4 +164,4 @@ gulp.task("watch", function () {
 });
 
 // Default task
-exports.default = gulp.series("app-css", "pug", "image");
+exports.default = gulp.series("app-css", "pug", "image","purgecss");

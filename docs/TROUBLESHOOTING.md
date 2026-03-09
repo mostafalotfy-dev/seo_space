@@ -63,18 +63,47 @@ ping registry.npmjs.org
 
 ## Compilation Issues
 
-### Pug compilation fails silently
+### "Templates Not Compiling"
 
-**Problem:** compilepg.cjs has errors
+**Problem:** Gulp watch mode not detecting changes or compilation fails
 
 **Solutions:**
-1. Check Node.js version: `node --version` (should be v14+)
-2. Verify compilepg.cjs exists: `ls compilepg.cjs`
-3. Run compilation directly to see errors:
+
+1. **Check if Gulp is running:**
    ```bash
-   node compilepg.cjs
+   npm run watch:gulp
    ```
-4. Check for syntax errors in index.pug
+
+2. **Check Node.js and npm versions:**
+   ```bash
+   node --version    # Should be v14+
+   npm --version     # Should be v6+
+   ```
+
+3. **Check Pug syntax in index.pug:**
+   - Ensure proper indentation (Pug is indent-sensitive)
+   - Verify all tags are balanced
+   - Check for unclosed attributes
+   - Line numbers in error messages help identify issues
+
+4. **Reinstall dependencies:**
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm install
+   npm run watch:gulp
+   ```
+
+5. **Check file permissions:**
+   ```bash
+   # On macOS/Linux
+   chmod -R 755 src/
+   ```
+
+6. **Clear build artifacts:**
+   ```bash
+   rm -rf public/output-*.html
+   npm run gulp    # Recompile
+   ```
 
 ### "SyntaxError in Pug template"
 
@@ -99,16 +128,14 @@ ping registry.npmjs.org
 **Problem:** HTML files not created after compilation
 
 **Solutions:**
-1. Check current directory: `pwd` (should be seo_Space root)
-2. Verify compilepg.cjs output path is correct
-3. Check if node_modules/pug exists:
+1. Check current directory: `pwd` (should be seo_space root)
+2. Verify gulp.cjs is running correctly: `npm run gulp`
+3. Check if node_modules/gulp-pug exists:
    ```bash
-   npm list pug
+   npm list gulp-pug
    ```
-4. Run compilation with verbose output:
-   ```bash
-   node -e "console.log('starting'); require('./compilepg.cjs');"
-   ```
+4. Verify output directory is set correctly (should be public/)
+5. Check the logs for errors during compilation
 
 ## Development Issues
 
@@ -243,13 +270,13 @@ ping registry.npmjs.org
 **Solutions:**
 1. **Recompile with different language:**
    ```bash
-   # Edit .env or compilepg.cjs
+   # Edit .env file
    LANG=ar
-   npm start
+   npm run gulp
    ```
 2. **Check if JS language switcher exists:**
    - Look for language button/menu in HTML
-   - Check main-custom.js for event handler
+   - Check main.js for event handler
 3. **Clear cache and reload:**
    - Hard refresh browser (Ctrl+F5)
 

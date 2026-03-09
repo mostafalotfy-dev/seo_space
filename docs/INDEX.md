@@ -272,7 +272,7 @@ You're a SEO Space expert!
 
 ✅ **Bookmark [QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - You'll use it constantly
 ✅ **Keep DevTools open (F12)** - Inspect elements while developing
-✅ **Use `npm run watch`** - Auto-recompiles on file changes
+✅ **Use `npm run watch:gulp`** - Auto-recompiles on file changes
 ✅ **Hard refresh browser (Ctrl+F5)** - Clears cache
 ✅ **Check browser console** - Shows errors and warnings
 ✅ **Read error messages carefully** - They tell you what's wrong

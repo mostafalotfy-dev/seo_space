@@ -1,13 +1,84 @@
-@charset "UTF-8";
 /* eslint-disable css/no-invalid-properties */
 
-/* ---------------------------------------------
-  Author:Mostafa Lotfy
-------------------------------------------------*/
-
-/* ---------------------------------------------
-Table of contents
-------------------------------------------------
+/**
+ * SEO Space - Main Stylesheet
+ * 
+ * Description: Primary CSS file for the SEO Space website.
+ * Handles all core styling, responsive design, layout, and component styling.
+ * 
+ * Author: Mostafa Lotfy
+ * Version: 2.3.0
+ * Last Updated: 2024
+ * 
+ * Architecture:
+ * - Mobile-first responsive design approach
+ * - CSS custom properties (variables) for theming
+ * - Grid layout for portfolio and content sections
+ * - Flexbox for navigation and component alignment
+ * - CSS transitions and animations for interactivity
+ * 
+ * Browser Support:
+ * - Modern browsers (Chrome, Firefox, Safari, Edge)
+ * - IE 11+ (with some graceful degradation)
+ * - Mobile browsers (iOS Safari, Chrome Mobile)
+ * 
+ * CSS Features Used:
+ * - CSS Variables (--main-color, --text-color, etc.)
+ * - Flexbox for layouts
+ * - Grid for portfolio display
+ * - Media queries for responsive design
+ * - CSS transitions for smooth animations
+ * - Pseudo-elements (::before, ::after)
+ * - CSS calc() for dynamic sizing
+ * 
+ * Theme System:
+ * - Light/Dark mode toggle via data-theme attribute
+ * - 5 color palette themes (navy, cranberries, green, etc.)
+ * - CSS variables allow theme switching without reloading
+ * - Bootstrap integration for UI components
+ * 
+ * File Size Optimization:
+ * - Minified for production (main.min.css)
+ * - Font loading optimized
+ * - No unused CSS (cleaned via linting)
+ * - External font imports commented for performance
+ * 
+ * Key CSS Variables (defined in color-palette/*.css):
+ * - --main-color: Primary brand color
+ * - --secondary-color: Supporting color\n * - --text-color: Main text color
+ * - --bg-color: Background color
+ * - --border-color: Border and divider color
+ * - --accent-color: Highlights and CTAs
+ * 
+ * Responsive Breakpoints:
+ * - Mobile: 0 - 576px (extra small)
+ * - Tablet: 576px - 768px (small)
+ * - Landscape tablet: 768px - 992px (medium)
+ * - Desktop: 992px and up (large)
+ * - Large desktop: 1200px and up (extra large)
+ * 
+ * Section Organization (See Table of Contents below):
+ * 00. Theme toggle functionality
+ * 01. Font imports and resets
+ * 02. HTML element resets\n * 03. Global styles and shared utilities
+ * 04. Header and navigation styling
+ * 05. Hero banner section
+ * 06. Features/services section
+ * 07. Testimonials section
+ * 08. Contact/newsletter forms
+ * 09. Footer styling
+ * 10. Page preloader animation
+ * 11. Search functionality
+ * 12. Portfolio/projects grid
+ * 13. Utility classes and helpers
+ * \n * Customization Guide:
+ * - Colors: Edit color-palette/theme-name.css files
+ * - Spacing: Adjust margin/padding values here
+ * - Fonts: Uncomment @import for Google Fonts
+ * - Animations: Modify transition/animation timing
+ * - Layouts: Update flexbox/grid properties
+ * \n */
+  /* ============================================\n   TABLE OF CONTENTS ========================================= 
 00. toggle theme
 01. font & reset css
 02. reset
@@ -50,12 +121,7 @@ Table of contents
   background-color: var(--text-color) !important;
 }
 
-/*---------------------------------------------
-font & reset css
---------------------------------------------- 
-*/
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
-/* 
+/*
 ---------------------------------------------
 reset
 --------------------------------------------- 
@@ -201,7 +267,7 @@ body {
 
 a {
   text-decoration: none !important;
-  color:var(--text-color);
+  color: var(--text-color);
 }
 
 h1,
@@ -221,13 +287,14 @@ ul {
 p {
   font-size: 15px;
   line-height: 30px;
-  color: var(--footer-text-color);
+  color: var(--text-color);
 }
 
 img {
   max-width: 100%;
   overflow: hidden;
-  min-width: 75%;
+  
+  
 }
 
 /* 
@@ -307,7 +374,7 @@ body {
   background-color: var(--secondary-color);
   font-size: 15px;
   font-weight: 400;
-  color:var(--text-accent-color);
+  color: var(--text-accent-color);
   text-transform: capitalize;
   padding: 12px 25px;
   border-radius: 23px;
@@ -405,7 +472,7 @@ header
 .header-area .main-nav .logo h4 {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom:0px;
+  margin-bottom: 0px;
   text-transform: uppercase;
   color: #03a4ed;
   line-height: 100px;
@@ -424,20 +491,21 @@ header
   line-height: 80px;
 }
 
+ 
 .background-header .main-nav .nav {
   margin-top: 20px !important;
-}
+} 
 
 .header-area .main-nav .nav {
-  
-  margin-top: 30px;
+
+  margin-top:40px;
   margin-right: 0px;
   background-color: transparent;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  position: relative;
+
   z-index: 999;
   justify-content: flex-end;
 }
@@ -454,44 +522,44 @@ header
 
 .header-area .main-nav .nav li:last-child a,
 .background-header .main-nav .nav li:last-child a {
-  color: var(--text-color) ;
-  padding: 0px 20px;
+  color: var(--text-color);
   font-weight: 400;
 }
 
 .header-area .main-nav .nav li:last-child a:hover,
 .header-area .main-nav .nav li:last-child a.active {
-  color: var(--text-hover-color) ;
+  color: var(--text-hover-color);
 }
 
 .header-area .main-nav .nav li a {
   display: block;
   font-weight: 500;
   font-size: 15px;
-  color: var(--text-color);
+  color: var(--navbar-list-color) !important;
   text-transform: capitalize;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   height: 40px;
-  line-height: 40px;
+  text-align: center;
   border: transparent;
   letter-spacing: 1px;
 }
 
 .header-area .main-nav .nav li a {
   color: var(--navbar-list-color);
+  background-color: var(--secondary-color) ;
 }
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-  color: var(--text-color) !important;
+  color: var(--navbar-list-color) !important;
 }
 
 .background-header .main-nav .nav li:hover a,
 .background-header .main-nav .nav li a.active {
-  color: var(--text-color) !important;
+  color: var(--navbar-list-color)  !important;
   opacity: 1;
 }
 
@@ -693,12 +761,12 @@ header
   min-height: 80px;
 }
 
-.header-area .nav {
+/* .header-area .nav {
   margin-top: 30px;
-}
+} */
 
 .header-area.header-sticky .nav li a.active {
-  color: var(--text-hover-color);
+  color: var(--text-hover-color) !important;
 }
 
 @media (max-width: 1200px) {
@@ -714,10 +782,8 @@ header
 
 @media (max-width: 992px) {
 
-  .header-area .main-nav .nav li:last-child,
-  .background-header .main-nav .nav li:last-child {
-    display: none;
-  }
+
+  
 
   .header-area .main-nav .nav li:nth-child(6),
   .background-header .main-nav .nav li:nth-child(6) {
@@ -726,9 +792,9 @@ header
 }
 
 @media (max-width: 767px) {
-  .background-header .main-nav .nav {
+  /* .background-header .main-nav .nav {
     margin-top: 80px !important;
-  }
+  } */
 
   .header-area .main-nav .logo {
     color: #1e1e1e;
@@ -787,9 +853,10 @@ header
     border-top: 1px solid #eee;
   }
 
+/*   
   .header-area.header-sticky .nav {
     margin-top: 100px;
-  }
+  } */
 
   .header-area .main-nav .nav li {
     width: 100%;
@@ -805,7 +872,7 @@ header
     padding: 0px !important;
     border: none !important;
     background: var(--main-color) !important;
-    color: var(--text-color) !important;
+    color: var(--navbar-list-color) !important;
   }
 
   .header-area .main-nav .nav li a:hover {
@@ -855,6 +922,7 @@ header
 @media (min-width: 767px) {
   .header-area .main-nav .nav {
     display: flex !important;
+    flex-wrap:nowrap
   }
 }
 
@@ -1027,7 +1095,7 @@ Banner Style
 }
 
 .main-banner .left-content form button {
- 
+
   position: absolute;
   right: 10px;
   top: 10px;
@@ -1067,8 +1135,20 @@ Banner Style
   color: #fff;
 }
 
+/*
+Testimonials
+*/
+#testemonials {
+  background: var(--secondary-color);
+  margin-top:15px
+  
+}
 
-
+#testemonials h2{
+  padding-top:15px;
+  text-align: center;
+  color:var(--heading-color)
+}
 /* 
 ---------------------------------------------
 About Us Style
@@ -1078,15 +1158,26 @@ About Us Style
 #about {
   margin-top: 120px;
 }
-
+#about h2 {
+  text-align: center;
+}
+#about img:not(.icon img) {
+  filter: drop-shadow(2px 4px 6px black);
+}
 .about-us {
-  background-image: url(../images/about-bg.png);
+  
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   padding: 140px 0px 120px 0px;
 }
-
+  .about-us .services .item {
+    background: rgb(255, 77, 30);
+    background: linear-gradient(105deg, rgba(255, 77, 30, 1) 0%, rgba(255, 44, 109, 1) 100%);
+    padding: 30px;
+    border-radius: 20px;
+    display: inline-block;
+  }
 .about-us .left-image {
   margin-right: 45px;
 }
@@ -1102,19 +1193,29 @@ About Us Style
 
 .about-us .services .item .icon img {
   max-width: 70px;
+
 }
 
 .about-us .services .item h4 {
-  color: var(--text-color);
+  color: var(--text-accent-color);
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 12px;
 }
 
 .about-us .services .item p {
-  color: var(--text-color);
+  color: var(--text-accent-color);
 }
 
+/*
+---------------------------------------------
+  Carousel
+---------------------------------------------
+*/
+.carousel img {
+  width: unset;
+  min-width: unset
+}
 
 /* 
 ---------------------------------------------
@@ -1177,7 +1278,7 @@ Services Style
   width: 100%;
   height: 6px;
   border-radius: 3px;
-  background-color:#e7e7e7;
+  background-color: #e7e7e7;
   position: relative;
   z-index: 1;
 }
@@ -1346,7 +1447,7 @@ Blog
 .our-blog .left-image ul li {
   display: inline-block;
   font-size: 15px;
-  color: var(--history-text-color);
+  color: var(--list-color);
   font-weight: 300;
   margin-right: 20px;
 }
@@ -1356,7 +1457,7 @@ Blog
 }
 
 .our-blog .left-image ul li i {
-  color: var(--accent-color);
+  color: var(--text-accent-color);
   font-size: 16px;
   margin-right: 8px;
 }
@@ -1364,7 +1465,7 @@ Blog
 .our-blog .left-image h4 {
   font-size: 20px;
   font-weight: 700;
-  color:var(--text-color);
+  color: var(--text-color);
   margin: 20px 0px 15px 0px;
 }
 
@@ -1488,7 +1589,7 @@ form#contact {
 }
 
 form#contact input {
-  
+
   width: 100%;
   height: 46px;
   border-radius: 33px;
@@ -1631,13 +1732,7 @@ responsive
     text-align: center;
   }
 
-  .about-us .services .item {
-    background: rgb(255, 77, 30);
-    background: linear-gradient(105deg, rgba(255, 77, 30, 1) 0%, rgba(255, 44, 109, 1) 100%);
-    padding: 30px;
-    border-radius: 20px;
-    display: inline-block;
-  }
+
 
   .about-us .services .item .right-text {
     text-align: left;
@@ -1753,14 +1848,20 @@ responsive
   .phone-info h4 span i {
     margin-left: 0px;
   }
+
+  .header-area .main-nav .nav {
+    position: absolute;
+    left: 0;
+    top: 80px;
+  }
 }
 
 /************************************************************
 * Utils
 *************************************************************/
-.flip.ar{
+.flip.ar {
   transform: rotateY(-.5turn);
-  right:revert !important;
+  right: revert !important;
   left: -188px !important;
 }
 
@@ -1788,14 +1889,54 @@ responsive
 }
 
 
-[data-theme="dark"] .showed-content img{
-  
-    filter:grayscale(1); 
-  
+[data-theme="dark"] .showed-content img {
+
+  filter: grayscale(1);
+
 }
-[data-theme="dark"] .main-button{
-  color:var(--light-color)
+
+[data-theme="dark"] .main-button {
+  color: var(--light-color)
 }
-.vh-100{
-  height:100vh;
+
+.vh-100 {
+  height: 100vh;
 }
+
+[dir=rtl] .our-blog .left-image ul li:last-child {
+
+  margin-right: 20px;
+}
+
+
+[dir=rtl] .header-area .main-nav .menu-trigger {
+  left: 40px;
+  right: revert;
+}
+[dir=rtl] .our-blog .right-list .left-content span i,
+[dir=rtl] .our-blog .left-image ul li i {
+  margin-right: unset;
+  margin-left:8px;
+}
+
+[dir=rtl] .our-blog .top-dec  {
+  text-align: left;
+  margin-left:30px;
+}
+
+/*************************************************
+  Buttons
+*************************************************/
+
+.dropdown-menu{
+  --bs-dropdown-color: var(--secondary-color);
+  --bs-dropdown-bg: var(--secondary-color);
+}
+[dir=rtl] .dropdown-toggle::after {
+  margin-right:.255em
+}
+#theme-toggle{
+  margin-top:7px;
+}
+
+

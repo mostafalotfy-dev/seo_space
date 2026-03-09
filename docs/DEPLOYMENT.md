@@ -17,20 +17,68 @@ SEO Space is a static HTML template that can be deployed to any web hosting prov
 - [ ] Mobile responsive design verified
 - [ ] Performance tested (Google PageSpeed)
 
+## Pre-Deployment Checklist
+
+**Content & Configuration:**
+- [ ] All sections have content (banner, services, portfolio, etc.)
+- [ ] All translations complete for both EN and AR (`locals/en.json` & `locals/ar.json`)
+- [ ] All color themes tested in both dark & light modes
+- [ ] All internal links are correct and functional
+- [ ] External links open in new tabs (target="_blank")
+- [ ] Logo and branding images are optimized
+- [ ] Favicon set correctly
+- [ ] Meta tags and SEO information added
+
+**Code Quality:**
+- [ ] Code passes linting: `npm run lint`
+- [ ] No console errors in browser DevTools
+- [ ] JavaScript works without errors
+- [ ] All forms validate input correctly
+- [ ] Contact form has working backend endpoint
+
+**Testing:**
+- [ ] All HTML files generated: `npm run gulp`
+- [ ] Desktop browsers tested (Chrome, Firefox, Safari, Edge)
+- [ ] Mobile responsive on phones & tablets
+- [ ] Touch interactions work on mobile
+- [ ] All animations play correctly
+- [ ] Dark/light modes toggle correctly
+- [ ] Language switching works
+- [ ] Performance tested with Google PageSpeed
+- [ ] Images load quickly (optimize if needed)
+
+**Deployment Prep:**
+- [ ] Production environment variables set
+- [ ] Firebase hosting configured (if using)
+- [ ] SSL/HTTPS enabled on hosting
+- [ ] Backups created
+- [ ] Domain DNS configured
+
 ## Generating Production Files
 
 ```bash
-# 1. Clean previous build
-rm output-*.html
-
-# 2. Generate all HTML files
+# 1. Run all build processes
 npm start
 
-# 3. Verify files were created
-ls -la output-*.html
+# Or compile each separately:
+npm run gulp           # Compile Pug → HTML
+npm run babel          # Transpile JavaScript
+npm run lint           # Verify code quality
 
-# 4. Check file sizes
-du -h output-*.html
+# 2. Verify all HTML files were generated
+ls -la public/output-*.html
+
+# Expected output (20 files total):
+# output-en-theme-navy-dark.html
+# output-en-theme-navy-light.html
+# output-en-theme-ignite-dark.html
+# ... (English + Arabic x 5 themes x 2 modes)
+
+# 3. Check file sizes
+du -h public/output-*.html
+
+# 4. Verify no broken links
+grep -r "href=\"[^\\"]*\"" public/ | grep -v "http" | head -20
 ```
 
 ## Deployment Methods

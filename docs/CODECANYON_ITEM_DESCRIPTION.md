@@ -264,9 +264,10 @@ SEO-Space/
 │   └── output-ar-theme-olive-garden-feast-light.html
 │
 ├── package.json                  (Dependencies)
-├── compilepg.cjs                 (Build script)
+├── gulp.cjs                      (Gulp build script)
+├── rollup.config.mjs             (JavaScript bundler)
 ├── eslint.config.mjs             (Linting)
-└── prepros.config                (Build tool config)
+└── babel.config.json             (JavaScript transpiler)
 ```
 
 ## Quick Start
@@ -285,9 +286,9 @@ SEO-Space/
 2. **Install Node.js** (if not already installed)
 3. **Open terminal/command prompt**
 4. **Run**: `npm install`
-5. **Run**: `npm run watch`
+5. **Run**: `npm run watch:gulp`
 6. **Edit** `index.pug`, `locals/`, and `assets/` files
-7. **HTML regenerates automatically**
+7. **HTML regenerates automatically in public/ directory**
 
 ## Customization Options
 

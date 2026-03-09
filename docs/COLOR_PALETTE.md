@@ -282,11 +282,10 @@ All themes define these CSS custom properties, organized by category:
 
 ### Selecting a Theme
 
-During compilation, specify the theme:
+During compilation, specify the theme in `.env`:
 
-```javascript
-// In compilepg.cjs
-const theme_name = 'olive-garden-feast'; // or 'navy', 'ignite', 'new-corporate-tech'
+```env
+THEME=olive-garden-feast  # or 'navy', 'ignite', 'new-corporate-tech'
 ```
 
 ### In HTML Output
@@ -375,14 +374,18 @@ Author: Your Name
 }
 ```
 
-### Step 2: Update Compilation Config
+### Step 2: Update Environment
 
-In `compilepg.cjs`, add your theme to the available themes list.
+Edit `.env` to use your new theme:
+
+```env
+THEME=my-custom-theme
+```
 
 ### Step 3: Test the Theme
 
 ```bash
-npm run watch
+npm run watch:gulp
 ```
 
 Check the generated HTML with your new theme applied.
@@ -633,5 +636,7 @@ Happy coloring! 🎨
 
 ---
 
-**Last Updated:** February 23, 2026  
+**Last Updated:** March 9, 2026
+**Version:** 2.3.0
+**Total Variables:** 40+ CSS custom properties  
 **Version:** 2.4.1

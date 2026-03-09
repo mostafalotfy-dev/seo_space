@@ -490,8 +490,8 @@ For advanced users who want to recompile:
 1. **Install Node.js**
 2. **Run**: `npm install`
 3. **Edit**: `index.pug`
-4. **Run**: `npm run watch`
-5. **New HTML** files auto-generate
+4. **Run**: `npm run watch:gulp`
+5. **New HTML** files auto-generate in public/ directory
 
 See `DEVELOPMENT.md` for detailed guide.
 

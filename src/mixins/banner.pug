@@ -22,5 +22,10 @@ mixin banner(lang)
                     fieldset
                       button.main-button(type="submit",dir=dir) #{t("banner.button.analyze")}
               .col-lg-6
-                .right-image.wow.text-start.text-sm-center.fadeInRight(data-wow-duration="1s", data-wow-delay="0.5s")
-                  img(src="./assets/images/banner-right-image.png", alt=t("banner.alt.team_meeting"))
+                .right-image.wow.text-center.fadeInRight(data-wow-duration="1s", data-wow-delay="0.5s")
+                  picture
+                    source(media="(max-width:992px )", srcset="./assets/images/banner-right-image-238.png")
+                    source(media="(max-width:1200px )", srcset="./assets/images/banner-right-image-238.png")
+                    source(media="(min-width:769px )", srcset="./assets/images/banner-right-image.png")
+                    
+                    img(src="./dist/assets/images/banner-right-image.png",loading="lazy", alt=t("banner.alt.team_meeting"))

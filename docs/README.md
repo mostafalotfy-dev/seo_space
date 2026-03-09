@@ -162,12 +162,12 @@ npm install
 npm run watch
 
 # Or compile once without watching
-npm start
+npm run watch:gulp
 ```
 
 ### Generated Output Files
 
-After running `npm start` or `npm run watch`, 16 HTML files are automatically generated in the root directory:
+After running `npm start` or `npm run watch:gulp`, 16 HTML files are automatically generated in the public/ directory:
 
 **English Versions:**
 - `output-en-theme-loyal-green-dark.html`
@@ -328,21 +328,72 @@ Complete documentation is available in the `docs/` folder:
 - Edge (latest)
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
-## Scripts
+## Scripts & Build Commands
 
 ### Available NPM Scripts
 
 ```bash
-npm start        # Compile Pug templates once
-npm run watch    # Watch mode - auto-recompile on changes
+# Development
+npm start              # Run all:
+                       # - Gulp watch (templates)
+                       # - Rollup watch (JS bundling)
+                       # - Lint (code quality)
+                       # - Babel (transpilation)
+                       # - Firebase deploy
+
+# Watching Changes
+npm run watch:gulp     # Watch & compile Pug templates → public/
+npm run watch:rollup   # Watch & bundle JavaScript → public/dist/
+
+# One-time Builds
+npm run gulp           # Compile Pug templates once
+npm run babel          # Transpile ES6+ → ES5 compatible JS
+npm run lint           # Check code quality with ESLint
+npm run lint:fix       # Auto-fix ESLint issues
+
+# Deployment
+npm run deploy         # Deploy to Firebase Hosting
 ```
 
-### Manual Compilation
+### How The Build System Works
 
-The project uses `compilepg.cjs` for Pug compilation:
-```bash
-node compilepg.cjs
-```
+**Multi-tool Pipeline:**
+
+1. **Gulp** (`gulp.cjs`)
+   - Watches `/src` for changes
+   - Compiles Pug templates → HTML
+   - Concatenates CSS files
+   - Outputs to `/public`
+   
+   ```bash
+   npm run watch:gulp    # Auto-recompile on save
+   ```
+
+2. **Rollup** (`rollup.config.mjs`)
+   - Watches JavaScript files
+   - Bundles & tree-shakes
+   - Outputs to `/public/dist`
+   
+   ```bash
+   npm run watch:rollup  # Auto-bundle on save
+   ```
+
+3. **Babel** (`babel.config.json`)
+   - Transpiles ES6+ → ES5
+   - Ensures browser compatibility
+   
+   ```bash
+   npm run babel         # Run once or watch above
+   ```
+
+4. **ESLint** (`eslint.config.mjs`)
+   - Checks code quality
+   - Catches common errors
+   
+   ```bash
+   npm run lint          # Check
+   npm run lint:fix      # Auto-fix
+   ```
 
 ## Performance
 
@@ -369,7 +420,7 @@ Modify the `theme_name` variable in compilation process or update `data-theme` a
 1. Create new Pug mixin in `index.pug`
 2. Add translations to `locals/en.json` and `locals/ar.json`
 3. Add styling to `assets/css/main.css`
-4. Recompile using `npm run watch`
+4. Recompile using `npm run watch:gulp`
 
 ### Switch Language
 Update language variable before compilation or use dynamic language switcher in JavaScript.
@@ -379,10 +430,32 @@ Edit CSS variables in `assets/css/color-palette/theme-name.css`
 
 ## Troubleshooting
 
-- **Templates not compiling**: Check `compilepg.cjs` configuration and Node.js path
+- **Templates not compiling**: Check `gulp.cjs` configuration, run `npm run gulp`, check Node.js version
 - **Styles not applying**: Clear browser cache, verify CSS file paths
 - **Translations missing**: Check `locals/` JSON files for correct keys
 - **Animations not working**: Ensure `assets/js/animation.js` is loaded
+
+## Project Status & Version Information
+
+| Item | Details |
+|------|---------|
+| **Current Version** | 2.3.0 |
+| **Last Updated** | March 9, 2026 |
+| **Status** | ✅ Actively Maintained |
+| **Node.js Requirement** | v14.0.0 or higher |
+| **npm Requirement** | v6.0.0 or higher |
+
+### Build System Stack
+
+- **Templates**: Pug 3.0+ with gulp-pug
+- **Build Tool**: Gulp 5.0.1
+- **JavaScript Bundler**: Rollup 4.58.0
+- **Transpiler**: Babel 7.29.0
+- **Linter**: ESLint 9.39.2
+- **CSS Framework**: Bootstrap 5.3.8
+- **UI Library**: jQuery 4.0.0
+- **Backend Integration**: Firebase 12.9.0
+- **Animations**: WOW.js + Animate.css
 
 ## License
 

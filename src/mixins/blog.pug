@@ -10,12 +10,12 @@ mixin blog(lang)
                 span #{t("blog.heading.span")}
           .col-lg-6.wow.fadeInDown(data-wow-duration="1s", data-wow-delay="0.25s")
             .top-dec
-              img(src="./assets/images/blog-dec.png", alt="")
+              img(src="./assets/images/blog-dec.png",loading="lazy", alt="")
         .row
           .col-lg-6.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.25s")
             .left-image
               a(href="#")
-                img(src="./assets/images/big-blog-thumb.jpg", alt=t("blog.alt"))
+                img(src="./assets/images/big-blog-thumb.jpg",loading="lazy", alt=t("blog.alt"))
               .info
                 .inner-content
                   ul
@@ -46,7 +46,7 @@ mixin blog(lang)
                     p #{t("blog.info.right_list.description")}
                   .right-image
                     a(href="#")
-                      img(src="./assets/images/blog-thumb-01.jpg", alt="")
+                      img(src="./assets/images/blog-thumb-01.jpg",loading="lazy", alt="")
                 li
                   .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;`)
                     span
@@ -57,7 +57,7 @@ mixin blog(lang)
                     p #{t("blog.info.left_content.description")}
                   .right-image
                     a(href="#")
-                      img(src="./assets/images/blog-thumb-01.jpg", alt="")
+                      img(src="./assets/images/blog-thumb-01.jpg",loading="lazy", alt="")
                 li
                   
                   .left-content.align-self-center(style=`margin-${lang == 'ar' ? 'left' : 'right'}:45px;` )
@@ -69,4 +69,4 @@ mixin blog(lang)
                     p #{t("blog.info.left_content.description")}
                   .right-image
                     a(href="#")
-                      img(src="./assets/images/blog-thumb-01.jpg", alt="")
+                      img(src="./assets/images/blog-thumb-01.jpg",loading="lazy", alt="")
