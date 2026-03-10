@@ -76,8 +76,8 @@ ping registry.npmjs.org
 
 2. **Check Node.js and npm versions:**
    ```bash
-   node --version    # Should be v14+
-   npm --version     # Should be v6+
+   node --version    # Should be v18+
+   npm --version     # Should be v8+
    ```
 
 3. **Check Pug syntax in index.pug:**

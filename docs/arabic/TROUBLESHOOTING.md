@@ -76,7 +76,7 @@ ping registry.npmjs.org
 **المشكلة:** gulp.cjs يحتوي على أخطاء
 
 **الحلول:**
-1. تحقق من إصدار Node.js: `node --version` (يجب v14+)
+1. تحقق من إصدار Node.js: `node --version` (يجب v18+)
 2. تأكد من وجود gulp.cjs: `ls gulp.cjs`
 3. شغّل التجميع مباشرةً لرؤية الأخطاء:
    ```bash

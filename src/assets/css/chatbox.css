@@ -17,6 +17,7 @@ Author:Mostafa Lotfy
     margin-bottom: 10px;
     width: 100%;
     min-width: max-content;
+    background-color: var(--main-color);
     
 }
 
@@ -30,6 +31,7 @@ Author:Mostafa Lotfy
     width: 100%;
     min-width: max-content;
     cursor: pointer;
+    box-shadow: 4px 6px rgb(0 0 0 / 10%);
 }
 .assistant {
     background-color:var(--secondary-color);
@@ -57,8 +59,8 @@ Author:Mostafa Lotfy
     min-width: min-content;
     color:var(--text-color);
     overflow-y: scroll;
-    background-color:var(--secondary-color);
-    color:var(--text-color);
+    background-color:var(--main-color);
+    
 }
 
 .message {

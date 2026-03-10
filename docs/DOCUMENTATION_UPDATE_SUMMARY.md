@@ -212,6 +212,6 @@ The SEO Space project now has comprehensive, well-organized documentation coveri
 
 ---
 
-**Last Updated:** February 20, 2026
-**Documentation Version:** 2.2.2
-**For:** SEO Space v2.2.2
+**Last Updated:** March 10, 2026
+**Documentation Version:** 2.3.0
+**For:** SEO Space v2.3.0

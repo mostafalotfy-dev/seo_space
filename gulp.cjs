@@ -41,10 +41,10 @@ gulp.task("app-css", function () {
 
 gulp.task("purgecss", () => {
   return gulp
-    .src("./public/dist/css/app.css")
+    .src(["./public/dist/css/*.css",])
     .pipe(
       purgecss({
-        content: ["public/*.html"],
+        content: ["public/*.html","public/dist/bundle.js"],
       }),
     )
     .pipe(gulp.dest("public/dist/css"));

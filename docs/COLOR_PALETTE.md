@@ -636,7 +636,6 @@ Happy coloring! 🎨
 
 ---
 
-**Last Updated:** March 9, 2026
+**Last Updated:** March 10, 2026
 **Version:** 2.3.0
-**Total Variables:** 40+ CSS custom properties  
-**Version:** 2.4.1
+**Total Variables:** 40+ CSS custom properties

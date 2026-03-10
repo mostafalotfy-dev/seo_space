@@ -2,8 +2,8 @@
 
 ## System Requirements
 
-- **Node.js**: v14.0.0 or higher
-- **npm**: v6.0.0 or higher (comes with Node.js)
+- **Node.js**: v18.0.0 or higher
+- **npm**: v8.0.0 or higher (comes with Node.js)
 - **Operating System**: Windows, macOS, or Linux
 - **Disk Space**: ~500MB (including node_modules)
 - **RAM**: 2GB minimum recommended

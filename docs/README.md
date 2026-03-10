@@ -144,8 +144,8 @@ seo/
 ## Quick Start Guide
 
 ### Prerequisites
-- **Node.js** v14.0.0 or higher ([download](https://nodejs.org/))
-- **npm** v6.0.0 or higher (comes with Node.js)
+- **Node.js** v18.0.0 or higher ([download](https://nodejs.org/))
+- **npm** v8.0.0 or higher (comes with Node.js)
 - **Code Editor** (VS Code recommended)
 - **2GB RAM minimum**, ~500MB disk space
 
@@ -442,8 +442,8 @@ Edit CSS variables in `assets/css/color-palette/theme-name.css`
 | **Current Version** | 2.3.0 |
 | **Last Updated** | March 9, 2026 |
 | **Status** | ✅ Actively Maintained |
-| **Node.js Requirement** | v14.0.0 or higher |
-| **npm Requirement** | v6.0.0 or higher |
+| **Node.js Requirement** | v18.0.0 or higher |
+| **npm Requirement** | v8.0.0 or higher |
 
 ### Build System Stack
 

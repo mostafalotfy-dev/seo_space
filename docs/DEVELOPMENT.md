@@ -4,8 +4,8 @@
 
 ### Prerequisites
 
-- Node.js v14+ (https://nodejs.org/)
-- npm v6+ (comes with Node.js)
+- Node.js v18+ (https://nodejs.org/)
+- npm v8+ (comes with Node.js)
 - Code Editor (VS Code recommended)
 - Git (optional, for version control)
 

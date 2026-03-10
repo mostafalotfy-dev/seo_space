@@ -4,8 +4,8 @@
 
 ### المتطلبات الأساسية
 
-- Node.js v14+ (https://nodejs.org/)
-- npm v6+ (يأتي مع Node.js)
+- Node.js v18+ (https://nodejs.org/)
+- npm v8+ (يأتي مع Node.js)
 - محرر كود (يُوصى بـ VS Code)
 - Git (اختياري، للتحكم في الإصدارات)
 

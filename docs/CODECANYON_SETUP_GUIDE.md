@@ -47,8 +47,8 @@
 ### Method 2: With Node.js (For Advanced Customization)
 
 **Prerequisites:**
-- Node.js v14+ installed
-- npm v6+ (comes with Node.js)
+- Node.js v18+ installed
+- npm v8+ (comes with Node.js)
 
 **Steps:**
 

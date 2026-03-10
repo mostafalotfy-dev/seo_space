@@ -83,16 +83,16 @@ mixin banner(lang)
               .right-image.wow.text-center.fadeInRight(data-wow-duration="1s", data-wow-delay="0.5s")
                 picture
                   //- Mobile version: screens up to 992px width
-                  source(media="(max-width:992px )", srcset="./assets/images/banner-right-image-238.png")
+                  source(media="(max-width:992px )", srcset="./assets/images/banner-right-image-238.png" class="rounded")
                   //- Tablet version: screens up to 1200px width
-                  source(media="(max-width:1200px )", srcset="./assets/images/banner-right-image-238.png")
+                  source(media="(max-width:1200px )", srcset="./assets/images/banner-right-image-238.png"  class="rounded")
                   //- Desktop version: screens 769px and above
-                  source(media="(min-width:769px )", srcset="./assets/images/banner-right-image.png")
+                  source(media="(min-width:769px )", srcset="./assets/images/banner-right-image.png"  class="rounded")
                   
                   //- Fallback image (used if no source matches or picture not supported)
                   //- Uses lazy loading for performance optimization
                   img(
                     src="./dist/assets/images/banner-right-image.png",
-                    loading="lazy",
+                    loading="lazy",  class="rounded"
                     alt=t("banner.alt.team_meeting")
                   )

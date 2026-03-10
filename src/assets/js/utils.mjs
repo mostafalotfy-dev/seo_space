@@ -228,6 +228,7 @@ export const counter = function (options) {
      * Allows users to specify only duration OR incrementBy
      * while other uses sensible defaults.
      */
+    // eslint-disable-next-line no-undef
     const settings = $.extend({
         duration: 100,
         incrementBy: 1

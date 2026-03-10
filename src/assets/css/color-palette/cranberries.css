@@ -113,7 +113,7 @@
   /* --- Brand & Accent Colors --- */
   --third-color: #2563EB;
   /* Primary brand color in light mode */
-  --accent-color: var(--secondary-color);
+  --accent-color: #16134a;
   /* Accent color inherits from secondary */
   --secondary-hover-color: #e27777;
   /* Hover state for secondary elements */

@@ -24,7 +24,8 @@
 require("./fbase.js");
 require("./menu-toggler.js")
 const $ = require("jquery");
-
+// const {counter} = require("./utils.mjs")
+// counter;
 /**
  * Main jQuery IIFE Wrapper
  * Using Immediately Invoked Function Expression to avoid global namespace pollution
@@ -304,7 +305,7 @@ const $ = require("jquery");
     const audio = new Audio("./assets/sounds/open.wav");
     const container = $("#messageContainer");
 
-    console.log(container.attr("style"))
+    // console.log(container.attr("style"))
     if(container.attr("style") != "height:0") return ;
     container.attr("style","height:unset")
     audio.play()
