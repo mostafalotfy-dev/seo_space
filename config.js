@@ -257,7 +257,7 @@ const config = {
    */
   "ai_asssitant": true,
   "pug_to_compile":[
-                //"src/pages/*.pug",
+                //"src/pages/*.pug", Soon
                 "src/index.pug",
                 // "src/pages/blog/main.pug", Soon
               ]

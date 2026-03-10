@@ -318,7 +318,7 @@ const $ = require("jquery");
       $("#messageArea").append($(`<div class="col-12"><p class="rounded bg-secondary-subtle p-1 text-center  text-break col-12 my-3"><b>Hello 😍 .Iam Ai Assistant. Tell Me What do You need? </b></p> `))
     }
     
-  },3 * 1000)
+  },30 * 1000)
   /**
    * AI Assistant Modal Close Handler
    * 
