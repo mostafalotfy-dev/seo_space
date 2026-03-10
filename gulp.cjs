@@ -144,7 +144,6 @@ gulp.task("image", (cb) => {
 gulp.task("watch", function () {
   gulp.watch("src/assets/css/*.css", gulp.series("app-css"));
   gulp.watch("src/assets/css/color-palette/*.css", gulp.series("app-css"));
-  gulp.watch("public/dist/css/*.css",gulp.series("purgecss"))
   gulp.watch(
     ["src/**/*.pug", "locals/*.json", "!src/assets", "!src/docs"],
     gulp.series("pug"),

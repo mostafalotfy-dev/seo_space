@@ -5,14 +5,15 @@
   "description": "SEO Space - A modern SEO-focused website template Landing Page",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently  \"npm run gulp\" \"npm run lint\" \"npm run deploy\" \"npm run babel\" \"npx rollup -c rollup.config.mjs\" ",
+    "start": "concurrently  \"npm run gulp\" \"npm run lint\" \"npm run deploy\" \"npm run babel\" \"npx rollup -c rollup.config.mjs\" \"npm run purgecss\" ",
     "watch:gulp": "gulp -f gulp.cjs watch ",
     "watch:rollup": "npx rollup -c rollup.config.mjs -w",
     "lint": "npx eslint ./src/assets/css/main.css ./src/assets/js/main.js",
     "lint:fix": "npx eslint ./src/assets/css/main.css ./src/assets/js/main.js  --fix",
     "deploy": "firebase deploy --only hosting",
     "gulp": "gulp -f gulp.cjs",
-    "babel": "npx babel src/assets/js --config-file ./babel.config.json --out-dir public/dist --extensions .ts,.js,.tsx,.jsx,.cjs,.mjs "
+    "babel": "npx babel src/assets/js --config-file ./babel.config.json --out-dir public/dist --extensions .ts,.js,.tsx,.jsx,.cjs,.mjs",
+    "purgecss": "gulp -f gulp.cjs purgecss"
   },
   "keywords": [],
   "author": "",
