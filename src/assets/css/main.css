@@ -1675,9 +1675,16 @@ footer p a {
 .push-left {
   left: 100%;
 }
+.animate-filter-ease-in{
+  transition: filter .5s ease-in;
+}
 
-
-
+.blur-10{
+  filter:blur(10px)
+}
+.blur-10:hover{
+  filter:blur(0px)
+}
 /* 
 ---------------------------------------------
 responsive

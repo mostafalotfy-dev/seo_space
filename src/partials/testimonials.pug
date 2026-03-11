@@ -1,0 +1,21 @@
+include ../mixins/rate
+#testemonials
+    .container-fluid
+        .row
+            //- Section heading with localized text
+            h2 #{t("menu.testemonials")}
+            
+            //- Carousel component with 2 visible items (from slider mixin)
+            +slider("slider",card_list.length)
+                //- First testimonial item
+                - for(let i = 0 ; i < card_list.length ;  i++)                  
+                    .carousel-item(class= active_number == i ? "active" : "")
+                        .container
+                            .row
+                                - for(const c of card_list[i])
+                                    .col-md-3.text-center.animate-filter-ease-in.blur-10
+                                        +card(c.person_name,c.image)
+                                            .card-text
+                                                +rate(c.rate_count)
+                                                .clearfix
+

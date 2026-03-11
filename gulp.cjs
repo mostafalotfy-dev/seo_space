@@ -85,10 +85,12 @@ gulp.task("pug", function () {
                 data: {
                   pre_loader: config.preloader,
                   username,
+                  active_number:config.active_number,
                   ai_assistant: config.ai_asssitant,
                   yearNumber: new Date().getFullYear(),
                   lang,
                   theme_name: theme,
+                  card_list:config.card_list,
                   mode,
                   dir: lang === "ar" ? "rtl" : "ltr",
                   t: getTranslator(lang),
@@ -159,4 +161,4 @@ gulp.task("watch", function () {
 });
 
 // Default task
-exports.default = gulp.series("app-css", "pug", "image","purgecss");
+exports.default = gulp.series("app-css", "pug", "image");

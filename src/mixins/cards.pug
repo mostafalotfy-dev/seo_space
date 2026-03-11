@@ -1,0 +1,8 @@
+mixin card(title,img_src,img_description)
+    - let classList = attributes ? attributes.class : ""
+    .card.mb-3(class=classList)
+        img.card-img-top(src=img_src, alt=img_description)
+        .card-body
+            h5.card-title #{title}
+            //- Card Text .card-text
+            block

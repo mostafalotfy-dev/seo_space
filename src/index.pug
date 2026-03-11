@@ -60,39 +60,13 @@ block content
     //- ================================================
     //- About company message, team details, and company history
     +about(lang)
-    
     //- ================================================
     //- TESTIMONIALS SECTION: Client Reviews and Feedback
     //- ================================================
     //- Rotating carousel displaying client testimonials with photos
     //- Currently uses placeholder content - replace with actual client reviews
-    #testemonials
-        .container-fluid
-            .row
-                //- Section heading with localized text
-                h2 #{t("menu.testemonials")}
-                
-                //- Carousel component with 2 visible items (from slider mixin)
-                +slider("slider",2)
-                    //- First testimonial item
-                    .carousel-item.active
-                        //- Client profile image - using lazy loading for performance
-                        img(src="./assets/images/person.png", loading="lazy", class="img-thumbnail rounded-pill d-block my-1 mx-auto", alt="person")
-                        .clearfix
-                        
-                        //- Testimonial quote/text
-                        blockqoute.text-center
-                            p Some representative placeholder content for the first slide.
-                        .clearfix
-                    
-                    //- Second testimonial item
-                    .carousel-item
-                        img(src="./assets/images/person.png", loading="lazy", class="img-thumbnail rounded-pill d-block my-1 mx-auto", alt="person")
-                        .clearfix
-                        blockquote.text-center
-                            p representative placeholder content for the first slide.
-                        .clearfix
-    
+
+    include partials/testimonials
     //- ================================================
     //- BLOG SECTION: Articles and News Feed
     //- ================================================
