@@ -13,9 +13,9 @@ include ../mixins/rate
                         .container
                             .row
                                 - for(const c of card_list[i])
-                                    .col-md-3.text-center.animate-filter-ease-in.blur-10
-                                        +card(c.person_name,c.image)
+                                    .col-md-3.text-center
+                                        +card(c.person_name,c.image)&attributes({class:"animate-filter-ease-in blur-10"})
                                             .card-text
                                                 +rate(c.rate_count)
-                                                .clearfix
+                                                
 
