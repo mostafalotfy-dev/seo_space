@@ -274,8 +274,8 @@ $('.lang-selector').on('click', function() {
 In `index.pug`:
 
 ```pug
-html(lang=lang)
-  body(dir=lang == 'ar' ? 'rtl' : 'ltr')
+html(lang=lang, dir=lang == 'ar' ? 'rtl' : 'ltr')
+  body
 ```
 
 The direction automatically sets to:

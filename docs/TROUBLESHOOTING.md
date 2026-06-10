@@ -258,8 +258,8 @@ ping registry.npmjs.org
 2. **Verify font supports Arabic:**
    - Check @font-face declaration
    - Or use system fonts: `font-family: Arial, sans-serif;`
-3. **Check RTL attribute:**
-   - HTML should have: `dir="rtl"` when lang is 'ar'
+3. Check RTL attribute:
+   - The `<html>` tag should have: `dir="rtl"` when lang is 'ar'
 4. **Verify ar.json file is UTF-8:**
    - Save file as UTF-8 encoding in editor
 
