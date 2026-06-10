@@ -144,9 +144,9 @@ const $ = require("jquery");
 
     $(this).addClass("active");
 
-    let target = this.hash;
+    
 
-    target = $(this.hash);
+    let target = $(this.hash);
     if(target.length)
     {
     $("html, body")
