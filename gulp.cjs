@@ -30,7 +30,7 @@ gulp.task("app-css", function () {
         .src("src/assets/css/color-palette/*.css")
         .pipe(gulp.dest("public/dist/css/color-palette"));
       gulp.src("src/assets/css/blog.css").pipe(gulp.dest("public/dist/css/"));
-      fs.cpSync("src/assets/fonts", "public/dist/webfonts", {
+      fs.cpSync("src/assets/fonts", "public/dist/fonts", {
         recursive: true,
       });
       gulp
