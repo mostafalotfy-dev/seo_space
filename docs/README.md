@@ -459,7 +459,7 @@ Edit CSS variables in `assets/css/color-palette/theme-name.css`
 
 ## License
 
-ISC License - See package.json for details
+MIT License - See package.json for details
 
 ## Author
 
