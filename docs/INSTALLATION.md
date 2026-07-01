@@ -27,18 +27,9 @@ cd path/to/seo
 npm install
 ```
 
-This will install all required packages listed in `package.json`:
-- **gulp-pug** (5.0.0) - Pug template compilation
-- **Bootstrap** (5.3.8) - CSS framework
-- **jQuery** (4.0.0) - JavaScript library
-- **Gulp** (5.0.1) - Task runner and build system
-- **Rollup** - JavaScript bundler
-- **Babel** - JavaScript transpiler
-- **Firebase** (12.9.0) - Backend and hosting
-- **ESLint** (9.39.2) - Code quality
-- And more...
+This installs the current toolchain from `package.json`, including Gulp, Rollup, Babel, Firebase, Bootstrap, and ESLint.
 
-**Installation time**: Usually 2-5 minutes depending on internet speed
+**Installation time**: Usually 2-5 minutes depending on internet speed.
 
 ### 3. Understand Project Structure
 
@@ -47,76 +38,57 @@ The project is organized as follows:
 ```
 src/
 ├── index.pug                    # Main template entry point
-├── layout.pug                   # Master layout wrapper
-├── pages/                       # Standalone pages
-│   ├── login.pug               # Login page
-│   ├── signup.pug              # Registration page
-│   └── profile.pug             # User profile page
-├── mixins/                      # Reusable components
-│   ├── header.pug              # Header navigation
-│   ├── footer.pug              # Footer section
-│   ├── preloader.pug           # Page loading indicator
-│   ├── auth/
-│   │   └── navbar.pug          # Auth-aware navbar
-│   └── ... (other sections)
+├── layout.pug                   # Shared page layout
+├── pages/                       # Login, signup, and profile templates
+├── mixins/                      # Reusable UI sections
+├── partials/                    # Shared partial templates
+├── sections/                    # Page sections
 ├── assets/                      # Static files
-│   ├── css/                    # Stylesheets
-│   ├── js/                     # JavaScript files
-│   ├── images/                 # Images
-│   ├── fonts/                  # Custom fonts
-│   └── sounds/                 # Audio effects (open.wav, close.mp3)
-└── locals/                      # Translations
-    ├── en.json                 # English translations
-    └── ar.json                 # Arabic translations
+│   ├── css/                     # Stylesheets and palettes
+│   ├── js/                      # App logic and Firebase helpers
+│   ├── images/                  # Images and graphics
+│   ├── fonts/                   # Custom fonts
+│   └── sounds/                  # Audio effects
+└── locals/                      # Translation files
+    ├── en.json                  # English strings
+    └── ar.json                  # Arabic strings
 ```
 
 ### 4. Available npm Scripts
 
-Check if dependencies installed correctly:
-
 ```bash
-npm list
+npm run gulp          # Compile templates and assets once
+npm run watch:gulp    # Rebuild on template and stylesheet changes
+npm run watch:rollup  # Rebuild JavaScript bundles on changes
+npm run lint          # Check code quality
+npm run lint:fix      # Auto-fix lint issues
+npm run deploy        # Deploy the public/ folder to Firebase Hosting
 ```
 
-Or check specific packages:
+### 5. Verify Installation
 
 ```bash
-npm list gulp
-npm list bootstrap
-npm list firebase
+npm list --depth=0
+npm list gulp rollup babel firebase bootstrap
 ```
 
-### 4. Verify Installation
+### 6. Start Development
 
 ```bash
-# Check if all dependencies installed correctly
-npm list
-
-# Check specific critical packages
-npm list gulp gulp-pug bootstrap firebase
-```
-
-### 5. Start Development
-
-```bash
-# Watch mode - Gulp automatically recompiles on file changes
+# Rebuild templates and assets when files change
 npm run watch:gulp
 
-# In separate terminal: Watch JavaScript bundling  
+# In a second terminal, watch JavaScript bundles
 npm run watch:rollup
-
-# Or run all build processes at once
-npm start
 ```
 
-**Output**: HTML files will be generated in the `public/` directory with pattern `output-[lang]-theme-[theme-name]-[mode].html`
+**Output**: HTML files are written to the `public/` directory using the pattern `output-index-{lang}-{mode}-{theme}.html`.
 
 **Example generated files:**
-- `output-en-theme-navy-dark.html`
-- `output-en-theme-navy-light.html` 
-- `output-ar-theme-navy-dark.html`
-- `output-ar-theme-navy-light.html`
-
+- `public/output-index-en-dark-navy.html`
+- `public/output-index-en-light-navy.html`
+- `public/output-index-ar-dark-loyal-green.html`
+- `public/output-index-ar-light-cranberries.html`
 ## Troubleshooting Installation
 
 ### Issue: "npm: command not found"

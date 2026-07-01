@@ -54,169 +54,97 @@ The template comes with 16+ pre-compiled HTML files supporting 2 languages (Engl
 ## Project Structure
 
 ```
-seo/
+seo_space/
 ├── src/
-│   ├── index.pug                      # Main template file
-│   ├── layout.pug                     # Master layout
-│   ├── pages/                         # Auth pages
-│   │   ├── login.pug
-│   │   ├── signup.pug
-│   │   └── profile.pug
-│   ├── mixins/                        # Reusable components
-│   │   ├── header.pug
-│   │   ├── footer.pug
-│   │   ├── preloader.pug
-│   │   ├── auth/
-│   │   │   └── navbar.pug
-│   │   └── ...
-│   ├── assets/                        # Static assets
-│   │   ├── css/
-│   │   │   ├── main.css               # Main styles
-│   │   │   ├── chatbox.css            # Chat component
-│   │   │   └── color-palette/         # Themes
-│   │   │       ├── Ignite.css
-│   │   │       ├── navy.css
-│   │   │       ├── loyal-green.css
-│   │   │       ├── new-corporate-tech.css
-│   │   │       └── olive-garden-feast.css
-│   │   ├── js/
-│   │   │   ├── main.js                # App logic
-│   │   │   ├── fbase.js               # Firebase integration
-│   │   │   └── ...
-│   │   ├── fonts/                     # Custom fonts
-│   │   ├── sounds/                    # Audio effects
-│   │   └── images/                    # Graphics
-│   ├── vendor/                        # Third-party libraries
-│   │   ├── bootstrap/
-│   │   └── jquery/
-│   └── locals/                        # Translations
-│       ├── en.json
-│       └── ar.json
-│
-├── gulp.cjs                           # Gulp build config
-├── rollup.config.mjs                  # Rollup bundling config
-├── babel.config.json                  # Babel transpilation config
-├── package.json                       # Node.js dependencies
-├── firebase.json                      # Firebase hosting config
-└── eslint.config.mjs                  # ESLint rules
-│   │   ├── animated.css               # Animation styles
-│   │   ├── fontawesome.css            # Icon library
-│   │   ├── owl.css                    # Carousel styles
-│   │   └── color-palette/             # Theme color palettes
-│   │       ├── Ignite.css
-│   │       ├── navy.css
-│   │       ├── new-corporate-tech.css
-│   │       └── olive-garden-feast.css
-│   ├── js/                            # JavaScript files
-│   │   ├── main-custom.js             # Custom app logic
-│   │   ├── animation.js               # Animation effects
-│   │   ├── tabs.js                    # Tab functionality
-│   │   ├── owl-carousel.js            # Carousel script
-│   │   ├── isotope.js                 # Filtering library
-│   │   ├── imagesloaded.js            # Image loading detection
-│   │   ├── jquery.countup.min.js      # Counter animation
-│   │   ├── noframework.waypoints.min.js # Scroll detection
-│   │   └── utils.js                   # Utility functions
-│   ├── fonts/                         # Custom fonts
-│   └── images/                        # Images and graphics
-│
-├── locals/                            # Localization files
-│   ├── en.json                        # English translations
-│   └── ar.json                        # Arabic translations
-│
-├── vendor/                            # Third-party libraries
-│   ├── bootstrap/                     # Bootstrap framework
-│   └── jquery/                        # jQuery library
-│
-├── output-*.html                      # Generated HTML files
-│   └── (auto-generated from index.pug)
-│
-└── Documentation/                     # Project documentation
-    ├── README.md                      # This file
-    ├── INSTALLATION.md                # Setup instructions
-    ├── ARCHITECTURE.md                # Project structure
-    ├── COLOR_PALETTE.md               # Theme documentation
-    ├── CONFIGURATION.md               # Configuration guide
-    ├── DEVELOPMENT.md                 # Development guidelines
-    └── LOCALIZATION.md                # Translation guide
+│   ├── index.pug                  # Main template entry point
+│   ├── layout.pug                 # Shared page layout
+│   ├── components/                # Reusable template components
+│   ├── pages/                     # Login, signup, and profile templates
+│   ├── mixins/                    # Section and UI mixins
+│   ├── partials/                  # Shared partials
+│   ├── sections/                  # Page sections
+│   └── assets/
+│       ├── css/                   # Stylesheets and theme palettes
+│       ├── js/                    # App logic, Firebase hooks, and helpers
+│       ├── images/                # Images and graphics
+│       ├── fonts/                 # Local font files
+│       └── sounds/                # Audio assets
+├── public/                        # Generated HTML and compiled assets
+├── docs/                          # Project documentation
+├── config.js                      # Shared build and content config
+├── gulp.cjs                       # Gulp build pipeline
+├── rollup.config.mjs              # Rollup bundling configuration
+├── babel.config.json              # Babel transpilation config
+├── package.json                   # Scripts and dependencies
+├── firebase.json                  # Firebase Hosting config
+└── eslint.config.mjs             # Linting configuration
 ```
 
 ## Quick Start Guide
 
 ### Prerequisites
-- **Node.js** v18.0.0 or higher ([download](https://nodejs.org/))
-- **npm** v8.0.0 or higher (comes with Node.js)
-- **Code Editor** (VS Code recommended)
-- **2GB RAM minimum**, ~500MB disk space
+- **Node.js** 18+ recommended ([download](https://nodejs.org/))
+- **npm** 9+ (included with Node.js)
+- **VS Code** or another editor with Pug/HTML support
+- **~500MB** free disk space for dependencies and build output
 
 ### Installation Steps
 
 ```bash
-# 1. Navigate to project directory
-cd d:\projects\seo_Space
+# 1. Navigate to the project directory
+cd d:\2.projects\seo_space
 
-# 2. Install dependencies (2-5 minutes)
+# 2. Install dependencies
 npm install
 
-# 3. Start development with auto-recompilation
-npm run watch
+# 3. Build once
+npm run gulp
 
-# Or compile once without watching
+# 4. Start live rebuilds for templates and styles
 npm run watch:gulp
+
+# 5. In a second terminal, watch JavaScript bundles
+npm run watch:rollup
 ```
 
 ### Generated Output Files
 
-After running `npm start` or `npm run watch:gulp`, 16 HTML files are automatically generated in the public/ directory:
+The build generates HTML files in the public/ directory using the pattern `output-index-{lang}-{mode}-{theme}.html`.
 
-**English Versions:**
-- `output-en-theme-loyal-green-dark.html`
-- `output-en-theme-loyal-green-light.html`
-- `output-en-theme-navy-dark.html`
-- `output-en-theme-navy-light.html`
-- `output-en-theme-new-corporate-tech-dark.html`
-- `output-en-theme-new-corporate-tech-light.html`
-- `output-en-theme-olive-garden-feast-dark.html`
-- `output-en-theme-olive-garden-feast-light.html`
+Examples:
+- `public/output-index-en-dark-navy.html`
+- `public/output-index-en-light-navy.html`
+- `public/output-index-ar-dark-loyal-green.html`
+- `public/output-index-ar-light-cranberries.html`
 
-**Arabic Versions (RTL):**
-- `output-ar-theme-ignite-dark.html`
-- `output-ar-theme-ignite-light.html`
-- `output-ar-theme-navy-dark.html`
-- `output-ar-theme-navy-light.html`
-- `output-ar-theme-new-corporate-tech-dark.html`
-- `output-ar-theme-new-corporate-tech-light.html`
-- `output-ar-theme-olive-garden-feast-dark.html`
-- `output-ar-theme-olive-garden-feast-light.html`
+The current configuration produces 12 HTML files for the available theme combinations.
 
 ### Opening in Browser
 
 ```bash
 # Windows
-start output-en-theme-navy-dark.html
+start public\output-index-en-dark-navy.html
 
 # macOS
-open output-en-theme-navy-dark.html
+open public/output-index-en-dark-navy.html
 
 # Linux
-xdg-open output-en-theme-navy-dark.html
+xdg-open public/output-index-en-dark-navy.html
 ```
-
-Or simply double-click the HTML file in your file explorer.
 
 ## Technology Stack
 
 | Technology | Version | Purpose |
 |-----------|---------|---------|
-| **Pug** | 3.0.3 | Template engine |
-| **Bootstrap** | 5.3.8 | CSS framework |
-| **jQuery** | 4.0.0 | JavaScript library |
-| **i18next** | 25.8.0 | Localization |
-| **ESLint** | 9.39.2 | Code quality |
-| **nodemon** | 3.1.11 | Development auto-reload |
+| **Gulp** | 5.0.1 | Build pipeline and template compilation |
+| **Rollup** | 4.62.2 | JavaScript bundling |
+| **Babel** | 8.0.2 | Modern JS transpilation |
+| **Bootstrap** | 5.3.8 | Responsive UI framework |
+| **jQuery** | 4.0.0 | DOM helpers and UI interactions |
+| **Firebase** | 12.15.0 | Hosting and backend hooks |
+| **ESLint** | 10.6.0 | Code quality checks |
+| **Pug** | via gulp-pug | Template engine |
 | **Animate.css** | 4.1.1 | CSS animations |
-| **WOW.js** | - | Scroll animations |
-| **Owl Carousel** | 0.9.1 | Image carousel |
 
 
 ## Page Sections

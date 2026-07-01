@@ -51,90 +51,95 @@ gulp.task("purgecss", () => {
 
 
 });
+function getUsername(lang) {
+  return lang === "en" ? "Mostafa" : "مصطفى";
+}
+
+function buildFullThemeName(theme, lang, mode) {
+  return config.output_default_name
+    .replace("{baseName}", "index")
+    .replace("{lang}", lang)
+    .replace("{mode}", mode)
+    .replace("{theme}", theme.replace(".css", ""));
+}
+
+function createPugData(lang, theme, mode) {
+  return {
+    pre_loader: config.preloader,
+    username: getUsername(lang),
+    active_number: config.active_number,
+    ai_assistant: config.ai_asssitant,
+    yearNumber: new Date().getFullYear(),
+    lang,
+    theme_name: theme,
+    card_list: config.card_list,
+    mode,
+    dir: lang === "ar" ? "rtl" : "ltr",
+    t: getTranslator(lang),
+    user: true,
+    full_theme_name: buildFullThemeName(theme, lang, mode),
+    posts: [
+      {
+        title: "Post 1",
+        image: "https://placehold.co/600x400",
+        slug: "post-1",
+        excerpt: "hello",
+        content: "Content of post 1",
+      },
+      {
+        title: "Post 2",
+        image: "https://placehold.co/600x400",
+        slug: "post-2",
+        excerpt: "hello",
+        content: "Content of post 2",
+      },
+      {
+        title: "Post 3",
+        image: "https://placehold.co/600x400",
+        slug: "post-3",
+        excerpt: "hello",
+        content: "Content of post 3",
+      },
+    ],
+  };
+}
+
+function createPugTask(theme, lang, mode) {
+  return gulp
+    .src(config.pug_to_compile)
+    .pipe(
+      rename(function (filePath) {
+        const baseName = path.basename(filePath.basename, ".pug");
+        filePath.basename = config.output_default_name
+          .replace("{baseName}", baseName)
+          .replace("{lang}", lang)
+          .replace("{mode}", mode)
+          .replace("{theme}", theme.replace(".css", ""));
+        filePath.extname = ".html";
+      }),
+    )
+    .pipe(
+      pug({
+        pretty: true,
+        data: createPugData(lang, theme, mode),
+      }),
+    )
+    .pipe(gulp.dest("public/"));
+}
+
 // Pug task with rename
 gulp.task("pug", function () {
   const tasks = [];
-  const config = require("./config.js");
 
   for (const theme of config.themes) {
-    if (tasks.length > config.themes) {
-      break;
-    }
     for (const lang of config.languages) {
       for (const mode of config.modes) {
-        const username = lang === "en" ? "Mostafa" : "مصطفى";
-
-        tasks.push(
-          gulp
-            .src(config.pug_to_compile)
-            .pipe(
-              rename(function (filePath) {
-                const baseName = path.basename(filePath.basename, ".pug");
-                filePath.basename = config.output_default_name
-                  .replace("{baseName}", baseName)
-                  .replace("{lang}", lang)
-                  .replace("{mode}", mode)
-                  .replace("{theme}", theme.replace(".css", ""));
-                filePath.extname = ".html";
-              }),
-            )
-            .pipe(
-              pug({
-                pretty: true,
-
-                data: {
-                  pre_loader: config.preloader,
-                  username,
-                  active_number:config.active_number,
-                  ai_assistant: config.ai_asssitant,
-                  yearNumber: new Date().getFullYear(),
-                  lang,
-                  theme_name: theme,
-                  card_list:config.card_list,
-                  mode,
-                  dir: lang === "ar" ? "rtl" : "ltr",
-                  t: getTranslator(lang),
-                  user: true,
-                  full_theme_name: (function () {
-                    return config.output_default_name
-                      .replace("{baseName}", "index")
-                      .replace("{lang}", lang)
-                      .replace("{mode}", mode)
-                      .replace("{theme}", theme.replace(".css", ""));
-                  })(),
-                  posts: [
-                    {
-                      title: "Post 1",
-                      image: "https://placehold.co/600x400",
-                      slug: "post-1",
-                      excerpt: "hello",
-                      content: "Content of post 1",
-                    },
-                    {
-                      title: "Post 2",
-                      image: "https://placehold.co/600x400",
-                      slug: "post-2",
-                      excerpt: "hello",
-                      content: "Content of post 2",
-                    },
-                    {
-                      title: "Post 3",
-                      image: "https://placehold.co/600x400",
-                      slug: "post-3",
-                      excerpt: "hello",
-                      content: "Content of post 3",
-                    },
-                  ],
-                },
-              }),
-            )
-            .pipe(gulp.dest("public/")),
-        );
+        tasks.push(createPugTask(theme, lang, mode));
       }
     }
   }
 
-  return tasks.length ? tasks[tasks.length - 1] : Promise.resolve();
+  return tasks.length ? tasks.at(-1) : Promise.resolve();
 });
 gulp.task("image", (cb) => {
   console.log("copying images...");

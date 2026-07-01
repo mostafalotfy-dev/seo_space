@@ -46,12 +46,11 @@ DEV_PORT=8080
 ### Available Themes
 
 ```javascript
-// Themes available in color-palette directory
+// Themes available in the color-palette directory
 const themes = [
-  'Ignite',                    // Vibrant, energetic
-  'navy',                      // Professional blue
-  'new-corporate-tech',        // Modern tech
-  'olive-garden-feast'         // Earthy tones
+  'navy.css',
+  'loyal-green.css',
+  'cranberries.css'
 ];
 ```
 
@@ -183,21 +182,21 @@ The project uses **Gulp** for Pug template compilation. Configuration is in `gul
 
 ### Output File Naming
 
-Generated files follow pattern:
+Generated files follow the pattern:
 
 ```
-output-[language]-theme-[theme-name]-[mode].html
+output-index-{lang}-{mode}-{theme}.html
 ```
 
 **Examples:**
-- `output-en-theme-navy-dark.html`
-- `output-en-theme-navy-light.html`
-- `output-ar-theme-navy-dark.html`
-- `output-ar-theme-olive-garden-feast-light.html`
+- `output-index-en-dark-navy.html`
+- `output-index-en-light-navy.html`
+- `output-index-ar-dark-loyal-green.html`
+- `output-index-ar-light-cranberries.html`
 
 ### Modifying Build Output
 
-Edit `gulp.cjs` to customize compilation:
+Edit `gulp.cjs` or `config.js` to customize compilation:
 
 ```bash
 # Run compilation once
@@ -205,6 +204,9 @@ npm run gulp
 
 # Watch for changes
 npm run watch:gulp
+
+# Watch JavaScript bundles separately
+npm run watch:rollup
 ```
 
 ## Development Server Configuration

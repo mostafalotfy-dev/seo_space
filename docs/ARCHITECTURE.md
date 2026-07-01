@@ -7,15 +7,15 @@ SEO Space Frontend uses a modular, component-based architecture with Pug templat
 ## Core Architecture Pattern
 
 ```
-Pug Templates (index.pug)
+Pug Templates (src/index.pug)
          ↓
-    Compilation (gulp.cjs)
+    Compilation (gulp.cjs + rollup.config.mjs)
          ↓
-    HTML Output (output-*.html)
+    HTML Output (public/output-index-*.html)
          ↓
     Browser Rendering
          ↓
-    JavaScript Enhancement (main.js)
+    JavaScript Enhancement (src/assets/js/main.js)
          ↓
     Interactive Website
 ```
@@ -25,22 +25,17 @@ Pug Templates (index.pug)
 ### Root Level Files
 
 ```
-seo/
-├── src/
-│   ├── index.pug          # Main entry template
-│   ├── layout.pug         # Master layout template
-│   ├── components/        # Reusable component templates
-│   ├── pages/             # Page-specific templates
-│   ├── partials/          # Partial template files
-│   ├── sections/          # Section components
-│   ├── mixins/            # Pug mixin definitions
-│   ├── assets/            # Static assets
-│   ├── vendor/            # Third-party libraries
-│   ├── docs/              # Documentation files
-│   └── ...
-├── eslint.config.mjs      # ESLint configuration for code quality
-├── package.json           # Project metadata and dependencies
-└── .env                   # Environment variables (optional)
+seo_space/
+├── src/                   # Source templates, styles, and scripts
+├── public/                # Generated HTML, CSS, JS, and assets
+├── docs/                  # Documentation files
+├── config.js              # Shared theme/language/build settings
+├── gulp.cjs               # Gulp build pipeline
+├── rollup.config.mjs      # Rollup bundling config
+├── babel.config.json      # Babel transpilation config
+├── package.json           # Scripts and dependencies
+├── firebase.json          # Firebase hosting settings
+└── eslint.config.mjs     # ESLint configuration
 ```
 
 ### `assets/` Directory Structure
