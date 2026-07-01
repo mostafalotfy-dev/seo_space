@@ -69,7 +69,7 @@ const config = {
     },
     {
       person_name: "Ahmed",
-      image: "./dist/images/Ahmed.png",
+      image: "./dist/images/ahmed.png",
       rate_count: 5,
     },
     {
