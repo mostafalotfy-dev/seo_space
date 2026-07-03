@@ -35,7 +35,6 @@ const {
   GoogleAIBackend,
 } = require("firebase/ai");
 const $ = require("jquery");
-;
 
 /**
  * Firebase Configuration Object
@@ -49,12 +48,12 @@ const $ = require("jquery");
  * - Realtime Database: ecommerce-fb9b3-default-rtdb.firebaseio.com
  *
  * Security Considerations:
- * - API key is loaded from environment variables at build time
+ * - API key has security rules in Firebase Console
  * - All access is restricted to authorized operations only
  * - Cross-origin requests are limited to whitelisted domains
  */
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: "AIzaSyDX5whingnG9Ta4NEk8BaFpXYT5-Shf-vM",
   authDomain: "ecommerce-fb9b3.firebaseapp.com",
   databaseURL: "https://ecommerce-fb9b3-default-rtdb.firebaseio.com",
   projectId: "ecommerce-fb9b3",

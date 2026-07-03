@@ -35,14 +35,14 @@ mixin header()
             //- Includes dropdown submenu for secondary pages
             ul.nav
               //- Home link - scrolls to #top
-              li.scroll-to-section
+              li.nav-item.scroll-to-section
                 a.btn.active(href="#top") #{t("menu.home")}
               
               //- Dropdown menu with links to major page sections
-              li.dropdown
-                a.btn.dropdown-toggle(href="#", role="button", data-bs-toggle="dropdown", aria-expanded="false")
+              li.dropdown#top
+                a.btn.dropdown-toggle(href="#collapseExample", role="button", data-bs-toggle="dropdown", aria-expanded="false")
                   | #{t("menu.main")}
-                ul.dropdown-menu
+                ul#collapseExample.dropdown-menu
                   //- Link to About section
                   li
                     a.dropdown-item(href="#about") #{t("menu.about")}
@@ -97,5 +97,5 @@ mixin header()
               //- ================================================
               //- Visible only on mobile/tablet screens
               //- Controlled by Bootstrap responsive utilities
-              a.menu-trigger
+            a.menu-trigger
                 span #{t("menu.trigger")}

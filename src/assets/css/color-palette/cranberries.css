@@ -91,6 +91,7 @@
   --footer-text-color: white;
   /* Color for footer text */
   --history-text-color: white;
+  --navbar-list-color: #ffffff;
   /* Color for history/timeline text */
 }
 
@@ -180,7 +181,7 @@
   --list-color: white;
   /* Color for list items */
   --heading-color: white;
-  --navbar-list-color:white
+  --navbar-list-color:black
 }
 
 
