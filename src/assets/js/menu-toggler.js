@@ -87,7 +87,7 @@ $(".navbar-toggler").on("click", function (e) {
  * - Improves overall app usability on touch devices
  */
 $("html").on("click", function (e) {
-  var header = $("#tm-header");
+  const header = $("#tm-header");
 
   if (!header.has(e.target)) {
     $(".tm-header").removeClass("show");

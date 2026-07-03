@@ -217,7 +217,7 @@ SEO-Space/
 │   │   │       ├── new-corporate-tech.css
 │   │   │       └── olive-garden-feast.css
 │   │   ├── js/
-│   │   │   ├── main-custom.js      (منطق التطبيق)
+│   │   │   ├── main.js      (منطق التطبيق)
 │   │   │   ├── animation.js        (إعداد WOW.js)
 │   │   │   └── utils.js            (وظائف مساعدة)
 │   │   ├── fonts/                  (خطوط مخصصة)

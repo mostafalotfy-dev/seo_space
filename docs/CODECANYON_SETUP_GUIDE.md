@@ -4,7 +4,7 @@
 
 ### Purchase Includes
 - ✓ Fully functional HTML5 template
-- ✓ 16 pre-compiled HTML files (all theme/language combinations)
+- ✓ 12 pre-compiled HTML files (all active theme/language combinations)
 - ✓ Source Pug template for customization
 - ✓ All assets (CSS, JavaScript, images, fonts)
 - ✓ Comprehensive documentation
@@ -14,11 +14,11 @@
 
 ### What You Get
 
-1. **16 Pre-Built HTML Files**
+1. **12 Pre-Built HTML Files**
    - 2 Languages (English, Arabic)
-   - 4 Themes (Ignite, Navy, Corporate Tech, Olive Garden)
+   - 3 Active Themes (Navy, Loyal Green, Cranberries)
    - 2 Modes (Dark, Light)
-   - Total: 2 × 4 × 2 = 16 variations
+   - Total: 2 × 3 × 2 = 12 variations
 
 2. **Complete Source Code**
    - Pug template (index.pug)
@@ -400,7 +400,7 @@ For production, minify CSS and JavaScript:
 <link rel="stylesheet" href="assets/css/main.min.css">
 
 <!-- Minified JS -->
-<script src="assets/js/main-custom.min.js"></script>
+<script src="assets/js/main.min.js"></script>
 ```
 
 ## SEO Setup

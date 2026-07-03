@@ -6,12 +6,12 @@
 
 SEO Space is a modern, responsive, and professionally designed HTML5 template specifically built for digital marketing agencies and SEO service providers. Built with **Pug templating**, **Bootstrap 5**, **Firebase integration**, and **i18next localization**, it provides a comprehensive, production-ready solution for showcasing SEO services, digital marketing capabilities, and user authentication.
 
-The template comes with 16+ pre-compiled HTML files supporting 2 languages (English & Arabic), 5 professional color themes, 2 display modes (Dark & Light), and complete authentication pages.
+The template comes with 12 pre-compiled HTML files supporting 2 languages (English & Arabic), 3 professional color themes, 2 display modes (Dark & Light), and complete authentication pages.
 
 ## Key Features
 
 ### Design & Appearance
-- 🎨 **5 Professional Color Themes** - Ignite, Navy, Corporate Tech, Olive Garden Feast, Loyal Green
+- 🎨 **3 Professional Color Themes** - Navy, Loyal Green, Cranberries
 - 🌓 **Dark/Light Mode** - Dynamic theme switching with persistence
 - ⚡ **Fully Responsive** - Mobile-first Bootstrap 5.3.8 framework
 - 🎬 **Smooth Animations** - WOW.js scroll animations and CSS transitions

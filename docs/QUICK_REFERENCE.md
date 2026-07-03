@@ -47,7 +47,7 @@ locals/en.json            →  Translations
 locals/ar.json            
 assets/css/main.css       →  Styling
 assets/css/color-palette/ →  Themes
-assets/js/main-custom.js  →  Behavior
+assets/js/main.js  →  Behavior
 ```
 
 ## Quick Edits
@@ -266,7 +266,7 @@ npm run gulp
 1. Check DevTools → Console for errors
 2. Verify jQuery loaded first
 3. Check script src paths
-4. Check syntax in main-custom.js
+4. Check syntax in main.js
 5. Use debugger to trace code
 ```
 

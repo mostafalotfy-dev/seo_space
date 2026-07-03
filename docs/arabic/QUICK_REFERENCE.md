@@ -51,7 +51,7 @@ locals/en.json         →  الترجمات
 locals/ar.json
 src/assets/css/main.css       →  الأنماط
 src/assets/css/color-palette/ →  السمات
-src/assets/js/main-custom.js  →  السلوك
+src/assets/js/main.js  →  السلوك
 ```
 
 ## تعديلات سريعة
@@ -267,7 +267,7 @@ npm run gulp
 1. تحقق من DevTools ← Console للأخطاء
 2. تأكد من تحميل jQuery أولاً
 3. تحقق من مسارات src للسكريبت
-4. تحقق من البناء الجملي في main-custom.js
+4. تحقق من البناء الجملي في main.js
 5. استخدم debugger لتتبع الكود
 ```
 

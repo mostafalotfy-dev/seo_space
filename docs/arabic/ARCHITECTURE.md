@@ -15,7 +15,7 @@
          ↓
     عرض المتصفح
          ↓
-    تحسين JavaScript (main-custom.js)
+    تحسين JavaScript (main.js)
          ↓
     موقع تفاعلي
 ```

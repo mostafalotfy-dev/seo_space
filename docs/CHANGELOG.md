@@ -166,7 +166,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ARCHITECTURE.md** - Synchronized with current src folder structure
   - Updated Root Level Files section to show src/ subdirectories (components/, pages/, mixins/, etc.)
   - Updated `assets/` directory structure with actual file inventory:
-    - Changed `main-custom.js` to `main.js`
+    - Changed `main.js` to `main.js`
     - Added `fbase.js` (Firebase integration)
     - Added `chatbox.css` to CSS section
     - Added `sounds/` folder with audio files (open.wav, close.mp3)
@@ -238,7 +238,7 @@ Complete replacement of the legacy `compilepg.cjs` script with a full **Gulp-bas
 - `gulp` (v5.0.1) as the primary task runner
 - `app-js` task — concatenates and minifies all JS files via `gulp-uglify` → `public/dist/app.mjs`
 - `app-css` task — concatenates all CSS files → `public/dist/css/app.css`
-- `pug` task — compiles Pug templates for all 4 themes × 2 languages × 2 modes (16 HTML files) → `public/`
+- `pug` task — compiles Pug templates for all 3 themes × 2 languages × 2 modes (12 HTML files) → `public/`
 - `watch` task — live-watches `src/assets/js/`, `src/assets/css/`, and `src/index.pug`
 - Default export runs `app-css → app-js → pug` in sequence
 - `gulp-concat` (v2.6.1), `gulp-uglify` (v3.0.2), `gulp-pug` (v5.0.0), `gulp-preprocess` (v6.0.0)
@@ -329,7 +329,7 @@ A complete, production-ready HTML5 template for digital marketing and SEO agenci
 
 **Core Template & Structure**
 - Pug template engine (`src/index.pug`) — single source of truth for all HTML output
-- 16 pre-compiled, production-ready HTML files
+- 12 pre-compiled, production-ready HTML files
   - 2 languages: English (`en`) & Arabic (`ar`) with RTL support
   - 4 professional themes: Ignite, Navy, Corporate Tech, Olive Garden Feast
   - 2 display modes: Dark & Light
@@ -418,7 +418,7 @@ A complete, production-ready HTML5 template for digital marketing and SEO agenci
 
 #### Migration Notes
 - First release — no migration needed
-- All 16 HTML files are independent and can be deployed separately
+- All 12 HTML files are independent and can be deployed separately
 
 ---
 

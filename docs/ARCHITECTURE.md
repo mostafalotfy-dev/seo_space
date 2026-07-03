@@ -272,7 +272,7 @@ xxl: ≥ 1400px       /* Extra large desktop */
    ↓ (WOW.js animations)
 5. assets/js/imagesloaded.js
    ↓ (Image detection)
-6. assets/js/main-custom.js (defer)
+6. assets/js/main.js (defer)
    ↓ (App initialization - runs last)
 ```
 
@@ -456,7 +456,7 @@ form#contact
 ### Form Handling
 
 - HTML5 validation (pattern, required attributes)
-- JavaScript submission handling in `main-custom.js`
+- JavaScript submission handling in `main.js`
 - AJAX form submission or traditional POST
 
 ## Performance Optimization
@@ -548,7 +548,7 @@ public/
 
 1. **New Sections**: Add to `index.pug`, add translations to locals
 2. **New Themes**: Create new CSS file in `color-palette/`
-3. **New Functionality**: Add to `main-custom.js`
+3. **New Functionality**: Add to `main.js`
 4. **New Languages**: Create new JSON in `locals/`
 
 ### Component Reusability

@@ -41,7 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Refreshed date stamps
 
 - **DEVELOPMENT.md**
-  - Updated main.js documentation (corrected from main-custom.js)
+  - Updated main.js documentation (corrected from main.js)
   - Enhanced JavaScript editing section
 
 - **CONFIGURATION.md**
@@ -213,7 +213,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ARCHITECTURE.md** - Synchronized with current src folder structure
   - Updated Root Level Files section to show src/ subdirectories (components/, pages/, mixins/, etc.)
   - Updated `assets/` directory structure with actual file inventory:
-    - Changed `main-custom.js` to `main.js`
+    - Changed `main.js` to `main.js`
     - Added `fbase.js` (Firebase integration)
     - Added `chatbox.css` to CSS section
     - Added `sounds/` folder with audio files (open.wav, close.mp3)

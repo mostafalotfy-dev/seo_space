@@ -321,7 +321,7 @@ npm run lint
 npm run lint:fix
 
 # فحص ملف محدد
-npx eslint src/assets/js/main-custom.js
+npx eslint src/assets/js/main.js
 ```
 
 ## سكريبتات package.json

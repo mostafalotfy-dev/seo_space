@@ -174,7 +174,7 @@
     
        تحديث قسم ملفات المستوى الجذري لإظهار المجلدات الفرعية (components/, pages/, mixins/, إلخ)
        تحديث هيكل مجلد assets/ مع قائمة الملفات الفعلية:
-           تغيير main-custom.js إلى main.js
+           تغيير main.js إلى main.js
            إضافة fbase.js (تكامل Firebase)
            إضافة chatbox.css إلى قسم CSS
            إضافة مجلد sounds/ مع ملفات صوتية (open.wav, close.mp3)

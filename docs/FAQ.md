@@ -6,7 +6,7 @@
 SEO Space is a professional HTML5 template designed for digital marketing agencies and SEO service providers. It features modern design, multiple themes, multi-language support, and all the sections needed to showcase digital marketing services.
 
 ### What's included in the purchase?
-- 16 pre-compiled HTML files (all theme/language combinations)
+- 12 pre-compiled HTML files (all active theme/language combinations)
 - Pug source template for customization
 - Complete CSS stylesheets
 - JavaScript files and libraries

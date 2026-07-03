@@ -41,7 +41,7 @@ npm run watch
 │   │   ├── color-palette/     ← ألوان السمات - حرّر هذه
 │   │   └── *.css              ← أنماط أخرى
 │   └── js/
-│       ├── main-custom.js     ← منطق التطبيق - حرّر هذا
+│       ├── main.js     ← منطق التطبيق - حرّر هذا
 │       └── *.js               ← سكريبتات أخرى
 └── .env                       ← الإعداد - حرّر هذا
 
@@ -268,7 +268,7 @@ body {
 
 ## تحرير JavaScript
 
-### ملف التطبيق الرئيسي (main-custom.js)
+### ملف التطبيق الرئيسي (main.js)
 
 ```javascript
 // عند جاهزية الصفحة
@@ -545,7 +545,7 @@ npm run lint
 npm run lint:fix
 
 # فحص ملف محدد
-npx eslint src/assets/js/main-custom.js
+npx eslint src/assets/js/main.js
 ```
 
 ### أفضل ممارسات أسلوب الكود

@@ -272,7 +272,7 @@ npx eslint .
 npx eslint . --fix
 
 # Lint specific file
-npx eslint assets/js/main-custom.js
+npx eslint src/assets/js/main.js
 ```
 
 ## Babel Configuration
@@ -480,7 +480,7 @@ Add version number to assets:
 
 ```pug
 link(rel="stylesheet" href="assets/css/main.css?v=1.0.0")
-script(src="assets/js/main-custom.js?v=1.0.0")
+script(src="assets/js/main.js?v=1.0.0")
 ```
 
 ## SEO Configuration

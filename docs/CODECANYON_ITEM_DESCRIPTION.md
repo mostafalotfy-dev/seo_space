@@ -22,7 +22,7 @@
 ### Template Files
 - `index.pug` - Main template (compiles to multiple HTML variations)
 - Multiple output HTML files for all language/theme combinations
-- 16 pre-compiled HTML versions (2 languages × 4 themes × 2 modes)
+- 12 pre-compiled HTML versions (2 languages × 3 active themes × 2 modes)
 
 ### Stylesheets
 - Bootstrap 5.3.8 framework
@@ -225,7 +225,7 @@ SEO-Space/
 │   │       ├── new-corporate-tech.css
 │   │       └── olive-garden-feast.css
 │   ├── js/
-│   │   ├── main-custom.js        (App logic)
+│   │   ├── main.js        (App logic)
 │   │   ├── animation.js          (WOW.js setup)
 │   │   ├── owl-carousel.js       (Carousel)
 │   │   ├── tabs.js               (Tab component)

@@ -718,13 +718,13 @@ live-server
 
 ```bash
 # Check code
-npx eslint assets/css/main.css ./assets/js/main-custom.js assets/css/color-palette/*.css
+npx eslint assets/css/main.css ./assets/js/main.js assets/css/color-palette/*.css
 
 # Auto-fix issues
-npx eslint assets/css/main.css ./assets/js/main-custom.js assets/css/color-palette/*.css --fix
+npx eslint assets/css/main.css ./assets/js/main.js assets/css/color-palette/*.css --fix
 
 # Check specific file
-npx eslint assets/js/main-custom.js
+npx eslint assets/js/main.js
 ```
 
 ### Code Style Best Practices

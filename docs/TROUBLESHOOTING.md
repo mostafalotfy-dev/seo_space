@@ -197,7 +197,7 @@ ping registry.npmjs.org
    - Should be: `assets/js/main.js`
 3. **Fix syntax errors:**
    - Look at line number in error
-   - Check main-custom.js or other JS files
+   - Check main.js or other JS files
 4. **Test in console:**
    - Press F12 → Console tab
    - Type `$` - if it returns function, jQuery is loaded
@@ -310,7 +310,7 @@ ping registry.npmjs.org
 **Solutions:**
 1. **Check if toggle exists:**
    - Look for button or switch in header
-   - Check main-custom.js for toggle functionality
+   - Check main.js for toggle functionality
 2. **Verify theme CSS has both modes:**
    ```css
    :root,[data-theme="dark"] { /* dark mode */ }
@@ -363,7 +363,7 @@ ping registry.npmjs.org
    - Don't keep many browser tabs open while developing
 4. **Check for infinite loops:**
    - Look in console for repeated messages
-   - Check main-custom.js for loops
+   - Check main.js for loops
 
 ## Responsive Design Issues
 
