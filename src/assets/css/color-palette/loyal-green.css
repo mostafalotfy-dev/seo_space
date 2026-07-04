@@ -38,8 +38,12 @@
   /* Muted text for secondary information */
   --text-hover-color: #dda15e;
   /* Color on hover for text elements */
-  --heading-color: var(--text-color);
+  --heading-color: #ffffff;
   /* Heading color inherits from primary text */
+  --bg-color: #212121;
+  /* General background color */
+  --border-color: #0f392c;
+  /* Border and divider color */
 
   /* --- Utility Colors --- */
   --light-color: #fff;
@@ -76,7 +80,8 @@
   /* Hover state for disabled elements */
   --disabled-text-color: #999999;
   /* Text color for disabled elements */
-
+  /* Background Color */
+  --bg-color:#212121
   /* --- Gray Scale Colors --- */
   --gray-color: #cccccc;
   /* Standard gray color */
@@ -100,6 +105,9 @@
   /* Primary background for light mode */
   --secondary-color: #217054;
   /* Secondary background for sections and cards */
+  --bg-color: #ffffff;
+  /* General background color */
+  --border-color: #d1d5db;
   --light-bg-color: #217054;
   /* Light background for nested elements */
 
@@ -116,15 +124,15 @@
   /* Primary text color (dark) */
   --title-color: #212121;
   /* Specific color for titles */
-  --paragraph-color: #444444;
+  --paragraph-color: #475569;
   /* Paragraph text color */
-  --text-muted: #000000;
+  --text-muted: #64748b;
   /* Muted text for secondary information */
-  --heading-color: white;
+  --heading-color: #ffffff;
   /* Heading color inherits from primary text */
-  --text-hover-color: #ffffff;
+  --text-hover-color: #0f172a;
   /* Color on hover for text elements */
-  --text-accent-color: white;
+  --text-accent-color: #ffffff;
   /* Accent text for emphasis */
   --history-text-color: #3a3939;
   /* Color for history/timeline text */

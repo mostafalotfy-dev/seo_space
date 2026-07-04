@@ -1,0 +1,111 @@
+/*========================================
+  Minimal Color Palette
+  A clean neutral palette for a simple
+  and minimal theme in both dark and light modes.
+========================================*/
+
+/* =========================
+   DARK MODE (DEFAULT)
+   ========================= */
+:root,
+[data-theme="dark"] {
+  --main-color: #121212;
+  /* Primary dark background */
+  --secondary-color: #1f1f1f;
+  /* Secondary dark surface */
+  --light-bg-color: #272727;
+  /* Nested element background */
+  --bg-color: #121212;
+  /* General background color */
+  --border-color: #2d2d2d;
+  /* Border and divider color */
+
+  --accent-color: #8d8d8d;
+  /* Subtle accent color */
+  --secondary-hover-color: #5f5f5f;
+  /* Hover state color */
+  --selection-color: #8d8d8d;
+  /* Text selection color */
+
+  --text-color: #e5e5e5;
+  /* Primary text color */
+  --title-color: #ffffff;
+  /* Title color */
+  --paragraph-color: #c1c1c1;
+  /* Paragraph text color */
+  --text-muted: #9a9a9a;
+  /* Muted text color */
+  --text-hover-color: #ffffff;
+  /* Hover text color */
+  --text-accent-color: #d4d4d4;
+  /* Accent text color */
+  --heading-color: #f8f8f8;
+  /* Heading color */
+
+  --navbar-list-color: #f8f8f8;
+  /* Navigation item color */
+  --list-color: #f8f8f8;
+  /* List text color */
+  --footer-text-color: #b0b0b0;
+  /* Footer text color */
+  --history-text-color: #9a9a9a;
+  /* History/timeline text color */
+
+  --light-color: #ffffff;
+  --dark-color: #000000;
+  --text-muted-placeholder: #9a9a9a;
+  --font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   LIGHT MODE
+   ========================= */
+:root,
+[data-theme="light"] {
+  --main-color: #f8fafc;
+  /* Primary light background */
+  --secondary-color: #ffffff;
+  /* Secondary surface */
+  --light-bg-color: #f1f5f9;
+  /* Nested element background */
+  --bg-color: #f8fafc;
+  /* General background color */
+  --border-color: #d1d5db;
+  /* Border and divider color */
+
+  --accent-color: #6b7280;
+  /* Subtle accent color */
+  --secondary-hover-color: #9ca3af;
+  /* Hover state color */
+  --selection-color: #6b7280;
+  /* Text selection color */
+
+  --text-color: #111827;
+  /* Primary text color */
+  --title-color: #0f172a;
+  /* Title color */
+  --paragraph-color: #475569;
+  /* Paragraph text color */
+  --text-muted: #6b7280;
+  /* Muted text color */
+  --text-hover-color: #0f172a;
+  /* Hover text color */
+  --text-accent-color: #111827;
+  /* Accent text color */
+  --heading-color: #0f172a;
+  /* Heading color */
+
+  --navbar-list-color: #111827;
+  /* Navigation item color */
+  --list-color: #111827;
+  /* List text color */
+  --footer-text-color: #475569;
+  /* Footer text color */
+  --history-text-color: #6b7280;
+  /* History/timeline text color */
+
+  --light-color: #ffffff;
+  --dark-color: #000000;
+  --text-muted-placeholder: #6b7280;
+  --font-family: 'Poppins', sans-serif;
+}

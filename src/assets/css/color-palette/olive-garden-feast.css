@@ -18,8 +18,11 @@
   /* Background for sections, cards, and components */
   --light-bg-color: #020617;
   /* Subtle/soft background for nested elements */
+  --bg-color: #212121;
+  /* General background color */
+  --border-color: #284946;
 
-  /* --- Brand & Accent Colors --- */
+  /* --- Brand & Accent Colors ---
   --third-color: #3B82F6;
   /* Primary brand color for links and icons */
   --accent-color: #5365ce;
@@ -106,6 +109,9 @@
   /* Subtle/soft background for nested elements in light mode */
   --header-bg-color: var(--dark-color);
   /* Header background color */
+  --bg-color: #F9FAFB;
+  /* General background color */
+  --border-color: #d1d5db;
 
   /* --- Brand & Accent Colors --- */
   --third-color: #2563EB;
@@ -120,15 +126,17 @@
   /* Primary text color in light mode */
   --title-color: var(--text-color);
   /* Title color inherits from primary text */
-  --paragraph-color: #444444;
+  --paragraph-color: #475569;
   /* Paragraph text color */
-  --text-muted: #3c6357;
+  --text-muted: #4b5563;
   /* Muted text for secondary information */
-  --text-hover-color: #dda15e;
+  --heading-color: #0f172a;
+  /* Color for headings */
+  --text-hover-color: #0f172a;
   /* Color on hover state for text elements */
-  --text-accent-color: white;
+  --text-accent-color: #2b7565;
   /* Accent text for emphasis */
-  --history-text-color: #cccccc;
+  --history-text-color: #64748b;
   /* Color for history/timeline text */
 
   /* --- Utility Colors --- */

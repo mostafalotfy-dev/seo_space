@@ -49,12 +49,16 @@
   /* History/timeline text color */
 
   /* --- Navigation & Lists --- */
-  --navbar-list-color: #aaa;
+  --navbar-list-color: white;
   /* Color for navigation list items */
   --list-color: var(--light-color);
   /* Color for list items */
   --footer-text-color: white;
   /* Color for footer text */
+  --bg-color: #212121;
+  /* General background color */
+  --border-color: #345281;
+  /* Border and divider color */
 
   /* --- Utility Colors --- */
   --light-color: #fff;
@@ -79,9 +83,12 @@
   /* Instagram brand color */
   --youtube-hover-color: #c4302b;
   /* YouTube brand color */
- /* --- Navigation & Lists --- */
+
+  /* --- Navigation & Lists --- */
   --navbar-list-color: white;
-  /* --- Disabled State Colors --- */
+  /* Color for navigation list items */
+  --disabled-color: #555555;
+  /* Background for disabled elements */
   --disabled-color: #555555;
   /* Background for disabled elements */
   --disabled-hover-color: #777777;
@@ -102,9 +109,7 @@
 
 
 
-::placeholder {
-  color: var(--light-color) !important;
-}
+
 
 /* =========================
    LIGHT MODE
@@ -116,6 +121,10 @@
   /* Primary background for light mode */
   --secondary-color: #345281;
   /* Secondary background for sections and cards */
+  --bg-color: #F9FAFB;
+  /* General background color */
+  --border-color: #CBD5E1;
+  /* Border and divider color */
 
   /* --- Brand & Accent Colors --- */
   --third-color: #2563EB;
@@ -131,20 +140,20 @@
   --text-color: #212121;
   /* Primary text color (dark) */
   --title-color: var(--secondary-color);
-  /* Title color inherits from primary text */
-  --paragraph-color: #ffffff;
+  /* Title color inherits from brand */
+  --paragraph-color: #475569;
   /* Paragraph text color */
-  --text-muted: #000000;
+  --text-muted: #64748b;
   /* Muted text for secondary information */
-  --heading-color: #ffff;
+  --heading-color: #0f172a;
   /* Color for headings */
-  --text-hover-color: var(--text-color) ;
+  --text-hover-color: #0f172a;
   /* Color on hover for text elements */
   --text-accent-color: white;
   /* Accent text for emphasis */
   --sub-heading-color: var(--dark-color);
   /* Color for sub-headings */
-  --text-muted-placeholder: var(--light-color);
+  --text-muted-placeholder: #000;
   /* Placeholder text color in form inputs */
   --history-text-color:#345281;
   /* --- Navigation & Lists --- */
@@ -184,7 +193,10 @@
   /* Hover state for disabled elements */
   --disabled-text-color: #999999;
   /* Text color for disabled elements */
-  --text-hover-color:rgb(231, 229, 229);
+
+
+   /* Placeholder text color for form inputs */
+
   /* --- Gray Scale Colors --- */
   --gray-color: #cccccc;
   /* Standard gray color */

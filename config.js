@@ -193,6 +193,7 @@ const config = {
    * Available Themes:
    * - "olive-garden-feast.css": Olive and earth tones (professional, natural)
    * - "navy.css": Navy and blue tones (corporate, trusted)
+   * - "minimal.css": Minimal neutral palette (clean, simple)
    * - "new-corporate-tech.css": Modern corporate tech colors (innovative)
    * - "loyal-green.css": Green tones (nature, growth, eco-friendly)
    * - "cranberries.css": Red/burgundy tones (energetic, bold)
@@ -228,7 +229,7 @@ const config = {
    * 5. Test with both dark and light modes
    * 6. Verify accessibility (AA contrast ratio minimum)
    */
-  themes: ["navy.css", "loyal-green.css", "cranberries.css"],
+  themes: ["navy.css", "loyal-green.css", "cranberries.css", "minimal.css"],
 
   /**
    * Translation Dictionaries Object

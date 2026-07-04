@@ -26,7 +26,10 @@
   /* Accent color (inherits from secondary) */
   --secondary-hover-color: #e27777;
   /* Hover state for secondary elements */
-
+  --bg-color: #212121;
+  /* General background color */
+  --border-color: #0f392c;
+  /* Border and divider color */
   /* --- Text Colors --- */
   --text-color: #f3d0d0;
   /* Primary text color with warm tone */
@@ -50,6 +53,10 @@
   /* Dark utility color */
   --header-bg-color: var(--dark-color);
   /* Header background color */
+  --bg-color: #212121;
+  /* General background color */
+  --border-color: #6b2733;
+  /* Border and divider color */
   --selection-color: var(--third-color);
   /* Color for text selection highlights */
 
@@ -108,6 +115,10 @@
   /* Secondary background for sections and cards */
   --light-bg-color: #88d9e6;
   /* Light background for nested elements */
+  --bg-color: #F9FAFB;
+  /* General background color */
+  --border-color: #E2E8F0;
+  /* Border and divider color */
   --header-bg-color: var(--dark-color);
   /* Header background color */
 
@@ -120,19 +131,19 @@
   /* Hover state for secondary elements */
 
   /* --- Text Colors --- */
-  --text-color: #f56767;
-  /* Primary text color with warm tone */
-  --title-color: #212121;
+  --text-color: #1f2937;
+  /* Primary text color */
+  --title-color: #111827;
   /* Specific color for titles */
-  --paragraph-color: #ffffff;
+  --paragraph-color: #475569;
   /* Paragraph text color */
-  --text-muted: #b16d6d;
+  --text-muted: #64748b;
   /* Muted text for secondary information */
-  --heading-color: var(--text-color);
+  --heading-color: #0f172a;
   /* Heading color inherits from primary text */
-  --text-hover-color: white;
+  --text-hover-color: #0f172a;
   /* Color on hover for text elements */
-  --text-accent-color: #ffffff;
+  --text-accent-color: #A60A3D;
   /* Accent text for emphasis */
   --history-text-color: #3a3939;
   /* Color for history/timeline text */
@@ -180,8 +191,16 @@
   /* Color for footer text */
   --list-color: white;
   /* Color for list items */
-  --heading-color: white;
-  --navbar-list-color:black
+  --heading-color: #0f172a;
+  /* Color for headings */
+  --navbar-list-color: white;
+  /* Color for navigation list items */
+  --bg-color: #F9FAFB;
+    
+
+  /* General background color */
+  --border-color: #E2E8F0;
+  
 }
 
 
