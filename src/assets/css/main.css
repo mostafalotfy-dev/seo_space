@@ -1558,7 +1558,7 @@ contact
   line-height: 46px;
   background-color: var(--secondary-color);
   border-radius: 50%;
-  color: var(--text-accent-color);
+  
   font-size: 22px;
   margin-left: 30px;
   margin-right: 15px;
@@ -1627,10 +1627,10 @@ form#contact textarea {
 
 form#contact button {
   display: inline-block;
-  background-color: var(--dark-color);
+
   font-size: 15px;
   font-weight: 400;
-  color: var(--text-accent-color);
+
   text-transform: capitalize;
   padding: 12px 25px;
   border-radius: 23px;
@@ -1640,9 +1640,6 @@ form#contact button {
   transition: all .3s;
 }
 
-form#contact button:hover {
-  background-color: var(--secondary-hover-color);
-}
 
 
 /* 
@@ -1975,9 +1972,9 @@ form#contact textarea,form#contact input{
 }
 form#contact textarea::placeholder,form#contact input::placeholder
 {
-  color: white;
+  color:var(--text-color);
   opacity: 1;
 }
 .main-banner .left-content form input::placeholder {
-   color:white
+    color:var(--text-color);
 }

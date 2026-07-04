@@ -2,7 +2,7 @@ mixin assistant(lang)
     - const dir = lang === "ar" ? "rtl" : "ltr";
     #assistant.container.rounded-pill.text-primary-emphasis.z-3
         .assistant
-            i.fa.fa-users.fa-lg
+            i.fa.fa-users.fa-lg.text-white
     #messageContainer.container.position-fixed.bottom-0.right-0.z-3.col-lg-4.col-md-5.col-sm-12(style="height:0")
         i.fa.fa-close.fa-lg.position-absolute.fixed-top.end-0(style="cursor:pointer" id="closeMessageContainer")
         form#messageForm.form(action="#",method="post",dir=dir)

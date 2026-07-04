@@ -33,7 +33,7 @@
   /* Primary light text on dark background */
   --title-color: var(--text-color);
   /* Title color inherits from primary text */
-  --paragraph-color: #818181;
+  --paragraph-color: #000000;
   /* Paragraph text color (slightly muted) */
   --text-muted: #94A3B8;
   /* Muted text for secondary information */
@@ -43,7 +43,7 @@
   /* Accent text for emphasis */
   --sub-heading-color: white;
   /* Color for sub-headings */
-  --heading-color: var(--text-color);
+  --heading-color: #000;
   /* General heading color */
   --history-text-color: #ffffff;
   /* History/timeline text color */
