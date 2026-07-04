@@ -1103,7 +1103,7 @@ Banner Style
   background-color: var(--secondary-color);
   font-size: 15px;
   font-weight: 500;
-  color: var(--text-accent-color);
+  color: white;
   text-transform: capitalize;
   padding: 12px 25px;
   border-radius: 23px;
