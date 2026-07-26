@@ -49,7 +49,7 @@
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@types/core-js": "^2.5.8",
     "babel-plugin-polyfill-corejs3": "^1.0.0",
-    "concurrently": "^10.0.3",
+    "concurrently": "^10.0.4",
     "eslint": "^10.6.0",
     "globals": "^17.7.0",
     "gulp": "^5.0.1",
